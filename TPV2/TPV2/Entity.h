@@ -11,11 +11,10 @@ class Entity
 public:
 	template<typename T, typename ...Ts>
 	inline T* addComponent(Ts&&...args) {
-		
 		T* c = new T(std::forward<Ts>(args));
 		auto id = c->getID();
 			if (cmpArray_[id] != nullptr) {
-				//removeComponent<T>();
+				removeComponent<T>(cmpArray_[i]);
 			}
 		components_.emplace_back(c);
 		
@@ -23,13 +22,12 @@ public:
 		c->setEntity(this);
 		c->init();
 
-
-
 		return c;
 	}
 
+	template<typename T, typename ...Ts>
 	void removeComponent(Component* c) {
-
+	
 	}
 	
 	template<typename T>

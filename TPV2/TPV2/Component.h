@@ -1,5 +1,7 @@
 #pragma once
 #include "ecs.h"
+#include "utils/Vector2D.h"
+#include "sdlutils/Texture.h"
 class Entity;
 class Component
 {
@@ -26,7 +28,23 @@ protected:
 
 // Caza: Transform, DeAcceleration, Image, Health, FighterCtrl, Gun, ShowAtOpposieSide
 class Transform : public Component {
+public:
+	Transform() : Component(ecs::CmpID::Transform) {};
+	Transform(Vector2D pos, double width, double height);
+	virtual ~Transform() {};
 
+	//get y set por aqui
+	inline double getW() { return w_; }
+	inline double getH() { return h_; }
+	inline Vector2D getPos() { return pos_; }
+
+	inline void setW(double w) { w_ = w; }
+	inline void setH(double h) { h_ = h; }
+	inline void setPos(Vector2D pos) { pos_.set(pos); }
+
+private:
+	double w_, h_;
+	Vector2D pos_;
 };
 
 class DeAcceleration : public Component {
@@ -34,7 +52,14 @@ class DeAcceleration : public Component {
 };
 
 class Image : public Component {
-
+public:
+	Image();
+	Image(Texture* t, Transform* tr);
+	virtual ~Image() { delete texture_; delete tr_; };
+	virtual void render() override;
+private:
+	Texture* texture_;
+	Transform* tr_;
 };
 
 class Health : public Component {
