@@ -14,7 +14,7 @@ public:
 		T* c = new T(std::forward<Ts>(args));
 		auto id = c->getID();
 			if (cmpArray_[id] != nullptr) {
-				removeComponent<T>(cmpArray_[i]);
+				removeComponent<T>(cmpArray_[id]);
 			}
 		components_.emplace_back(c);
 		
@@ -24,6 +24,7 @@ public:
 
 		return c;
 	}
+
 
 	template<typename T, typename ...Ts>
 	void removeComponent(Component* c) {
