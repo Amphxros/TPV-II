@@ -5,10 +5,14 @@
 #include <vector>
 #include "ecs.h"
 
+class Manager;
 class Entity
 {
 	using uptr_cmp = std::unique_ptr<Component>;
 public:
+	Entity(): active(true) {}
+	Entity(Manager* mngr);
+	virtual ~Entity();
 	template<typename T, typename ...Ts>
 	inline T* addComponent(Ts&&...args) {
 		T* c = new T(std::forward<Ts>(args));
@@ -48,10 +52,18 @@ public:
 			return cmpArray_[id] != nullptr;
 	}
 
+	inline bool isActive() { return active; }
+	inline void setActive(bool act) { active = act; }
+
+
+	void render();
+	void update();
+	void handleInput();
 
 
 protected:
+		Manager* mngr_;
+		bool active;
 		std::vector<uptr_cmp> components_;
 		std::array<Component*, ecs::maxComponents> cmpArray_ = {};
 };
-

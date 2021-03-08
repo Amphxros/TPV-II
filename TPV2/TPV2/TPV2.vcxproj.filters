@@ -72,6 +72,9 @@
     <ClCompile Include="ecs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="json\JSON.h">
@@ -129,6 +132,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ecs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

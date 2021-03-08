@@ -29,8 +29,8 @@ protected:
 // Caza: Transform, DeAcceleration, Image, Health, FighterCtrl, Gun, ShowAtOpposieSide
 class Transform : public Component {
 public:
-	Transform() : Component(ecs::CmpID::Transform) {};
-	Transform(Vector2D pos,Vector2D vel, double width, double height);
+	Transform();
+	Transform(Vector2D pos,Vector2D vel, double width, double height, double rotation);
 	virtual ~Transform() {};
 	
 	void update() override;
@@ -40,6 +40,7 @@ public:
 	inline double getH() { return h_; }
 	inline double getRotation() { return rot_; }
 	inline Vector2D getPos() { return pos_; }
+	inline Vector2D getVel() { return vel_; }
 
 	inline void setW(double w) { w_ = w; }
 	inline void setH(double h) { h_ = h; }
@@ -69,11 +70,22 @@ private:
 
 class Health : public Component {
 public:
+	Health();
+	Health(int num);
+
+	virtual void init() override;
+	inline int getNumVidas() { return num_; }
+	inline void setNumVidas(int num) { num_ = num; }
+	inline void resetNumVidas() { num_ = maxVidas_; }
+
 private:
+	int maxVidas_;
+	int num_;
 };
 
 class FighterCtrl : public Component {
 public:
+
 private:
 };
 
