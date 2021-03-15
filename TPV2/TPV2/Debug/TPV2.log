@@ -1,5 +1,0 @@
-﻿  Component.cpp
-  Entity.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\TPV2\TPV2\Entity.h(17,34): error C3861: 'i': no se encontró el identificador
-  Generando código...
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\TPV2\TPV2\Entity.h(17,34): message : Diagnóstico en la función 'T *Entity::addComponent(Ts &&...)' generada por el compilador
