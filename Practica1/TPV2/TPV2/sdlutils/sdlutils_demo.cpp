@@ -59,9 +59,15 @@ void sdlutils_basic_demo() {
 	Texture* t = new Texture(renderer, "../resources/images/star.png");
 
 	Manager* mngr_= new Manager();
+	
+	//fighter
 	Entity* fighter = mngr_->addEntity();
 	fighter->addComponent<Transform>(Vector2D(), Vector2D(), 150,150,0);
 	fighter->addComponent<Image>(t);
+	fighter->addComponent<Gun>(3);
+	fighter->addComponent<Health>(3);
+	fighter->addComponent<FighterCtrl>();
+	fighter->addComponent <ShowAtOppositeSide>(winWidth, winHeight);
 
 	while (!exit_) {
 		Uint32 startTime = sdl.currRealTime();

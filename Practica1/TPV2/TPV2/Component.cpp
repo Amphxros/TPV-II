@@ -90,6 +90,13 @@ void FighterCtrl::init()
 
 void FighterCtrl::handleInput()
 {
+	auto& ih = *InputHandler::instance();
+	if (ih.isKeyDown(SDLK_UP)) {
+		std::cout << "up";
+	}
+	//else if(...)
+	//else if(...)
+	//else if(...)
 }
 
 //COMPONENTE SHOW AT OPPOSITE SIDE

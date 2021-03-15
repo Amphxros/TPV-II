@@ -1,2 +1,2 @@
 ﻿  sdlutils_demo.cpp
-  TPV2.vcxproj -> C:\Users\usuario_local\Documents\GitHub\TPV-II\Practica1\TPV2\bin\TPV2Debug.exe
+LINK : fatal error LNK1104: cannot open file 'C:\Users\usuario_local\Documents\GitHub\TPV-II\Practica1\TPV2\bin\TPV2Debug.exe'
