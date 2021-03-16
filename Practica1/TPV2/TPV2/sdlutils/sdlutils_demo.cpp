@@ -56,14 +56,13 @@ void sdlutils_basic_demo() {
 	bool exit_ = false;
 	SDL_Event event;
 
-	Texture* t = new Texture(renderer, "../resources/images/star.png");
 
 	Manager* mngr_= new Manager();
 	
 	//fighter
 	Entity* fighter = mngr_->addEntity();
 	fighter->addComponent<Transform>(Vector2D(), Vector2D(), 150,150,0);
-	fighter->addComponent<Image>(t);
+	fighter->addComponent<Image>(&sdlLogo);
 	fighter->addComponent<Gun>(3);
 	fighter->addComponent<Health>(3);
 	fighter->addComponent<FighterCtrl>();

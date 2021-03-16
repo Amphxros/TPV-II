@@ -113,6 +113,7 @@ public:
 	ShowAtOppositeSide();
 	ShowAtOppositeSide(int width, int height);
 	virtual ~ShowAtOppositeSide() {}
+	virtual void init() override;
 	virtual void update() override;
 
 private:

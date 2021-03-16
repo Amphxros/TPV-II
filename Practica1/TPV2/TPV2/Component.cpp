@@ -79,7 +79,7 @@ void Gun::handleInput()
 }
 //COMPONENTE FIGHTERCTRL
 FighterCtrl::FighterCtrl():
-	Component(ecs::FighterCtrl)
+	Component(ecs::FighterCtrl),tr_(nullptr)
 {
 }
 
@@ -100,10 +100,20 @@ void FighterCtrl::handleInput()
 }
 
 //COMPONENTE SHOW AT OPPOSITE SIDE
-ShowAtOppositeSide::ShowAtOppositeSide()
+ShowAtOppositeSide::ShowAtOppositeSide(): Component(ecs::ShowAtOppositeSide)
+{
+}
+
+ShowAtOppositeSide::ShowAtOppositeSide(int width, int height): 
+	Component(ecs::ShowAtOppositeSide), width_(width), height_(height)
+{
+}
+
+void ShowAtOppositeSide::init()
 {
 }
 
 void ShowAtOppositeSide::update()
 {
+
 }
