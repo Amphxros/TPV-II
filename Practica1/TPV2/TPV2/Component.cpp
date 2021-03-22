@@ -54,6 +54,10 @@ void Health::init()
 	resetNumVidas();
 }
 
+void Health::render()
+{
+}
+
 //COMPONENTE GUN
 Gun::Gun(): 
 	time_(0), Component()
@@ -105,15 +109,54 @@ ShowAtOppositeSide::ShowAtOppositeSide(): Component(ecs::ShowAtOppositeSide)
 }
 
 ShowAtOppositeSide::ShowAtOppositeSide(int width, int height): 
-	Component(ecs::ShowAtOppositeSide), width_(width), height_(height)
+	Component(ecs::ShowAtOppositeSide), width_(width), height_(height), tr_(nullptr)
 {
 }
 
 void ShowAtOppositeSide::init()
 {
+	tr_ = entity_->getComponent<Transform>();
 }
 
 void ShowAtOppositeSide::update()
 {
+	//comprobamos en X
+	if (tr_->getPos().getX() < 0) {
+		tr_->setPos(Vector2D(width_, tr_->getPos().getY()));
+	}
+	else if (tr_->getPos().getX() + tr_->getW() > width_) {
 
+		tr_->setPos(Vector2D(tr_->getW(), tr_->getPos().getY()));
+	}
+	// comprobamos en y
+	if (tr_->getPos().getY() < 0) {
+
+		tr_->setPos(Vector2D(tr_->getPos().getX(),height_));
+	}
+	else if (tr_->getPos().getX() + tr_->getH() > height_) {
+
+		tr_->setPos(Vector2D(tr_->getPos().getX(), tr_->getH()));
+	}
+}
+
+//DEACCELERATION
+DeAcceleration::DeAcceleration(double deAcceleration): 
+	Component(ecs::DeAcceleration), tr_(nullptr), deAccel_(deAcceleration)
+{
+}
+
+DeAcceleration::~DeAcceleration()
+{
+	tr_ = nullptr;
+}
+
+void DeAcceleration::init()
+{
+	tr_ = entity_->getComponent<Transform>();
+}
+
+void DeAcceleration::update()
+{
+	Vector2D vel = tr_->getVel() * deAccel_;
+	tr_->setVel(vel);
 }

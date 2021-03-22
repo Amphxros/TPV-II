@@ -73,12 +73,10 @@ void sdlutils_basic_demo() {
 
 		// update the event handler
 		ih.clearState();
-		while (SDL_PollEvent(&event))
+		while (SDL_PollEvent(&event)) {
 			ih.update(event);
-
-		// exit when any key is down
-		if (ih.keyDownEvent())
-			exit_ = true;
+			mngr_->handleInput();
+		}
 
 		// clear screen
 		sdl.clearRenderer();

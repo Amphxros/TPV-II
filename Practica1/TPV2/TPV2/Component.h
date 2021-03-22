@@ -37,15 +37,22 @@ public:
 
 	//get y set por aqui
 	inline double getW() { return w_; }
-	inline double getH() { return h_; }
-	inline double getRotation() { return rot_; }
-	inline Vector2D getPos() { return pos_; }
-	inline Vector2D getVel() { return vel_; }
-
 	inline void setW(double w) { w_ = w; }
+	
+	inline double getH() { return h_; }
 	inline void setH(double h) { h_ = h; }
+	
+	inline double getRotation() { return rot_; }
 	inline void setRotation(double rot) { rot_ = rot; }
-	inline void setPos(Vector2D pos) { pos_.set(pos); }
+
+	inline Vector2D getPos() { return pos_; }
+	inline void setPos(Vector2D p) { pos_.set(p); }
+	inline void setPos(double x, double y) { pos_.set(x, y); }
+
+	inline Vector2D getVel() { return vel_; }
+	inline void setVel(Vector2D v) { vel_.set(v); }
+	inline void setVel(double x, double y) { vel_.set(x,y); }
+
 
 private:
 	double w_, h_, rot_;
@@ -54,6 +61,13 @@ private:
 
 class DeAcceleration : public Component {
 public:
+	DeAcceleration(double deAcceleration);
+	virtual ~DeAcceleration();
+	virtual void init() override;
+	virtual void update() override;
+private:
+	double deAccel_;
+	Transform* tr_;
 };
 
 class Image : public Component {
@@ -72,8 +86,10 @@ class Health : public Component {
 public:
 	Health();
 	Health(int num);
+	
 	virtual ~Health() {}
 	virtual void init() override;
+	virtual void render() override;
 	inline int getNumVidas() { return num_; }
 	inline void setNumVidas(int num) { num_ = num; }
 	inline void resetNumVidas() { num_ = maxVidas_; }
@@ -81,6 +97,9 @@ public:
 private:
 	int maxVidas_;
 	int num_;
+
+	Texture* texture_;
+	
 };
 
 class FighterCtrl : public Component {
@@ -132,7 +151,15 @@ private:
 
 class Generations : public Component {
 public:
+	Generations();
+	Generations(int gen);
+
+	void setGen(int gen);
+	void resetGen();
+	inline int genGen() { return gen_; }
+
 private:
+	int gen_;
 };
 
 class Follow : public Component {
@@ -144,7 +171,12 @@ private:
 
 class DisableOnExit : public Component {
 public:
+	DisableOnExit(int width, int height);
+	virtual ~DisableOnExit();
+
+	virtual void update() override;
 private:
+	int width_, height_;
 };
 //GameManager: State, GameCtrl, AsteroidsManager, CollisionsManager
 
