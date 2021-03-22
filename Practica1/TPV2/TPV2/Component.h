@@ -85,7 +85,7 @@ private:
 class Health : public Component {
 public:
 	Health();
-	Health(int num);
+	Health(int num, Texture* texture);
 	
 	virtual ~Health() {}
 	virtual void init() override;

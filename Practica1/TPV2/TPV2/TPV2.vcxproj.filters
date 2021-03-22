@@ -119,9 +119,6 @@
     <ClInclude Include="sdlutils\Texture.h">
       <Filter>Header Files\sdlutils</Filter>
     </ClInclude>
-    <ClInclude Include="sdlutils\VirtualTimer.h">
-      <Filter>Header Files\sdlutils</Filter>
-    </ClInclude>
     <ClInclude Include="json\simplejson_demo.h">
       <Filter>Header Files\json</Filter>
     </ClInclude>
@@ -135,6 +132,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sdlutils\VirtualTimer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

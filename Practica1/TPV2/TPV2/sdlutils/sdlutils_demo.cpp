@@ -62,11 +62,19 @@ void sdlutils_basic_demo() {
 	//fighter
 	Entity* fighter = mngr_->addEntity();
 	fighter->addComponent<Transform>(Vector2D(), Vector2D(), 150,150,0);
+	fighter->addComponent<DeAcceleration>(0.995);
 	fighter->addComponent<Image>(&sdlLogo);
 	fighter->addComponent<Gun>(3);
-	fighter->addComponent<Health>(3);
+	fighter->addComponent<Health>(3,&sdlLogo);
 	fighter->addComponent<FighterCtrl>();
 	fighter->addComponent <ShowAtOppositeSide>(winWidth, winHeight);
+
+	//asteroids
+	Entity* astManager = mngr_->addEntity();
+	//GameManager
+
+	Entity* gm = mngr_->addEntity();
+	
 
 	while (!exit_) {
 		Uint32 startTime = sdl.currRealTime();

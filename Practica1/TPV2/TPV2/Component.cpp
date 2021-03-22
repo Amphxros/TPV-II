@@ -73,8 +73,8 @@ void Image::render()
 Health::Health()
 {
 }
-Health::Health(int num): 
-	Component(ecs::Health),maxVidas_(num)
+Health::Health(int num, Texture* texture):
+	Component(ecs::Health),maxVidas_(num), texture_(texture)
 {
 }
 void Health::init()
@@ -84,6 +84,17 @@ void Health::init()
 
 void Health::render()
 {
+
+	for (int i = 0; i < num_; i++) {
+		SDL_Rect dest;
+		dest.x = i*60;
+		dest.y = 0;
+		dest.w = 50;
+		dest.y = 50;
+
+		texture_->render(dest);
+	}
+
 }
 
 //COMPONENTE GUN
@@ -127,10 +138,23 @@ void FighterCtrl::handleInput()
 {
 	auto& ih = *InputHandler::instance();
 	if (ih.isKeyDown(SDLK_UP)) {
+		Vector2D vel = tr_->getVel();
+		Vector2D newVel = vel + Vector2D(0, -1).rotate(tr_->getRotation()) * 0.2; //cambiar el 0.2 por 1 parametro
 		std::cout << "up";
 	}
-	//else if(...)
-	//else if(...)
+	else if (ih.isKeyDown(SDLK_LEFT)) {
+		double r = tr_->getRotation() - 5.0;
+		tr_->setRotation(r);
+	}
+	else if (ih.isKeyDown(SDLK_RIGHT)) {
+		double r = tr_->getRotation() + 5.0;
+		tr_->setRotation(r);
+	}
+	else if (ih.isKeyDown(SDLK_DOWN)) {
+		Vector2D vel = tr_->getVel();
+		Vector2D newVel = vel + Vector2D(0, 1).rotate(tr_->getRotation()) * 0.2; //cambiar el 0.2 por 1 parametro
+
+	}
 	//else if(...)
 }
 
@@ -185,8 +209,7 @@ FramedImage::FramedImage(Texture* texture, int nRows, int nCols, int posX, int p
 	src_.h = height;
 
 	tam = Vector2D(nCols_, nRows_);
-
-
+	ini = Vector2D(pos_X, pos_Y);
 
 }
 
@@ -208,4 +231,5 @@ void FramedImage::render()
 
 void FramedImage::update()
 {
+
 }

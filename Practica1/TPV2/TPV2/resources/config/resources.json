@@ -9,7 +9,11 @@
   "images" : [
     { "id" : "sdl_logo", "file" : "resources/images/SDL_logo.png" },
     { "id" : "tennis_ball", "file" : "resources/images/tennis_ball.png" },
-    { "id" : "star", "file" : "resources/images/star.png"}
+    { "id" : "star", "file" : "resources/images/star.png"},
+	
+	{ "id" : "asteroid", "file" : "resources/images/asteroid.png"},
+	{ "id" : "Golden_asteroid", "file" : "resources/images/asteroid_gold.png"},
+	{ "id" : "fighter", "file" : "resources/images/fighter.png"},
   ],
   
   "messages" : [
@@ -19,12 +23,14 @@
   
   "sounds" : [
     { "id" : "gunshot", "file" : "resources/sound/gunshot.wav" },
-    { "id" : "explosion", "file" : "resources/sound/explosion.wav" }
-  ],
+    { "id" : "explosion", "file" : "resources/sound/explosion.wav" },
+	{ "id" : "thrust", "file" : "resources/sound/thrust.wav" }
+	],
 
   "musics" : [
     { "id" : "beat", "file" : "resources/sound/beat.wav" },
     { "id" : "imperial_march", "file" : "resources/sound/imperial_march.wav" }
+	
   ]
 
 }
