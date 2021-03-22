@@ -19,6 +19,32 @@ void Transform::update()
 	pos_ = pos_ + vel_;
 }
 
+
+//DEACCELERATION
+DeAcceleration::DeAcceleration(double deAcceleration) :
+	Component(ecs::DeAcceleration), tr_(nullptr), deAccel_(deAcceleration)
+{
+}
+
+DeAcceleration::~DeAcceleration()
+{
+	tr_ = nullptr;
+}
+
+void DeAcceleration::init()
+{
+	tr_ = entity_->getComponent<Transform>();
+	assert(tr_ != nullptr);
+}
+
+void DeAcceleration::update()
+{
+	Vector2D vel = tr_->getVel() * deAccel_;
+	tr_->setVel(vel);
+}
+
+
+
 //COMPONENTE IMAGE
 Image::Image(Texture* t):
 	Component(ecs::Image), texture_(t), tr_(nullptr)
@@ -28,6 +54,7 @@ Image::Image(Texture* t):
 void Image::init()
 {
 	tr_ = entity_->getComponent<Transform>();
+	assert(tr_ != nullptr);
 }
 
 void Image::render()
@@ -40,6 +67,7 @@ void Image::render()
 
 	texture_->render(dest, tr_->getRotation());
 }
+
 
 //COMPONETE HEALTH
 Health::Health()
@@ -81,6 +109,8 @@ void Gun::handleInput()
 		std::cout << "pum";
 	}
 }
+
+
 //COMPONENTE FIGHTERCTRL
 FighterCtrl::FighterCtrl():
 	Component(ecs::FighterCtrl),tr_(nullptr)
@@ -90,6 +120,7 @@ FighterCtrl::FighterCtrl():
 void FighterCtrl::init()
 {
 	tr_ = entity_->getComponent<Transform>();
+	assert(tr_ != nullptr);
 }
 
 void FighterCtrl::handleInput()
@@ -102,6 +133,7 @@ void FighterCtrl::handleInput()
 	//else if(...)
 	//else if(...)
 }
+
 
 //COMPONENTE SHOW AT OPPOSITE SIDE
 ShowAtOppositeSide::ShowAtOppositeSide(): Component(ecs::ShowAtOppositeSide)
@@ -116,6 +148,7 @@ ShowAtOppositeSide::ShowAtOppositeSide(int width, int height):
 void ShowAtOppositeSide::init()
 {
 	tr_ = entity_->getComponent<Transform>();
+	assert(tr_ != nullptr);
 }
 
 void ShowAtOppositeSide::update()
@@ -139,24 +172,40 @@ void ShowAtOppositeSide::update()
 	}
 }
 
-//DEACCELERATION
-DeAcceleration::DeAcceleration(double deAcceleration): 
-	Component(ecs::DeAcceleration), tr_(nullptr), deAccel_(deAcceleration)
+FramedImage::FramedImage(Texture* texture, int nRows, int nCols, int posX, int posY, float framerate): 
+	Component(ecs::FramedImage), texture_(texture), nRows_(nRows), nCols_(nCols),framerate_(framerate),
+	pos_X(posX),pos_Y(posY), tr_(nullptr)
 {
+	width = texture_->width() / nCols_;
+	height = texture_->height() / nRows_;
+
+	src_.x = pos_X* width;
+	src_.y = pos_Y* height;
+	src_.w = width;
+	src_.h = height;
+
+	tam = Vector2D(nCols_, nRows_);
+
+
+
 }
 
-DeAcceleration::~DeAcceleration()
-{
-	tr_ = nullptr;
-}
-
-void DeAcceleration::init()
+void FramedImage::init()
 {
 	tr_ = entity_->getComponent<Transform>();
+	assert(tr_ != nullptr);
 }
 
-void DeAcceleration::update()
+void FramedImage::render()
 {
-	Vector2D vel = tr_->getVel() * deAccel_;
-	tr_->setVel(vel);
+	SDL_Rect dest;
+	dest.x = tr_->getPos().getX();
+	dest.y = tr_->getPos().getY();
+	dest.w = tr_->getW();
+	dest.h = tr_->getH();
+
+}
+
+void FramedImage::update()
+{
 }

@@ -146,7 +146,22 @@ private:
 
 class FramedImage : public Component {
 public:
+	FramedImage(Texture* texture, int nRows, int nCols, int posX, int posY, float framerate);
+	virtual ~FramedImage();
+	virtual void init() override;
+	virtual void render() override;
+	virtual void update() override;
+
 private:
+	Transform* tr_;
+	Texture* texture_;
+	SDL_Rect src_;
+	
+	Vector2D tam;
+	Vector2D ini;
+
+	int nRows_, nCols_, pos_X, pos_Y, width, height;
+	float framerate_;
 };
 
 class Generations : public Component {
@@ -201,13 +216,17 @@ private:
 class AsteroidsManager  {
 public:
 	AsteroidsManager();
-	AsteroidsManager(int numAsteroids);
-
+	AsteroidsManager(int numAsteroids,int time, int width, int height);
 	void update();
 	void render();
 
 private:
-	int num_asteroids;
+	void createAsteroids(int nGen);
+	Transform* tr_;
+	Manager* mngr_;
+
+	int num_asteroids, time_, lastTime_, gen_;
+	float width_, height_;
 };
 
 class CollisionsManager : public Component {
