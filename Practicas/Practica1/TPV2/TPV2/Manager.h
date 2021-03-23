@@ -1,14 +1,13 @@
 #pragma once
 #include "Entity.h"
+#include "System.h"
 #include <memory>
 using uptr_ent = std::unique_ptr<Entity>;
-class System;
 class Manager
-
 {
 public:
-	Manager();
-	virtual ~Manager();
+	Manager():entities_(), sys_() {};
+	virtual ~Manager() {};
 
 	Entity* addEntity();
 	void refresh();		// Controla y borra las entidades no activas

@@ -1,45 +1,16 @@
-﻿  Component.cpp
+﻿  Game.cpp
 C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.h(50,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.h(50,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.h(54,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.h(54,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(42,33): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(63,29): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(64,29): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(65,20): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(66,20): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(68,41): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(143,66): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(143,75): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(156,65): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(156,74): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(182,24): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(186,33): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(191,46): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(195,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(211,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(211,17): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(212,24): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(212,17): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(229,29): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(230,29): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(231,20): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(232,20): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-  Entity.cpp
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Game.cpp(17,10): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+  Manager.cpp
 C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.h(50,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.h(50,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.h(54,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.h(54,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-  somplejson_demo.cpp
-  JSON.cpp
-  JSONValue.cpp
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Manager.cpp(29,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\TPV2\Manager.cpp(37,20): warning C4018: '<': no coinciden signed/unsigned
   main.cpp
-  sdlutils_demo.cpp
-  SDLUtils.cpp
-  SoundEffect.cpp
-  Texture.cpp
-  Collisions.cpp
-  Vector2D.cpp
   Generando código...
-     Creando biblioteca C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\bin\TPV2Debug.lib y objeto C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\bin\TPV2Debug.exp
   TPV2.vcxproj -> C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\bin\TPV2Debug.exe

@@ -1,5 +1,5 @@
 #include "System.h"
-
+#include "Manager.h"
 Entity* System::addEntity() {
 
 	Entity* e = new Entity(manager_);

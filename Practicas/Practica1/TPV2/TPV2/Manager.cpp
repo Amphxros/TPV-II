@@ -30,7 +30,7 @@ void Manager::update()
 		entities_[i]->update();
 }
 
-// Llama al Draw de todas las entidades
+// Llama al render de todas las entidades
 void Manager::render()
 {
 	std::size_t n = entities_.size();
