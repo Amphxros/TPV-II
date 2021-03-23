@@ -7,8 +7,11 @@ namespace ecs
 	constexpr std::size_t maxComponents = 10;
 
 	using GroupIDType = std::size_t;
-
 	constexpr std::size_t maxGroups = 10;
+
+	using SystemIDType = std::size_t;
+	constexpr std::size_t maxSystem = 10;
+
 	enum CmpID : CmpIDType {
 		//caza
 		Transform,
@@ -24,7 +27,7 @@ namespace ecs
 		//transform,
 		FramedImage,
 		Generations,
-		Follow,
+		Follow, // 2 transform, uno al que seguir (target) y otro para moverse
 
 		//bala
 		DisableOnExit,
@@ -41,8 +44,17 @@ namespace ecs
 		Asteroids,
 		Bullets,
 		Fighter,
-		Other,
+		Other
 	};
+
+	enum SystemID : SystemIDType {
+		AsteroidsSys,
+		BulletsSys,
+		CollisionsSys,
+		RenderSys,
+		GMSys
+	};
+
 
 };
 

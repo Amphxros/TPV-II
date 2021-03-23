@@ -26,23 +26,6 @@ public:
 		return t;
 
 	}
-	/*	// entrada de un unico parametro
-	template<typename T, typename Ts>
-	inline T* addComponent(Ts args) {
-		T* c = new T(std::forward<Ts>(args));
-		auto id = c->getID();
-			if (cmpArray_[id] != nullptr) {
-				removeComponent<T>(cmpArray_[id]);
-			}
-		components_.emplace_back(c);
-
-		cmpArray_[id] = c;
-		c->setEntity(this);
-		c->init();
-
-		return c;
-	}
-	*/
 
 	template<typename T, typename ...Ts>
 	void removeComponent(Component* c) {
