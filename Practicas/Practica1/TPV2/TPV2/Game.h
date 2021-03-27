@@ -15,6 +15,8 @@ public:
 	void render();
 
 private:
+	void createPlayer();
+	void createGameManager();
 
 	Manager* mngr_;
 	SDLUtils* sdl;
