@@ -105,12 +105,13 @@ private:
 class FighterCtrl : public Component {
 public:
 	FighterCtrl();
+	FighterCtrl(double thrust);
 	virtual ~FighterCtrl() {}
 	virtual void init() override;
 	virtual void update() override;
 private:
 	Transform* tr_;
-
+	double thrust_;
 };
 
 class Gun : public Component {

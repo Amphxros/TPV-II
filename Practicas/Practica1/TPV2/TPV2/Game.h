@@ -8,13 +8,15 @@ class Game
 {
 public:
 	Game();
+	~Game();
 
 	void init();
 	void run();
+
+private:
 	void update();
 	void render();
 
-private:
 	void createPlayer();
 	void createGameManager();
 

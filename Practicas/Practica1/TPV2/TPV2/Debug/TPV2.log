@@ -1,1 +1,9 @@
-﻿
+﻿  Game.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.h(50,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.h(50,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.h(54,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.h(54,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Game.cpp(23,10): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Game.cpp(43,53): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Game.cpp(43,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  TPV2.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\bin\TPV2Debug.exe

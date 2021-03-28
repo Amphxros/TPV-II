@@ -118,7 +118,8 @@ void Gun::init()
 void Gun::update()
 {
 	auto& ih = *InputHandler::instance();
-	if (ih.isKeyDown(SDLK_s)) {
+	
+	if (ih.isKeyDown(SDLK_SPACE)) {
 		std::cout << "pum";
 	}
 }
@@ -127,6 +128,11 @@ void Gun::update()
 //COMPONENTE FIGHTERCTRL
 FighterCtrl::FighterCtrl() :
 	Component(ecs::FighterCtrl), tr_(nullptr)
+{
+}
+
+FighterCtrl::FighterCtrl(double thrust):
+	Component(ecs::FighterCtrl), tr_(nullptr), thrust_(thrust)
 {
 }
 
@@ -141,8 +147,8 @@ void FighterCtrl::update()
 	auto& ih = *InputHandler::instance();
 	if (ih.isKeyDown(SDLK_UP)) {
 		Vector2D vel = tr_->getVel();
-		Vector2D newVel = vel + Vector2D(0, -1).rotate(tr_->getRotation()) * 0.2; //cambiar el 0.2 por 1 parametro
-		std::cout << "up";
+		Vector2D newVel = vel + Vector2D(0, -1).rotate(tr_->getRotation()) * thrust_; //cambiar el 0.2 por 1 parametro
+		tr_->setVel(newVel);
 	}
 	else if (ih.isKeyDown(SDLK_LEFT)) {
 		double r = tr_->getRotation() - 5.0;
@@ -154,7 +160,9 @@ void FighterCtrl::update()
 	}
 	else if (ih.isKeyDown(SDLK_DOWN)) {
 		Vector2D vel = tr_->getVel();
-		Vector2D newVel = vel + Vector2D(0, 1).rotate(tr_->getRotation()) * 0.2; //cambiar el 0.2 por 1 parametro
+		Vector2D newVel = vel + Vector2D(0, 1).rotate(tr_->getRotation()) * thrust_; //cambiar el 0.2 por 1 parametro
+
+		tr_->setVel(newVel);
 
 	}
 }
@@ -182,7 +190,7 @@ void ShowAtOppositeSide::update()
 	if (tr_->getPos().getX() < 0) {
 		tr_->setPos(Vector2D(width_, tr_->getPos().getY()));
 	}
-	else if (tr_->getPos().getX() + tr_->getW() > width_) {
+	else if (tr_->getPos().getX() > width_) {
 
 		tr_->setPos(Vector2D(tr_->getW(), tr_->getPos().getY()));
 	}
@@ -191,7 +199,7 @@ void ShowAtOppositeSide::update()
 
 		tr_->setPos(Vector2D(tr_->getPos().getX(), height_));
 	}
-	else if (tr_->getPos().getX() + tr_->getH() > height_) {
+	else if (tr_->getPos().getY() > height_) {
 
 		tr_->setPos(Vector2D(tr_->getPos().getX(), tr_->getH()));
 	}

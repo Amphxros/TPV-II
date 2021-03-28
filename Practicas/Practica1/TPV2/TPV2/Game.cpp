@@ -5,16 +5,22 @@
 
 #include <SDL.h>
 
-Game::Game(){
+Game::Game(): mngr_(nullptr), renderer(nullptr), sdl(nullptr){
+}
+
+Game::~Game() {
+
+	delete sdl;
+}
+
+void Game::init() {
+
 	SDLUtils::init("SDLGame Demo!", 800, 600,
 		"resources/config/resources.json");
 	sdl = SDLUtils::instance();
 	
 	mngr_=new Manager();
 	renderer== sdl->renderer();
-
-}
-void Game::init() {
 
 
 }
@@ -28,18 +34,19 @@ void Game::render(){
 void Game::createPlayer()
 {
 
-	auto& sdlLogo = sdl->images().at("sdl_logo");
+	auto& sdlLogo = sdl->images().at("fighter");
 
 	int width = sdl->width();
 	int height = sdl->height();
 
 	Entity* e = mngr_->addEntity();
-	e->addComponent<Transform>(Vector2D(), Vector2D(), 150, 150, 0);
+	e->addComponent<Transform>(Vector2D(width/2, height/2), Vector2D(1,1), 50, 50, 0);
 	e->addComponent<Image>(&sdlLogo);
 	e->addComponent<ShowAtOppositeSide>(width, height);
-	e->addComponent<FighterCtrl>();
+	e->addComponent<FighterCtrl>(1);
 	e->addComponent<DeAcceleration>(0.995);
 	e->addComponent<Health>(3, &sdlLogo);
+	e->addComponent<Gun>(5);
 
 	e->setActive(true);
 
