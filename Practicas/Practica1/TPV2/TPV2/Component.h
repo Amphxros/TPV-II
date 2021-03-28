@@ -169,18 +169,27 @@ public:
 	Generations();
 	Generations(int gen);
 	virtual ~Generations() {}
-	void setGen(int gen);
 	void resetGen();
+	inline void setGen(int gen) { gen_ = gen; };
 	inline int genGen() { return gen_; }
 
 private:
+	int maxgen_;
 	int gen_;
 };
 
-//class Follow : public Component {
-//public:
-//private:
-//};
+class Follow : public Component {
+public:
+	Follow(Entity* target, double speed);
+
+	virtual void init() override;
+	virtual void update() override;
+
+private:
+	Transform* tr_, targetTr_;
+	Entity* target_;
+	double speed_;
+};
 
 //Bala: Transform, Image, DisableOnExit
 
@@ -195,7 +204,7 @@ private:
 };
 //GameManager: State, GameCtrl, AsteroidsManager, CollisionsManager
 
-class State {
+class State: Component {
 public:
 	enum GameState { NEWGAME, PAUSED, RUNNING, GAMEOVER };
 	State();

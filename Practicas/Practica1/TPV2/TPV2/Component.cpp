@@ -1,6 +1,6 @@
 #include "Component.h"
 #include "Entity.h"
-
+#include "Manager.h"
 #include "sdlutils/InputHandler.h"
 
 //COMPONENTE TRANSFORM
@@ -10,7 +10,7 @@ Transform::Transform() :
 }
 
 Transform::Transform(Vector2D pos, Vector2D vel, double width, double height, double rotation) :
-	Component(), pos_(pos), vel_(vel), w_(width), h_(height), rot_(rotation)
+	Component(ecs::Transform), pos_(pos), vel_(vel), w_(width), h_(height), rot_(rotation)
 {
 }
 
@@ -22,7 +22,7 @@ void Transform::update()
 
 //DEACCELERATION
 DeAcceleration::DeAcceleration(double deAcceleration) :
-	Component(), tr_(nullptr), deAccel_(deAcceleration)
+	Component(ecs::DeAcceleration), tr_(nullptr), deAccel_(deAcceleration)
 {
 }
 
@@ -47,7 +47,7 @@ void DeAcceleration::update()
 
 //COMPONENTE IMAGE
 Image::Image(Texture* t) :
-	Component(), texture_(t), tr_(nullptr)
+	Component(ecs::Image), texture_(t), tr_(nullptr)
 {
 }
 
@@ -66,6 +66,7 @@ void Image::render()
 	dest.h = tr_->getH();
 
 	texture_->render(dest, tr_->getRotation());
+	assert(tr_ != nullptr && texture_ != nullptr);
 }
 
 
@@ -74,7 +75,7 @@ Health::Health()
 {
 }
 Health::Health(int num, Texture* texture) :
-	Component(), maxVidas_(num), texture_(texture)
+	Component(ecs::Health), maxVidas_(num), texture_(texture)
 {
 }
 void Health::init()
@@ -104,7 +105,7 @@ Gun::Gun() :
 }
 
 Gun::Gun(uint32_t time) :
-	Component(), time_(time)
+	Component(ecs::Gun), time_(time)
 {
 }
 
@@ -125,7 +126,7 @@ void Gun::update()
 
 //COMPONENTE FIGHTERCTRL
 FighterCtrl::FighterCtrl() :
-	Component(), tr_(nullptr)
+	Component(ecs::FighterCtrl), tr_(nullptr)
 {
 }
 
@@ -165,13 +166,13 @@ ShowAtOppositeSide::ShowAtOppositeSide() : Component()
 }
 
 ShowAtOppositeSide::ShowAtOppositeSide(int width, int height) :
-	Component(), width_(width), height_(height), tr_(nullptr)
+	Component(ecs::ShowAtOppositeSide), width_(width), height_(height), tr_(nullptr)
 {
 }
 
 void ShowAtOppositeSide::init()
 {
-	tr_ = entity_->getComponent<Transform>();
+	tr_ = entity_->getComponent<Transform>(ecs::Transform);
 	assert(tr_ != nullptr);
 }
 
@@ -197,7 +198,7 @@ void ShowAtOppositeSide::update()
 }
 
 FramedImage::FramedImage(Texture* texture, int nRows, int nCols, int posX, int posY, float framerate) :
-	Component(), texture_(texture), nRows_(nRows), nCols_(nCols), framerate_(framerate),
+	Component(ecs::FramedImage), texture_(texture), nRows_(nRows), nCols_(nCols), framerate_(framerate),
 	pos_X(posX), pos_Y(posY), tr_(nullptr)
 {
 	width = texture_->width() / nCols_;
@@ -232,10 +233,41 @@ void FramedImage::render()
 	dest.h = tr_->getH();
 
 	texture_->render(src_, dest, tr_->getRotation());
+	assert(tr_ != nullptr && texture_ != nullptr);
 
 }
 
 void FramedImage::update()
 {
 
+}
+
+Generations::Generations():
+	maxgen_(0),gen_(0)
+{
+}
+
+Generations::Generations(int gen): 
+	Component(ecs::Generations), maxgen_(gen), gen_(gen)
+{
+}
+
+void Generations::resetGen()
+{
+	gen_ = maxgen_;
+}
+
+Follow::Follow(Entity* target, double speed): 
+	Component(ecs::Follow), target_(target), speed_(speed), targetTr_(Transform()), tr_(nullptr)
+{
+}
+
+void Follow::init()
+{
+	//targetTr_ = entity_->getMngr()->getSystem<ecs::Fighter>();
+	tr_ = entity_->getComponent<Transform>(ecs::Transform);
+}
+
+void Follow::update()
+{
 }
