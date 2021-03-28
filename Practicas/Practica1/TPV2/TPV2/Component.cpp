@@ -5,7 +5,7 @@
 
 //COMPONENTE TRANSFORM
 Transform::Transform() :
-	Component(), pos_(Vector2D()), vel_(Vector2D()), w_(0), h_(0), rot_(0)
+	Component(ecs::Transform), pos_(Vector2D()), vel_(Vector2D()), w_(0), h_(0), rot_(0)
 {
 }
 
@@ -33,7 +33,7 @@ DeAcceleration::~DeAcceleration()
 
 void DeAcceleration::init()
 {
-	tr_ = entity_->getComponent<Transform>();
+	tr_ = entity_->getComponent<Transform>(ecs::Transform);
 	assert(tr_ != nullptr);
 }
 
@@ -100,7 +100,7 @@ void Health::render()
 
 //COMPONENTE GUN
 Gun::Gun() :
-	time_(0), Component()
+	time_(0), Component(ecs::Gun)
 {
 }
 
@@ -161,7 +161,7 @@ void FighterCtrl::update()
 
 
 //COMPONENTE SHOW AT OPPOSITE SIDE
-ShowAtOppositeSide::ShowAtOppositeSide() : Component()
+ShowAtOppositeSide::ShowAtOppositeSide() : Component(ecs::ShowAtOppositeSide)
 {
 }
 

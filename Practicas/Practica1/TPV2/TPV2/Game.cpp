@@ -10,8 +10,8 @@ Game::Game(){
 		"resources/config/resources.json");
 	sdl = SDLUtils::instance();
 	
-	//	mngr_.reset(new Manager());
-	//renderer== sdl->renderer();
+	mngr_=new Manager();
+	renderer== sdl->renderer();
 
 }
 void Game::init() {
@@ -41,6 +41,8 @@ void Game::createPlayer()
 	e->addComponent<DeAcceleration>(0.995);
 	e->addComponent<Health>(3, &sdlLogo);
 
+	e->setActive(true);
+
 }
 
 void Game::createGameManager()
@@ -51,14 +53,26 @@ void Game::createGameManager()
 
 void Game::update(){
 	mngr_->update();
+	mngr_->refresh();
 }
 
 void Game::run(){
 	bool exit = false;
+	SDL_Event event;
 
 	createPlayer();
 	while (!exit) {
+		Uint32 startTime = sdlutils().currRealTime();
+		ih().clearState();
+		while (SDL_PollEvent(&event))
+			ih().update(event);
+
 		render();
 		update();
+
+		Uint32 frameTime = sdlutils().currRealTime() - startTime;
+
+		if (frameTime < 20)
+			SDL_Delay(20 - frameTime);
 	}
 }
