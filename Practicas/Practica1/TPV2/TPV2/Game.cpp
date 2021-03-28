@@ -54,5 +54,11 @@ void Game::update(){
 }
 
 void Game::run(){
-	
+	bool exit = false;
+
+	createPlayer();
+	while (!exit) {
+		render();
+		update();
+	}
 }

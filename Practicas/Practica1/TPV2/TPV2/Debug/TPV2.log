@@ -1,8 +1,2 @@
-﻿  Game.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.h(50,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.h(50,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.h(54,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-  main.cpp
-  Generando código...
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.h(54,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-LINK : fatal error LNK1104: no se puede abrir el archivo 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\bin\TPV2Debug.exe'
+﻿  main.cpp
+  TPV2.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\bin\TPV2Debug.exe
