@@ -126,6 +126,7 @@ private:
 	Transform* tr_;
 	uint32_t time_;
 	uint32_t curr_time_;
+	Manager* mngr_;
 
 };
 class ShowAtOppositeSide : public Component {
@@ -198,10 +199,11 @@ class DisableOnExit : public Component {
 public:
 	DisableOnExit(int width, int height);
 	virtual ~DisableOnExit();
-
+	virtual void init() override;
 	virtual void update() override;
 private:
 	int width_, height_;
+	Transform* tr_;
 };
 //GameManager: State, GameCtrl, AsteroidsManager, CollisionsManager
 

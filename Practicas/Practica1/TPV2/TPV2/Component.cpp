@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include "Manager.h"
 #include "sdlutils/InputHandler.h"
+#include "sdlutils/SDLUtils.h"
 
 //COMPONENTE TRANSFORM
 Transform::Transform() :
@@ -85,11 +86,10 @@ void Health::init()
 
 void Health::render()
 {
-
 	for (int i = 0; i < num_; i++) {
 		SDL_Rect dest;
 		dest.x = i * 60;
-		dest.y = 0;
+		dest.y = 60;
 		dest.w = 50;
 		dest.y = 50;
 
@@ -111,6 +111,8 @@ Gun::Gun(uint32_t time) :
 
 void Gun::init()
 {
+	curr_time_ = sdlutils().currRealTime() - time_;
+	mngr_ = entity_->getMngr();
 	tr_ = entity_->getComponent<Transform>(ecs::Transform);
 	assert(tr_ != nullptr);
 }
@@ -118,9 +120,19 @@ void Gun::init()
 void Gun::update()
 {
 	auto& ih = *InputHandler::instance();
-	
 	if (ih.isKeyDown(SDLK_SPACE)) {
-		std::cout << "pum";
+		curr_time_ = sdlutils().currRealTime();
+
+		Entity* b = mngr_->addEntity();
+
+	
+		Vector2D pos = tr_->getPos() + Vector2D(tr_->getW(), tr_->getH()) -
+			Vector2D(0.0f, tr_->getH()).rotate(tr_->getRotation());
+		Vector2D v = Vector2D(0, -1).rotate(tr_->getRotation()) * (tr_->getVel().magnitude() + 5.0f);
+
+		b->addComponent<Transform>(pos, v, 25, 25, tr_->getRotation());
+		b->addComponent <Image>(&sdlutils().images().at("fighter"));
+		b->addComponent<DisableOnExit>(sdlutils().width(), sdlutils().height());
 	}
 }
 
@@ -274,8 +286,28 @@ void Follow::init()
 {
 	//targetTr_ = entity_->getMngr()->getSystem<ecs::Fighter>();
 	tr_ = entity_->getComponent<Transform>(ecs::Transform);
+	assert(tr_ != nullptr);
 }
 
 void Follow::update()
+{
+}
+
+DisableOnExit::DisableOnExit(int width, int height): 
+	Component(ecs::DisableOnExit), width_(width), height_(height), tr_(nullptr)
+{
+}
+
+DisableOnExit::~DisableOnExit()
+{
+}
+
+void DisableOnExit::init()
+{
+	tr_ = entity_->getComponent<Transform>(ecs::Transform);
+	assert(tr_ != nullptr);
+}
+
+void DisableOnExit::update()
 {
 }

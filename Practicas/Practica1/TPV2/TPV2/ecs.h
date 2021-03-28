@@ -4,7 +4,7 @@
 namespace ecs
 {
 	using CmpIDType = std::size_t;
-	constexpr std::size_t maxComponents = 10;
+	constexpr std::size_t maxComponents = 20;
 
 	using GroupIDType = std::size_t;
 	constexpr std::size_t maxGroups = 10;
