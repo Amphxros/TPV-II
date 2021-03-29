@@ -133,6 +133,8 @@ void Gun::update()
 		b->addComponent<Transform>(pos, v, 25, 25, tr_->getRotation());
 		b->addComponent <Image>(&sdlutils().images().at("fighter"));
 		b->addComponent<DisableOnExit>(sdlutils().width(), sdlutils().height());
+		b->setGroup(ecs::Bullets,true);
+	
 	}
 }
 

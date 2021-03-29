@@ -55,9 +55,20 @@ public:
 	}
 
 	template<typename T>
-	inline bool hasComponent() {
-		auto id = 0; //aqui deberia ir algo?
+	inline bool hasComponent(ecs::CmpID id) {
 		return cmpArray_[id] != nullptr;
+	}
+
+	inline void setGroup(ecs::GroupID id, bool state) {
+		groups_[id] = state;
+	}
+	
+	inline bool hasGroup(ecs::GroupID id) {
+		return groups_[id];
+	}
+
+	inline void resetGroups() {
+		groups_.reset();
 	}
 
 	inline bool isActive() { return active; }
