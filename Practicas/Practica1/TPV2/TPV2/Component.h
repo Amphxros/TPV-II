@@ -74,7 +74,7 @@ class Image : public Component {
 public:
 	Image() : Component(ecs::CmpID::Image), texture_(nullptr), tr_(nullptr) {};
 	Image(Texture* t);
-	virtual ~Image() { delete texture_; delete tr_; };
+	virtual ~Image() { };
 	virtual void init() override;
 	virtual void render() override;
 private:
@@ -220,7 +220,6 @@ class GameCtrl: Component {
 public:
 	GameCtrl(State* state);
 
-
 private:
 	State* state_;
 };
@@ -231,7 +230,6 @@ public:
 	AsteroidsManager(int numAsteroids, int time, int width, int height);
 	virtual void init() override;
 	virtual void update() override;
-	virtual void render() override;
 	void OnCollision(Entity* A);
 
 private:

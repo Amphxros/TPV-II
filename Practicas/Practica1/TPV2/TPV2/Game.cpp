@@ -22,6 +22,8 @@ void Game::init() {
 	mngr_=new Manager();
 	renderer== sdl->renderer();
 
+	createPlayer();
+	createGameManager();
 
 }
 
@@ -65,10 +67,10 @@ void Game::update(){
 
 void Game::run(){
 	bool exit = false;
-	SDL_Event event;
 
-	createPlayer();
+	SDL_Event event;
 	while (!exit) {
+
 		Uint32 startTime = sdlutils().currRealTime();
 		ih().clearState();
 		while (SDL_PollEvent(&event))

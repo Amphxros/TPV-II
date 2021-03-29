@@ -124,9 +124,9 @@ void Gun::update()
 		curr_time_ = sdlutils().currRealTime();
 
 		Entity* b = mngr_->addEntity();
+	
+		Vector2D pos = tr_->getPos() + Vector2D(tr_->getW() / 2.0f, tr_->getH() / 2.0f) - Vector2D(0.0f, tr_->getH() / 2.0f + 7.0f).rotate(tr_->getRotation()) - Vector2D(2.0f, 10.0f);
 
-		Vector2D pos = tr_->getPos() + Vector2D(tr_->getW(), tr_->getH()) -
-			Vector2D(0.0f, tr_->getH()).rotate(tr_->getRotation());
 		Vector2D v = Vector2D(0, -1).rotate(tr_->getRotation()) * (tr_->getVel().magnitude() + 5.0f);
 
 		b->addComponent<Transform>(pos, v, 25, 25, tr_->getRotation());
@@ -297,20 +297,24 @@ void DisableOnExit::init()
 
 void DisableOnExit::update()
 {
+	bool b = false;
 	//comprobamos en X
 	if (tr_->getPos().getX() < 0) {
-		entity_->setActive(false);
+		b = true;
 	}
 	else if (tr_->getPos().getX() > width_) {
-		entity_->setActive(false);
+		b = true;
 	}
 	// comprobamos en y
 	if (tr_->getPos().getY() < 0) {
-		entity_->setActive(false);
+		b = true;
 	}
 	else if (tr_->getPos().getY() > height_) {
-		entity_->setActive(false);
+		b = true;
 	}
+
+	if (b)
+		entity_->setActive(false);
 }
 
 AsteroidsManager::AsteroidsManager(): 
@@ -353,9 +357,9 @@ void AsteroidsManager::createAsteroid(int nGen)
 		Vector2D pos = Vector2D(sdlutils().rand().nextInt(0, sdlutils().width()), sdlutils().rand().nextInt(0,sdlutils().height()));
 		Vector2D vel = Vector2D(sdlutils().rand().nextInt(-5, 5), sdlutils().rand().nextInt(-5,5));
 
-		a->addComponent<Transform>(pos, vel, 10+ nGen * width_, 10+ nGen * height_, sdlutils().rand().nextInt(0, 360));
+		a->addComponent<Transform>(pos, vel, 5+ nGen * width_, 5+ nGen * height_, sdlutils().rand().nextInt(0, 360));
 
-		a->addComponent<FramedImage>(&sdlutils().images().at("asteroid"), 5, 6, 0, 0, 60);
+		a->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 60);
 		a->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
 		a->setGroup(ecs::Asteroids, true);
 
@@ -367,8 +371,8 @@ void AsteroidsManager::createAsteroid(int nGen)
 		Vector2D pos = Vector2D(sdlutils().rand().nextInt(0, sdlutils().width()), sdlutils().rand().nextInt(0, sdlutils().height()));
 		Vector2D vel = Vector2D(sdlutils().rand().nextInt(-5, 5), sdlutils().rand().nextInt(-5, 5));
 
-		b->addComponent<Transform>(pos, vel, 10 + nGen * width_, 10 + nGen * height_, sdlutils().rand().nextInt(0, 360));
-		b->addComponent<FramedImage>(&sdlutils().images().at("asteroid_gold"), 5, 6, 0, 0, 60);
+		b->addComponent<Transform>(pos, vel, 5 + nGen * width_, 5 + nGen * height_, sdlutils().rand().nextInt(0, 360));
+		b->addComponent<FramedImage>(&sdlutils().images().at("AsteroidGoldenImg"), 5, 6, 0, 0, 60);
 		b->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
 		b->addComponent<Follow>();
 		b->setGroup(ecs::Asteroids, true);
@@ -387,9 +391,21 @@ void AsteroidsManager::OnCollision(Entity* A) {
 	
 	Vector2D p = t->getPos().rotate(t->getRotation()) * 2 * width_;
 	Entity* asteroidA = mngr_->addEntity();
-	asteroidA->addComponent<Transform>(p, t->getVel().rotate(t->getRotation()) * 1.1f, 10 + gen * width_, 10 + gen * height_,0);
+	asteroidA->addComponent<Transform>(p, t->getVel().rotate(t->getRotation()) * 1.1f, 5 + gen * width_, 5 + gen * height_,0);
 	asteroidA->addComponent<FramedImage>(&sdlutils().images().at("asteroid"), 5, 6, 0, 0, 60);
 	asteroidA->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
 
 	asteroidA->setGroup(ecs::Asteroids, true);
+}
+
+Follow::Follow(): Component(ecs::Follow)
+{
+}
+
+void Follow::init()
+{
+}
+
+void Follow::update()
+{
 }

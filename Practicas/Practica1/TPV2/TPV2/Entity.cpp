@@ -7,6 +7,9 @@ Entity::Entity(Manager* mngr):
 
 Entity::~Entity()
 {
+	components_.clear();
+
+
 }
 
 void Entity::render()

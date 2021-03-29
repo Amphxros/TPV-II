@@ -18,7 +18,7 @@ public:
 	inline T* addComponent(Targs&&...args) {
 		T* t(new T(std::forward<Targs>(args)...));
 		std::unique_ptr<Component> c(t);
-		components_.push_back(std::move(c));
+ 		components_.push_back(std::move(c));
 		cmpArray_[t->getID()] = t;
 
 		t->setEntity(this);
