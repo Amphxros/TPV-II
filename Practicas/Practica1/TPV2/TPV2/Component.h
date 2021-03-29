@@ -182,7 +182,7 @@ private:
 
 class Follow : public Component {
 public:
-	Follow(Entity* target, double speed);
+	Follow();
 
 	virtual void init() override;
 	virtual void update() override;
@@ -216,7 +216,7 @@ public:
 private:
 	GameState gs;
 };
-class GameCtrl {
+class GameCtrl: Component {
 public:
 	GameCtrl(State* state);
 
@@ -229,12 +229,13 @@ class AsteroidsManager : public Component {
 public:
 	AsteroidsManager();
 	AsteroidsManager(int numAsteroids, int time, int width, int height);
-	void update();
-	void render();
+	virtual void init() override;
+	virtual void update() override;
+	virtual void render() override;
+	void OnCollision(Entity* A);
 
 private:
-	void createAsteroids(int nGen);
-	Transform* tr_;
+	void createAsteroid(int nGen);
 	Manager* mngr_;
 	int num_asteroids, time_, lastTime_, gen_;
 	float width_, height_;
