@@ -249,10 +249,12 @@ public:
 
 private:
 	AsteroidsManager* ast;
-	Manager mngr_;
 
 	Entity* fighter_;
 	Health* health_;
 	State* state_;
+
+	Transform* fighterTr_;
+
 
 };

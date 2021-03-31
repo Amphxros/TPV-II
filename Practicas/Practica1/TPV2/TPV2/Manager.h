@@ -18,12 +18,13 @@ public:
 		return handlers_[id];
 	}
 
-	inline void setHandler(Entity* e, ecs::GroupID id) {
+	inline void setHandler(Entity* e, ecs::HandlerID id) {
 		handlers_[id] = e;
 	}
 
+	inline std::vector<Entity*> getEntities() { return entities_; }
 
 private:
-	std::vector<uptr_ent> entities_;	// TODAS las entidades, uptr_ent ayuda a borrarlas automáticamente
-	std::array<Entity*, ecs::maxGroups> handlers_;
+	std::vector<Entity*> entities_;	// TODAS las entidades, uptr_ent ayuda a borrarlas automáticamente
+	std::array<Entity*, ecs::maxHandlers> handlers_;
 };

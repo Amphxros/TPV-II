@@ -132,8 +132,8 @@ void Gun::update()
 		b->addComponent<Transform>(pos, v, 25, 25, tr_->getRotation());
 		b->addComponent <Image>(&sdlutils().images().at("fighter"));
 		b->addComponent<DisableOnExit>(sdlutils().width(), sdlutils().height());
-		b->setGroup(ecs::Bullets,true);
-	
+		b->setGroup(ecs::BulletsGroup,true);
+		mngr_->setHandler(b, ecs::BulletsHndlr);
 	}
 }
 
@@ -361,7 +361,7 @@ void AsteroidsManager::createAsteroid(int nGen)
 
 		a->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 60);
 		a->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
-		a->setGroup(ecs::Asteroids, true);
+		a->setGroup(ecs::AsteroidsGroup, true);
 
 
 	}
@@ -375,7 +375,7 @@ void AsteroidsManager::createAsteroid(int nGen)
 		b->addComponent<FramedImage>(&sdlutils().images().at("AsteroidGoldenImg"), 5, 6, 0, 0, 60);
 		b->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
 		b->addComponent<Follow>();
-		b->setGroup(ecs::Asteroids, true);
+		b->setGroup(ecs::AsteroidsGroup, true);
 
 	}
 
@@ -395,7 +395,7 @@ void AsteroidsManager::OnCollision(Entity* A) {
 	asteroidA->addComponent<FramedImage>(&sdlutils().images().at("asteroid"), 5, 6, 0, 0, 60);
 	asteroidA->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
 
-	asteroidA->setGroup(ecs::Asteroids, true);
+	asteroidA->setGroup(ecs::AsteroidsGroup, true);
 }
 
 Follow::Follow(): Component(ecs::Follow), tr_(nullptr), pos(nullptr)
@@ -419,3 +419,28 @@ void Follow::update()
 	tr_->setVel(dir);
 }
 
+CollisionsManager::CollisionsManager(): 
+	Component(ecs::CollisionsManager), ast(nullptr), fighter_(nullptr), health_(nullptr)
+{
+}
+
+void CollisionsManager::init()
+{
+	ast = entity_->getComponent<AsteroidsManager>(ecs::AsteroidsManager);
+	fighter_ = entity_->getMngr()->getHandler(ecs::Fighter);
+	fighterTr_ = entity_->getMngr()->getHandler(ecs::Fighter)->getComponent<Transform>();
+	health_ = fighter_->getComponent<Health>(ecs::Health);
+
+}
+
+void CollisionsManager::update()
+{
+	auto entities = entity_->getMngr()->getEntities();
+
+	for (Entity* e : entities) {
+		if (e->hasGroup(ecs::AsteroidsGroup)) {
+
+		}
+	}
+
+}

@@ -12,6 +12,7 @@ namespace ecs
 	using HandlerIDType = std::size_t;
 	constexpr std::size_t maxHandlers = 10;
 
+	// component id
 	enum CmpID : CmpIDType {
 		//caza
 		Transform,
@@ -40,19 +41,17 @@ namespace ecs
 
 	};
 
+	//groups
 	enum GroupID : GroupIDType {
-		Asteroids,
-		Bullets,
+		AsteroidsGroup,
+		BulletsGroup,
 		Fighter,
 		Other
 	};
 
 	enum HandlerID : HandlerIDType {
-		AsteroidsSys,
-		BulletsSys,
-		CollisionsSys,
-		RenderSys,
-		GMSys
+		AsteroidsHndlr,
+		BulletsHndlr
 	};
 
 
