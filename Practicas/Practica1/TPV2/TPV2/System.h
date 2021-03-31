@@ -8,12 +8,12 @@ class Manager;
 class System
 {
 public:
-	System(Manager* mngr, ecs::SystemID id);
+	System(Manager* mngr, ecs::HandlerID id);
 	virtual ~System() { }
 	void setMngr(Manager *manager) {
 	manager_ = manager;
 	}
-	inline ecs::SystemID getID() { return id_; }
+	inline ecs::HandlerID getID() { return id_; }
 	
 	void refresh();		// Controla y borra las entidades no activas
 	Entity* addEntity();
@@ -22,7 +22,7 @@ public:
 	virtual void render() { }
 protected:
 	Manager *manager_;
-	ecs::SystemID id_;
+	ecs::HandlerID id_;
 	
 	std::vector<uptr_ent> entities_;	// entidades que añado a este system
 };

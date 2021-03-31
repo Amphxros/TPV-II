@@ -188,9 +188,9 @@ public:
 	virtual void update() override;
 
 private:
-	Transform* tr_, targetTr_;
-	Entity* target_;
+	Transform* tr_;
 	double speed_;
+	Vector2D pos;
 };
 
 //Bala: Transform, Image, DisableOnExit
@@ -228,6 +228,7 @@ class AsteroidsManager : public Component {
 public:
 	AsteroidsManager();
 	AsteroidsManager(int numAsteroids, int time, int width, int height);
+	virtual ~AsteroidsManager(){}
 	virtual void init() override;
 	virtual void update() override;
 	void OnCollision(Entity* A);
@@ -241,5 +242,17 @@ private:
 
 class CollisionsManager : public Component {
 public:
+	CollisionsManager();
+	virtual ~CollisionsManager(){}
+	virtual void init() override;
+	virtual void update() override;
+
 private:
+	AsteroidsManager* ast;
+	Manager mngr_;
+
+	Entity* fighter_;
+	Health* health_;
+	State* state_;
+
 };

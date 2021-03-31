@@ -11,6 +11,7 @@ Game::Game(): mngr_(nullptr), renderer(nullptr), sdl(nullptr){
 Game::~Game() {
 
 	delete sdl;
+	delete mngr_;
 }
 
 void Game::init() {
@@ -42,7 +43,7 @@ void Game::createPlayer()
 	int height = sdl->height();
 
 	Entity* e = mngr_->addEntity();
-	e->addComponent<Transform>(Vector2D(width/2, height/2), Vector2D(1,1), 50, 50, 0);
+	e->addComponent<Transform>(Vector2D(width/2, height/2), Vector2D(), 50, 50, 0);
 	e->addComponent<Image>(&sdlLogo);
 	e->addComponent<ShowAtOppositeSide>(width, height);
 	e->addComponent<FighterCtrl>(1);
@@ -50,8 +51,8 @@ void Game::createPlayer()
 	e->addComponent<Health>(3, &sdlLogo);
 	e->addComponent<Gun>(5);
 
-	e->setActive(true);
-
+	mngr_->setHandler(e, ecs::Fighter);
+	e->setGroup(ecs::Fighter, true);
 }
 
 void Game::createGameManager()
@@ -73,9 +74,13 @@ void Game::run(){
 
 		Uint32 startTime = sdlutils().currRealTime();
 		ih().clearState();
-		while (SDL_PollEvent(&event))
+		while (SDL_PollEvent(&event)){
+		
 			ih().update(event);
-
+		}
+		if (ih().isKeyDown(SDLK_ESCAPE)) {
+			exit = true;
+		}
 		render();
 		update();
 

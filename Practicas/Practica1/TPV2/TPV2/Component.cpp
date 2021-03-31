@@ -398,14 +398,24 @@ void AsteroidsManager::OnCollision(Entity* A) {
 	asteroidA->setGroup(ecs::Asteroids, true);
 }
 
-Follow::Follow(): Component(ecs::Follow)
+Follow::Follow(): Component(ecs::Follow), tr_(nullptr), pos(nullptr)
 {
 }
 
 void Follow::init()
 {
+	tr_ = entity_->getComponent<Transform>(ecs::Transform);
+	assert(tr_ != nullptr);
+	pos = entity_->getMngr()->getHandler(ecs::Fighter)->getComponent<Transform>()->getPos();
+	
 }
 
 void Follow::update()
 {
+	auto dir = tr_->getVel();
+	Vector2D pos_ = tr_->getPos();
+	dir.set(dir.rotate(dir.angle(pos - pos_) > 0 ? 1.0f : -1.0f));
+
+	tr_->setVel(dir);
 }
+
