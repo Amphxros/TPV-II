@@ -47,17 +47,7 @@ C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\T
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(373,52): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(374,86): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(374,52): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(394,49): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(394,66): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(396,74): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Entity.h(19,33): warning C4244: 'argumento': conversión de '_Ty' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Entity.h(19,33): warning C4244:         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Entity.h(19,33): warning C4244:         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Entity.h(19,33): warning C4244:             _Ty=int
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Entity.h(19,33): warning C4244:         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(365): message : vea la referencia a la creación de instancias de plantilla de función "T *Entity::addComponent<FramedImage,Texture*,int,int,int,int,int>(Texture *&&,int &&,int &&,int &&,int &&,int &&)" que se está compilando
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(365): message :         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(365): message :         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(365): message :             T=FramedImage
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(365): message :         ]
-  TPV2.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\bin\TPV2Debug.exe
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(393,49): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(393,66): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(395,74): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica1\TPV2\TPV2\Component.cpp(451,7): error C2059: error de sintaxis: '&&'

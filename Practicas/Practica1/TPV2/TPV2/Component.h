@@ -174,7 +174,7 @@ public:
 	virtual ~Generations() {}
 	void resetGen();
 	inline void setGen(int gen) { gen_ = gen; };
-	inline int genGen() { return gen_; }
+	inline int getGen() { return gen_; }
 
 private:
 	int maxgen_;

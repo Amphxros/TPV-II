@@ -9,7 +9,9 @@
   "images" : [
 	{ "id" : "fighter", "file" : "resources/images/fighter.png"},
 	{ "id" : "AsteroidImg", "file" : "resources/images/asteroid.png"},
-	{ "id" : "AsteroidGoldenImg", "file" : "resources/images/asteroid_gold.png"}
+	{ "id" : "AsteroidGoldenImg", "file" : "resources/images/asteroid_gold.png"},
+	{ "id" : "Bullet", "file" : "resources/images/bullet.png"}
+
   ],
   
   "messages" : [

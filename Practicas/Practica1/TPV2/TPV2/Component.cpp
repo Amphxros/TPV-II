@@ -129,8 +129,8 @@ void Gun::update()
 
 		Vector2D v = Vector2D(0, -1).rotate(tr_->getRotation()) * (tr_->getVel().magnitude() + 5.0f);
 
-		b->addComponent<Transform>(pos, v, 25, 25, tr_->getRotation());
-		b->addComponent <Image>(&sdlutils().images().at("fighter"));
+		b->addComponent<Transform>(pos, v, 5, 5, tr_->getRotation());
+		b->addComponent <Image>(&sdlutils().images().at("Bullet"));
 		b->addComponent<DisableOnExit>(sdlutils().width(), sdlutils().height());
 		b->setGroup(ecs::BulletsGroup,true);
 		mngr_->setHandler(b, ecs::BulletsHndlr);
@@ -387,19 +387,18 @@ void AsteroidsManager::OnCollision(Entity* A) {
 
 	Transform* t = A->getComponent<Transform>(ecs::Transform);
 
-	//int gen = A->getComponent<Generations>(ecs::Generations)->genGen();
-	//gen--;
-
-	//if (gen > 0) {
+	Generations* gen = A->getComponent<Generations>(ecs::Generations);
+	
+	if (gen->getGen() > 0) {
 		Vector2D p = t->getPos().rotate(t->getRotation()) * 2 * t->getW();
 		Entity* asteroidA = mngr_->addEntity();
-		asteroidA->addComponent<Transform>(p, t->getVel().rotate(t->getRotation()) * 1.1f, 5 + 10 * t->getW(), 5 + 10 * t->getH(), 0);
+		asteroidA->addComponent<Transform>(p, t->getVel().rotate(t->getRotation()) * 1.1f, 5 + gen->getGen()-1 * t->getW(), 5 + gen->getGen() - 1 * t->getH(), 0);
 		asteroidA->addComponent<FramedImage>(&sdlutils().images().at("asteroid"), 5, 6, 0, 0, 60);
-	//	asteroidA->addComponent<Generations>(gen);
+		asteroidA->addComponent<Generations>(gen->getGen()-1);
 		asteroidA->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
 
 		asteroidA->setGroup(ecs::AsteroidsGroup, true);
-	//}
+	}
 	
 }
 
@@ -449,7 +448,7 @@ void CollisionsManager::update()
 			for (Entity* b : entities) {
 				if (a != b && b->hasGroup(ecs::BulletsGroup)) {
 					if (isOnCollision(a->getComponent<Transform>(ecs::Transform), b->getComponent<Transform>(ecs::Transform))) {
-						ast->OnCollision(a);
+						//ast->OnCollision(a);
 						a->setActive(false);
 						b->setActive(false);
 					}
