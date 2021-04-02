@@ -72,7 +72,7 @@ void Image::render()
 
 
 //COMPONETE HEALTH
-Health::Health():Component(ecs::Health), maxVidas_(-1), texture_(nullptr), num_(-1)
+Health::Health():Component(ecs::Health), maxVidas_(3), texture_(nullptr), num_(3)
 {
 }
 Health::Health(int num, Texture* texture) :
@@ -86,12 +86,12 @@ void Health::init()
 
 void Health::render()
 {
-	for (int i = 0; i < num_; i++) {
+	for (int i = 0; i < getNumVidas(); i++) {
 		SDL_Rect dest;
 		dest.x = i * 60;
-		dest.y = 60;
-		dest.w = 50;
-		dest.y = 50;
+		dest.y = 0;
+		dest.w = 150;
+		dest.y = 150;
 
 		texture_->render(dest,0);
 	}
@@ -255,7 +255,6 @@ void FramedImage::render()
 	dest.h = tr_->getH();
 
 	texture_->render(src_, dest, tr_->getRotation());
-	assert(tr_ != nullptr && texture_ != nullptr);
 
 }
 
@@ -354,16 +353,19 @@ void AsteroidsManager::createAsteroid(int nGen)
 	if (rnd > 3) { // tipo A
 		Entity* a = mngr_->addEntity();
 
-		Vector2D pos = Vector2D(sdlutils().rand().nextInt(0, sdlutils().width()), sdlutils().rand().nextInt(0,sdlutils().height()));
-		Vector2D vel = Vector2D(sdlutils().rand().nextInt(-5, 5), sdlutils().rand().nextInt(-5,5));
+		Vector2D pos = Vector2D();
+		pos.setX(sdlutils().rand().nextInt(0, sdlutils().width()));
+		pos.setY(sdlutils().rand().nextInt(0, sdlutils().height()));
+
+		Vector2D vel = Vector2D();
+		vel.setX(sdlutils().rand().nextInt(-5,5));
+		vel.setY(sdlutils().rand().nextInt(-5, 5));
 
 		a->addComponent<Transform>(pos, vel, 5+ nGen * width_, 5+ nGen * height_, sdlutils().rand().nextInt(0, 360));
-
 		a->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 60);
 		a->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
+		a->addComponent<Generations>(nGen);
 		a->setGroup(ecs::AsteroidsGroup, true);
-
-
 	}
 	else {
 		Entity* b = mngr_->addEntity();
@@ -374,9 +376,9 @@ void AsteroidsManager::createAsteroid(int nGen)
 		b->addComponent<Transform>(pos, vel, 5 + nGen * width_, 5 + nGen * height_, sdlutils().rand().nextInt(0, 360));
 		b->addComponent<FramedImage>(&sdlutils().images().at("AsteroidGoldenImg"), 5, 6, 0, 0, 60);
 		b->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
-		b->addComponent<Follow>();
+		b->addComponent<Generations>(sdlutils().rand().nextInt(1, 4));
+		//	b->addComponent<Follow>();
 		b->setGroup(ecs::AsteroidsGroup, true);
-
 	}
 
 }
@@ -384,21 +386,25 @@ void AsteroidsManager::createAsteroid(int nGen)
 void AsteroidsManager::OnCollision(Entity* A) {
 
 	Transform* t = A->getComponent<Transform>(ecs::Transform);
-	int gen= A->getComponent<Generations>(ecs::Generations)->genGen();
-	gen--;
-	
-	A->setActive(false);
-	
-	Vector2D p = t->getPos().rotate(t->getRotation()) * 2 * width_;
-	Entity* asteroidA = mngr_->addEntity();
-	asteroidA->addComponent<Transform>(p, t->getVel().rotate(t->getRotation()) * 1.1f, 5 + gen * width_, 5 + gen * height_,0);
-	asteroidA->addComponent<FramedImage>(&sdlutils().images().at("asteroid"), 5, 6, 0, 0, 60);
-	asteroidA->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
 
-	asteroidA->setGroup(ecs::AsteroidsGroup, true);
+	//int gen = A->getComponent<Generations>(ecs::Generations)->genGen();
+	//gen--;
+
+	//if (gen > 0) {
+		Vector2D p = t->getPos().rotate(t->getRotation()) * 2 * t->getW();
+		Entity* asteroidA = mngr_->addEntity();
+		asteroidA->addComponent<Transform>(p, t->getVel().rotate(t->getRotation()) * 1.1f, 5 + 10 * t->getW(), 5 + 10 * t->getH(), 0);
+		asteroidA->addComponent<FramedImage>(&sdlutils().images().at("asteroid"), 5, 6, 0, 0, 60);
+	//	asteroidA->addComponent<Generations>(gen);
+		asteroidA->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
+
+		asteroidA->setGroup(ecs::AsteroidsGroup, true);
+	//}
+	
 }
 
-Follow::Follow(): Component(ecs::Follow), tr_(nullptr), pos(nullptr)
+Follow::Follow(): 
+	Component(ecs::Follow), tr_(nullptr), posPlayer(nullptr)
 {
 }
 
@@ -406,21 +412,22 @@ void Follow::init()
 {
 	tr_ = entity_->getComponent<Transform>(ecs::Transform);
 	assert(tr_ != nullptr);
-	pos = entity_->getMngr()->getHandler(ecs::Fighter)->getComponent<Transform>()->getPos();
-	
+	posPlayer = entity_->getMngr()->getHandler(ecs::Fighter)->getComponent<Transform>(ecs::Transform);
+	assert(posPlayer != nullptr);
 }
 
 void Follow::update()
 {
 	auto dir = tr_->getVel();
 	Vector2D pos_ = tr_->getPos();
-	dir.set(dir.rotate(dir.angle(pos - pos_) > 0 ? 1.0f : -1.0f));
+	dir.set(dir.rotate(dir.angle(posPlayer->getPos() - pos_) > 0 ? 1.0f : -1.0f));
 
 	tr_->setVel(dir);
 }
 
 CollisionsManager::CollisionsManager(): 
-	Component(ecs::CollisionsManager), ast(nullptr), fighter_(nullptr), health_(nullptr)
+	Component(ecs::CollisionsManager),
+	ast(nullptr), fighter_(nullptr), health_(nullptr),state_(nullptr),fighterTr_(nullptr)
 {
 }
 
@@ -428,7 +435,7 @@ void CollisionsManager::init()
 {
 	ast = entity_->getComponent<AsteroidsManager>(ecs::AsteroidsManager);
 	fighter_ = entity_->getMngr()->getHandler(ecs::Fighter);
-	fighterTr_ = entity_->getMngr()->getHandler(ecs::Fighter)->getComponent<Transform>();
+	fighterTr_ = entity_->getMngr()->getHandler(ecs::Fighter)->getComponent<Transform>(ecs::Transform);
 	health_ = fighter_->getComponent<Health>(ecs::Health);
 
 }
@@ -436,10 +443,18 @@ void CollisionsManager::init()
 void CollisionsManager::update()
 {
 	auto entities = entity_->getMngr()->getEntities();
-
-	for (Entity* e : entities) {
-		if (e->hasGroup(ecs::AsteroidsGroup)) {
-
+	
+	for (Entity* a : entities) {
+		if (a->hasGroup(ecs::AsteroidsGroup)) {
+			for (Entity* b : entities) {
+				if (a != b && b->hasGroup(ecs::BulletsGroup)) {
+					if (isOnCollision(a->getComponent<Transform>(ecs::Transform), b->getComponent<Transform>(ecs::Transform))) {
+						ast->OnCollision(a);
+						a->setActive(false);
+						b->setActive(false);
+					}
+				}
+			}
 		}
 	}
 

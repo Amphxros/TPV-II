@@ -2,6 +2,7 @@
 #include "ecs.h"
 #include "utils/Vector2D.h"
 #include "sdlutils/Texture.h"
+#include "utils/Collisions.h"
 class Entity;
 class Manager;
 class Component
@@ -86,10 +87,10 @@ class Health : public Component {
 public:
 	Health();
 	Health(int num, Texture* texture);
-
 	virtual ~Health() {}
 	virtual void init() override;
 	virtual void render() override;
+
 	inline int getNumVidas() { return num_; }
 	inline void setNumVidas(int num) { num_ = num; }
 	inline void resetNumVidas() { num_ = maxVidas_; }
@@ -189,8 +190,7 @@ public:
 
 private:
 	Transform* tr_;
-	double speed_;
-	Vector2D pos;
+	Transform* posPlayer;
 };
 
 //Bala: Transform, Image, DisableOnExit
@@ -248,6 +248,13 @@ public:
 	virtual void update() override;
 
 private:
+
+	bool isOnCollision(Transform* t, Transform* other) {
+		return (Collisions::collidesWithRotation(t->getPos(), t->getW(), t->getH(), t->getRotation(),
+			other->getPos(), other->getW(), other->getH(), other->getRotation()));
+	}
+
+
 	AsteroidsManager* ast;
 
 	Entity* fighter_;

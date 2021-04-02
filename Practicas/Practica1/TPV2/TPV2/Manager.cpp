@@ -14,7 +14,7 @@ void Manager::refresh()
 {
 	entities_.erase(
 	// Cambia los elementos inactivos al final del vector y devuelve su inicio
-		std::remove_if( entities_.begin(),entities_.end(), [](const uptr_ent& e) 
+		std::remove_if( entities_.begin(),entities_.end(), [](Entity* & e) 
 			{
 				return !e->isActive();
 			}

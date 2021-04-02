@@ -51,7 +51,8 @@ namespace ecs
 
 	enum HandlerID : HandlerIDType {
 		AsteroidsHndlr,
-		BulletsHndlr
+		BulletsHndlr,
+		FighterHndlr
 	};
 
 

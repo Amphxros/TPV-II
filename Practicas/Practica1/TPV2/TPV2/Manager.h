@@ -2,7 +2,6 @@
 #include "Entity.h"
 #include "System.h"
 #include <memory>
-using uptr_ent = std::unique_ptr<Entity>;
 class Manager
 {
 public:

@@ -37,21 +37,21 @@ void Game::render(){
 void Game::createPlayer()
 {
 
-	auto& sdlLogo = sdl->images().at("fighter");
+	auto& fighter = sdl->images().at("fighter");
 
 	int width = sdl->width();
 	int height = sdl->height();
 
 	Entity* e = mngr_->addEntity();
 	e->addComponent<Transform>(Vector2D(width/2, height/2), Vector2D(), 50, 50, 0);
-	e->addComponent<Image>(&sdlLogo);
+	e->addComponent<Image>(&fighter);
 	e->addComponent<ShowAtOppositeSide>(width, height);
 	e->addComponent<FighterCtrl>(1);
 	e->addComponent<DeAcceleration>(0.995);
-	e->addComponent<Health>(3, &sdlLogo);
+	e->addComponent<Health>(3, &fighter);
 	e->addComponent<Gun>(5);
 
-	mngr_->setHandler(e, ecs::Fighter);
+	mngr_->setHandler(e,ecs::FighterHndlr);
 	e->setGroup(ecs::Fighter, true);
 }
 
@@ -59,11 +59,12 @@ void Game::createGameManager()
 {
 	Entity* gm = mngr_->addEntity();
 	gm->addComponent<AsteroidsManager>(10, 5000, 30, 30);
+	gm->addComponent<CollisionsManager>();
 }
 
 void Game::update(){
-	mngr_->update();
 	mngr_->refresh();
+	mngr_->update();
 }
 
 void Game::run(){
