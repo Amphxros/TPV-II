@@ -249,10 +249,7 @@ public:
 
 private:
 
-	bool isOnCollision(Transform* t, Transform* other) {
-		return (Collisions::collidesWithRotation(t->getPos(), t->getW(), t->getH(), t->getRotation(),
-			other->getPos(), other->getW(), other->getH(), other->getRotation()));
-	}
+	bool isOnCollision(Transform* t, Transform* other);
 
 
 	AsteroidsManager* ast;

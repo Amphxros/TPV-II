@@ -393,11 +393,20 @@ void AsteroidsManager::OnCollision(Entity* A) {
 		Vector2D p = t->getPos().rotate(t->getRotation()) * 2 * t->getW();
 		Entity* asteroidA = mngr_->addEntity();
 		asteroidA->addComponent<Transform>(p, t->getVel().rotate(t->getRotation()) * 1.1f, 5 + gen->getGen()-1 * t->getW(), 5 + gen->getGen() - 1 * t->getH(), 0);
-		asteroidA->addComponent<FramedImage>(&sdlutils().images().at("asteroid"), 5, 6, 0, 0, 60);
+		asteroidA->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 60);
 		asteroidA->addComponent<Generations>(gen->getGen()-1);
 		asteroidA->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
-
 		asteroidA->setGroup(ecs::AsteroidsGroup, true);
+		asteroidA->setActive(true);
+
+		p = t->getPos().rotate(t->getRotation() + 180) * 2 * t->getW();
+		Entity* asteroidB = mngr_->addEntity();
+		asteroidB->addComponent<Transform>(p, t->getVel().rotate(t->getRotation()+180) * 1.1f, 5 + gen->getGen()-1 * t->getW(), 5 + gen->getGen() - 1 * t->getH(), 0);
+		asteroidB->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 60);
+		asteroidB->addComponent<Generations>(gen->getGen()-1);
+		asteroidB->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
+		asteroidB->setGroup(ecs::AsteroidsGroup, true);
+		asteroidB->setActive(true);
 	}
 	
 }
@@ -448,7 +457,7 @@ void CollisionsManager::update()
 			for (Entity* b : entities) {
 				if (a != b && b->hasGroup(ecs::BulletsGroup)) {
 					if (isOnCollision(a->getComponent<Transform>(ecs::Transform), b->getComponent<Transform>(ecs::Transform))) {
-						//ast->OnCollision(a);
+						ast->OnCollision(a);
 						a->setActive(false);
 						b->setActive(false);
 					}
@@ -457,4 +466,9 @@ void CollisionsManager::update()
 		}
 	}
 
+}
+
+bool CollisionsManager::isOnCollision(Transform* tA, Transform* tB)
+{
+	return (Collisions::collidesWithRotation(tA->getPos(), tA->getW(), tA->getH(), tA->getRotation(), tB->getPos(), tB->getW(), tB->getH(), tB->getRotation()));
 }
