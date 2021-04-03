@@ -542,3 +542,27 @@ void State::render()
 		break;
 	}
 }
+
+GameCtrl::GameCtrl(): Component(ecs::GameCtrl), state_(nullptr)
+{
+}
+
+void GameCtrl::init()
+{
+	state_ = entity_->getComponent<State>(ecs::State);
+}
+
+void GameCtrl::update()
+{
+	auto& ih = *InputHandler::instance();
+	if (ih.keyDownEvent()) {
+		if (state_->isGameNew()) {
+			state_->setState(State::GameState::RUNNING);
+		}
+		else if (state_->isGameOver()) {
+	
+			state_->setState(State::GameState::NEWGAME);
+		}
+	}
+	
+}

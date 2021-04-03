@@ -62,6 +62,7 @@ void Game::createGameManager()
 	gm->addComponent<AsteroidsManager>(10, 5000, 10, 10);
 	gm->addComponent<CollisionsManager>();
 	gm->addComponent<State>();
+	gm->addComponent<GameCtrl>();
 }
 
 void Game::update(){

@@ -227,9 +227,12 @@ private:
 	Texture* continueMsg;
 	Texture* gameOverMsg;
 };
-class GameCtrl: Component {
+class GameCtrl: public Component {
 public:
-	GameCtrl(State* state);
+	GameCtrl();
+	virtual ~GameCtrl(){}
+	virtual void init() override;
+	virtual void update() override;
 
 private:
 	State* state_;
