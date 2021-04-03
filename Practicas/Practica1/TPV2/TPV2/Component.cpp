@@ -317,7 +317,7 @@ void DisableOnExit::update()
 }
 
 AsteroidsManager::AsteroidsManager(): 
-	Component(ecs::AsteroidsManager), num_asteroids(0), time_(0), width_(0), height_(0), gen_(0), lastTime_(0), mngr_(nullptr)
+	Component(ecs::AsteroidsManager), num_asteroids(0), time_(0), width_(0), height_(0), gen_(0), lastTime_(0), mngr_(nullptr),state_(nullptr)
 {
 }
 
@@ -329,17 +329,23 @@ AsteroidsManager::AsteroidsManager(int numAsteroids, int time, int width, int he
 void AsteroidsManager::init()
 {
 	mngr_ = entity_->getMngr();
-	
-	for (int i = 0; i < num_asteroids; i++) {
-		gen_ = sdlutils().rand().nextInt(1, 4);
-		createAsteroid(gen_);
-	}
+	state_ = entity_->getComponent<State>(ecs::State);
 }
 
 void AsteroidsManager::update()
 {
-	if (sdlutils().currRealTime() - lastTime_ >= time_ && gen_ > 0) {
-		lastTime_ = sdlutils().currRealTime();
+	if (sdlutils().currRealTime() - lastTime_ >= time_ && gen_ > 0 ) {
+			lastTime_ = sdlutils().currRealTime();
+			gen_ = sdlutils().rand().nextInt(1, 4);
+		if (state_->isGameRunning()) {
+			createAsteroid(gen_);
+		}
+	}
+}
+
+void AsteroidsManager::createAsteroids()
+{
+	for (int i = 0; i < num_asteroids; i++) {
 		gen_ = sdlutils().rand().nextInt(1, 4);
 		createAsteroid(gen_);
 	}
@@ -423,7 +429,7 @@ void Follow::init()
 {
 	tr_ = entity_->getComponent<Transform>(ecs::Transform);
 	assert(tr_ != nullptr);
-	posPlayer = entity_->getMngr()->getHandler(ecs::Fighter)->getComponent<Transform>(ecs::Transform);
+	posPlayer = entity_->getMngr()->getHandler(ecs::FighterHndlr)->getComponent<Transform>(ecs::Transform);
 	assert(posPlayer != nullptr);
 }
 
@@ -445,8 +451,8 @@ CollisionsManager::CollisionsManager():
 void CollisionsManager::init()
 {
 	ast = entity_->getComponent<AsteroidsManager>(ecs::AsteroidsManager);
-	fighter_ = entity_->getMngr()->getHandler(ecs::Fighter);
-	fighterTr_ = entity_->getMngr()->getHandler(ecs::Fighter)->getComponent<Transform>(ecs::Transform);
+	fighter_ = entity_->getMngr()->getHandler(ecs::FighterHndlr);
+	fighterTr_ = entity_->getMngr()->getHandler(ecs::FighterHndlr)->getComponent<Transform>(ecs::Transform);
 	health_ = fighter_->getComponent<Health>(ecs::Health);
 
 }
@@ -495,6 +501,9 @@ State::State(): Component(ecs::State)
 
 State::~State()
 {
+	delete startMsg;	startMsg = nullptr;
+	delete continueMsg; continueMsg= nullptr;
+	delete gameOverMsg; gameOverMsg= nullptr;
 }
 
 void State::init()
@@ -511,7 +520,7 @@ void State::render()
 	switch (gs)
 	{
 	case State::NEWGAME:
-		dest.x = sdlutils().width() / 4;
+		dest.x = sdlutils().width() / 3;
 		dest.y = sdlutils().height() / 2;
 		dest.w = startMsg->width();
 		dest.h = startMsg->height();
@@ -550,6 +559,8 @@ GameCtrl::GameCtrl(): Component(ecs::GameCtrl), state_(nullptr)
 void GameCtrl::init()
 {
 	state_ = entity_->getComponent<State>(ecs::State);
+	astManager_ = entity_->getComponent<AsteroidsManager>(ecs::AsteroidsManager);
+	mngr_ = entity_->getMngr();
 }
 
 void GameCtrl::update()
@@ -558,11 +569,23 @@ void GameCtrl::update()
 	if (ih.keyDownEvent()) {
 		if (state_->isGameNew()) {
 			state_->setState(State::GameState::RUNNING);
+			astManager_->createAsteroids();
 		}
 		else if (state_->isGameOver()) {
-	
 			state_->setState(State::GameState::NEWGAME);
 		}
+		
+		if (state_->isGameRunning() && ih.isKeyDown(SDLK_ESCAPE)) {
+			state_->setState(State::GameState::PAUSED);
+			mngr_->PauseGame(true);
+		}
+		if (state_->isGamePaused() && ih.isKeyDown(SDLK_ESCAPE)) {
+			state_->setState(State::GameState::RUNNING);
+			mngr_->PauseGame(false);
+		}
+
 	}
+
+
 	
 }

@@ -110,9 +110,12 @@ public:
 	virtual ~FighterCtrl() {}
 	virtual void init() override;
 	virtual void update() override;
+	void setActive(bool act) { isActive = act; }
 private:
 	Transform* tr_;
 	double thrust_;
+
+	bool isActive;
 };
 
 class Gun : public Component {
@@ -122,12 +125,14 @@ public:
 	virtual ~Gun() {}
 	virtual void init() override;
 	virtual void update()override;
-
+	void setActive(bool act) { isActive = act; }
 private:
 	Transform* tr_;
 	uint32_t time_;
 	uint32_t curr_time_;
 	Manager* mngr_;
+
+	bool isActive;
 
 };
 class ShowAtOppositeSide : public Component {
@@ -137,6 +142,8 @@ public:
 	virtual ~ShowAtOppositeSide() {}
 	virtual void init() override;
 	virtual void update() override;
+
+
 
 private:
 	Transform* tr_;
@@ -207,9 +214,10 @@ private:
 };
 //GameManager: State, GameCtrl, AsteroidsManager, CollisionsManager
 
-class State: public Component {
+
+class State : public Component {
 public:
-enum GameState { NEWGAME, PAUSED, RUNNING, GAMEOVER };
+	enum GameState { NEWGAME, PAUSED, RUNNING, GAMEOVER };
 	State();
 	virtual ~State();
 	virtual void init() override;
@@ -226,34 +234,39 @@ private:
 	Texture* startMsg;
 	Texture* continueMsg;
 	Texture* gameOverMsg;
-};
-class GameCtrl: public Component {
-public:
-	GameCtrl();
-	virtual ~GameCtrl(){}
-	virtual void init() override;
-	virtual void update() override;
 
-private:
-	State* state_;
 };
 
 class AsteroidsManager : public Component {
 public:
 	AsteroidsManager();
 	AsteroidsManager(int numAsteroids, int time, int width, int height);
-	virtual ~AsteroidsManager(){}
+	virtual ~AsteroidsManager() {}
 	virtual void init() override;
 	virtual void update() override;
+	void createAsteroids();
 	void OnCollision(Entity* A);
 
 private:
 	void createAsteroid(int nGen);
 	Manager* mngr_;
+	State* state_;
 	int num_asteroids, time_, lastTime_, gen_;
 	float width_, height_;
 };
+class GameCtrl : public Component {
+public:
+	GameCtrl();
+	virtual ~GameCtrl() {}
+	virtual void init() override;
+	virtual void update() override;
 
+private:
+	State* state_;
+	AsteroidsManager* astManager_;
+	Manager* mngr_;
+
+};
 class CollisionsManager : public Component {
 public:
 	CollisionsManager();

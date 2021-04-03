@@ -26,8 +26,10 @@ void Manager::refresh()
 void Manager::update()
 {
 	std::size_t n = entities_.size();
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < n; i++) {
+	if(!entities_[i]->isPaused())
 		entities_[i]->update();
+	}
 }
 
 // Llama al render de todas las entidades
@@ -36,4 +38,13 @@ void Manager::render()
 	std::size_t n = entities_.size();
 	for (int i = 0; i < n; i++)
 		entities_[i]->render();
+}
+
+void Manager::PauseGame(bool act)
+{
+	for (Entity* e : entities_) {
+		if (e->hasGroup(ecs::AsteroidsGroup) || e->hasGroup(ecs::Fighter)) {
+			e->setPause(act);
+		}
+	}
 }

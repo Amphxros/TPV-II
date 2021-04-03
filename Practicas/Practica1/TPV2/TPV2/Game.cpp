@@ -63,6 +63,8 @@ void Game::createGameManager()
 	gm->addComponent<CollisionsManager>();
 	gm->addComponent<State>();
 	gm->addComponent<GameCtrl>();
+
+	gm->setGroup(ecs::Other,true);
 }
 
 void Game::update(){
@@ -79,10 +81,9 @@ void Game::run(){
 		Uint32 startTime = sdlutils().currRealTime();
 		ih().clearState();
 		while (SDL_PollEvent(&event)){
-		
 			ih().update(event);
 		}
-		if (ih().isKeyDown(SDLK_ESCAPE)) {
+		if (ih().isKeyDown(SDLK_q)) {
 			exit = true;
 		}
 		render();

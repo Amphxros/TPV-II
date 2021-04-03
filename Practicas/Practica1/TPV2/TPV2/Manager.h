@@ -13,7 +13,8 @@ public:
 	void update();		// Llamada a Update de entidades
 	void render();		// Llamada a Render de entidades
 
-	inline Entity* getHandler(ecs::GroupID id) {
+	void PauseGame(bool act);
+	inline Entity* getHandler(ecs::HandlerID id) {
 		return handlers_[id];
 	}
 

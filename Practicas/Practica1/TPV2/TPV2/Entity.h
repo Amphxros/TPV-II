@@ -11,7 +11,7 @@ class Entity
 {
 	using uptr_cmp = std::unique_ptr<Component>;
 public:
-	Entity() : active(true) {}
+	Entity() : active(true), paused_(false) {}
 	Entity(Manager* mngr);
 	virtual ~Entity();
 	template<typename T, typename...Targs>
@@ -78,11 +78,12 @@ public:
 	void update();
 
 	inline Manager* getMngr() { return mngr_; }
-
+	inline bool isPaused() { return paused_; }
+	inline void setPause(bool pause) { paused_=pause; }
 
 protected:
 	Manager* mngr_;
-	bool active;
+	bool active, paused_;
 	std::vector<uptr_cmp> components_;
 	std::array<Component*, ecs::maxComponents> cmpArray_ = {};
 	std::bitset<ecs::maxGroups> groups_;
