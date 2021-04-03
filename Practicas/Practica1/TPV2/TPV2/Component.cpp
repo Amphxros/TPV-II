@@ -388,25 +388,28 @@ void AsteroidsManager::OnCollision(Entity* A) {
 	Transform* t = A->getComponent<Transform>(ecs::Transform);
 
 	Generations* gen = A->getComponent<Generations>(ecs::Generations);
-	
-	if (gen->getGen() > 0) {
-		Vector2D p = t->getPos().rotate(t->getRotation()) * 2 * t->getW();
-		Entity* asteroidA = mngr_->addEntity();
-		asteroidA->addComponent<Transform>(p, t->getVel().rotate(t->getRotation()) * 1.1f, 5 + gen->getGen()-1 * t->getW(), 5 + gen->getGen() - 1 * t->getH(), 0);
-		asteroidA->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 60);
-		asteroidA->addComponent<Generations>(gen->getGen()-1);
-		asteroidA->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
-		asteroidA->setGroup(ecs::AsteroidsGroup, true);
-		asteroidA->setActive(true);
+	int curr_gen = gen->getGen();
 
-		p = t->getPos().rotate(t->getRotation() + 180) * 2 * t->getW();
-		Entity* asteroidB = mngr_->addEntity();
-		asteroidB->addComponent<Transform>(p, t->getVel().rotate(t->getRotation()+180) * 1.1f, 5 + gen->getGen()-1 * t->getW(), 5 + gen->getGen() - 1 * t->getH(), 0);
-		asteroidB->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 60);
-		asteroidB->addComponent<Generations>(gen->getGen()-1);
-		asteroidB->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
-		asteroidB->setGroup(ecs::AsteroidsGroup, true);
-		asteroidB->setActive(true);
+	if (curr_gen > 0) {
+		
+		Entity* ast = mngr_->addEntity();
+		ast->addComponent<Transform>(t->getPos(), t->getVel(), 5 + (curr_gen - 1) * width_, 5 + (curr_gen - 1) * height_, sdlutils().rand().nextInt(0, 360));
+		ast->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 60);
+		ast->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
+		ast->addComponent<Generations>(curr_gen-1);
+		ast->setGroup(ecs::AsteroidsGroup, true);
+
+		Vector2D p = ast->getComponent<Transform>(ecs::Transform)->getPos();
+		Vector2D v = ast->getComponent<Transform>(ecs::Transform)->getVel();
+		double w = ast->getComponent<Transform>(ecs::Transform)->getW();
+		double h = ast->getComponent<Transform>(ecs::Transform)->getH();
+		int r = sdlutils().rand().nextInt(0, 360);
+
+		p.set(p + v.rotate(r) * 2 * w);
+		v.set(v.rotate(r) * 1.1f);
+
+		ast->setGroup(ecs::AsteroidsGroup,true);
+
 	}
 	
 }
@@ -465,6 +468,8 @@ void CollisionsManager::update()
 			}
 		}
 	}
+
+	
 
 }
 

@@ -11,6 +11,7 @@ Game::Game(): mngr_(nullptr), renderer(nullptr), sdl(nullptr){
 Game::~Game() {
 
 	delete sdl;
+	sdl = nullptr;
 	delete mngr_;
 }
 
@@ -58,7 +59,7 @@ void Game::createPlayer()
 void Game::createGameManager()
 {
 	Entity* gm = mngr_->addEntity();
-	gm->addComponent<AsteroidsManager>(10, 5000, 30, 30);
+	gm->addComponent<AsteroidsManager>(10, 5000, 10, 10);
 	gm->addComponent<CollisionsManager>();
 }
 
