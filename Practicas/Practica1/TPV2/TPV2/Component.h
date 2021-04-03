@@ -207,14 +207,25 @@ private:
 };
 //GameManager: State, GameCtrl, AsteroidsManager, CollisionsManager
 
-class State: Component {
+class State: public Component {
 public:
-	enum GameState { NEWGAME, PAUSED, RUNNING, GAMEOVER };
+enum GameState { NEWGAME, PAUSED, RUNNING, GAMEOVER };
 	State();
-	void update();
-	void render();
+	virtual ~State();
+	virtual void init() override;
+	virtual void render() override;
+
+	inline void setState(GameState s) { gs = s; }
+	inline bool isGameRunning() { return gs == GameState::RUNNING; }
+	inline bool isGameNew() { return gs == GameState::NEWGAME; }
+	inline bool isGamePaused() { return gs == GameState::PAUSED; }
+	inline bool isGameOver() { return gs == GameState::GAMEOVER; }
 private:
 	GameState gs;
+
+	Texture* startMsg;
+	Texture* continueMsg;
+	Texture* gameOverMsg;
 };
 class GameCtrl: Component {
 public:

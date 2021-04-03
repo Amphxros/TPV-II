@@ -15,9 +15,10 @@
   ],
   
   "messages" : [
-    { "id" : "PressAnyKey", "text" : "Press Any Key", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" },
-    { "id" : "HelloSDL", "text" : "Hello SDL!", "font" : "ARIAL48", "color" : "0x0000ffff" },
-	{ "id" : "AsteroidText", "text" : "Asteroids!", "font" : "ARIAL48", "color" : "0x0000ffff" }
+    { "id" : "Start", "text" : "Press Any Key", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" },
+    { "id" : "Continue", "text" : "Game Paused", "font" : "ARIAL48", "color" : "0x0000ffff" },
+	{ "id" : "gameOver", "text" : "Game over! ", "font" : "ARIAL48", "color" : "0x0000ffff" }
+	
 	
 
   ],

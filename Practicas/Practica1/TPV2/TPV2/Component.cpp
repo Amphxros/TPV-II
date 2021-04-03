@@ -469,11 +469,76 @@ void CollisionsManager::update()
 		}
 	}
 
-	
+	for (Entity* a : entities) {
+		if (a->hasGroup(ecs::AsteroidsGroup)) {
+			if (isOnCollision(a->getComponent<Transform>(ecs::Transform), fighterTr_)) {
+				if (health_->getNumVidas() > 0) {
+					health_->setNumVidas(health_->getNumVidas() - 1);
+				}
+				else {
+				}
+			}
+		}
+	}
 
 }
 
 bool CollisionsManager::isOnCollision(Transform* tA, Transform* tB)
 {
 	return (Collisions::collidesWithRotation(tA->getPos(), tA->getW(), tA->getH(), tA->getRotation(), tB->getPos(), tB->getW(), tB->getH(), tB->getRotation()));
+}
+
+State::State(): Component(ecs::State)
+{
+	gs = GameState::NEWGAME;
+}
+
+State::~State()
+{
+}
+
+void State::init()
+{
+	startMsg = &sdlutils().msgs().at("Start");
+	continueMsg = &sdlutils().msgs().at("Continue");
+	gameOverMsg = &sdlutils().msgs().at("gameOver");
+
+}
+
+void State::render()
+{
+	SDL_Rect dest;
+	switch (gs)
+	{
+	case State::NEWGAME:
+		dest.x = sdlutils().width() / 4;
+		dest.y = sdlutils().height() / 2;
+		dest.w = startMsg->width();
+		dest.h = startMsg->height();
+
+		startMsg->render(dest);
+
+
+		break;
+	case State::PAUSED:
+
+		dest.x = sdlutils().width() / 4;
+		dest.y = sdlutils().height() / 2;
+		dest.w = continueMsg->width();
+		dest.h = continueMsg->height();
+
+		continueMsg->render(dest);
+
+		break;
+	case State::GAMEOVER:
+		dest.x = sdlutils().width() / 4;
+		dest.y = sdlutils().height() / 2;
+		dest.w = gameOverMsg->width();
+		dest.h = gameOverMsg->height();
+
+		gameOverMsg->render(dest);
+		break;
+	default:
+		break;
+	}
 }
