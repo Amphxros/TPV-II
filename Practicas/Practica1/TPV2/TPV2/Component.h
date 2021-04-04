@@ -86,7 +86,7 @@ private:
 class Health : public Component {
 public:
 	Health();
-	Health(int num, Texture* texture);
+	Health(int num);
 	virtual ~Health() {}
 	virtual void init() override;
 	virtual void render() override;
@@ -110,12 +110,10 @@ public:
 	virtual ~FighterCtrl() {}
 	virtual void init() override;
 	virtual void update() override;
-	void setActive(bool act) { isActive = act; }
 private:
 	Transform* tr_;
 	double thrust_;
 
-	bool isActive;
 };
 
 class Gun : public Component {
@@ -125,14 +123,12 @@ public:
 	virtual ~Gun() {}
 	virtual void init() override;
 	virtual void update()override;
-	void setActive(bool act) { isActive = act; }
 private:
 	Transform* tr_;
 	uint32_t time_;
 	uint32_t curr_time_;
 	Manager* mngr_;
 
-	bool isActive;
 
 };
 class ShowAtOppositeSide : public Component {
@@ -142,8 +138,6 @@ public:
 	virtual ~ShowAtOppositeSide() {}
 	virtual void init() override;
 	virtual void update() override;
-
-
 
 private:
 	Transform* tr_;

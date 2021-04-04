@@ -49,7 +49,7 @@ void Game::createPlayer()
 	e->addComponent<ShowAtOppositeSide>(width, height);
 	e->addComponent<FighterCtrl>(1);
 	e->addComponent<DeAcceleration>(0.995);
-	e->addComponent<Health>(3, &fighter);
+	e->addComponent<Health>(3);
 	e->addComponent<Gun>(5);
 
 	mngr_->setHandler(e,ecs::FighterHndlr);
@@ -59,10 +59,10 @@ void Game::createPlayer()
 void Game::createGameManager()
 {
 	Entity* gm = mngr_->addEntity();
-	gm->addComponent<AsteroidsManager>(10, 5000, 10, 10);
-	gm->addComponent<CollisionsManager>();
 	gm->addComponent<State>();
+	gm->addComponent<AsteroidsManager>(10, 5000, 10, 10);
 	gm->addComponent<GameCtrl>();
+	gm->addComponent<CollisionsManager>();
 
 	gm->setGroup(ecs::Other,true);
 }

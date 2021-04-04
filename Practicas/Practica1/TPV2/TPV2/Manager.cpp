@@ -48,3 +48,11 @@ void Manager::PauseGame(bool act)
 		}
 	}
 }
+void Manager::resetGame() {
+
+	for (Entity* e : entities_) {
+		if (e->hasGroup(ecs::AsteroidsGroup)) {
+			e->setActive(false);
+		}
+	}
+}

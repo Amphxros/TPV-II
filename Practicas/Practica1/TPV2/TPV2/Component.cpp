@@ -75,27 +75,28 @@ void Image::render()
 Health::Health():Component(ecs::Health), maxVidas_(3), texture_(nullptr), num_(3)
 {
 }
-Health::Health(int num, Texture* texture) :
-	Component(ecs::Health), maxVidas_(num), texture_(texture), num_(num)
+Health::Health(int num) :
+	Component(ecs::Health), maxVidas_(num), texture_(nullptr), num_(num)
 {
+	std::cout << getNumVidas() << std::endl;
 }
 void Health::init()
 {
-	resetNumVidas();
+	texture_ = &sdlutils().images().at("fighter");
 }
 
 void Health::render()
 {
-	for (int i = 0; i < getNumVidas(); i++) {
+	for (int i = 0; i < num_; i++) {
+
 		SDL_Rect dest;
-		dest.x = i * 60;
-		dest.y = 0;
-		dest.w = 150;
-		dest.y = 150;
+		dest.x = sdlutils().width() / 3;
+		dest.y = 50;
+		dest.w = 50;
+		dest.y = 50;
 
-		texture_->render(dest,0);
+		texture_->render(dest);
 	}
-
 }
 
 //COMPONENTE GUN
@@ -322,7 +323,7 @@ AsteroidsManager::AsteroidsManager():
 }
 
 AsteroidsManager::AsteroidsManager(int numAsteroids, int time, int width, int height) :
-	Component(ecs::AsteroidsManager), num_asteroids(numAsteroids), time_(time), width_(width), height_(height), gen_(0), lastTime_(0), mngr_(nullptr)
+	Component(ecs::AsteroidsManager), num_asteroids(numAsteroids), time_(time), width_(width), height_(height), gen_(0), lastTime_(0), mngr_(nullptr),state_(nullptr)
 {
 }
 
@@ -330,6 +331,7 @@ void AsteroidsManager::init()
 {
 	mngr_ = entity_->getMngr();
 	state_ = entity_->getComponent<State>(ecs::State);
+	assert(state_ != nullptr);
 }
 
 void AsteroidsManager::update()
@@ -337,9 +339,8 @@ void AsteroidsManager::update()
 	if (sdlutils().currRealTime() - lastTime_ >= time_ && gen_ > 0 ) {
 			lastTime_ = sdlutils().currRealTime();
 			gen_ = sdlutils().rand().nextInt(1, 4);
-		if (state_->isGameRunning()) {
+			if(state_!=nullptr && state_->isGameRunning())
 			createAsteroid(gen_);
-		}
 	}
 }
 
@@ -383,7 +384,7 @@ void AsteroidsManager::createAsteroid(int nGen)
 		b->addComponent<FramedImage>(&sdlutils().images().at("AsteroidGoldenImg"), 5, 6, 0, 0, 60);
 		b->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
 		b->addComponent<Generations>(sdlutils().rand().nextInt(1, 4));
-		//	b->addComponent<Follow>();
+		b->addComponent<Follow>();
 		b->setGroup(ecs::AsteroidsGroup, true);
 	}
 
@@ -438,7 +439,7 @@ void Follow::update()
 	auto dir = tr_->getVel();
 	Vector2D pos_ = tr_->getPos();
 	dir.set(dir.rotate(dir.angle(posPlayer->getPos() - pos_) > 0 ? 1.0f : -1.0f));
-
+	
 	tr_->setVel(dir);
 }
 
@@ -454,7 +455,7 @@ void CollisionsManager::init()
 	fighter_ = entity_->getMngr()->getHandler(ecs::FighterHndlr);
 	fighterTr_ = entity_->getMngr()->getHandler(ecs::FighterHndlr)->getComponent<Transform>(ecs::Transform);
 	health_ = fighter_->getComponent<Health>(ecs::Health);
-
+	state_ = entity_->getComponent<State>(ecs::State);
 }
 
 void CollisionsManager::update()
@@ -479,10 +480,17 @@ void CollisionsManager::update()
 		if (a->hasGroup(ecs::AsteroidsGroup)) {
 			if (isOnCollision(a->getComponent<Transform>(ecs::Transform), fighterTr_)) {
 				if (health_->getNumVidas() > 0) {
+
+					state_->setState(State::GameState::PAUSED);
+					entity_->getMngr()->resetGame();
 					health_->setNumVidas(health_->getNumVidas() - 1);
 				}
 				else {
+					state_->setState(State::GameState::GAMEOVER);
+					entity_->getMngr()->resetGame();
+					health_->resetNumVidas();
 				}
+				a->setActive(false);
 			}
 		}
 	}
@@ -494,9 +502,9 @@ bool CollisionsManager::isOnCollision(Transform* tA, Transform* tB)
 	return (Collisions::collidesWithRotation(tA->getPos(), tA->getW(), tA->getH(), tA->getRotation(), tB->getPos(), tB->getW(), tB->getH(), tB->getRotation()));
 }
 
-State::State(): Component(ecs::State)
+State::State(): 
+	Component(ecs::State),gs(GameState::NEWGAME), startMsg(nullptr), continueMsg(nullptr), gameOverMsg(nullptr)
 {
-	gs = GameState::NEWGAME;
 }
 
 State::~State()
@@ -526,8 +534,6 @@ void State::render()
 		dest.h = startMsg->height();
 
 		startMsg->render(dest);
-
-
 		break;
 	case State::PAUSED:
 
@@ -552,7 +558,7 @@ void State::render()
 	}
 }
 
-GameCtrl::GameCtrl(): Component(ecs::GameCtrl), state_(nullptr)
+GameCtrl::GameCtrl(): Component(ecs::GameCtrl), state_(nullptr), astManager_(nullptr),mngr_(nullptr)
 {
 }
 
@@ -573,19 +579,15 @@ void GameCtrl::update()
 		}
 		else if (state_->isGameOver()) {
 			state_->setState(State::GameState::NEWGAME);
-		}
-		
-		if (state_->isGameRunning() && ih.isKeyDown(SDLK_ESCAPE)) {
+		}	
+		if (state_->isGameRunning() && ih.isKeyDown(SDLK_SPACE)) {
 			state_->setState(State::GameState::PAUSED);
 			mngr_->PauseGame(true);
 		}
-		if (state_->isGamePaused() && ih.isKeyDown(SDLK_ESCAPE)) {
+		if (state_->isGamePaused() && ih.isKeyDown(SDLK_SPACE)) {
 			state_->setState(State::GameState::RUNNING);
 			mngr_->PauseGame(false);
 		}
 
 	}
-
-
-	
 }
