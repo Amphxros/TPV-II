@@ -1,11 +1,11 @@
 #pragma once
 #include "ecs.h"
 #include "utils/Vector2D.h"
-//#include "sdlutils/Texture.h"
 #include "utils/Collisions.h"
 #include "sdlutils/SDLUtils.h"
 class Entity;
 class Manager;
+
 class Component
 {
 public:
@@ -25,10 +25,7 @@ protected:
 	ecs::CmpID id_;
 };
 
-//COMPONENTES
-// Implementar todos los componenetes
-
-// Caza: Transform, DeAcceleration, Image, Health, FighterCtrl, Gun, ShowAtOpposieSide
+//Resto de componentes
 class Transform : public Component {
 public:
 	Transform();
@@ -37,28 +34,32 @@ public:
 
 	void update() override;
 
-	//get y set por aqui
+	//get y set del ancho
 	inline double getW() { return w_; }
 	inline void setW(double w) { w_ = w; }
 
+	//get y set del alto 
 	inline double getH() { return h_; }
 	inline void setH(double h) { h_ = h; }
 
+	//get y set de la rotacion
 	inline double getRotation() { return rot_; }
 	inline void setRotation(double rot) { rot_ = rot; }
 
+	//get y set de la posicion
 	inline Vector2D getPos() { return pos_; }
 	inline void setPos(Vector2D p) { pos_.set(p); }
 	inline void setPos(double x, double y) { pos_.set(x, y); }
 
+	//get y set de la velocidad
 	inline Vector2D getVel() { return vel_; }
 	inline void setVel(Vector2D v) { vel_.set(v); }
 	inline void setVel(double x, double y) { vel_.set(x, y); }
 
 
 private:
-	double w_, h_, rot_;
-	Vector2D pos_, vel_;
+	double w_, h_, rot_; //ancho, alto y rotacion
+	Vector2D pos_, vel_; // posicion y velocidad
 };
 
 class DeAcceleration : public Component {
@@ -68,8 +69,8 @@ public:
 	virtual void init() override;
 	virtual void update() override;
 private:
-	double deAccel_;
-	Transform* tr_;
+	double deAccel_; //deacceleracion
+	Transform* tr_; //transform de la entidad
 };
 
 class Image : public Component {
@@ -80,8 +81,8 @@ public:
 	virtual void init() override;
 	virtual void render() override;
 private:
-	Texture* texture_;
-	Transform* tr_;
+	Texture* texture_; //textura de la entidad a dibujar
+	Transform* tr_; //transform de la entidad
 };
 
 class Health : public Component {
@@ -92,15 +93,16 @@ public:
 	virtual void init() override;
 	virtual void render() override;
 
+	// Utilidades para calculos de las vidas con las colisiones
 	inline int getNumVidas() { return num_; }
 	inline void setNumVidas(int num) { num_ = num; }
 	inline void resetNumVidas() { num_ = maxVidas_; }
 
 private:
-	int maxVidas_;
-	int num_;
+	int maxVidas_;	// Cantidad inicial de vidas
+	int num_;		// Cantidad actial de vidas
 
-	Texture* texture_;
+	Texture* texture_; //textura de las vidas
 
 };
 
@@ -114,9 +116,9 @@ public:
 
 	void resetPos();
 private:
-	Transform* tr_;
-	double thrust_;
-	Vector2D pos_ini;
+	Transform* tr_; //transform de la entidad
+	double thrust_; //thrust 
+	Vector2D pos_ini; //posicion inicial para resetear la posicion
 
 };
 
@@ -129,9 +131,9 @@ public:
 	virtual void update()override;
 private:
 	Transform* tr_;
-	uint32_t time_;
+	uint32_t time_;		// Variable tiempo para el recorrido de la bala
 	uint32_t curr_time_, lastTime_;
-	Manager* mngr_;
+	Manager* mngr_;		//manager para crear las balas
 
 
 };
@@ -144,9 +146,9 @@ public:
 	virtual void update() override;
 
 private:
-	Transform* tr_;
-	int width_;
-	int height_;
+	Transform* tr_; //transform de la entidad
+	int width_; //ancho 
+	int height_; //alto
 };
 
 
@@ -161,15 +163,15 @@ public:
 	virtual void update() override;
 
 private:
-	Transform* tr_;
-	Texture* texture_;
-	SDL_Rect src_;
+	Transform* tr_; //trnsform de la entidad
+	Texture* texture_; //textura a dibujar
+	SDL_Rect src_; 
 
-	Vector2D tam;
-	Vector2D ini;
+	Vector2D tam; //tamaño de la textura
+	Vector2D ini; //frame inicial
 
-	int nRows_, nCols_, pos_X, pos_Y, width, height;
-	float framerate_;
+	int nRows_, nCols_, pos_X, pos_Y, width, height; //num de filas, columnas, frame actual y tamaño del frame
+	float framerate_; //cantidad de milisegundos que se cambia el frame
 };
 
 class Generations : public Component {
@@ -182,8 +184,8 @@ public:
 	inline int getGen() { return gen_; }
 
 private:
-	int maxgen_;
-	int gen_;
+	int maxgen_; //num maximo de generaciones
+	int gen_;	//numero actual de generaciones
 };
 
 class Follow : public Component {
@@ -194,11 +196,10 @@ public:
 	virtual void update() override;
 
 private:
-	Transform* tr_;
-	Transform* posPlayer;
+	Transform* tr_; //transform de la entidad
+	Transform* posPlayer;	// Posicion del jugador para seguirle
 };
 
-//Bala: Transform, Image, DisableOnExit
 
 class DisableOnExit : public Component {
 public:
@@ -207,10 +208,9 @@ public:
 	virtual void init() override;
 	virtual void update() override;
 private:
-	int width_, height_;
-	Transform* tr_;
+	int width_, height_; //ancho y alto para tener un margen
+	Transform* tr_; //transform de la entidad
 };
-//GameManager: State, GameCtrl, AsteroidsManager, CollisionsManager
 
 
 class State : public Component {
@@ -242,16 +242,20 @@ public:
 	virtual ~AsteroidsManager() {}
 	virtual void init() override;
 	virtual void update() override;
+	//crea los asteroides cuando se inicia el juego
 	void createAsteroids();
 	void OnCollision(Entity* A);
 
 private:
+	//crea 1 asteroide
 	void createAsteroid(int nGen);
+
 	Manager* mngr_;
-	State* state_;
-	int num_asteroids, time_, lastTime_, gen_;
+	State* state_;	//estado de la entidad
+	int num_asteroids, time_, lastTime_; //num de asteroides iniciales, tiempo actual y tiempo desde el ultimo spawn
 	float width_, height_;
 };
+
 class GameCtrl : public Component {
 public:
 	GameCtrl();
@@ -260,9 +264,9 @@ public:
 	virtual void update() override;
 
 private:
-	State* state_;
-	AsteroidsManager* astManager_;
-	Manager* mngr_;
+	State* state_;		//estado de la entidad
+	AsteroidsManager* astManager_;//asteroid manager de la entidad
+	Manager* mngr_;//manager de la entidad
 
 };
 class CollisionsManager : public Component {
@@ -276,14 +280,13 @@ private:
 
 	bool isOnCollision(Transform* t, Transform* other);
 
+	AsteroidsManager* ast;//Asteroid manager de la entidad
 
-	AsteroidsManager* ast;
+	Entity* fighter_; //entidad fighter/ jugador
+	Health* health_; //vida del jugador
+	State* state_; //estado del juego
 
-	Entity* fighter_;
-	Health* health_;
-	State* state_;
-
-	Transform* fighterTr_;
+	Transform* fighterTr_; //transform del fighter
 
 
 };

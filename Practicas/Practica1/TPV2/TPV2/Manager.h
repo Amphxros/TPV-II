@@ -14,6 +14,7 @@ public:
 
 	void resetGame();
 	void PauseGame(bool act);
+
 	inline Entity* getHandler(ecs::HandlerID id) {
 		return handlers_[id];
 	}
@@ -21,10 +22,10 @@ public:
 	inline void setHandler(Entity* e, ecs::HandlerID id) {
 		handlers_[id] = e;
 	}
-
+	//devuelve las entidades
 	inline std::vector<Entity*> getEntities() { return entities_; }
 
 private:
-	std::vector<Entity*> entities_;	// TODAS las entidades, uptr_ent ayuda a borrarlas automáticamente
-	std::array<Entity*, ecs::maxHandlers> handlers_;
+	std::vector<Entity*> entities_;	// TODAS las entidades
+	std::array<Entity*, ecs::maxHandlers> handlers_; //handlers
 };

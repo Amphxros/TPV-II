@@ -40,6 +40,7 @@ void Manager::render()
 		entities_[i]->render();
 }
 
+// pausa el juego impidiendo el movimiento de los asteroides y los fighters
 void Manager::PauseGame(bool act)
 {
 	for (Entity* e : entities_) {
@@ -48,10 +49,11 @@ void Manager::PauseGame(bool act)
 		}
 	}
 }
+//borra las balas y los asteroides
 void Manager::resetGame() {
 
 	for (Entity* e : entities_) {
-		if (e->hasGroup(ecs::AsteroidsGroup)) {
+		if (e->hasGroup(ecs::AsteroidsGroup) || e->hasGroup(ecs::BulletsGroup)) {
 			e->setActive(false);
 		}
 	}

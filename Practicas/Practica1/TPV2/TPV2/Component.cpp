@@ -3,7 +3,10 @@
 #include "Manager.h"
 #include "sdlutils/InputHandler.h"
 
-//COMPONENTE TRANSFORM
+//////////////
+// TRANSFORM//
+//////////////
+
 Transform::Transform() :
 	Component(ecs::Transform), pos_(Vector2D()), vel_(Vector2D()), w_(0), h_(0), rot_(0)
 {
@@ -19,8 +22,10 @@ void Transform::update()
 	pos_ = pos_ + vel_;
 }
 
+//////////////////
+//DEACCELERATION//
+//////////////////
 
-//DEACCELERATION
 DeAcceleration::DeAcceleration(double deAcceleration) :
 	Component(ecs::DeAcceleration), tr_(nullptr), deAccel_(deAcceleration)
 {
@@ -44,8 +49,10 @@ void DeAcceleration::update()
 }
 
 
+/////////
+//IMAGE//
+/////////
 
-//COMPONENTE IMAGE
 Image::Image(Texture* t) :
 	Component(ecs::Image), texture_(t), tr_(nullptr)
 {
@@ -70,7 +77,10 @@ void Image::render()
 }
 
 
-//COMPONETE HEALTH
+///////////
+// HEALTH//
+///////////
+
 Health::Health():Component(ecs::Health), maxVidas_(3), texture_(nullptr), num_(3)
 {
 }
@@ -98,7 +108,9 @@ void Health::render()
 	}
 }
 
-//COMPONENTE GUN
+////////
+// GUN//
+////////
 Gun::Gun() :
 	time_(0), Component(ecs::Gun), tr_(nullptr), mngr_(nullptr), curr_time_(0)
 {
@@ -139,8 +151,9 @@ void Gun::update()
 	}
 }
 
-
-//COMPONENTE FIGHTERCTRL
+///////////////
+//FighterCtrl//
+///////////////
 FighterCtrl::FighterCtrl() :
 	Component(ecs::FighterCtrl), tr_(nullptr), thrust_(0)
 {
@@ -196,7 +209,10 @@ void FighterCtrl::resetPos()
 }
 
 
-//COMPONENTE SHOW AT OPPOSITE SIDE
+//////////////////////////
+// SHOW AT OPPOSITE SIDE//
+//////////////////////////
+
 ShowAtOppositeSide::ShowAtOppositeSide() : 
 	Component(ecs::ShowAtOppositeSide), tr_(nullptr), width_(0), height_(0)
 {
@@ -234,6 +250,9 @@ void ShowAtOppositeSide::update()
 	}
 }
 
+//////////////////
+// FRAMED IMAGE //
+//////////////////
 FramedImage::FramedImage(Texture* texture, int nRows, int nCols, int posX, int posY, float framerate) :
 	Component(ecs::FramedImage), texture_(texture), nRows_(nRows), nCols_(nCols), framerate_(framerate),pos_X(posX), pos_Y(posY), tr_(nullptr)
 {
@@ -274,9 +293,36 @@ void FramedImage::render()
 
 void FramedImage::update()
 {
+	if (sdlutils().currRealTime() % framerate_ == 0) {
 
+		if (pos_X + 1 == nCols_) {
+			pos_X = 0;
+		}
+		else {
+			pos_X++;
+		}
+
+
+		if (pos_Y + 1 == nRows_) {
+			pos_Y = 0;
+		}
+		else {
+			pos_Y++;
+		}
+
+		src_.x = pos_X * width;
+		src_.y = pos_Y * height;
+		src_.w = width;
+		src_.h = height;
+
+	}
 }
 
+
+
+/////////////////
+// GENERATIONS //
+/////////////////
 Generations::Generations():
 	maxgen_(0),gen_(0)
 {
@@ -297,6 +343,9 @@ DisableOnExit::DisableOnExit(int width, int height):
 {
 }
 
+///////////////////
+// DISABLEONEXIT //
+///////////////////
 DisableOnExit::~DisableOnExit()
 {
 }
@@ -309,28 +358,27 @@ void DisableOnExit::init()
 
 void DisableOnExit::update()
 {
-	bool b = false;
 	//comprobamos en X
 	if (tr_->getPos().getX() < 0) {
-		b = true;
+		entity_->setActive(false);
 	}
 	else if (tr_->getPos().getX() > width_) {
-		b = true;
+		entity_->setActive(false);
 	}
 	// comprobamos en y
 	if (tr_->getPos().getY() < 0) {
-		b = true;
+		entity_->setActive(false);
 	}
 	else if (tr_->getPos().getY() > height_) {
-		b = true;
+		entity_->setActive(false);
 	}
 
-	if (b)
-		entity_->setActive(false);
 }
 
 
-
+//////////////////////
+// ASTEROIDSMANAGER //
+//////////////////////
 AsteroidsManager::AsteroidsManager(): 
 	Component(ecs::AsteroidsManager), num_asteroids(0), time_(0), width_(0), height_(0), gen_(0), lastTime_(0), mngr_(nullptr),state_(nullptr)
 {
@@ -350,9 +398,9 @@ void AsteroidsManager::init()
 
 void AsteroidsManager::update()
 {
-	if (sdlutils().currRealTime() - lastTime_ >= time_ && gen_ > 0 ) {
+	if (sdlutils().currRealTime() - lastTime_ >= time_) {
 		lastTime_ = sdlutils().currRealTime();
-		gen_ = sdlutils().rand().nextInt(1, 4);
+		int gen_ = sdlutils().rand().nextInt(1, 4);
 		if(state_!=nullptr && state_->isGameRunning())
 			createAsteroid(gen_);
 	}
@@ -361,7 +409,7 @@ void AsteroidsManager::update()
 void AsteroidsManager::createAsteroids()
 {
 	for (int i = 0; i < num_asteroids; i++) {
-		gen_ = sdlutils().rand().nextInt(1, 4);
+		int gen_ = sdlutils().rand().nextInt(1, 4);
 		createAsteroid(gen_);
 	}
 }
@@ -384,7 +432,7 @@ void AsteroidsManager::createAsteroid(int nGen)
 		Vector2D vel = (c - pos).normalize() * (sdlutils().rand().nextInt(1, 10) / 10.0);
 
 		a->addComponent<Transform>(pos, vel, 5+ nGen * width_, 5+ nGen * height_, sdlutils().rand().nextInt(0, 360));
-		a->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 60);
+		a->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 600);
 		a->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
 		a->addComponent<Generations>(nGen);
 		a->setGroup(ecs::AsteroidsGroup, true);
@@ -401,7 +449,7 @@ void AsteroidsManager::createAsteroid(int nGen)
 		Vector2D vel = (c - pos).normalize() * (sdlutils().rand().nextInt(1, 10) / 10.0);
 
 		b->addComponent<Transform>(pos, vel, 5 + nGen * width_, 5 + nGen * height_, sdlutils().rand().nextInt(0, 360));
-		b->addComponent<FramedImage>(&sdlutils().images().at("AsteroidGoldenImg"), 5, 6, 0, 0, 60);
+		b->addComponent<FramedImage>(&sdlutils().images().at("AsteroidGoldenImg"), 5, 6, 0, 0, 600);
 		b->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
 		b->addComponent<Generations>(sdlutils().rand().nextInt(1, 4));
 		b->addComponent<Follow>();
@@ -423,11 +471,11 @@ void AsteroidsManager::OnCollision(Entity* A) {
 		Entity* astA = mngr_->addEntity();
 		astA->addComponent<Transform>(t->getPos(), t->getVel(), 5 + (curr_gen - 1) * width_, 5 + (curr_gen - 1) * height_, sdlutils().rand().nextInt(0, 360));
 		if (f != nullptr) {
-			astA->addComponent<FramedImage>(&sdlutils().images().at("AsteroidGoldenImg"), 5, 6, 0, 0, 60);
+			astA->addComponent<FramedImage>(&sdlutils().images().at("AsteroidGoldenImg"), 5, 6, 0, 0, 600);
 			astA->addComponent<Follow>();
 		}
 		else {
-			astA->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 60);
+			astA->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 600);
 		}
 		astA->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
 		astA->addComponent<Generations>(curr_gen-1);
@@ -473,7 +521,9 @@ void AsteroidsManager::OnCollision(Entity* A) {
 }
 
 
-
+////////////
+// FOLLOW //
+////////////
 Follow::Follow(): 
 	Component(ecs::Follow), tr_(nullptr), posPlayer(nullptr)
 {
@@ -496,6 +546,9 @@ void Follow::update()
 	tr_->setVel(dir);
 }
 
+///////////////////////
+// COLLISIONSMANAGER //
+///////////////////////
 CollisionsManager::CollisionsManager(): 
 	Component(ecs::CollisionsManager),
 	ast(nullptr), fighter_(nullptr), health_(nullptr),state_(nullptr),fighterTr_(nullptr)
@@ -520,6 +573,8 @@ void CollisionsManager::update()
 			for (Entity* b : entities) {
 				if (a != b && b->hasGroup(ecs::BulletsGroup)) {
 					if (isOnCollision(a->getComponent<Transform>(ecs::Transform), b->getComponent<Transform>(ecs::Transform))) {
+
+						sdlutils().soundEffects().at("explosion").play();
 						ast->OnCollision(a);
 						a->setActive(false);
 						b->setActive(false);
@@ -535,11 +590,13 @@ void CollisionsManager::update()
 				if (health_->getNumVidas() > 0) {
 
 					state_->setState(State::GameState::PAUSED);	
-					health_->setNumVidas(health_->getNumVidas() - 1);
+					health_->setNumVidas(health_->getNumVidas() - 1);	
+					sdlutils().musics().at("imperial_march").pauseMusic();
 				}
 				else {
 					state_->setState(State::GameState::GAMEOVER);
 					health_->resetNumVidas();
+					sdlutils().musics().at("imperial_march").haltMusic();
 				}
 				fighter_->getComponent<FighterCtrl>(ecs::FighterCtrl)->resetPos();
 				entity_->getMngr()->resetGame();
@@ -555,6 +612,9 @@ bool CollisionsManager::isOnCollision(Transform* tA, Transform* tB)
 	return (Collisions::collidesWithRotation(tA->getPos(), tA->getW(), tA->getH(), tA->getRotation(), tB->getPos(), tB->getW(), tB->getH(), tB->getRotation()));
 }
 
+///////////
+// STATE //
+///////////
 State::State(): 
 	Component(ecs::State),gs(GameState::NEWGAME), startMsg(nullptr), continueMsg(nullptr), gameOverMsg(nullptr)
 {
@@ -609,6 +669,9 @@ void State::render()
 	}
 }
 
+//////////////
+// GAMECTRL //
+//////////////
 GameCtrl::GameCtrl():
 	Component(ecs::GameCtrl), state_(nullptr), astManager_(nullptr),mngr_(nullptr)
 {
@@ -628,16 +691,19 @@ void GameCtrl::update()
 		if (state_->isGameNew()) {
 			state_->setState(State::GameState::RUNNING);
 			astManager_->createAsteroids();
+			sdlutils().musics().at("imperial_march").play();
 		}
 		else if (state_->isGameOver()) {
 			state_->setState(State::GameState::NEWGAME);
 		}	
 		if (state_->isGameRunning() && ih.isKeyDown(SDLK_SPACE)) {
 			state_->setState(State::GameState::PAUSED);
-		
+			sdlutils().musics().at("imperial_march").pauseMusic();
 		}
 		if (state_->isGamePaused() && ih.isKeyDown(SDLK_SPACE)) {
 			state_->setState(State::GameState::RUNNING);
+			
+			sdlutils().musics().at("imperial_march").resumeMusic();
 		}
 
 	}
