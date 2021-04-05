@@ -1,8 +1,9 @@
 #pragma once
 #include "ecs.h"
 #include "utils/Vector2D.h"
-#include "sdlutils/Texture.h"
+//#include "sdlutils/Texture.h"
 #include "utils/Collisions.h"
+#include "sdlutils/SDLUtils.h"
 class Entity;
 class Manager;
 class Component
@@ -110,9 +111,12 @@ public:
 	virtual ~FighterCtrl() {}
 	virtual void init() override;
 	virtual void update() override;
+
+	void resetPos();
 private:
 	Transform* tr_;
 	double thrust_;
+	Vector2D pos_ini;
 
 };
 

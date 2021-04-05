@@ -12,7 +12,9 @@ Game::~Game() {
 
 	delete sdl;
 	sdl = nullptr;
+
 	delete mngr_;
+	mngr_ = nullptr;
 }
 
 void Game::init() {
@@ -26,7 +28,6 @@ void Game::init() {
 
 	createPlayer();
 	createGameManager();
-
 }
 
 void Game::render(){
@@ -37,7 +38,6 @@ void Game::render(){
 
 void Game::createPlayer()
 {
-
 	auto& fighter = sdl->images().at("fighter");
 
 	int width = sdl->width();
@@ -50,7 +50,7 @@ void Game::createPlayer()
 	e->addComponent<FighterCtrl>(1);
 	e->addComponent<DeAcceleration>(0.995);
 	e->addComponent<Health>(3);
-	e->addComponent<Gun>(5);
+	e->addComponent<Gun>(5000);
 
 	mngr_->setHandler(e,ecs::FighterHndlr);
 	e->setGroup(ecs::Fighter, true);
@@ -67,15 +67,17 @@ void Game::createGameManager()
 	gm->setGroup(ecs::Other,true);
 }
 
-void Game::update(){
+void Game::update()
+{
 	mngr_->refresh();
 	mngr_->update();
 }
 
-void Game::run(){
+void Game::run()
+{
 	bool exit = false;
-
 	SDL_Event event;
+
 	while (!exit) {
 
 		Uint32 startTime = sdlutils().currRealTime();
@@ -83,7 +85,7 @@ void Game::run(){
 		while (SDL_PollEvent(&event)){
 			ih().update(event);
 		}
-		if (ih().isKeyDown(SDLK_q)) {
+		if (ih().isKeyDown(SDLK_ESCAPE)) {
 			exit = true;
 		}
 		render();

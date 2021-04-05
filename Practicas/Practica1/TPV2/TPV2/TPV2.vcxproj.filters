@@ -78,9 +78,6 @@
     <ClCompile Include="Manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="System.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="json\JSON.h">
@@ -131,23 +128,20 @@
     <ClInclude Include="json\simplejson_demo.h">
       <Filter>Header Files\json</Filter>
     </ClInclude>
-    <ClInclude Include="ecs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Entity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Component.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Manager.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Component.h">
+      <Filter>Header Files\Component-Entity</Filter>
     </ClInclude>
-    <ClInclude Include="System.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="ecs.h">
+      <Filter>Header Files\Component-Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager.h">
+      <Filter>Header Files\Component-Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files\Component-Entity</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

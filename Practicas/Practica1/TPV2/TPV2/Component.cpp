@@ -2,7 +2,6 @@
 #include "Entity.h"
 #include "Manager.h"
 #include "sdlutils/InputHandler.h"
-#include "sdlutils/SDLUtils.h"
 
 //COMPONENTE TRANSFORM
 Transform::Transform() :
@@ -153,7 +152,10 @@ FighterCtrl::FighterCtrl(double thrust):
 void FighterCtrl::init()
 {
 	tr_ = entity_->getComponent<Transform>(ecs::Transform);
+	pos_ini = tr_->getPos();
 	assert(tr_ != nullptr);
+	sdlutils().soundEffects().at("gunshot").play();
+
 }
 
 void FighterCtrl::update()
@@ -161,24 +163,31 @@ void FighterCtrl::update()
 	auto& ih = *InputHandler::instance();
 	if (ih.isKeyDown(SDLK_UP)) {
 		Vector2D vel = tr_->getVel();
-		Vector2D newVel = vel + Vector2D(0, -1).rotate(tr_->getRotation()) * thrust_; //cambiar el 0.2 por 1 parametro
+		Vector2D newVel = vel + Vector2D(0, -1).rotate(tr_->getRotation()) * thrust_; 
+		
 		tr_->setVel(newVel);
 	}
 	else if (ih.isKeyDown(SDLK_LEFT)) {
 		double r = tr_->getRotation() - 5.0;
+		
 		tr_->setRotation(r);
 	}
 	else if (ih.isKeyDown(SDLK_RIGHT)) {
 		double r = tr_->getRotation() + 5.0;
+		
 		tr_->setRotation(r);
 	}
 	else if (ih.isKeyDown(SDLK_DOWN)) {
 		Vector2D vel = tr_->getVel();
-		Vector2D newVel = vel + Vector2D(0, 1).rotate(tr_->getRotation()) * thrust_; //cambiar el 0.2 por 1 parametro
-
+		Vector2D newVel = vel + Vector2D(0, 1).rotate(tr_->getRotation()) * thrust_; 
 		tr_->setVel(newVel);
-
 	}
+}
+
+void FighterCtrl::resetPos()
+{
+	tr_->setPos(pos_ini);
+	tr_->setVel(Vector2D());
 }
 
 
@@ -221,8 +230,7 @@ void ShowAtOppositeSide::update()
 }
 
 FramedImage::FramedImage(Texture* texture, int nRows, int nCols, int posX, int posY, float framerate) :
-	Component(ecs::FramedImage), texture_(texture), nRows_(nRows), nCols_(nCols), framerate_(framerate),
-	pos_X(posX), pos_Y(posY), tr_(nullptr)
+	Component(ecs::FramedImage), texture_(texture), nRows_(nRows), nCols_(nCols), framerate_(framerate),pos_X(posX), pos_Y(posY), tr_(nullptr)
 {
 	width = texture_->width() / nCols_;
 	height = texture_->height() / nRows_;
@@ -317,6 +325,8 @@ void DisableOnExit::update()
 		entity_->setActive(false);
 }
 
+
+
 AsteroidsManager::AsteroidsManager(): 
 	Component(ecs::AsteroidsManager), num_asteroids(0), time_(0), width_(0), height_(0), gen_(0), lastTime_(0), mngr_(nullptr),state_(nullptr)
 {
@@ -337,9 +347,9 @@ void AsteroidsManager::init()
 void AsteroidsManager::update()
 {
 	if (sdlutils().currRealTime() - lastTime_ >= time_ && gen_ > 0 ) {
-			lastTime_ = sdlutils().currRealTime();
-			gen_ = sdlutils().rand().nextInt(1, 4);
-			if(state_!=nullptr && state_->isGameRunning())
+		lastTime_ = sdlutils().currRealTime();
+		gen_ = sdlutils().rand().nextInt(1, 4);
+		if(state_!=nullptr && state_->isGameRunning())
 			createAsteroid(gen_);
 	}
 }
@@ -354,7 +364,6 @@ void AsteroidsManager::createAsteroids()
 
 void AsteroidsManager::createAsteroid(int nGen)
 {
-
 	// 70% A, 30% B
 	int rnd= sdlutils().rand().nextInt(0, 10);
 	if (rnd > 3) { // tipo A
@@ -395,31 +404,64 @@ void AsteroidsManager::OnCollision(Entity* A) {
 	Transform* t = A->getComponent<Transform>(ecs::Transform);
 
 	Generations* gen = A->getComponent<Generations>(ecs::Generations);
+	Follow* f = A->getComponent<Follow>(ecs::Follow);
 	int curr_gen = gen->getGen();
 
 	if (curr_gen > 0) {
 		
-		Entity* ast = mngr_->addEntity();
-		ast->addComponent<Transform>(t->getPos(), t->getVel(), 5 + (curr_gen - 1) * width_, 5 + (curr_gen - 1) * height_, sdlutils().rand().nextInt(0, 360));
-		ast->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 60);
-		ast->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
-		ast->addComponent<Generations>(curr_gen-1);
-		ast->setGroup(ecs::AsteroidsGroup, true);
-
-		Vector2D p = ast->getComponent<Transform>(ecs::Transform)->getPos();
-		Vector2D v = ast->getComponent<Transform>(ecs::Transform)->getVel();
-		double w = ast->getComponent<Transform>(ecs::Transform)->getW();
-		double h = ast->getComponent<Transform>(ecs::Transform)->getH();
+		Entity* astA = mngr_->addEntity();
+		astA->addComponent<Transform>(t->getPos(), t->getVel(), 5 + (curr_gen - 1) * width_, 5 + (curr_gen - 1) * height_, sdlutils().rand().nextInt(0, 360));
+		if (f != nullptr) {
+			astA->addComponent<FramedImage>(&sdlutils().images().at("AsteroidGoldenImg"), 5, 6, 0, 0, 60);
+			astA->addComponent<Follow>();
+		}
+		else {
+			astA->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 60);
+		}
+		astA->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
+		astA->addComponent<Generations>(curr_gen-1);
+		astA->setGroup(ecs::AsteroidsGroup, true);
+		
+		Vector2D p = astA->getComponent<Transform>(ecs::Transform)->getPos();
+		Vector2D v = astA->getComponent<Transform>(ecs::Transform)->getVel();
+		double w = astA->getComponent<Transform>(ecs::Transform)->getW();
+		double h = astA->getComponent<Transform>(ecs::Transform)->getH();
 		int r = sdlutils().rand().nextInt(0, 360);
-
+		
 		p.set(p + v.rotate(r) * 2 * w);
 		v.set(v.rotate(r) * 1.1f);
+		
+		astA->setGroup(ecs::AsteroidsGroup,true);
+		
+		
+		Entity* astB = mngr_->addEntity();
+		astB->addComponent<Transform>(t->getPos(), t->getVel(), 5 + (curr_gen - 1) * width_, 5 + (curr_gen - 1) * height_, sdlutils().rand().nextInt(0, 360));
+		if (f != nullptr) {
+			astB->addComponent<FramedImage>(&sdlutils().images().at("AsteroidGoldenImg"), 5, 6, 0, 0, 60);
+			astB->addComponent<Follow>();
+		}
+		else {
+			astB->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 60);
+		}
+		astB->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
+		astB->addComponent<Generations>(curr_gen-1);
+		astB->setGroup(ecs::AsteroidsGroup, true);
 
-		ast->setGroup(ecs::AsteroidsGroup,true);
+		p = astB->getComponent<Transform>(ecs::Transform)->getPos();
+		v = astB->getComponent<Transform>(ecs::Transform)->getVel();
+		w = astB->getComponent<Transform>(ecs::Transform)->getW();
+		h = astB->getComponent<Transform>(ecs::Transform)->getH();
+		r = sdlutils().rand().nextInt(0, 360);
 
+		p.set(p - v.rotate(r) * 2 * w);
+		v.set(v.rotate(r) * 1.1f);
+
+		astB->setGroup(ecs::AsteroidsGroup,true);
 	}
 	
 }
+
+
 
 Follow::Follow(): 
 	Component(ecs::Follow), tr_(nullptr), posPlayer(nullptr)
@@ -481,15 +523,15 @@ void CollisionsManager::update()
 			if (isOnCollision(a->getComponent<Transform>(ecs::Transform), fighterTr_)) {
 				if (health_->getNumVidas() > 0) {
 
-					state_->setState(State::GameState::PAUSED);
-					entity_->getMngr()->resetGame();
+					state_->setState(State::GameState::PAUSED);	
 					health_->setNumVidas(health_->getNumVidas() - 1);
 				}
 				else {
 					state_->setState(State::GameState::GAMEOVER);
-					entity_->getMngr()->resetGame();
 					health_->resetNumVidas();
 				}
+				fighter_->getComponent<FighterCtrl>(ecs::FighterCtrl)->resetPos();
+				entity_->getMngr()->resetGame();
 				a->setActive(false);
 			}
 		}
@@ -535,30 +577,29 @@ void State::render()
 
 		startMsg->render(dest);
 		break;
-	case State::PAUSED:
 
+	case State::PAUSED:
 		dest.x = sdlutils().width() / 4;
 		dest.y = sdlutils().height() / 2;
 		dest.w = continueMsg->width();
 		dest.h = continueMsg->height();
 
 		continueMsg->render(dest);
-
 		break;
+
 	case State::GAMEOVER:
 		dest.x = sdlutils().width() / 4;
 		dest.y = sdlutils().height() / 2;
 		dest.w = gameOverMsg->width();
 		dest.h = gameOverMsg->height();
-
+		
 		gameOverMsg->render(dest);
-		break;
-	default:
 		break;
 	}
 }
 
-GameCtrl::GameCtrl(): Component(ecs::GameCtrl), state_(nullptr), astManager_(nullptr),mngr_(nullptr)
+GameCtrl::GameCtrl():
+	Component(ecs::GameCtrl), state_(nullptr), astManager_(nullptr),mngr_(nullptr)
 {
 }
 
@@ -582,11 +623,10 @@ void GameCtrl::update()
 		}	
 		if (state_->isGameRunning() && ih.isKeyDown(SDLK_SPACE)) {
 			state_->setState(State::GameState::PAUSED);
-			mngr_->PauseGame(true);
+		
 		}
 		if (state_->isGamePaused() && ih.isKeyDown(SDLK_SPACE)) {
 			state_->setState(State::GameState::RUNNING);
-			mngr_->PauseGame(false);
 		}
 
 	}

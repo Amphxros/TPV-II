@@ -1,6 +1,5 @@
 #pragma once
 #include "Entity.h"
-#include "System.h"
 #include <memory>
 class Manager
 {
