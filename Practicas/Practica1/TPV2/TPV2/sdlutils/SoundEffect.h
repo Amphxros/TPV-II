@@ -13,10 +13,10 @@ class SoundEffect {
 public:
 
 	// cannot copy objects of this type!
-//	SoundEffect& operator=(SoundEffect &other) = delete;
-//	SoundEffect(const SoundEffect&) = delete;
+	SoundEffect& operator=(SoundEffect &other) = delete;
+	SoundEffect(const SoundEffect&) = delete;
 
-	SoundEffect(): chunk_(nullptr){}
+//	SoundEffect(): chunk_(nullptr){}
 	SoundEffect(const std::string &fileName) {
 		chunk_ = Mix_LoadWAV(fileName.c_str());
 		assert(chunk_ != nullptr);

@@ -130,7 +130,7 @@ public:
 private:
 	Transform* tr_;
 	uint32_t time_;
-	uint32_t curr_time_;
+	uint32_t curr_time_, lastTime_;
 	Manager* mngr_;
 
 

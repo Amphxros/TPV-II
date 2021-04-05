@@ -89,7 +89,7 @@ void Health::render()
 	for (int i = 0; i < num_; i++) {
 
 		SDL_Rect dest;
-		dest.x = sdlutils().width() / 3;
+		dest.x = sdlutils().width() / 3 + 60* i;
 		dest.y = 50;
 		dest.w = 50;
 		dest.y = 50;
@@ -120,7 +120,7 @@ void Gun::init()
 void Gun::update()
 {
 	auto& ih = *InputHandler::instance();
-	if (ih.isKeyDown(SDLK_SPACE)) {
+	if (ih.isKeyDown(SDLK_SPACE)&& sdlutils().currRealTime() - lastTime_ >= time_) {
 		curr_time_ = sdlutils().currRealTime();
 
 		Entity* b = mngr_->addEntity();
@@ -134,6 +134,8 @@ void Gun::update()
 		b->addComponent<DisableOnExit>(sdlutils().width(), sdlutils().height());
 		b->setGroup(ecs::BulletsGroup,true);
 		mngr_->setHandler(b, ecs::BulletsHndlr);
+
+		sdlutils().soundEffects().at("gunshot").play();
 	}
 }
 
@@ -154,7 +156,6 @@ void FighterCtrl::init()
 	tr_ = entity_->getComponent<Transform>(ecs::Transform);
 	pos_ini = tr_->getPos();
 	assert(tr_ != nullptr);
-	sdlutils().soundEffects().at("gunshot").play();
 
 }
 
@@ -166,6 +167,8 @@ void FighterCtrl::update()
 		Vector2D newVel = vel + Vector2D(0, -1).rotate(tr_->getRotation()) * thrust_; 
 		
 		tr_->setVel(newVel);
+		
+		sdlutils().soundEffects().at("thrust").play();
 	}
 	else if (ih.isKeyDown(SDLK_LEFT)) {
 		double r = tr_->getRotation() - 5.0;
@@ -181,6 +184,8 @@ void FighterCtrl::update()
 		Vector2D vel = tr_->getVel();
 		Vector2D newVel = vel + Vector2D(0, 1).rotate(tr_->getRotation()) * thrust_; 
 		tr_->setVel(newVel);
+		
+		sdlutils().soundEffects().at("thrust").play();
 	}
 }
 
@@ -287,7 +292,6 @@ void Generations::resetGen()
 	gen_ = maxgen_;
 }
 
-
 DisableOnExit::DisableOnExit(int width, int height): 
 	Component(ecs::DisableOnExit), width_(width), height_(height), tr_(nullptr)
 {
@@ -372,10 +376,12 @@ void AsteroidsManager::createAsteroid(int nGen)
 		Vector2D pos = Vector2D();
 		pos.setX(sdlutils().rand().nextInt(0, sdlutils().width()));
 		pos.setY(sdlutils().rand().nextInt(0, sdlutils().height()));
+	
+		Vector2D c = Vector2D();
+		c.setX(sdlutils().rand().nextInt(0, sdlutils().width()));
+		c.setY(sdlutils().rand().nextInt(0, sdlutils().height()));
 
-		Vector2D vel = Vector2D();
-		vel.setX(sdlutils().rand().nextInt(-5,5));
-		vel.setY(sdlutils().rand().nextInt(-5, 5));
+		Vector2D vel = (c - pos).normalize() * (sdlutils().rand().nextInt(1, 10) / 10.0);
 
 		a->addComponent<Transform>(pos, vel, 5+ nGen * width_, 5+ nGen * height_, sdlutils().rand().nextInt(0, 360));
 		a->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 60);
@@ -387,7 +393,12 @@ void AsteroidsManager::createAsteroid(int nGen)
 		Entity* b = mngr_->addEntity();
 
 		Vector2D pos = Vector2D(sdlutils().rand().nextInt(0, sdlutils().width()), sdlutils().rand().nextInt(0, sdlutils().height()));
-		Vector2D vel = Vector2D(sdlutils().rand().nextInt(-5, 5), sdlutils().rand().nextInt(-5, 5));
+	
+		Vector2D c = Vector2D();
+		c.setX(sdlutils().rand().nextInt(0, sdlutils().width()));
+		c.setY(sdlutils().rand().nextInt(0, sdlutils().height()));
+		
+		Vector2D vel = (c - pos).normalize() * (sdlutils().rand().nextInt(1, 10) / 10.0);
 
 		b->addComponent<Transform>(pos, vel, 5 + nGen * width_, 5 + nGen * height_, sdlutils().rand().nextInt(0, 360));
 		b->addComponent<FramedImage>(&sdlutils().images().at("AsteroidGoldenImg"), 5, 6, 0, 0, 60);
@@ -424,9 +435,9 @@ void AsteroidsManager::OnCollision(Entity* A) {
 		
 		Vector2D p = astA->getComponent<Transform>(ecs::Transform)->getPos();
 		Vector2D v = astA->getComponent<Transform>(ecs::Transform)->getVel();
-		double w = astA->getComponent<Transform>(ecs::Transform)->getW();
-		double h = astA->getComponent<Transform>(ecs::Transform)->getH();
-		int r = sdlutils().rand().nextInt(0, 360);
+		double w = A->getComponent<Transform>(ecs::Transform)->getW();
+		double h = A->getComponent<Transform>(ecs::Transform)->getH();
+		int r = astA->getComponent<Transform>(ecs::Transform)->getRotation();
 		
 		p.set(p + v.rotate(r) * 2 * w);
 		v.set(v.rotate(r) * 1.1f);
@@ -449,12 +460,12 @@ void AsteroidsManager::OnCollision(Entity* A) {
 
 		p = astB->getComponent<Transform>(ecs::Transform)->getPos();
 		v = astB->getComponent<Transform>(ecs::Transform)->getVel();
-		w = astB->getComponent<Transform>(ecs::Transform)->getW();
-		h = astB->getComponent<Transform>(ecs::Transform)->getH();
-		r = sdlutils().rand().nextInt(0, 360);
+		w = A->getComponent<Transform>(ecs::Transform)->getW();
+		h = A->getComponent<Transform>(ecs::Transform)->getH();
+		r = astB->getComponent<Transform>(ecs::Transform)->getRotation();
 
 		p.set(p - v.rotate(r) * 2 * w);
-		v.set(v.rotate(r) * 1.1f);
+		v.set(v.rotate(r * 1.1f));
 
 		astB->setGroup(ecs::AsteroidsGroup,true);
 	}

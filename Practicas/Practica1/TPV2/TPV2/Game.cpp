@@ -47,7 +47,7 @@ void Game::createPlayer()
 	e->addComponent<Transform>(Vector2D(width/2, height/2), Vector2D(), 50, 50, 0);
 	e->addComponent<Image>(&fighter);
 	e->addComponent<ShowAtOppositeSide>(width, height);
-	e->addComponent<FighterCtrl>(1);
+	e->addComponent<FighterCtrl>(0.5);
 	e->addComponent<DeAcceleration>(0.995);
 	e->addComponent<Health>(3);
 	e->addComponent<Gun>(5000);
