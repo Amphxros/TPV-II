@@ -4,15 +4,24 @@ class System
 {
 public:
 	System();
+	System(ecs::SystemID id);
+
 	virtual ~System() {};
 	virtual void init() {};
 	virtual void update() {};
+	inline ecs::SystemID getID() { return id_; }
+	inline Manager* getMngr() { return mngr; }
+	inline void setManager(Manager* m) { mngr = m; }
 protected:
 	Manager* mngr;
+	ecs::SystemID id_;
 };
 
 class GameCtrlSystem : public System {
 public:
+	GameCtrlSystem();
+
+	virtual ~GameCtrlSystem();
 	// - a este método se le va a llamar cuando muere el caza.
 	// - desactivar los asteroides y las balas, actualizar el estado del juego, etc.
 	void onFighterDeath();
@@ -31,8 +40,11 @@ public:
 class AsteroidsSystem : public System {
 
 public:
-	AsteroidsSystem();
+	AsteroidsSystem(int numAsteroid);
 	virtual ~AsteroidsSystem();
+
+	virtual void init() override;
+	virtual void update() override;
 private:
 	Texture* asteroidA;
 	Texture* asteroidB;
@@ -42,7 +54,20 @@ private:
 };
 class BulletsSystem : public System {
 
+public:
+	BulletsSystem();
+	virtual void init() override;
+	virtual void update() override;
 };
 class CollisionSystem : public System {
-
+public:
+	CollisionSystem();
+	virtual void init() override;
+	virtual void update() override;
+};
+class RenderSystem : public System {
+public:
+	RenderSystem();
+	virtual void init() override;
+	virtual void update() override;
 };

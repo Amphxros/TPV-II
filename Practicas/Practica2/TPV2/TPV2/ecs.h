@@ -12,6 +12,8 @@ namespace ecs
 	using HandlerIDType = std::size_t;
 	constexpr std::size_t maxHandlers = 10;
 
+	using SystemIDType = std::size_t;
+
 	// component id
 	enum CmpID : CmpIDType {
 		//caza
@@ -55,6 +57,14 @@ namespace ecs
 		FighterHndlr
 	};
 
+	enum SystemID: SystemIDType {
+		AsteroidSys,
+		BulletSys,
+		CollisionSys,
+		GameCtrlSys,
+		FighterSys,
+		RenderSys,
+	};
 
 };
 
