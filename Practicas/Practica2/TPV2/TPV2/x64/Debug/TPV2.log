@@ -1,0 +1,126 @@
+﻿  Component.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C2143: error de sintaxis: falta ';' delante de '*'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,27): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(47,33): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(70,29): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(71,29): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(72,20): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(73,20): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(75,41): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(140,75): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(140,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(140,119): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(140,150): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(142,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(180,66): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(180,72): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(198,65): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(198,71): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(236,24): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(240,33): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(245,46): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(249,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(267,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(267,17): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(268,24): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(268,17): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(285,29): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(286,29): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(287,20): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(288,20): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(296,5): error C2297: '%': no es válido; el operando derecho es de tipo 'float'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(383,87): error C2614: 'AsteroidsManager': inicialización de miembro no válida: 'gen_' no es una base o miembro
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(388,84): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(388,100): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(388,110): error C2614: 'AsteroidsManager': inicialización de miembro no válida: 'gen_' no es una base o miembro
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(401,44): warning C4018: '>=': no coinciden signed/unsigned
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(425,37): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(426,37): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(429,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(430,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(432,76): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(443,102): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(443,52): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(446,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(447,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(449,76): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(488,9): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(490,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(490,31): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(491,18): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(513,65): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(515,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(515,31): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(612,153): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(612,134): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(612,122): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(612,96): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(612,77): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  Game.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(612,65): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C2143: error de sintaxis: falta ';' delante de '*'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,27): error C2238: símbolos (token) inesperados delante de ';'
+  somplejson_demo.cpp
+  main.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Game.cpp(27,10): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C2143: error de sintaxis: falta ';' delante de '*'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+  Manager.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,27): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C2143: error de sintaxis: falta ';' delante de '*'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+  sdlutils_demo.cpp
+  System.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,27): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C2143: error de sintaxis: falta ';' delante de '*'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,27): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(64,28): error C2677: '==' binario: no se encontró un operador global que adopte el tipo 'GameState' (o bien no existe una conversión aceptable)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(86,37): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(87,37): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(90,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(91,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(93,76): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(104,102): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(104,52): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(107,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(108,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(110,76): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(167,2): error C2065: 'fighterSys': identificador no declarado
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(209,153): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(209,134): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(209,122): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(209,96): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(209,77): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(209,65): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(271,65): error C3867: 'SDLUtils::width': sintaxis no estándar; utilice '&' para crear un puntero al miembro
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(271,65): error C2296: '/': no es válido; el operando izquierdo es de tipo 'int (__cdecl SDLUtils::* )(void)'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(271,95): error C3867: 'SDLUtils::height': sintaxis no estándar; utilice '&' para crear un puntero al miembro
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(271,95): error C2296: '/': no es válido; el operando izquierdo es de tipo 'int (__cdecl SDLUtils::* )(void)'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(272,60): error C3867: 'SDLUtils::width': sintaxis no estándar; utilice '&' para crear un puntero al miembro
+  Collisions.cpp
+  Vector2D.cpp
+  Generando código...
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(272,9): error C2672: 'Entity::addComponent': no se encontró una función sobrecargada que coincida

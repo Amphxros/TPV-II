@@ -45,17 +45,22 @@ private:
 class AsteroidsSystem : public System {
 
 public:
-	AsteroidsSystem(int numAsteroid);
+	AsteroidsSystem(int numAsteroid, double width, double height);
 	virtual ~AsteroidsSystem();
 
 	virtual void init() override;
 	virtual void update() override;
 private:
-	Texture* asteroidA;
-	Texture* asteroidB;
+
+	void createAsteroid();
+	GameCtrlSystem* gameSys;
 	int numAsteroids;
 	int nAsteroids; //current num of asteroids
-	std::size_t time_;
+	double width_;
+	double height_;
+
+	std::size_t time_, lastTime_;
+
 };
 class BulletsSystem : public System {
 
@@ -79,6 +84,13 @@ public:
 	CollisionSystem();
 	virtual void init() override;
 	virtual void update() override;
+private:
+	FighterSystem* fighterSys;
+	BulletsSystem* bulletSys;
+	AsteroidsSystem* astSys;
+
+	bool isOnCollision(Transform* tA, Transform* tB);
+
 };
 
 class FighterSystem : public System {
@@ -97,7 +109,8 @@ public:
 	// - actualizar la velocidad del caza y moverlo como en la práctica 1.
 	void update() override;
 private:
-	GameCtrlSystem* gameSys_;
+	GameCtrlSystem* gameSys;
+	
 };
 
 class FighterGunSystem : public System {
@@ -112,6 +125,8 @@ public:
 	virtual void update() override;
 private:
 	BulletsSystem* bulletSys;
+
+	std::size_t time_, lastTime_;
 
 };
 

@@ -26,51 +26,46 @@ void Game::init() {
 	mngr_=new Manager();
 	renderer== sdl->renderer();
 
-	createPlayer();
-	createGameManager();
+	gameSys = new GameCtrlSystem();
+	gameSys->setManager(mngr_);
+	gameSys->init();
+
+	asteroidSys = new AsteroidsSystem(10,10,10);
+	asteroidSys->setManager(mngr_);
+	asteroidSys->init();
+	
+	bulletSys = new BulletsSystem();
+	bulletSys->setManager(mngr_);
+	bulletSys->init();
+
+	fighterSys = new FighterSystem();
+	fighterSys->setManager(mngr_);
+	fighterSys->init();
+	
+	fighterGunSys = new FighterGunSystem();
+	fighterGunSys->setManager(mngr_);
+	fighterGunSys->init();
+
+	collisionSys = new CollisionSystem();
+	collisionSys->setManager(mngr_);
+	collisionSys->init();
+
+	renderSys = new RenderSystem();
+	renderSys->setManager(mngr_);
+	renderSys->init();
 }
 
 void Game::render(){
 	sdl->clearRenderer();
-	mngr_->render();
+	renderSys->update();
 	sdl->presentRenderer();
-}
-
-void Game::createPlayer()
-{
-	auto& fighter = sdl->images().at("fighter");
-
-	int width = sdl->width();
-	int height = sdl->height();
-
-	Entity* e = mngr_->addEntity();
-	e->addComponent<Transform>(Vector2D(width/2, height/2), Vector2D(), 50, 50, 0);
-	e->addComponent<Image>(&fighter);
-	e->addComponent<ShowAtOppositeSide>(width, height);
-	e->addComponent<FighterCtrl>(0.5);
-	e->addComponent<DeAcceleration>(0.995);
-	e->addComponent<Health>(3);
-	e->addComponent<Gun>(5000);
-
-	mngr_->setHandler(e,ecs::FighterHndlr);
-	e->setGroup(ecs::Fighter, true);
-}
-
-void Game::createGameManager()
-{
-	Entity* gm = mngr_->addEntity();
-	gm->addComponent<State>();
-	gm->addComponent<AsteroidsManager>(10, 5000, 10, 10);
-	gm->addComponent<GameCtrl>();
-	gm->addComponent<CollisionsManager>();
-
-	gm->setGroup(ecs::Other,true);
 }
 
 void Game::update()
 {
+	//definiremos el orden de actualizado de las distitas entidades con los sistemas
+
 	mngr_->refresh();
-	mngr_->update();
 }
 
 void Game::run()
