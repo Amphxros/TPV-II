@@ -29,7 +29,7 @@ void Game::init() {
 	gameSys = new GameCtrlSystem();
 	gameSys->setManager(mngr_);
 	gameSys->init();
-
+	
 	asteroidSys = new AsteroidsSystem(10,10,10);
 	asteroidSys->setManager(mngr_);
 	asteroidSys->init();
@@ -37,7 +37,7 @@ void Game::init() {
 	bulletSys = new BulletsSystem();
 	bulletSys->setManager(mngr_);
 	bulletSys->init();
-
+	
 	fighterSys = new FighterSystem();
 	fighterSys->setManager(mngr_);
 	fighterSys->init();
@@ -45,11 +45,11 @@ void Game::init() {
 	fighterGunSys = new FighterGunSystem();
 	fighterGunSys->setManager(mngr_);
 	fighterGunSys->init();
-
+	
 	collisionSys = new CollisionSystem();
 	collisionSys->setManager(mngr_);
 	collisionSys->init();
-
+	
 	renderSys = new RenderSystem();
 	renderSys->setManager(mngr_);
 	renderSys->init();

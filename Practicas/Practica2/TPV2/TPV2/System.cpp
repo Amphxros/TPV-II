@@ -221,16 +221,16 @@ FighterGunSystem::~FighterGunSystem()
 
 void FighterGunSystem::init()
 {
-	bulletSys = mngr->getSystem<BulletsSystem>(ecs::BulletSys);
-	assert(bulletSys != nullptr);
+	//bulletSys = mngr->getSystem<BulletsSystem>(ecs::BulletSys);
+	//assert(bulletSys != nullptr);
 }
 
 void FighterGunSystem::update()
 {
-	auto& ih = *InputHandler::instance();
-	if (ih.isKeyDown(SDLK_SPACE) && sdlutils().currRealTime() - lastTime_ >= time_) {
-		bulletSys->shoot(Vector2D(),Vector2D(), 10,10);
-	}
+	//auto& ih = *InputHandler::instance();
+	//if (ih.isKeyDown(SDLK_SPACE) && sdlutils().currRealTime() - lastTime_ >= time_) {
+	//	bulletSys->shoot(Vector2D(),Vector2D(), 10,10);
+	//}
 }
 
 //RenderSystem//
@@ -267,24 +267,24 @@ void FighterSystem::onCollisionWithAsteroid(Entity* a)
 
 void FighterSystem::init()
 {
-	Entity* fighter = mngr->addEntity();
-	fighter->addComponent<Transform>(Vector2D((sdlutils().width / 2) - 75, (sdlutils().height / 2) - 75), 150, 150, 0);
-	fighter->addComponent<ShowAtOppositeSide>(sdlutils().width, sdlutils().height());
-	fighter->addComponent<FighterCtrl>(0.5);
-	fighter->addComponent<DeAcceleration>(0.995);
-	fighter->addComponent<Health>(3);
-
-	mngr->setHandler(fighter, ecs::FighterHndlr);
-	fighter->setGroup(ecs::Fighter, true);
-
-	gameSys = mngr->getSystem<GameCtrlSystem>(ecs::GameCtrlSys);
+	//Entity* fighter = mngr->addEntity();
+	//fighter->addComponent<Transform>(Vector2D((sdlutils().width / 2) - 75, (sdlutils().height / 2) - 75), 150, 150, 0);
+	//fighter->addComponent<ShowAtOppositeSide>(sdlutils().width, sdlutils().height());
+	//fighter->addComponent<FighterCtrl>(0.5);
+	//fighter->addComponent<DeAcceleration>(0.995);
+	//fighter->addComponent<Health>(3);
+	//
+	//mngr->setHandler(fighter, ecs::FighterHndlr);
+	//fighter->setGroup(ecs::Fighter, true);
+	//
+	//gameSys = mngr->getSystem<GameCtrlSystem>(ecs::GameCtrlSys);
 }
 
 void FighterSystem::update()
 {
-	for (Entity* fighter : mngr->getEntities()) {
-		if (fighter->hasGroup(ecs::Fighter)) {
-			fighter->update();
-		}
-	}
+	//for (Entity* fighter : mngr->getEntities()) {
+	//	if (fighter->hasGroup(ecs::Fighter)) {
+	//		fighter->update();
+	//	}
+	//}
 }

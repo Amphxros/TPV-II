@@ -1,126 +1,76 @@
-﻿  Component.cpp
+﻿  Game.cpp
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,27): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(47,33): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(70,29): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(71,29): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(72,20): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(73,20): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(75,41): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(140,75): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(140,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(140,119): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(140,150): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(142,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(180,66): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(180,72): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(198,65): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(198,71): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(236,24): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(240,33): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(245,46): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(249,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(267,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(267,17): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(268,24): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(268,17): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(285,29): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(286,29): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(287,20): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(288,20): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(296,5): error C2297: '%': no es válido; el operando derecho es de tipo 'float'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(383,87): error C2614: 'AsteroidsManager': inicialización de miembro no válida: 'gen_' no es una base o miembro
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(388,84): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(388,100): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(388,110): error C2614: 'AsteroidsManager': inicialización de miembro no válida: 'gen_' no es una base o miembro
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(401,44): warning C4018: '>=': no coinciden signed/unsigned
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(425,37): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(426,37): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(429,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(430,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(432,76): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(443,102): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(443,52): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(446,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(447,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(449,76): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(488,9): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(490,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(490,31): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(491,18): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(513,65): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(515,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(515,31): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(612,153): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(612,134): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(612,122): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(612,96): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(612,77): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-  Game.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.cpp(612,65): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,27): error C2238: símbolos (token) inesperados delante de ';'
-  somplejson_demo.cpp
   main.cpp
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Game.cpp(27,10): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-  Manager.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,27): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-  sdlutils_demo.cpp
-  System.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,27): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,15): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.h(88,27): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(64,28): error C2677: '==' binario: no se encontró un operador global que adopte el tipo 'GameState' (o bien no existe una conversión aceptable)
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(86,37): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(87,37): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(90,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(91,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(93,76): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(104,102): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(104,52): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(107,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(108,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(110,76): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(167,2): error C2065: 'fighterSys': identificador no declarado
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(209,153): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(209,134): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(209,122): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(209,96): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(209,77): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(209,65): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(271,65): error C3867: 'SDLUtils::width': sintaxis no estándar; utilice '&' para crear un puntero al miembro
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(271,65): error C2296: '/': no es válido; el operando izquierdo es de tipo 'int (__cdecl SDLUtils::* )(void)'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(271,95): error C3867: 'SDLUtils::height': sintaxis no estándar; utilice '&' para crear un puntero al miembro
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(271,95): error C2296: '/': no es válido; el operando izquierdo es de tipo 'int (__cdecl SDLUtils::* )(void)'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(272,60): error C3867: 'SDLUtils::width': sintaxis no estándar; utilice '&' para crear un puntero al miembro
-  Collisions.cpp
-  Vector2D.cpp
   Generando código...
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(272,9): error C2672: 'Entity::addComponent': no se encontró una función sobrecargada que coincida
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+     Creando biblioteca C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\bin\TPV2Debug.lib y objeto C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\bin\TPV2Debug.exp
+Component.obj : error LNK2019: símbolo externo SDL_GetKeyboardState sin resolver al que se hace referencia en la función "private: __cdecl InputHandler::InputHandler(void)" (??0InputHandler@@AEAA@XZ)
+Game.obj : error LNK2001: símbolo externo SDL_GetKeyboardState sin resolver
+sdlutils_demo.obj : error LNK2001: símbolo externo SDL_GetKeyboardState sin resolver
+Component.obj : error LNK2019: símbolo externo SDL_GetScancodeFromKey sin resolver al que se hace referencia en la función "public: bool __cdecl InputHandler::isKeyDown(int)" (?isKeyDown@InputHandler@@QEAA_NH@Z)
+Game.obj : error LNK2001: símbolo externo SDL_GetScancodeFromKey sin resolver
+Component.obj : error LNK2019: símbolo externo SDL_RenderCopy sin resolver al que se hace referencia en la función "public: void __cdecl Texture::render(struct SDL_Rect const &,struct SDL_Rect const &)" (?render@Texture@@QEAAXAEBUSDL_Rect@@0@Z)
+sdlutils_demo.obj : error LNK2001: símbolo externo SDL_RenderCopy sin resolver
+Component.obj : error LNK2019: símbolo externo SDL_RenderCopyEx sin resolver al que se hace referencia en la función "public: void __cdecl Texture::render(struct SDL_Rect const &,struct SDL_Rect const &,double,struct SDL_Point const *,enum SDL_RendererFlip)" (?render@Texture@@QEAAXAEBUSDL_Rect@@0NPEBUSDL_Point@@W4SDL_RendererFlip@@@Z)
+Component.obj : error LNK2019: símbolo externo SDL_GetTicks sin resolver al que se hace referencia en la función "public: unsigned int __cdecl SDLUtils::currRealTime(void)const " (?currRealTime@SDLUtils@@QEBAIXZ)
+Game.obj : error LNK2001: símbolo externo SDL_GetTicks sin resolver
+sdlutils_demo.obj : error LNK2001: símbolo externo SDL_GetTicks sin resolver
+SDLUtils.obj : error LNK2001: símbolo externo SDL_GetTicks sin resolver
+Component.obj : error LNK2019: símbolo externo Mix_PlayChannelTimed sin resolver al que se hace referencia en la función "public: int __cdecl SoundEffect::play(int,int)const " (?play@SoundEffect@@QEBAHHH@Z)
+Game.obj : error LNK2019: símbolo externo SDL_PollEvent sin resolver al que se hace referencia en la función "public: void __cdecl Game::run(void)" (?run@Game@@QEAAXXZ)
+sdlutils_demo.obj : error LNK2001: símbolo externo SDL_PollEvent sin resolver
+Game.obj : error LNK2019: símbolo externo SDL_SetRenderDrawColor sin resolver al que se hace referencia en la función "public: void __cdecl SDLUtils::clearRenderer(struct SDL_Color)" (?clearRenderer@SDLUtils@@QEAAXUSDL_Color@@@Z)
+sdlutils_demo.obj : error LNK2001: símbolo externo SDL_SetRenderDrawColor sin resolver
+Game.obj : error LNK2019: símbolo externo SDL_RenderClear sin resolver al que se hace referencia en la función "public: void __cdecl SDLUtils::clearRenderer(struct SDL_Color)" (?clearRenderer@SDLUtils@@QEAAXUSDL_Color@@@Z)
+sdlutils_demo.obj : error LNK2001: símbolo externo SDL_RenderClear sin resolver
+Game.obj : error LNK2019: símbolo externo SDL_RenderPresent sin resolver al que se hace referencia en la función "public: void __cdecl SDLUtils::presentRenderer(void)" (?presentRenderer@SDLUtils@@QEAAXXZ)
+sdlutils_demo.obj : error LNK2001: símbolo externo SDL_RenderPresent sin resolver
+Game.obj : error LNK2019: símbolo externo SDL_Delay sin resolver al que se hace referencia en la función "public: void __cdecl Game::run(void)" (?run@Game@@QEAAXXZ)
+sdlutils_demo.obj : error LNK2001: símbolo externo SDL_Delay sin resolver
+sdlutils_demo.obj : error LNK2019: símbolo externo SDL_DestroyTexture sin resolver al que se hace referencia en la función "public: virtual __cdecl Texture::~Texture(void)" (??1Texture@@UEAA@XZ)
+SDLUtils.obj : error LNK2001: símbolo externo SDL_DestroyTexture sin resolver
+Texture.obj : error LNK2001: símbolo externo SDL_DestroyTexture sin resolver
+sdlutils_demo.obj : error LNK2019: símbolo externo Mix_PlayMusic sin resolver al que se hace referencia en la función "public: void __cdecl Music::play(int)const " (?play@Music@@QEBAXH@Z)
+sdlutils_demo.obj : error LNK2019: símbolo externo Mix_HaltMusic sin resolver al que se hace referencia en la función "public: static void __cdecl Music::haltMusic(void)" (?haltMusic@Music@@SAXXZ)
+SDLUtils.obj : error LNK2019: símbolo externo SDL_RWFromFile sin resolver al que se hace referencia en la función "public: __cdecl SoundEffect::SoundEffect(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (??0SoundEffect@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+SDLUtils.obj : error LNK2019: símbolo externo SDL_CreateWindow sin resolver al que se hace referencia en la función "private: void __cdecl SDLUtils::initWindow(void)" (?initWindow@SDLUtils@@AEAAXXZ)
+SDLUtils.obj : error LNK2019: símbolo externo SDL_DestroyWindow sin resolver al que se hace referencia en la función "private: void __cdecl SDLUtils::closeWindow(void)" (?closeWindow@SDLUtils@@AEAAXXZ)
+SDLUtils.obj : error LNK2019: símbolo externo SDL_ShowCursor sin resolver al que se hace referencia en la función "public: void __cdecl SDLUtils::hideCursor(void)" (?hideCursor@SDLUtils@@QEAAXXZ)
+SDLUtils.obj : error LNK2019: símbolo externo SDL_CreateRenderer sin resolver al que se hace referencia en la función "private: void __cdecl SDLUtils::initWindow(void)" (?initWindow@SDLUtils@@AEAAXXZ)
+SDLUtils.obj : error LNK2019: símbolo externo SDL_DestroyRenderer sin resolver al que se hace referencia en la función "private: void __cdecl SDLUtils::closeWindow(void)" (?closeWindow@SDLUtils@@AEAAXXZ)
+SDLUtils.obj : error LNK2019: símbolo externo SDL_Init sin resolver al que se hace referencia en la función "private: void __cdecl SDLUtils::initWindow(void)" (?initWindow@SDLUtils@@AEAAXXZ)
+SDLUtils.obj : error LNK2019: símbolo externo SDL_Quit sin resolver al que se hace referencia en la función "private: void __cdecl SDLUtils::closeWindow(void)" (?closeWindow@SDLUtils@@AEAAXXZ)
+SDLUtils.obj : error LNK2019: símbolo externo TTF_Init sin resolver al que se hace referencia en la función "private: void __cdecl SDLUtils::initSDLExtensions(void)" (?initSDLExtensions@SDLUtils@@AEAAXXZ)
+SDLUtils.obj : error LNK2019: símbolo externo TTF_OpenFont sin resolver al que se hace referencia en la función "public: __cdecl Font::Font(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)" (??0Font@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z)
+SDLUtils.obj : error LNK2019: símbolo externo TTF_CloseFont sin resolver al que se hace referencia en la función "public: virtual __cdecl Font::~Font(void)" (??1Font@@UEAA@XZ)
+SDLUtils.obj : error LNK2019: símbolo externo TTF_Quit sin resolver al que se hace referencia en la función "private: void __cdecl SDLUtils::closeSDLExtensions(void)" (?closeSDLExtensions@SDLUtils@@AEAAXXZ)
+SDLUtils.obj : error LNK2019: símbolo externo Mix_Init sin resolver al que se hace referencia en la función "private: void __cdecl SDLUtils::initSDLExtensions(void)" (?initSDLExtensions@SDLUtils@@AEAAXXZ)
+SDLUtils.obj : error LNK2019: símbolo externo Mix_Quit sin resolver al que se hace referencia en la función "private: void __cdecl SDLUtils::closeSDLExtensions(void)" (?closeSDLExtensions@SDLUtils@@AEAAXXZ)
+SDLUtils.obj : error LNK2019: símbolo externo Mix_OpenAudio sin resolver al que se hace referencia en la función "private: void __cdecl SDLUtils::initSDLExtensions(void)" (?initSDLExtensions@SDLUtils@@AEAAXXZ)
+SDLUtils.obj : error LNK2019: símbolo externo Mix_AllocateChannels sin resolver al que se hace referencia en la función "public: static int __cdecl SoundEffect::setNumberofChannels(int)" (?setNumberofChannels@SoundEffect@@SAHH@Z)
+SDLUtils.obj : error LNK2019: símbolo externo Mix_LoadWAV_RW sin resolver al que se hace referencia en la función "public: __cdecl SoundEffect::SoundEffect(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (??0SoundEffect@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+SDLUtils.obj : error LNK2019: símbolo externo Mix_LoadMUS sin resolver al que se hace referencia en la función "public: __cdecl Music::Music(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (??0Music@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+SDLUtils.obj : error LNK2019: símbolo externo Mix_FreeChunk sin resolver al que se hace referencia en la función "public: virtual __cdecl SoundEffect::~SoundEffect(void)" (??1SoundEffect@@UEAA@XZ)
+SDLUtils.obj : error LNK2019: símbolo externo Mix_FreeMusic sin resolver al que se hace referencia en la función "public: virtual __cdecl Music::~Music(void)" (??1Music@@UEAA@XZ)
+SDLUtils.obj : error LNK2019: símbolo externo IMG_Init sin resolver al que se hace referencia en la función "private: void __cdecl SDLUtils::initSDLExtensions(void)" (?initSDLExtensions@SDLUtils@@AEAAXXZ)
+SDLUtils.obj : error LNK2019: símbolo externo IMG_Quit sin resolver al que se hace referencia en la función "private: void __cdecl SDLUtils::closeSDLExtensions(void)" (?closeSDLExtensions@SDLUtils@@AEAAXXZ)
+Texture.obj : error LNK2019: símbolo externo SDL_FreeSurface sin resolver al que se hace referencia en la función "public: __cdecl Texture::Texture(struct SDL_Renderer *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (??0Texture@@QEAA@PEAUSDL_Renderer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Texture.obj : error LNK2019: símbolo externo SDL_CreateTextureFromSurface sin resolver al que se hace referencia en la función "public: __cdecl Texture::Texture(struct SDL_Renderer *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (??0Texture@@QEAA@PEAUSDL_Renderer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Texture.obj : error LNK2019: símbolo externo IMG_Load sin resolver al que se hace referencia en la función "public: __cdecl Texture::Texture(struct SDL_Renderer *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (??0Texture@@QEAA@PEAUSDL_Renderer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Texture.obj : error LNK2019: símbolo externo TTF_RenderUTF8_Solid sin resolver al que se hace referencia en la función "public: struct SDL_Surface * __cdecl Font::renderText(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct SDL_Color)const " (?renderText@Font@@QEBAPEAUSDL_Surface@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@USDL_Color@@@Z)
+Texture.obj : error LNK2019: símbolo externo TTF_RenderUTF8_Shaded sin resolver al que se hace referencia en la función "public: struct SDL_Surface * __cdecl Font::renderText(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct SDL_Color,struct SDL_Color)const " (?renderText@Font@@QEBAPEAUSDL_Surface@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@USDL_Color@@1@Z)
+MSVCRTD.lib(exe_main.obj) : error LNK2019: símbolo externo main sin resolver al que se hace referencia en la función "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\SDL2-2.0.7\lib\x86\SDL2.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\SDL2-2.0.7\lib\x86\SDL2main.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\SDL2_image-2.0.1\lib\x86\SDL2_image.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\SDL2_ttf-2.0.14\lib\x86\SDL2_ttf.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\SDL2_mixer-2.0.2\lib\x86\SDL2_mixer.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\SDL2_net-2.0.1\lib\x86\SDL2_net.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\bin\TPV2Debug.exe : fatal error LNK1120: 42 externos sin resolver

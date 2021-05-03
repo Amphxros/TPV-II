@@ -42,56 +42,7 @@ private:
 	GameState gs;
 };
 
-class AsteroidsSystem : public System {
 
-public:
-	AsteroidsSystem(int numAsteroid, double width, double height);
-	virtual ~AsteroidsSystem();
-
-	virtual void init() override;
-	virtual void update() override;
-private:
-
-	void createAsteroid();
-	GameCtrlSystem* gameSys;
-	int numAsteroids;
-	int nAsteroids; //current num of asteroids
-	double width_;
-	double height_;
-
-	std::size_t time_, lastTime_;
-
-};
-class BulletsSystem : public System {
-
-public:
-	BulletsSystem();
-	virtual ~BulletsSystem();
-
-	virtual void init() override;
-	virtual void update() override;
-	
-	// - añadir una bala al juego, como en la práctica 1. La rotación de la bala
-	// sería vel.angle(Vector2D(0.0f,-1.0f))
-	void shoot(Vector2D pos, Vector2D vel, double width, double height);
-	void onCollisionWithAsteroid(Entity* b, Entity* a);
-
-private:
-	GameCtrlSystem* gameSys;
-};
-class CollisionSystem : public System {
-public:
-	CollisionSystem();
-	virtual void init() override;
-	virtual void update() override;
-private:
-	FighterSystem* fighterSys;
-	BulletsSystem* bulletSys;
-	AsteroidsSystem* astSys;
-
-	bool isOnCollision(Transform* tA, Transform* tB);
-
-};
 
 class FighterSystem : public System {
 public:
@@ -113,6 +64,65 @@ private:
 	
 };
 
+
+
+class AsteroidsSystem : public System {
+
+public:
+	AsteroidsSystem(int numAsteroid, double width, double height);
+	virtual ~AsteroidsSystem();
+
+	virtual void init() override;
+	virtual void update() override;
+private:
+
+	void createAsteroid();
+	GameCtrlSystem* gameSys;
+	int numAsteroids;
+	int nAsteroids; //current num of asteroids
+	double width_;
+	double height_;
+
+	std::size_t time_, lastTime_;
+
+};
+
+
+class BulletsSystem : public System {
+
+public:
+	BulletsSystem();
+	virtual ~BulletsSystem();
+
+	virtual void init() override;
+	virtual void update() override;
+	
+	// - añadir una bala al juego, como en la práctica 1. La rotación de la bala
+	// sería vel.angle(Vector2D(0.0f,-1.0f))
+	void shoot(Vector2D pos, Vector2D vel, double width, double height);
+	void onCollisionWithAsteroid(Entity* b, Entity* a);
+
+private:
+	GameCtrlSystem* gameSys;
+};
+
+
+class CollisionSystem : public System {
+public:
+	CollisionSystem();
+	virtual void init() override;
+	virtual void update() override;
+private:
+	FighterSystem* fighterSys;
+	BulletsSystem* bulletSys;
+	AsteroidsSystem* astSys;
+
+	bool isOnCollision(Transform* tA, Transform* tB);
+
+};
+
+
+
 class FighterGunSystem : public System {
 public:
 	FighterGunSystem();
@@ -129,6 +139,8 @@ private:
 	std::size_t time_, lastTime_;
 
 };
+
+
 
 class RenderSystem : public System {
 public:

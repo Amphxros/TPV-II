@@ -1,2 +1,2 @@
-PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.28.29910:TargetPlatformVersion=10.0.19041.0:
-Debug|Win32|C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\|
+#TargetFrameworkVersion=v4.0:PlatformToolSet=v142:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=10.0
+Debug|Win32|C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\|
