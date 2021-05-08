@@ -12,7 +12,7 @@ public:
 	virtual void update() {};
 	inline ecs::SystemID getID() { return id_; }
 	inline Manager* getMngr() { return mngr; }
-	inline void setManager(Manager* m) { mngr = m; }
+	void setManager(Manager* m);
 protected:
 	Manager* mngr;
 	ecs::SystemID id_;
@@ -32,7 +32,7 @@ public:
 	// - desactivar todas las balas, etc.
 	void onAsteroidsExtinction();
 	// - devuelve el estado del juego.
-	GameState getGameState();
+	GameState getGameState() { return gs; };
 	// - inicializar el estado del juego si es necesario, etc.
 	virtual void init() override;
 	// - si el juego está parado y el jugador pulsa SDLK_SPACE cambia el estado como
@@ -40,6 +40,11 @@ public:
 	virtual void update() override;
 private:
 	GameState gs;
+
+	//texturas 
+	Texture* msgInit; 
+	Texture* msgPause;
+	Texture* msgGameOver;
 };
 
 
@@ -61,7 +66,7 @@ public:
 	void update() override;
 private:
 	GameCtrlSystem* gameSys;
-	
+	Entity* fighter;
 };
 
 
@@ -116,6 +121,7 @@ private:
 	FighterSystem* fighterSys;
 	BulletsSystem* bulletSys;
 	AsteroidsSystem* astSys;
+	GameCtrlSystem* gameSys;
 
 	bool isOnCollision(Transform* tA, Transform* tB);
 

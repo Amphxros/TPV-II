@@ -5,7 +5,7 @@
 class Manager
 {
 public:
-	Manager():entities_(), handlers_() {};
+	Manager():entities_(), handlers_(), systems_() {};
 	virtual ~Manager() {};
 
 	Entity* addEntity();
@@ -30,7 +30,9 @@ public:
 	inline T* getSystem(ecs::SystemID id) {
 		return static_cast<T*>(systems_[id]);
 	}
-
+	inline void addSystem(System* sys,ecs::SystemID id) {
+		systems_[id] = sys;
+	}
 
 
 private:

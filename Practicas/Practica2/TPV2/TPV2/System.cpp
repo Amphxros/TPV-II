@@ -4,46 +4,102 @@
 
 //System//
 
-System::System()
-{
-}
+System::System(): id_(),mngr(nullptr){}
 
-System::System(ecs::SystemID id): id_(id)
-{
+System::System(ecs::SystemID id) : id_(id), mngr(nullptr) {}
+
+void System::setManager(Manager* m){
+	mngr = m; 
+	mngr->addSystem(this, id_); 
 }
 
 //GameCtrlSystem//
 
 GameCtrlSystem::GameCtrlSystem(): 
-	System(ecs::GameCtrlSys), gs(GameState::NEW)
+	System(ecs::GameCtrlSys), gs(GameState::NEW), msgInit(nullptr), msgGameOver(nullptr), msgPause(nullptr)
 {
 }
 
 GameCtrlSystem::~GameCtrlSystem()
 {
+	delete msgInit;
+	delete msgPause;
+	delete msgGameOver;
 }
 
 void GameCtrlSystem::onFighterDeath()
 {
-
+	Health* health_ = mngr->getHandler(ecs::FighterHndlr)->getComponent<Health>(ecs::Health);
+	if (health_->getNumVidas() > 0) {
+		gs = GameState::PAUSED;
+	}
+	else {
+		gs = GameState::GAMEOVER;
+	}
+	mngr->resetGame();
 }
 
 void GameCtrlSystem::onAsteroidsExtinction()
 {
+	gs = GameState::GAMEOVER;
+	mngr->resetGame();
 }
 
 void GameCtrlSystem::init()
 {
+	msgInit = &(sdlutils().msgs().at("Start"));
+	msgPause = &(sdlutils().msgs().at("Continue"));
+	msgGameOver = &(sdlutils().msgs().at("gameOver"));
 }
 
 void GameCtrlSystem::update()
 {
+	SDL_Rect dest;
+	auto ih = InputHandler::instance();
+	if (gs == GameState::NEW) {
+		dest.x = sdlutils().width() / 3;
+		dest.y = sdlutils().height() / 2;
+		dest.w = msgInit->width();
+		dest.h = msgInit->height();
+
+		msgInit->render(dest);
+		if (ih->isKeyDown(SDLK_SPACE)) {
+			gs = GameState::RUNNING;
+		}
+	}
+	else if (gs == GameState::PAUSED) {
+		
+		dest.x = sdlutils().width() / 3;
+		dest.y = sdlutils().height() / 2;
+		dest.w = msgPause->width();
+		dest.h = msgPause->height();
+		msgPause->render(dest);
+		if (ih->isKeyDown(SDLK_SPACE)) {
+			gs = GameState::RUNNING;
+		}
+	}
+	else if (gs == GameState::GAMEOVER) {
+		
+		dest.x = sdlutils().width() / 3;
+		dest.y = sdlutils().height() / 2;
+		dest.w = msgGameOver->width();
+		dest.h = msgGameOver->height();
+		msgGameOver->render(dest);
+		if (ih->isKeyDown(SDLK_SPACE)) {
+			gs = GameState::NEW;
+		}
+	}
+	else {
+		if (ih->isKeyDown(SDLK_SPACE)) {
+			gs = GameState::PAUSED;
+		}
+	}
 }
 
 //AsteroidsSystem//
 
-AsteroidsSystem::AsteroidsSystem(int numAsteroid, double width, double height): System(ecs::AsteroidSys),
-	numAsteroids(numAsteroid), width_(width), height_(height)
+AsteroidsSystem::AsteroidsSystem(int numAsteroid, double width, double height): 
+	System(ecs::AsteroidSys),numAsteroids(numAsteroid), width_(width), height_(height)
 {
 }
 
@@ -61,7 +117,7 @@ void AsteroidsSystem::init()
 
 void AsteroidsSystem::update()
 {
-	if (gameSys->getGameState == GameState::RUNNING) {
+	if (gameSys->getGameState() == GameState::RUNNING) {
 		for (Entity* ast : mngr->getEntities()) {
 			if (ast->hasGroup(ecs::AsteroidsGroup)) {
 				ast->update();
@@ -146,7 +202,7 @@ void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double width, double heigh
 {
 	Entity* e = mngr->addEntity();
 	e->addComponent<Transform>(pos, vel, width, height, vel.angle(Vector2D(0.0f, 1.0f)));
-	e->addComponent<Image>(sdlutils().images().at("Bullet"));
+	e->addComponent<Image>(&sdlutils().images().at("Bullet"));
 	e->addComponent<DisableOnExit>(sdlutils().width(), sdlutils().height());
 	e->setGroup(ecs::BulletsGroup, true);
 	mngr->setHandler(e, ecs::BulletsHndlr);
@@ -164,6 +220,7 @@ CollisionSystem::CollisionSystem()
 
 void CollisionSystem::init()
 {
+	gameSys = mngr->getSystem<GameCtrlSystem>(ecs::GameCtrlSys);
 	fighterSys = mngr->getSystem<FighterSystem>(ecs::FighterSys);
 	bulletSys = mngr->getSystem<BulletsSystem>(ecs::BulletSys);
 	astSys = mngr->getSystem<AsteroidsSystem>(ecs::AsteroidSys);
@@ -184,19 +241,11 @@ void CollisionSystem::update()
 	}
 
 	Transform* fighterTr_ = mngr->getHandler(ecs::FighterHndlr)->getComponent<Transform>(ecs::Transform);
-	Health* health_ = mngr->getHandler(ecs::FighterHndlr)->getComponent<Health>(ecs::Health);
-	
+
 	for (Entity* a : mngr->getEntities()) {
 		if (a->hasGroup(ecs::AsteroidsGroup)) {
 			if (isOnCollision(a->getComponent<Transform>(ecs::Transform), fighterTr_)) {
-				if (health_->getNumVidas() > 0) {
-
-					
-				}
-				else {
-					
-				}
-				
+				fighterSys->onCollisionWithAsteroid(a);
 			}
 		}
 	}
@@ -221,16 +270,16 @@ FighterGunSystem::~FighterGunSystem()
 
 void FighterGunSystem::init()
 {
-	//bulletSys = mngr->getSystem<BulletsSystem>(ecs::BulletSys);
-	//assert(bulletSys != nullptr);
+	bulletSys = mngr->getSystem<BulletsSystem>(ecs::BulletSys);
+	assert(bulletSys != nullptr);
 }
 
 void FighterGunSystem::update()
 {
-	//auto& ih = *InputHandler::instance();
-	//if (ih.isKeyDown(SDLK_SPACE) && sdlutils().currRealTime() - lastTime_ >= time_) {
-	//	bulletSys->shoot(Vector2D(),Vector2D(), 10,10);
-	//}
+	auto& ih = *InputHandler::instance();
+	if (ih.isKeyDown(SDLK_SPACE) && sdlutils().currRealTime() - lastTime_ >= time_) {
+		bulletSys->shoot(Vector2D(),Vector2D(), 10,10);
+	}
 }
 
 //RenderSystem//
@@ -252,7 +301,8 @@ void RenderSystem::update()
 
 //FighterSystem//
 
-FighterSystem::FighterSystem(): System(ecs::FighterSys)
+FighterSystem::FighterSystem():
+	System(ecs::FighterSys)
 {
 }
 
@@ -262,29 +312,32 @@ FighterSystem::~FighterSystem()
 
 void FighterSystem::onCollisionWithAsteroid(Entity* a)
 {
-	
+	a->setActive(false);
+	Health* h =fighter->getComponent<Health>(ecs::Health);
+	h->setNumVidas(h->getNumVidas() - 1);
+	gameSys->onFighterDeath();
 }
 
 void FighterSystem::init()
 {
-	//Entity* fighter = mngr->addEntity();
-	//fighter->addComponent<Transform>(Vector2D((sdlutils().width / 2) - 75, (sdlutils().height / 2) - 75), 150, 150, 0);
-	//fighter->addComponent<ShowAtOppositeSide>(sdlutils().width, sdlutils().height());
-	//fighter->addComponent<FighterCtrl>(0.5);
-	//fighter->addComponent<DeAcceleration>(0.995);
-	//fighter->addComponent<Health>(3);
-	//
-	//mngr->setHandler(fighter, ecs::FighterHndlr);
-	//fighter->setGroup(ecs::Fighter, true);
-	//
-	//gameSys = mngr->getSystem<GameCtrlSystem>(ecs::GameCtrlSys);
+	fighter = mngr->addEntity();
+	fighter->addComponent<Transform>(Vector2D(sdlutils().width() / 2, sdlutils().height() / 2),Vector2D(), 150, 150, 0);
+	fighter->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
+	fighter->addComponent<FighterCtrl>(0.5);
+	fighter->addComponent<DeAcceleration>(0.995);
+	fighter->addComponent<Health>(3);
+	
+	mngr->setHandler(fighter, ecs::FighterHndlr);
+	fighter->setGroup(ecs::Fighter, true);
+	
+	gameSys = mngr->getSystem<GameCtrlSystem>(ecs::GameCtrlSys);
 }
 
 void FighterSystem::update()
 {
-	//for (Entity* fighter : mngr->getEntities()) {
-	//	if (fighter->hasGroup(ecs::Fighter)) {
-	//		fighter->update();
-	//	}
-	//}
+	for (Entity* fighter : mngr->getEntities()) {
+		if (fighter->hasGroup(ecs::Fighter)) {
+			fighter->update();
+		}
+	}
 }

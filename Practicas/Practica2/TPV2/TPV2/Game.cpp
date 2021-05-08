@@ -29,15 +29,11 @@ void Game::init() {
 	gameSys = new GameCtrlSystem();
 	gameSys->setManager(mngr_);
 	gameSys->init();
-	
-	asteroidSys = new AsteroidsSystem(10,10,10);
-	asteroidSys->setManager(mngr_);
-	asteroidSys->init();
-	
+
 	bulletSys = new BulletsSystem();
 	bulletSys->setManager(mngr_);
 	bulletSys->init();
-	
+
 	fighterSys = new FighterSystem();
 	fighterSys->setManager(mngr_);
 	fighterSys->init();
@@ -46,6 +42,10 @@ void Game::init() {
 	fighterGunSys->setManager(mngr_);
 	fighterGunSys->init();
 	
+	asteroidSys = new AsteroidsSystem(10,10,10);
+	asteroidSys->setManager(mngr_);
+	asteroidSys->init();
+
 	collisionSys = new CollisionSystem();
 	collisionSys->setManager(mngr_);
 	collisionSys->init();
@@ -58,13 +58,18 @@ void Game::init() {
 void Game::render(){
 	sdl->clearRenderer();
 	renderSys->update();
+	gameSys->update();
 	sdl->presentRenderer();
 }
 
 void Game::update()
 {
 	//definiremos el orden de actualizado de las distitas entidades con los sistemas
-
+	//fighterSys->update();
+	//fighterGunSys->update();
+	asteroidSys->update();
+	//bulletSys->update();
+	//collisionSys->update();
 	mngr_->refresh();
 }
 

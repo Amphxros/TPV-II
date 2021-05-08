@@ -4,4 +4,4 @@ C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\T
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Game.cpp(27,10): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
-LINK : fatal error LNK1168: no se puede abrir C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\bin\TPV2Debug.exe para escritura
+  TPV2.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\bin\TPV2Debug.exe

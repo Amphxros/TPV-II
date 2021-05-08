@@ -112,12 +112,12 @@ void Health::render()
 // GUN//
 ////////
 Gun::Gun() :
-	time_(0), Component(ecs::Gun), tr_(nullptr), mngr_(nullptr), curr_time_(0)
+	time_(0), Component(ecs::Gun), tr_(nullptr), mngr_(nullptr), curr_time_(0),lastTime_(0)
 {
 }
 
 Gun::Gun(uint32_t time) :
-	Component(ecs::Gun), time_(time), tr_(nullptr), mngr_(nullptr),curr_time_(0)
+	Component(ecs::Gun), time_(time), tr_(nullptr), mngr_(nullptr),curr_time_(0), lastTime_(0)
 {
 }
 
