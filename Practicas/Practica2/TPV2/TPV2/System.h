@@ -79,7 +79,7 @@ public:
 
 	virtual void init() override;
 	virtual void update() override;
-	void OnCollision(Entity* A);
+	void OnCollisionWithBullet(Entity* A);
 private:
 
 	void createAsteroid();

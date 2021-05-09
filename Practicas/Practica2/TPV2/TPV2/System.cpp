@@ -129,6 +129,7 @@ void AsteroidsSystem::update()
 			
 			lastTime_ = sdlutils().currRealTime();
 			createAsteroid();
+			numAsteroids++;
 		}
 	}
 }
@@ -176,7 +177,7 @@ void AsteroidsSystem::createAsteroid()
 	}
 }
 
-void AsteroidsSystem::OnCollision(Entity* A){
+void AsteroidsSystem::OnCollisionWithBullet(Entity* A){
 	
 	Transform* t = A->getComponent<Transform>(ecs::Transform);
 
@@ -234,6 +235,13 @@ void AsteroidsSystem::OnCollision(Entity* A){
 		v.set(v.rotate(r * 1.1f));
 
 		astB->setGroup(ecs::AsteroidsGroup, true);
+	numAsteroids+=1;
+	}
+	else{
+		numAsteroids--;
+		if(numAsteroids<=0){
+			gameSys->onAsteroidsExtinction();
+		}
 	}
 }
 
@@ -300,7 +308,7 @@ void CollisionSystem::update()
 				if (a != b && b->hasGroup(ecs::BulletsGroup)) {
 					if (isOnCollision(a->getComponent<Transform>(ecs::Transform), b->getComponent<Transform>(ecs::Transform))) {
 						bulletSys->onCollisionWithAsteroid(b, a);
-						astSys->OnCollision(a);
+						astSys->OnCollisionWithBullet(a);
 						a->setActive(false);
 					}
 				}

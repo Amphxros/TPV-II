@@ -92,6 +92,7 @@ Health::Health(int num) :
 void Health::init()
 {
 	texture_ = &sdlutils().images().at("fighter");
+	assert(texture_ != nullptr);
 }
 
 void Health::render()
@@ -99,7 +100,7 @@ void Health::render()
 	for (int i = 0; i < num_; i++) {
 
 		SDL_Rect dest;
-		dest.x = sdlutils().width() / 3 + 60* i;
+		dest.x = 60 * i;
 		dest.y = 50;
 		dest.w = 50;
 		dest.y = 50;
