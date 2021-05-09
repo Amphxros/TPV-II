@@ -1,7 +1,44 @@
-﻿  Game.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\TPV2\Game.cpp(27,10): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
-  TPV2.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\Practica2\TPV2\bin\TPV2Debug.exe
+﻿  System.cpp
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(52,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\Component.h(57,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(144,37): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(145,37): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(148,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(149,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(151,76): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(162,102): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(162,52): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(165,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(166,35): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(168,76): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(206,9): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(208,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(208,31): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(209,18): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(231,65): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(233,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(233,31): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(326,153): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(326,134): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(326,122): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(326,96): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(326,77): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(326,65): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(355,11): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(356,11): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(357,11): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(420,88): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(420,63): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\Entity.h(19,33): warning C4244: 'argumento': conversión de '_Ty' a 'float'; posible pérdida de datos
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\TPV2\System.cpp(154): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Entity::addComponent<FramedImage,Texture*,int,int,int,int,int>(Texture *&&,int &&,int &&,int &&,int &&,int &&)" que se está compilando
+          with
+          [
+              T=FramedImage
+          ]
+  TPV2.vcxproj -> C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica2\TPV2\bin\TPV2Debug.exe
