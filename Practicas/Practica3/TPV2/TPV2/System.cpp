@@ -35,6 +35,7 @@ void GameCtrlSystem::onFighterDeath()
 	}
 	else {
 		gs = GameState::GAMEOVER;
+		health_->resetNumVidas();
 	}
 	mngr->resetGame();
 }
@@ -99,7 +100,7 @@ void GameCtrlSystem::update()
 //AsteroidsSystem//
 
 AsteroidsSystem::AsteroidsSystem(int numAsteroid, double width, double height): 
-	System(ecs::AsteroidSys),numAsteroids(numAsteroid), width_(width), height_(height)
+	System(ecs::AsteroidSys),numAsteroids(numAsteroid), width_(width), height_(height), time_(500), lastTime_(0)
 {
 }
 
@@ -125,6 +126,7 @@ void AsteroidsSystem::update()
 		}
 
 		if (sdlutils().currRealTime() - lastTime_ >= time_) {
+			
 			lastTime_ = sdlutils().currRealTime();
 			createAsteroid();
 		}
@@ -174,6 +176,68 @@ void AsteroidsSystem::createAsteroid()
 	}
 }
 
+void AsteroidsSystem::OnCollision(Entity* A){
+	
+	Transform* t = A->getComponent<Transform>(ecs::Transform);
+
+	Generations* gen = A->getComponent<Generations>(ecs::Generations);
+	Follow* f = A->getComponent<Follow>(ecs::Follow);
+	int curr_gen = gen->getGen();
+
+	if (curr_gen > 0) {
+
+		Entity* astA = mngr->addEntity();
+		astA->addComponent<Transform>(t->getPos(), t->getVel(), 5 + (curr_gen - 1) * width_, 5 + (curr_gen - 1) * height_, sdlutils().rand().nextInt(0, 360));
+		if (f != nullptr) {
+			astA->addComponent<FramedImage>(&sdlutils().images().at("AsteroidGoldenImg"), 5, 6, 0, 0, 600);
+			astA->addComponent<Follow>();
+		}
+		else {
+			astA->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 600);
+		}
+		astA->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
+		astA->addComponent<Generations>(curr_gen - 1);
+		astA->setGroup(ecs::AsteroidsGroup, true);
+
+		Vector2D p = astA->getComponent<Transform>(ecs::Transform)->getPos();
+		Vector2D v = astA->getComponent<Transform>(ecs::Transform)->getVel();
+		double w = A->getComponent<Transform>(ecs::Transform)->getW();
+		double h = A->getComponent<Transform>(ecs::Transform)->getH();
+		int r = astA->getComponent<Transform>(ecs::Transform)->getRotation();
+
+		p.set(p + v.rotate(r) * 2 * w);
+		v.set(v.rotate(r) * 1.1f);
+
+		astA->setGroup(ecs::AsteroidsGroup, true);
+
+
+		Entity* astB = mngr->addEntity();
+		astB->addComponent<Transform>(t->getPos(), t->getVel(), 5 + (curr_gen - 1) * width_, 5 + (curr_gen - 1) * height_, sdlutils().rand().nextInt(0, 360));
+		if (f != nullptr) {
+			astB->addComponent<FramedImage>(&sdlutils().images().at("AsteroidGoldenImg"), 5, 6, 0, 0, 60);
+			astB->addComponent<Follow>();
+		}
+		else {
+			astB->addComponent<FramedImage>(&sdlutils().images().at("AsteroidImg"), 5, 6, 0, 0, 60);
+		}
+		astB->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
+		astB->addComponent<Generations>(curr_gen - 1);
+		astB->setGroup(ecs::AsteroidsGroup, true);
+
+		p = astB->getComponent<Transform>(ecs::Transform)->getPos();
+		v = astB->getComponent<Transform>(ecs::Transform)->getVel();
+		w = A->getComponent<Transform>(ecs::Transform)->getW();
+		h = A->getComponent<Transform>(ecs::Transform)->getH();
+		r = astB->getComponent<Transform>(ecs::Transform)->getRotation();
+
+		p.set(p - v.rotate(r) * 2 * w);
+		v.set(v.rotate(r * 1.1f));
+
+		astB->setGroup(ecs::AsteroidsGroup, true);
+	}
+}
+
+
 //BulletsSystem//
 
 BulletsSystem::BulletsSystem(): System(ecs::BulletSys)
@@ -210,6 +274,8 @@ void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double width, double heigh
 
 void BulletsSystem::onCollisionWithAsteroid(Entity* b, Entity* a)
 {
+	b->setActive(false);
+
 }
 
 //CollisionSystem//
@@ -234,6 +300,8 @@ void CollisionSystem::update()
 				if (a != b && b->hasGroup(ecs::BulletsGroup)) {
 					if (isOnCollision(a->getComponent<Transform>(ecs::Transform), b->getComponent<Transform>(ecs::Transform))) {
 						bulletSys->onCollisionWithAsteroid(b, a);
+						astSys->OnCollision(a);
+						a->setActive(false);
 					}
 				}
 			}
@@ -271,20 +339,34 @@ FighterGunSystem::~FighterGunSystem()
 void FighterGunSystem::init()
 {
 	bulletSys = mngr->getSystem<BulletsSystem>(ecs::BulletSys);
+	gameSys = mngr->getSystem<GameCtrlSystem>(ecs::GameCtrlSys);
 	assert(bulletSys != nullptr);
 }
 
 void FighterGunSystem::update()
 {
 	auto& ih = *InputHandler::instance();
-	if (ih.isKeyDown(SDLK_SPACE) && sdlutils().currRealTime() - lastTime_ >= time_) {
-		bulletSys->shoot(Vector2D(),Vector2D(), 10,10);
+	if (ih.isKeyDown(SDLK_s) && sdlutils().currRealTime() - lastTime_ >= time_ &&  gameSys->getGameState()==GameState::RUNNING) {
+		lastTime_=time_;
+		Transform* tr_ = mngr->getHandler(ecs::FighterHndlr)->getComponent<Transform>(ecs::Transform);
+		Vector2D pos = tr_->getPos();
+		Vector2D vel = tr_->getVel();
+
+		float r = tr_->getRotation();
+		float w = tr_->getW();
+		float h = tr_->getH();
+
+		Vector2D bPos = pos + Vector2D(w / 2.0f, h / 2.0f) - Vector2D(0.0f, h / 2.0f + 5.0f + 12.0f).rotate(r) - Vector2D(2.0f, 10.0f);
+		Vector2D bVel = Vector2D(0.0f, -1.0f).rotate(r) * (vel.magnitude() + 5.0f);
+
+		bulletSys->shoot(bPos,bVel, 5,20);
 	}
 }
 
 //RenderSystem//
 
-RenderSystem::RenderSystem(): System(ecs::RenderSys)
+RenderSystem::RenderSystem(): 
+	System(ecs::RenderSys)
 {
 }
 
@@ -295,8 +377,18 @@ void RenderSystem::init()
 void RenderSystem::update()
 {
 	for (auto e : mngr->getEntities()) {
-		e->render();
+		if (e->hasGroup(ecs::AsteroidsGroup)) {
+			e->render();
+		}
 	}
+
+	for (auto e : mngr->getEntities()) {
+		if (e->hasGroup(ecs::BulletsGroup)) {
+			e->render();
+		}
+	}
+	mngr->getHandler(ecs::FighterHndlr)->render();
+
 }
 
 //FighterSystem//
@@ -315,13 +407,18 @@ void FighterSystem::onCollisionWithAsteroid(Entity* a)
 	a->setActive(false);
 	Health* h =fighter->getComponent<Health>(ecs::Health);
 	h->setNumVidas(h->getNumVidas() - 1);
+	fighter->getComponent<Transform>(ecs::Transform)->setPos(sdlutils().width() / 2, sdlutils().height() / 2);
+	fighter->getComponent<Transform>(ecs::Transform)->setVel(0, 0);
+	fighter->getComponent<Transform>(ecs::Transform)->setRotation(0);
+
 	gameSys->onFighterDeath();
 }
 
 void FighterSystem::init()
 {
 	fighter = mngr->addEntity();
-	fighter->addComponent<Transform>(Vector2D(sdlutils().width() / 2, sdlutils().height() / 2),Vector2D(), 150, 150, 0);
+	fighter->addComponent<Transform>(Vector2D(sdlutils().width() / 2, sdlutils().height() / 2),Vector2D(), 50, 50, 0);
+	fighter->addComponent<Image>(&sdlutils().images().at("fighter"));
 	fighter->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
 	fighter->addComponent<FighterCtrl>(0.5);
 	fighter->addComponent<DeAcceleration>(0.995);
@@ -336,7 +433,7 @@ void FighterSystem::init()
 void FighterSystem::update()
 {
 	for (Entity* fighter : mngr->getEntities()) {
-		if (fighter->hasGroup(ecs::Fighter)) {
+		if (fighter->hasGroup(ecs::Fighter) && gameSys->getGameState() == GameState::RUNNING) {
 			fighter->update();
 		}
 	}

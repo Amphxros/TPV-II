@@ -79,6 +79,7 @@ public:
 
 	virtual void init() override;
 	virtual void update() override;
+	void OnCollision(Entity* A);
 private:
 
 	void createAsteroid();
@@ -141,6 +142,7 @@ public:
 	virtual void update() override;
 private:
 	BulletsSystem* bulletSys;
+	GameCtrlSystem* gameSys;
 
 	std::size_t time_, lastTime_;
 
