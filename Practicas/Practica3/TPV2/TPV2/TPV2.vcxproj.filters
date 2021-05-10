@@ -81,6 +81,9 @@
     <ClCompile Include="System.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="NetworkSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="json\JSON.h">
@@ -146,10 +149,10 @@
     <ClInclude Include="Entity.h">
       <Filter>Header Files\Component-Entity</Filter>
     </ClInclude>
-    <ClInclude Include="message.h">
+    <ClInclude Include="System.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="System.h">
+    <ClInclude Include="NetworkSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

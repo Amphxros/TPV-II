@@ -65,6 +65,7 @@ namespace ecs
 		FighterSys,
 		FighterGunSys,
 		RenderSys,
+		NetWorkSys,
 	};
 
 };
