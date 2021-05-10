@@ -65,11 +65,11 @@ void Game::render(){
 void Game::update()
 {
 	//definiremos el orden de actualizado de las distitas entidades con los sistemas
-	//fighterSys->update();
-	//fighterGunSys->update();
+	fighterSys->update();
+	fighterGunSys->update();
 	asteroidSys->update();
-	//bulletSys->update();
-	//collisionSys->update();
+	bulletSys->update();
+	collisionSys->update();
 	mngr_->refresh();
 }
 
