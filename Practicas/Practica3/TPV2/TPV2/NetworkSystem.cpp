@@ -40,8 +40,13 @@ void NetworkSystem::init()
 		if (SDLNet_ResolveHost(&otherPlayerAddress_, host_, port_) < 0) {
 			throw SDLNet_GetError();
 		}
+		
+		msg::PlayRequestMsg* m = static_cast<msg::PlayRequestMsg*>(m_);
+		m->id_ = msg::MsgID::START_REQUEST;
+		memset(m->name_,0,10);
 
 
+			
 	}
 
 }

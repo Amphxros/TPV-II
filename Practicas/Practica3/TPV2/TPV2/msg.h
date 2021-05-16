@@ -26,6 +26,12 @@ namespace msg
 		MsgID id_;
 	};
 
+
+	struct PlayRequestMsg : public Message {
+		uint8_t name_[10];
+	};
+
+
 	struct ConnectedMsg : public Message {
 		ConnectedMsg(int clientID) :
 			Message(sizeof(ConnectedMsg), CONNECTED), clientID_(clientID) {}
@@ -53,7 +59,7 @@ namespace msg
 	};
 	struct  FighterDeath : public Message
 	{
-		FighterDeath(uint8_t id) : Message(sizeof(FighterDeath) FIGHTER_DEATH), id_(id){}
+		FighterDeath(uint8_t id) : Message(sizeof(FighterDeath), FIGHTER_DEATH), id_(id){}
 		uint8_t id_;
 	};
 };
