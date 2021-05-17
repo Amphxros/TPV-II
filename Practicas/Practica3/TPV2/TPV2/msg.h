@@ -5,6 +5,7 @@ namespace msg
 	using msgSizeType = uint32_t;
 
 	enum MsgID : uint8_t {
+		NONE = 0,
 		CONNECTED,
 		CONNECTION_REFUSED,
 		CLIENT_DISCONNECTED,
@@ -28,6 +29,7 @@ namespace msg
 
 
 	struct PlayRequestMsg : public Message {
+		PlayRequestMsg(): Message(sizeof(PlayRequestMsg), START_REQUEST){}
 		uint8_t name_[10];
 	};
 

@@ -388,7 +388,7 @@ void Follow::init()
 {
 	tr_ = entity_->getComponent<Transform>(ecs::Transform);
 	assert(tr_ != nullptr);
-	posPlayer = entity_->getMngr()->getHandler(ecs::FighterHndlr)->getComponent<Transform>(ecs::Transform);
+	posPlayer = entity_->getMngr()->getHandler(ecs::FighterAHndlr)->getComponent<Transform>(ecs::Transform);
 	assert(posPlayer != nullptr);
 }
 

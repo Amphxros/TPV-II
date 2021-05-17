@@ -65,8 +65,10 @@ public:
 	// - actualizar la velocidad del caza y moverlo como en la práctica 1.
 	void update() override;
 private:
+	void MoveEntity(Entity* e);
 	GameCtrlSystem* gameSys;
-	Entity* fighter;
+	Entity* fighterA;
+	Entity* fighterB;
 };
 
 
@@ -121,7 +123,7 @@ public:
 private:
 	FighterSystem* fighterSys;
 	BulletsSystem* bulletSys;
-	AsteroidsSystem* astSys;
+	//AsteroidsSystem* astSys;
 	GameCtrlSystem* gameSys;
 
 	bool isOnCollision(Transform* tA, Transform* tB);

@@ -22,7 +22,7 @@ private:
 	Manager* mngr_;
 	SDLUtils* sdl;
 	
-	AsteroidsSystem* asteroidSys;
+	//AsteroidsSystem* asteroidSys;
 	BulletsSystem* bulletSys;
 	FighterSystem* fighterSys;
 	FighterGunSystem* fighterGunSys;

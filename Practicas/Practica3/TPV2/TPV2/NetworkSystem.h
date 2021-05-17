@@ -19,6 +19,8 @@ public:
 
 	inline bool isMaster() {	return isMaster_;	}
 	inline bool isGameReady() {	return isGameReady_;	}
+	inline Uint8 getId() {return id_;}
+
 	// Estado del juego
 	void sendStateChanged(Uint8 state, Uint8 left_score, Uint8 right_score);
 	void sendStartGameRequest();
@@ -36,6 +38,15 @@ public:
 	}
 	
 protected:
+	//sistemas
+
+	GameCtrlSystem* gameSys_;
+	BulletsSystem* bulletSys_;
+	FighterSystem* fighterSys_;
+
+
+
+
 	const char* host_;
 	Uint16 port_;
 	bool isMaster_;
@@ -49,5 +60,6 @@ protected:
 	std::string remotePlayerName_;
 	std::array<std::string, 2> names_;
 	Uint32 lastTimeActive_;
+	
 };
 
