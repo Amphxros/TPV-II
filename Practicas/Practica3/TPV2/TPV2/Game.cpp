@@ -41,10 +41,6 @@ void Game::init() {
 	fighterGunSys = new FighterGunSystem();
 	fighterGunSys->setManager(mngr_);
 	fighterGunSys->init();
-	
-	asteroidSys = new AsteroidsSystem(10,10,10);
-	asteroidSys->setManager(mngr_);
-	asteroidSys->init();
 
 	collisionSys = new CollisionSystem();
 	collisionSys->setManager(mngr_);

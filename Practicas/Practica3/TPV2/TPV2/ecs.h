@@ -10,7 +10,7 @@ namespace ecs
 	constexpr std::size_t maxGroups = 10;
 
 	using HandlerIDType = std::size_t;
-	constexpr std::size_t maxHandlers = 10;
+	constexpr std::size_t maxHandlers = 4;
 
 	using SystemIDType = std::size_t;
 	constexpr std::size_t maxSystems = 20;
