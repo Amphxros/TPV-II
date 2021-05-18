@@ -69,30 +69,8 @@ private:
 	GameCtrlSystem* gameSys;
 	Entity* fighterA;
 	Entity* fighterB;
-};
 
-
-
-class AsteroidsSystem : public System {
-
-public:
-	AsteroidsSystem(int numAsteroid, double width, double height);
-	virtual ~AsteroidsSystem();
-
-	virtual void init() override;
-	virtual void update() override;
-	void OnCollision(Entity* A);
-private:
-
-	void createAsteroid();
-	GameCtrlSystem* gameSys;
-	int numAsteroids;
-	int nAsteroids; //current num of asteroids
-	double width_;
-	double height_;
-
-	std::size_t time_, lastTime_;
-
+	NetworkSystem* netWorkSys_;
 };
 
 

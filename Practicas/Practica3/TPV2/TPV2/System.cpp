@@ -297,7 +297,7 @@ void FighterSystem::init()
 	mngr->setHandler(fighterB, ecs::FighterBHndlr);
 	fighterB->setGroup(ecs::Fighter, true);
 
-
+	networkSys_ = mngr->getSystem<NetworkSystem>(ecs::NetWorkSys);
 	gameSys = mngr->getSystem<GameCtrlSystem>(ecs::GameCtrlSys);
 }
 
@@ -316,4 +316,6 @@ void FighterSystem::update()
 void FighterSystem::MoveEntity(Entity* e)
 {
 	e->update();
+	networkSys_->sendFighterPosition(e->getComponent<Transform>(ecs::Transform)->getPos());
+
 }

@@ -104,6 +104,23 @@ void NetworkSystem::sendStartGameRequest()
 
 void NetworkSystem::sendFighterPosition(Vector2D pos)
 {
+	if (!isGameReady_) {
+		return;
+	}
+	else {
+		msg::FighterInfo* f = static_cast<msg::FighterInfo*>(m_);
+		f->id_ = msg::FIGHTER_INFO;
+		f->x_ = pos.getX();
+		f->y_ = pos.getY;
+		f->rot_ = 0; //añadir parametros
+
+
+		p_->len = f->size_;
+		p_->address = otherPlayerAddress_;
+		//send
+		SDLNet_UDP_Send(conn_, -1, p_);
+
+	}
 }
 
 void NetworkSystem::sendBulletInfo(Vector2D pos, Vector2D vel)
