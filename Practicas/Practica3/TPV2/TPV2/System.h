@@ -70,7 +70,7 @@ private:
 	Entity* fighterA;
 	Entity* fighterB;
 
-	NetworkSystem* netWorkSys_;
+	NetworkSystem* networkSys_;
 };
 
 
@@ -89,7 +89,8 @@ public:
 	void onCollisionWithAsteroid(Entity* b, Entity* a);
 
 private:
-	GameCtrlSystem* gameSys;
+	GameCtrlSystem* gameSys_;
+	NetworkSystem* networkSys_;
 };
 
 

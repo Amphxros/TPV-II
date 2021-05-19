@@ -96,10 +96,20 @@ void NetworkSystem::update()
 
 void NetworkSystem::sendStateChanged(Uint8 state, Uint8 left_score, Uint8 right_score)
 {
+	if (!isGameReady_) {
+		return;
+	}
+	else {
+
+	}
 }
 
 void NetworkSystem::sendStartGameRequest()
 {
+	m_->id_ = msg::START_REQUEST;
+	p_->len = sizeof(msg::Message);
+	p_->address = otherPlayerAddress_;
+	SDLNet_UDP_Send(conn_, -1, p_);
 }
 
 void NetworkSystem::sendFighterPosition(Vector2D pos)

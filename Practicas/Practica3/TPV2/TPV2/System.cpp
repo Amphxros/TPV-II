@@ -30,13 +30,16 @@ GameCtrlSystem::~GameCtrlSystem()
 
 void GameCtrlSystem::onFighterDeath()
 {
-	Health* health_ = mngr->getHandler(ecs::FighterAHndlr)->getComponent<Health>(ecs::Health);
-	if (health_->getNumVidas() > 0) {
+	Health* health_A = mngr->getHandler(ecs::FighterAHndlr)->getComponent<Health>(ecs::Health);
+	Health* health_B = mngr->getHandler(ecs::FighterBHndlr)->getComponent<Health>(ecs::Health);
+	
+	if (health_A->getNumVidas() > 0 && health_B->getNumVidas()>0) {
 		gs = GameState::PAUSED;
 	}
 	else {
 		gs = GameState::GAMEOVER;
-		health_->resetNumVidas();
+		health_A->resetNumVidas();
+		health_B->resetNumVidas();
 	}
 	mngr->resetGame();
 }
@@ -101,7 +104,7 @@ void GameCtrlSystem::update()
 
 //BulletsSystem//
 
-BulletsSystem::BulletsSystem(): System(ecs::BulletSys)
+BulletsSystem::BulletsSystem(): System(ecs::BulletSys), gameSys_(nullptr), networkSys_(nullptr)
 {
 }
 
@@ -111,13 +114,14 @@ BulletsSystem::~BulletsSystem()
 
 void BulletsSystem::init()
 {
-	gameSys = mngr->getSystem<GameCtrlSystem>(ecs::GameCtrlSys);
+	gameSys_ = mngr->getSystem<GameCtrlSystem>(ecs::GameCtrlSys);
+	networkSys_ = mngr->getSystem<NetworkSystem>(ecs::NetWorkSys);
 }
 
 void BulletsSystem::update()
 {
 	for (auto b : mngr->getEntities()) {
-		if (b->hasGroup(ecs::BulletsGroup) && gameSys->getGameState()==GameState::RUNNING) {
+		if (b->hasGroup(ecs::BulletsGroup) && gameSys_->getGameState()==GameState::RUNNING) {
 			b->update();
 		}
 	}
@@ -131,6 +135,9 @@ void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double width, double heigh
 	e->addComponent<DisableOnExit>(sdlutils().width(), sdlutils().height());
 	e->setGroup(ecs::BulletsGroup, true);
 	mngr->setHandler(e, ecs::BulletsHndlr);
+
+	networkSys_->sendBulletInfo(pos, vel);
+
 }
 
 void BulletsSystem::onCollisionWithAsteroid(Entity* b, Entity* a)
@@ -141,7 +148,8 @@ void BulletsSystem::onCollisionWithAsteroid(Entity* b, Entity* a)
 
 //CollisionSystem//
 
-CollisionSystem::CollisionSystem(): System(ecs::CollisionSys), gameSys(nullptr), fighterSys(nullptr)
+CollisionSystem::CollisionSystem(): 
+	System(ecs::CollisionSys), gameSys(nullptr), fighterSys(nullptr)
 {
 }
 
@@ -150,25 +158,12 @@ void CollisionSystem::init()
 	gameSys = mngr->getSystem<GameCtrlSystem>(ecs::GameCtrlSys);
 	fighterSys = mngr->getSystem<FighterSystem>(ecs::FighterSys);
 	bulletSys = mngr->getSystem<BulletsSystem>(ecs::BulletSys);
-	//astSys = mngr->getSystem<AsteroidsSystem>(ecs::AsteroidSys);
+
 }
 
 void CollisionSystem::update()
 {
-	//for (Entity* a : mngr->getEntities()) {
-	//	if (a->hasGroup(ecs::AsteroidsGroup)) {
-	//		for (Entity* b : mngr->getEntities()) {
-	//			if (a != b && b->hasGroup(ecs::BulletsGroup)) {
-	//				if (isOnCollision(a->getComponent<Transform>(ecs::Transform), b->getComponent<Transform>(ecs::Transform))) {
-	//					bulletSys->onCollisionWithAsteroid(b, a);
-	//					astSys->OnCollision(a);
-	//					a->setActive(false);
-	//				}
-	//			}
-	//		}
-	//	}
-	//}
-
+	
 	Transform* fighterATr_ = mngr->getHandler(ecs::FighterAHndlr)->getComponent<Transform>(ecs::Transform);
 	Transform* fighterBTr_ = mngr->getHandler(ecs::FighterBHndlr)->getComponent<Transform>(ecs::Transform);
 	
