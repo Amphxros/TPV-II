@@ -17,7 +17,7 @@ void NetworkSystem::init()
 	p_ = SDLNet_AllocPacket(100);
 	m_ = reinterpret_cast<msg::Message*>(p_->data);
 
-	if(host_==nullptr){
+	if(host_==nullptr){ //si empezamos el juego como host
 		isMaster_ = true;
 		id_ = 0;
 		conn_ = SDLNet_UDP_Open(port_);
@@ -27,7 +27,7 @@ void NetworkSystem::init()
 		names_[0] = localPlayerName_;
 		names_[1] = remotePlayerName_;
 	}
-	else{
+	else{ //si vamos como cliente
 		isMaster_ = false;
 		id_ = 1;
 		conn_ = SDLNet_UDP_Open(0);

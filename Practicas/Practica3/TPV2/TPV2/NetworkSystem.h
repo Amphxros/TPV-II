@@ -38,14 +38,6 @@ public:
 	}
 	
 protected:
-	//sistemas
-
-	GameCtrlSystem* gameSys_;
-	BulletsSystem* bulletSys_;
-	FighterSystem* fighterSys_;
-
-
-
 
 	const char* host_;
 	Uint16 port_;

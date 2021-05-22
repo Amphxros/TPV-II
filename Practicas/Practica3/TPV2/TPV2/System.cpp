@@ -104,7 +104,8 @@ void GameCtrlSystem::update()
 
 //BulletsSystem//
 
-BulletsSystem::BulletsSystem(): System(ecs::BulletSys), gameSys_(nullptr), networkSys_(nullptr)
+BulletsSystem::BulletsSystem():
+	System(ecs::BulletSys), gameSys_(nullptr), networkSys_(nullptr)
 {
 }
 
@@ -143,7 +144,6 @@ void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double width, double heigh
 void BulletsSystem::onCollisionWithAsteroid(Entity* b, Entity* a)
 {
 	b->setActive(false);
-
 }
 
 //CollisionSystem//
@@ -163,22 +163,26 @@ void CollisionSystem::init()
 
 void CollisionSystem::update()
 {
-	
-	Transform* fighterATr_ = mngr->getHandler(ecs::FighterAHndlr)->getComponent<Transform>(ecs::Transform);
-	Transform* fighterBTr_ = mngr->getHandler(ecs::FighterBHndlr)->getComponent<Transform>(ecs::Transform);
-	
-	//colisiones con balas
-	for (Entity* b : mngr->getEntities()) {
-		if (b->hasGroup(ecs::BulletsGroup)) {
-			if (isOnCollision(b->getComponent<Transform>(ecs::Transform), fighterATr_)) {
-				fighterSys->onCollisionWithAsteroid(b);
-			}
-			else if (isOnCollision(b->getComponent<Transform>(ecs::Transform), fighterBTr_)) {
-				fighterSys->onCollisionWithAsteroid(b);
+
+	if (!mngr->getSystem<NetworkSystem>(ecs::NetWorkSys)->isMaster()) {
+		return;
+	}
+	else if(gameSys->getGameState()==GameState::RUNNING){
+		Transform* fighterATr_ = mngr->getHandler(ecs::FighterAHndlr)->getComponent<Transform>(ecs::Transform);
+		Transform* fighterBTr_ = mngr->getHandler(ecs::FighterBHndlr)->getComponent<Transform>(ecs::Transform);
+
+		//colisiones con balas
+		for (Entity* b : mngr->getEntities()) {
+			if (b->hasGroup(ecs::BulletsGroup)) {
+				if (isOnCollision(b->getComponent<Transform>(ecs::Transform), fighterATr_)) {
+					fighterSys->onCollisionWithAsteroid(b);
+				}
+				else if (isOnCollision(b->getComponent<Transform>(ecs::Transform), fighterBTr_)) {
+					fighterSys->onCollisionWithAsteroid(b);
+				}
 			}
 		}
 	}
-
 }
 
 bool CollisionSystem::isOnCollision(Transform* tA, Transform* tB)
@@ -264,7 +268,6 @@ FighterSystem::~FighterSystem()
 
 void FighterSystem::onCollisionWithAsteroid(Entity* a)
 {
-	
 	gameSys->onFighterDeath();
 }
 
