@@ -8,6 +8,8 @@
   
   "images" : [
 	{ "id" : "fighter", "file" : "resources/images/fighter.png"},
+	{ "id" : "fighterA", "file" : "resources/images/fighter.png"},
+	{ "id" : "fighterB", "file" : "resources/images/fighter2.png"},
 	{ "id" : "AsteroidImg", "file" : "resources/images/asteroid.png"},
 	{ "id" : "AsteroidGoldenImg", "file" : "resources/images/asteroid_gold.png"},
 	{ "id" : "Bullet", "file" : "resources/images/bullet.png"}

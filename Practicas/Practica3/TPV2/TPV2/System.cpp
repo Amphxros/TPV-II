@@ -275,7 +275,7 @@ void FighterSystem::init()
 {
 	fighterA = mngr->addEntity();
 	fighterA->addComponent<Transform>(Vector2D(sdlutils().width() / 4, sdlutils().height() / 2),Vector2D(), 50, 50, 90);
-	fighterA->addComponent<Image>(&sdlutils().images().at("fighter"));
+	fighterA->addComponent<Image>(&sdlutils().images().at("fighterA"));
 	fighterA->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
 	fighterA->addComponent<FighterCtrl>(0.5);
 	fighterA->addComponent<DeAcceleration>(0.995);
@@ -286,7 +286,7 @@ void FighterSystem::init()
 	
 	fighterB = mngr->addEntity();
 	fighterB->addComponent<Transform>(Vector2D(3* sdlutils().width() / 4, sdlutils().height() / 2),Vector2D(), 50, 50, 270);
-	fighterB->addComponent<Image>(&sdlutils().images().at("fighter"));
+	fighterB->addComponent<Image>(&sdlutils().images().at("fighterB"));
 	fighterB->addComponent<ShowAtOppositeSide>(sdlutils().width(), sdlutils().height());
 	fighterB->addComponent<FighterCtrl>(0.5);
 	fighterB->addComponent<DeAcceleration>(0.995);
