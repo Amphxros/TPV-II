@@ -1,5 +1,7 @@
 #pragma once
 #include "Component.h"
+
+class NetworkSystem;
 class Manager;
 class System
 {
@@ -25,6 +27,8 @@ public:
 	GameCtrlSystem();
 
 	virtual ~GameCtrlSystem();
+
+	void start();
 	// - a este método se le va a llamar cuando muere el caza.
 	// - desactivar los asteroides y las balas, actualizar el estado del juego, etc.
 	void onFighterDeath();

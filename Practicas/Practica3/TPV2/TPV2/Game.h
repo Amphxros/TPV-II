@@ -11,7 +11,7 @@ public:
 	Game();
 	~Game();
 
-	void init();
+	void init(const char *host, Uint16 port);
 	void run();
 
 private:
@@ -29,7 +29,7 @@ private:
 	CollisionSystem* collisionSys;
 	RenderSystem* renderSys;
 	GameCtrlSystem* gameSys;
-
+	NetworkSystem* netWorkSys;
 	SDL_Renderer* renderer;
 };
 

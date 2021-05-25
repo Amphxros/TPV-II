@@ -1,7 +1,8 @@
 #include "Game.h"
 #include "Entity.h"
 #include "Manager.h"
-#include"Component.h"
+#include "Component.h"
+#include "NetworkSystem.h"
 
 #include <SDL.h>
 
@@ -17,7 +18,13 @@ Game::~Game() {
 	mngr_ = nullptr;
 }
 
-void Game::init() {
+void Game::init(const char *host, Uint16 port) {
+
+	// ask the player for a name
+	std::string playerName;
+	std::cout << "Enter you name: ";
+	std::cin >> playerName;
+
 
 	SDLUtils::init("SDLGame Demo!", 800, 600,
 		"resources/config/resources.json");
@@ -25,6 +32,10 @@ void Game::init() {
 	
 	mngr_=new Manager();
 	renderer== sdl->renderer();
+
+	netWorkSys = new NetworkSystem(host, port, playerName);
+	netWorkSys->setManager(mngr_);
+	netWorkSys->init();
 
 	gameSys = new GameCtrlSystem();
 	gameSys->setManager(mngr_);
@@ -63,7 +74,6 @@ void Game::update()
 	//definiremos el orden de actualizado de las distitas entidades con los sistemas
 	fighterSys->update();
 	fighterGunSys->update();
-	asteroidSys->update();
 	bulletSys->update();
 	collisionSys->update();
 	mngr_->refresh();

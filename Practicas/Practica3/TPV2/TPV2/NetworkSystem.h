@@ -8,6 +8,7 @@
 #include "System.h"
 
 class Vector2D;
+class Manager;
 class NetworkSystem :
 	public System
 {

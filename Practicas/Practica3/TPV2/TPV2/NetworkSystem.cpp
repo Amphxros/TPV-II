@@ -1,7 +1,9 @@
 #include "NetworkSystem.h"
+#include "Manager.h"
 
 NetworkSystem::NetworkSystem(const char* host, Uint16 port, std::string playerName): 
-	System(ecs::NetWorkSys),host_(host), port_(port), isMaster_(false), //
+	System(ecs::NetWorkSys),
+	host_(host), port_(port), isMaster_(false),//
 	isGameReady_(false), id_(0), conn_(), p_(nullptr), m_(nullptr), //
 	otherPlayerAddress_(), localPlayerName_(playerName), remotePlayerName_("N/A"), lastTimeActive_(0) { }
 
@@ -27,51 +29,59 @@ void NetworkSystem::init()
 		names_[0] = localPlayerName_;
 		names_[1] = remotePlayerName_;
 	}
-	else{ //si vamos como cliente
+	else { //si vamos como cliente
 		isMaster_ = false;
-		id_ = 1;
+		//id_=1;
 		conn_ = SDLNet_UDP_Open(0);
-		if(!conn_)
-			throw "ERROR CATASTROFICO";
+		if(!conn_){
+
+		}
+
 		std::cout << "Trying to connect to other player at " << host_ << ":"
 				<< port_ << std::endl;
-	
 		// resolve the host name into an IPAdrress
 		if (SDLNet_ResolveHost(&otherPlayerAddress_, host_, port_) < 0) {
 			throw SDLNet_GetError();
 		}
 		
-		msg::PlayRequestMsg* m = static_cast<msg::PlayRequestMsg*>(m_);
-		m->id_ = msg::MsgID::START_REQUEST;
-		memset(m->name_,0,10);
-		auto size = localPlayerName_.length() > 9 ? 9 : localPlayerName_.length();
-		memcpy(m->name_, localPlayerName_.c_str(), size);
-		p_->len = sizeof(msg::PlayRequestMsg);
+		msg::PlayRequest* p = static_cast<msg::PlayRequest*>(m_);
+		p->type  = msg::I_WANT_PLAY;
+		memset(p->name, 0, 10);
+		auto size = localPlayerName_.length();
+		memcpy(p->name, localPlayerName_.c_str(), size);
+		p_->len = sizeof(msg::PlayRequest);
 		p_->address = otherPlayerAddress_;
 		SDLNet_UDP_Send(conn_, -1, p_);
-
-		// we use socket set to allow waiting for response instead of just looping
+		
 		SDLNet_SocketSet socketSet = SDLNet_AllocSocketSet(1);
 		SDLNet_UDP_AddSocket(socketSet, conn_);
-		
 		if (SDLNet_CheckSockets(socketSet, 3000)) {
-			if (SDLNet_SocketReady(conn_)) {
-				if (SDLNet_UDP_Recv(conn_, p_) > 0) {
-					if (m_->id_ == msg::CONNECTED) {
-						isGameReady_ = true;
-						msg::ConnectedMsg* c = static_cast<msg::ConnectedMsg*>(m_);
-						remotePlayerName_ = std::string(reinterpret_cast<char*>(m->name_));
-						id_ = m->id_;
-						names_[id_] = localPlayerName_;
-						names_[1 - id_] = remotePlayerName_;
-					}
-				}
-			}
+		std::cout << "Connecting to" << host_ << ":"
+				<< port_ << std::endl;
+		if (SDLNet_SocketReady(conn_)) {
+		std::cout << "Socket Ready" << host_ << ":"
+				<< port_ << std::endl;
+		if (SDLNet_UDP_Recv(conn_, p_) > 0) {
+		std::cout << "Connected" << host_ << ":"
+				<< port_ << std::endl;
+		isGameReady_ = true;
+			msg::Welcome* w= static_cast<msg::Welcome*>(m_);
+			remotePlayerName_ = std::string(reinterpret_cast<char*>(m_->name));
+			id_ = m_->type;
+			names_[id_] = localPlayerName_;
+			names_[1 - id_] = remotePlayerName_;
+		}
+		
 		}
 
+		}
+
+		// free the socket set, won't be used anymore
 		SDLNet_FreeSocketSet(socketSet);
-		if (isGameReady_)
-			throw "ERROR AL CONNECTAR";
+		// if did not succeed to connect, throw an exception
+		if (!isGameReady_) {
+			throw "ERROR AL CONECTAR";
+		}
 	}
 
 }
@@ -80,14 +90,14 @@ void NetworkSystem::update()
 {
 	while (SDLNet_UDP_Recv(conn_, p_)) {
 		lastTimeActive_ = SDL_GetTicks();
-		switch (m_->id_) {
-		case msg::MsgID::START_REQUEST:
-			if (isMaster_) {
-				//enviar al gamesys el cambio
+		switch (m_->type) {
+		case msg::_START_REQUEST:
+			if (isMaster_ && isGameReady_) {
+			mngr->getSystem<GameCtrlSystem>(ecs::GameCtrlSys)->start();
 			}
 			break;
-		case msg::MsgID::BULLET_SHOT:
-			
+		case msg::I_WANT_PLAY:
+		
 			break;
 
 		}
@@ -121,7 +131,7 @@ void NetworkSystem::sendFighterPosition(Vector2D pos)
 		msg::FighterInfo* f = static_cast<msg::FighterInfo*>(m_);
 		f->id_ = msg::FIGHTER_INFO;
 		f->x_ = pos.getX();
-		f->y_ = pos.getY;
+		f->y_ = pos.getY();
 		f->rot_ = 0; //añadir parametros
 
 

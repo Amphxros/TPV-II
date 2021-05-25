@@ -44,6 +44,10 @@ void GameCtrlSystem::onFighterDeath()
 	mngr->resetGame();
 }
 
+void GameCtrlSystem::start(){
+	gs = GameState::RUNNING;
+}
+
 void GameCtrlSystem::onAsteroidsExtinction()
 {
 	gs = GameState::GAMEOVER;

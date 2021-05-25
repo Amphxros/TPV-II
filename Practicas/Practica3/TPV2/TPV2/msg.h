@@ -6,63 +6,53 @@ namespace msg
 
 	enum MsgID : uint8_t {
 		NONE = 0,
-		CONNECTED,
-		CONNECTION_REFUSED,
-		CLIENT_DISCONNECTED,
-		START_REQUEST,
-		START_GAME,
-		PLAYER_INFO,
-		BULLET_SHOT,
-		COLLISION,
-		FIGHTER_INFO,
-		FIGHTER_DEATH,
+		I_WANT_PLAY,
+		_WELCOME,
+		_FIGHTER_POS,
+		_START_REQUEST,
+		_STATE_CHANGED,
+		_BULLET_INFO,
+		_DISCONNECTED,
+		_ACTIVE_,
+
 		_last_msgID
 	};
 
-	struct Message
-	{
-		Message(msgSizeType size, MsgID id): size_(size),senderClientID(0), id_(id){}
-		msgSizeType size_;
-		uint32_t senderClientID;
-		MsgID id_;
+	struct Message {
+		uint8_t type;
 	};
-
-
-	struct PlayRequestMsg : public Message {
-		PlayRequestMsg(): Message(sizeof(PlayRequestMsg), START_REQUEST){}
-		uint8_t name_[10];
-	};
-
-
-	struct ConnectedMsg : public Message {
-		ConnectedMsg(int clientID) :
-			Message(sizeof(ConnectedMsg), CONNECTED), clientID_(clientID) {}
-
-		uint32_t clientID_;
-	};
-	struct ClientDisconnectedMsg: public Message
-	{
-		ClientDisconnectedMsg(uint32_t clientID) : Message(sizeof(ClientDisconnectedMsg),CLIENT_DISCONNECTED), clientID_(clientID){}
-		uint32_t clientID_;
-	};
-	struct  BulletShoot: public Message
-	{
-		BulletShoot(double x, double y, double velX, double velY, double w, double h):
-			Message(sizeof(BulletShoot), BULLET_SHOT), x_(x), y_(y), velX_(velX), velY_(velY), w_(w),h_(h){}
-		double x_, y_, velX_, velY_, w_, h_;
-	};
-
-	struct FighterInfo: public Message
-	{
-		FighterInfo(double x, double y, double rot) :
-			Message(sizeof(FighterInfo), FIGHTER_INFO),x_(x), y_(y),rot_(rot){}
-
-			double x_, y_, rot_;
-	};
-	struct  FighterDeath : public Message
-	{
-		FighterDeath(uint8_t id) : Message(sizeof(FighterDeath), FIGHTER_DEATH), id_(id){}
+	struct Disconnected: Message {
 		uint8_t id_;
 	};
-};
+	struct PlayRequest: Message {
+		uint8_t name[10];
+	};
+	struct Welcome: Message {
+		uint8_t id_;
+		uint8_t name[10];
+	};
 
+	struct FighterPosition: Message {
+		uint8_t id_;
+		uint8_t x;
+		uint8_t y;
+	};
+
+	struct StateChanged: Message {
+		uint8_t state_;
+		uint8_t fighterAscore;
+		uint8_t figherBscore;
+	};
+
+	struct BulletInfoMsg : Message {
+		float pos_x;
+		float pos_y;
+		float vel_x;
+		float vel_y;
+	};
+
+
+
+
+
+}
