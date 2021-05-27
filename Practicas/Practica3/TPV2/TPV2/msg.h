@@ -1,5 +1,8 @@
 #pragma once
 #include <cstdint>
+
+#pragma pack(push,1)
+
 namespace msg
 {
 	using msgSizeType = uint32_t;
@@ -51,8 +54,6 @@ namespace msg
 		float vel_y;
 	};
 
-
-
-
-
 }
+
+#pragma pack(pop)
