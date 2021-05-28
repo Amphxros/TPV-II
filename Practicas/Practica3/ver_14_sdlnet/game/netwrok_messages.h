@@ -57,3 +57,4 @@ struct StateChangedMessage: NetworkMessage {
 
 
 #pragma pack(pop)
+
