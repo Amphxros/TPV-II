@@ -2,9 +2,9 @@
 
 #include "GameManagerSystem.h"
 
-#include "../components/Transform.h"
-#include "../ecs/Manager.h"
-#include "../sdlutils/InputHandler.h"
+#include "components/Transform.h"
+#include "ecs/Manager.h"
+#include "sdlutils/InputHandler.h"
 #include "BallSystem.h"
 #include "NetworkSystem.h"
 

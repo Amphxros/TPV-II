@@ -42,6 +42,9 @@
   <ItemGroup>
     <ClInclude Include="BallSystem.h" />
     <ClInclude Include="CollisionSystem.h" />
+    <ClInclude Include="components\Image.h" />
+    <ClInclude Include="components\PaddleCtrlKeys.h" />
+    <ClInclude Include="components\Transform.h" />
     <ClInclude Include="DefFactory.h" />
     <ClInclude Include="ecs\Component.h" />
     <ClInclude Include="ecs\ecs.h" />

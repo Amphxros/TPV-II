@@ -1,0 +1,306 @@
+﻿  BallSystem.cpp
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\BallSystem.cpp(44,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\BallSystem.cpp(43,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\BallSystem.cpp(56,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\BallSystem.cpp(56,16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27,35): error C2027: use of undefined type 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=Transform
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27): message : see declaration of 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=Transform
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\ecs.h(56): message : see reference to class template instantiation 'mpl::IndexOf<T,ecs::ComponentsList>' being compiled
+          with
+          [
+              T=Transform
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(39): message : see reference to variable template 'const size_t cmpIdx<Transform>' being compiled
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\BallSystem.cpp(22): message : see reference to function template instantiation 'T *Manager::addComponent<Transform,>(Entity *)' being compiled
+          with
+          [
+              T=Transform
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27,35): error C2027: use of undefined type 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=NetworkSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27): message : see declaration of 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=NetworkSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\ecs.h(65): message : see reference to class template instantiation 'mpl::IndexOf<T,ecs::SysList>' being compiled
+          with
+          [
+              T=NetworkSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(104): message : see reference to variable template 'const size_t sysIdx<NetworkSystem>' being compiled
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\BallSystem.cpp(46): message : see reference to function template instantiation 'T *Manager::getSystem<NetworkSystem>(void)' being compiled
+          with
+          [
+              T=NetworkSystem
+          ]
+  CollisionSystem.cpp
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\CollisionSystem.cpp(27,67): error C2065: 'Ball': undeclared identifier
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\CollisionSystem.cpp(27,54): error C2672: 'Manager::getHandler': no matching overloaded function found
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\CollisionSystem.cpp(27,73): error C2974: 'Manager::getHandler': invalid template argument for 'T', type expected
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(84): message : see declaration of 'Manager::getHandler'
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\CollisionSystem.cpp(30,25): error C2065: 'LeftPaddle': undeclared identifier
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\CollisionSystem.cpp(30,12): error C2672: 'Manager::getHandler': no matching overloaded function found
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\CollisionSystem.cpp(30,37): error C2974: 'Manager::getHandler': invalid template argument for 'T', type expected
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(84): message : see declaration of 'Manager::getHandler'
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\CollisionSystem.cpp(33,25): error C2065: 'RightPaddle': undeclared identifier
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\CollisionSystem.cpp(33,12): error C2672: 'Manager::getHandler': no matching overloaded function found
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\CollisionSystem.cpp(33,38): error C2974: 'Manager::getHandler': invalid template argument for 'T', type expected
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(84): message : see declaration of 'Manager::getHandler'
+  Game.cpp
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27,35): error C2027: use of undefined type 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=NetworkSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27): message : see declaration of 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=NetworkSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\ecs.h(65): message : see reference to class template instantiation 'mpl::IndexOf<T,ecs::SysList>' being compiled
+          with
+          [
+              T=NetworkSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(96): message : see reference to variable template 'const size_t sysIdx<NetworkSystem>' being compiled
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\Game.cpp(44): message : see reference to function template instantiation 'T *Manager::addSystem<NetworkSystem,const char*&,Uint16&,std::string&>(const char *&,Uint16 &,std::string &)' being compiled
+          with
+          [
+              T=NetworkSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27,35): error C2027: use of undefined type 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=BallSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27): message : see declaration of 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=BallSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\ecs.h(65): message : see reference to class template instantiation 'mpl::IndexOf<T,ecs::SysList>' being compiled
+          with
+          [
+              T=BallSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(96): message : see reference to variable template 'const size_t sysIdx<BallSystem>' being compiled
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\Game.cpp(45): message : see reference to function template instantiation 'T *Manager::addSystem<BallSystem,>(void)' being compiled
+          with
+          [
+              T=BallSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27,35): error C2027: use of undefined type 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=PaddlesSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27): message : see declaration of 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=PaddlesSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\ecs.h(65): message : see reference to class template instantiation 'mpl::IndexOf<T,ecs::SysList>' being compiled
+          with
+          [
+              T=PaddlesSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(96): message : see reference to variable template 'const size_t sysIdx<PaddlesSystem>' being compiled
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\Game.cpp(46): message : see reference to function template instantiation 'T *Manager::addSystem<PaddlesSystem,>(void)' being compiled
+          with
+          [
+              T=PaddlesSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27,35): error C2027: use of undefined type 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=CollisionSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27): message : see declaration of 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=CollisionSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\ecs.h(65): message : see reference to class template instantiation 'mpl::IndexOf<T,ecs::SysList>' being compiled
+          with
+          [
+              T=CollisionSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(96): message : see reference to variable template 'const size_t sysIdx<CollisionSystem>' being compiled
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\Game.cpp(47): message : see reference to function template instantiation 'T *Manager::addSystem<CollisionSystem,>(void)' being compiled
+          with
+          [
+              T=CollisionSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27,35): error C2027: use of undefined type 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=GameManagerSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27): message : see declaration of 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=GameManagerSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\ecs.h(65): message : see reference to class template instantiation 'mpl::IndexOf<T,ecs::SysList>' being compiled
+          with
+          [
+              T=GameManagerSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(96): message : see reference to variable template 'const size_t sysIdx<GameManagerSystem>' being compiled
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\Game.cpp(48): message : see reference to function template instantiation 'T *Manager::addSystem<GameManagerSystem,>(void)' being compiled
+          with
+          [
+              T=GameManagerSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27,35): error C2027: use of undefined type 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=RenderSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27): message : see declaration of 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=RenderSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\ecs.h(65): message : see reference to class template instantiation 'mpl::IndexOf<T,ecs::SysList>' being compiled
+          with
+          [
+              T=RenderSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(96): message : see reference to variable template 'const size_t sysIdx<RenderSystem>' being compiled
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\Game.cpp(49): message : see reference to function template instantiation 'T *Manager::addSystem<RenderSystem,>(void)' being compiled
+          with
+          [
+              T=RenderSystem
+          ]
+  GameManagerSystem.cpp
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27,35): error C2027: use of undefined type 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=NetworkSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27): message : see declaration of 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=NetworkSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\ecs.h(65): message : see reference to class template instantiation 'mpl::IndexOf<T,ecs::SysList>' being compiled
+          with
+          [
+              T=NetworkSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(104): message : see reference to variable template 'const size_t sysIdx<NetworkSystem>' being compiled
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\GameManagerSystem.cpp(38): message : see reference to function template instantiation 'T *Manager::getSystem<NetworkSystem>(void)' being compiled
+          with
+          [
+              T=NetworkSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27,35): error C2027: use of undefined type 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=BallSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27): message : see declaration of 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=BallSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\ecs.h(65): message : see reference to class template instantiation 'mpl::IndexOf<T,ecs::SysList>' being compiled
+          with
+          [
+              T=BallSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(104): message : see reference to variable template 'const size_t sysIdx<BallSystem>' being compiled
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\GameManagerSystem.cpp(79): message : see reference to function template instantiation 'T *Manager::getSystem<BallSystem>(void)' being compiled
+          with
+          [
+              T=BallSystem
+          ]
+  NetworkSystem.cpp
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27,35): error C2027: use of undefined type 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=GameManagerSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27): message : see declaration of 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=GameManagerSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\ecs.h(65): message : see reference to class template instantiation 'mpl::IndexOf<T,ecs::SysList>' being compiled
+          with
+          [
+              T=GameManagerSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(104): message : see reference to variable template 'const size_t sysIdx<GameManagerSystem>' being compiled
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\NetworkSystem.cpp(180): message : see reference to function template instantiation 'T *Manager::getSystem<GameManagerSystem>(void)' being compiled
+          with
+          [
+              T=GameManagerSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27,35): error C2027: use of undefined type 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=PaddlesSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27): message : see declaration of 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=PaddlesSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\ecs.h(65): message : see reference to class template instantiation 'mpl::IndexOf<T,ecs::SysList>' being compiled
+          with
+          [
+              T=PaddlesSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(104): message : see reference to variable template 'const size_t sysIdx<PaddlesSystem>' being compiled
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\NetworkSystem.cpp(196): message : see reference to function template instantiation 'T *Manager::getSystem<PaddlesSystem>(void)' being compiled
+          with
+          [
+              T=PaddlesSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27,35): error C2027: use of undefined type 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=BallSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\mpl.h(27): message : see declaration of 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=BallSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\ecs.h(65): message : see reference to class template instantiation 'mpl::IndexOf<T,ecs::SysList>' being compiled
+          with
+          [
+              T=BallSystem
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(104): message : see reference to variable template 'const size_t sysIdx<BallSystem>' being compiled
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\NetworkSystem.cpp(204): message : see reference to function template instantiation 'T *Manager::getSystem<BallSystem>(void)' being compiled
+          with
+          [
+              T=BallSystem
+          ]
+  PaddlesSystem.cpp
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\PaddlesSystem.cpp(29,23): error C2065: 'LeftPaddle': undeclared identifier
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\PaddlesSystem.cpp(29,10): error C2672: 'Manager::setHandler': no matching overloaded function found
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\PaddlesSystem.cpp(29,46): error C2974: 'Manager::setHandler': invalid template argument for 'T', type expected
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(79): message : see declaration of 'Manager::setHandler'
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\PaddlesSystem.cpp(40,23): error C2065: 'RightPaddle': undeclared identifier
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\PaddlesSystem.cpp(40,10): error C2672: 'Manager::setHandler': no matching overloaded function found
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\PaddlesSystem.cpp(40,48): error C2974: 'Manager::setHandler': invalid template argument for 'T', type expected
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(79): message : see declaration of 'Manager::setHandler'
+  RenderSystem.cpp
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\RenderSystem.cpp(5,10): fatal error C1083: Cannot open include file: '../components/Image.h': No such file or directory
+  Generating Code...

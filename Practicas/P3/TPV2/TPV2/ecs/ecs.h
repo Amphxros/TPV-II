@@ -16,8 +16,8 @@
 // from c++17, it won't compile with older versions. If you are
 // using an older version replace the #if #else and #endif
 //
-#if __has_include("../game/ecs_defs.h")
-#include "../game/ecs_defs.h"
+#if __has_include("ecs_defs.h")
+#include "ecs_defs.h"
 #else
 #endif
 

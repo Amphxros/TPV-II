@@ -2,11 +2,11 @@
 
 #include "RenderSystem.h"
 
-#include "../components/Image.h"
-#include "../components/Transform.h"
-#include "../ecs/Manager.h"
-#include "../sdlutils/macros.h"
-#include "../sdlutils/SDLUtils.h"
+#include "components/Image.h"
+#include "components/Transform.h"
+#include "ecs/Manager.h"
+#include "sdlutils/macros.h"
+#include "sdlutils/SDLUtils.h"
 #include "GameManagerSystem.h"
 #include "NetworkSystem.h"
 

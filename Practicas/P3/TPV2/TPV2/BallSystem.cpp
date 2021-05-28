@@ -2,10 +2,10 @@
 
 #include "BallSystem.h"
 
-#include "../components/Transform.h"
-#include "../ecs/Manager.h"
-#include "../sdlutils/SDLUtils.h"
-#include "../utils/Vector2D.h"
+#include "components/Transform.h"
+#include "ecs/Manager.h"
+#include "sdlutils/SDLUtils.h"
+#include "utils/Vector2D.h"
 #include "NetworkSystem.h"
 
 BallSystem::BallSystem() :
@@ -20,7 +20,7 @@ void BallSystem::init() {
 	wallHit_ = &sdlutils().soundEffects().at("wall_hit");
 	auto e = manager_->addEntity();
 	ballTr_ = manager_->addComponent<Transform>(e);
-	manager_->setHandler<Ball>(e);
+	//manager_->setHandler<Ball>(e);
 	resetBall();
 }
 

@@ -3,10 +3,10 @@
 #include "CollisionSystem.h"
 
 #include <cassert>
-#include "../components/Transform.h"
-#include "../ecs/Manager.h"
-#include "../sdlutils/SDLUtils.h"
-#include "../utils/Collisions.h"
+#include "components/Transform.h"
+#include "ecs/Manager.h"
+#include "sdlutils/SDLUtils.h"
+#include "utils/Collisions.h"
 #include "BallSystem.h"
 #include "GameManagerSystem.h"
 #include "NetworkSystem.h"

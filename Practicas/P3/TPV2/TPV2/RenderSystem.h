@@ -3,7 +3,7 @@
 #pragma once
 #include <SDL_pixels.h>
 
-#include "../ecs/System.h"
+#include "ecs/System.h"
 
 struct Transform;
 

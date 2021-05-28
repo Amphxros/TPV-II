@@ -5,7 +5,7 @@
 #include <SDL_stdinc.h>
 #include <array>
 
-#include "../ecs/System.h"
+#include "ecs/System.h"
 #include "netwrok_messages.h"
 
 class Vector2D;

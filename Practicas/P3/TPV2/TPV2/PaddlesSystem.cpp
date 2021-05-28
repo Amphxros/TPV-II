@@ -2,11 +2,11 @@
 
 #include "PaddlesSystem.h"
 
-#include "../components/PaddleCtrlKeys.h"
-#include "../components/Transform.h"
-#include "../ecs/Manager.h"
-#include "../sdlutils/InputHandler.h"
-#include "../sdlutils/SDLUtils.h"
+#include "components/PaddleCtrlKeys.h"
+#include "components/Transform.h"
+#include "ecs/Manager.h"
+#include "sdlutils/InputHandler.h"
+#include "sdlutils/SDLUtils.h"
 #include "NetworkSystem.h"
 
 

@@ -4,7 +4,7 @@
 
 #include <SDL_net.h>
 
-#include "../ecs/Manager.h"
+#include "ecs/Manager.h"
 #include "BallSystem.h"
 #include "GameManagerSystem.h"
 #include "netwrok_messages.h"

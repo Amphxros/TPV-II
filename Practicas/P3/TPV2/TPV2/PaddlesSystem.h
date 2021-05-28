@@ -3,8 +3,8 @@
 #pragma once
 #include <SDL_stdinc.h>
 
-#include "../ecs/System.h"
-#include "../utils/Vector2D.h"
+#include "ecs/System.h"
+#include "utils/Vector2D.h"
 
 struct Entity;
 

@@ -2,15 +2,15 @@
 
 #include "Game.h"
 
-#include "../components/Image.h"
-#include "../components/Transform.h"
-#include "../ecs/ecs.h"
-#include "../ecs/Entity.h"
-#include "../sdlutils/InputHandler.h"
-#include "../sdlutils/SDLUtils.h"
+#include "components/Image.h"
+#include "components/Transform.h"
+#include "ecs/ecs.h"
+#include "ecs/Entity.h"
+#include "sdlutils/InputHandler.h"
+#include "sdlutils/SDLUtils.h"
 
-#include "../ecs/Manager.h"
-#include "../utils/Vector2D.h"
+#include "ecs/Manager.h"
+#include "utils/Vector2D.h"
 #include "BallSystem.h"
 #include "CollisionSystem.h"
 #include "GameManagerSystem.h"
