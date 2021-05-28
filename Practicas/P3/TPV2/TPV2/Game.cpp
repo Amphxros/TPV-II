@@ -42,11 +42,11 @@ void Game::init(const char *host, Uint16 port) {
 			"resources/config/pingpong.resources.json");
 
 	networkSys_ = mngr_->addSystem<NetworkSystem>(host, port, playerName);
-	ballSys_ = mngr_->addSystem<BallSystem>();
-	paddlesSys_ = mngr_->addSystem<PaddlesSystem>();
-	collisionSys_ = mngr_->addSystem<CollisionSystem>();
+	//ballSys_ = mngr_->addSystem<BallSystem>();
+	//paddlesSys_ = mngr_->addSystem<PaddlesSystem>();
+	//collisionSys_ = mngr_->addSystem<CollisionSystem>();
 	gameMngrSys_ = mngr_->addSystem<GameManagerSystem>();
-	renderSys_ = mngr_->addSystem<RenderSystem>();
+	//renderSys_ = mngr_->addSystem<RenderSystem>();
 }
 
 void Game::start() {
@@ -69,14 +69,14 @@ void Game::start() {
 
 		mngr_->refresh();
 
-		ballSys_->update();
-		paddlesSys_->update();
-		collisionSys_->update();
+		//ballSys_->update();
+		//paddlesSys_->update();
+		//collisionSys_->update();
 		gameMngrSys_->update();
 		networkSys_->update();
 
 		sdlutils().clearRenderer();
-		renderSys_->update();
+		//renderSys_->update();
 		sdlutils().presentRenderer();
 
 		Uint32 frameTime = sdlutils().currRealTime() - startTime;

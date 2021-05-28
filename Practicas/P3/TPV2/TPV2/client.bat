@@ -7,4 +7,4 @@ cd C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2
  
 :: ejecutar el program
 
-..\bin\TPV2Debug.exe localhost 2000
+..\bin\TPV2Debug.exe localhost 7000

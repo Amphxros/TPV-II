@@ -1,5 +1,2 @@
-﻿  RenderSystem.cpp
-  sdlutils_demo.cpp
-  Vector2D.cpp
-  Generating Code...
-  TPV2.vcxproj -> C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\bin\TPV2Debug.exe
+﻿  NetworkSystem.cpp
+LINK : fatal error LNK1168: cannot open C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\bin\TPV2Debug.exe for writing
