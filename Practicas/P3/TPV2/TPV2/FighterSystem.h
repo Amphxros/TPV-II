@@ -13,7 +13,7 @@ public:
 	void init() override;
 	void update();
 
-	void setFighterPosition(Uint8 id, Vector2D pos);
+	void setFighterPosition(Uint8 id, Vector2D pos, float rotation);
 
 protected:
 	void moveFighter(Entity* e);
