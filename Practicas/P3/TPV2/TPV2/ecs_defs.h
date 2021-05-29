@@ -5,38 +5,43 @@
 // components -- forward declaration, i.e., assume they are defined somewhere
 struct Transform;
 struct Image;
-struct PaddleCtrlKeys;
+struct FighterCtrl;
+struct DisableAtExit;
+struct FighterCtrl;
 
 #define _CMPS_LIST_  \
 	Transform,\
 	Image,\
-	PaddleCtrlKeys
+	DisableAtExit,\
+	FighterCtrl,\
 
 // groups
-struct Paddle;
-#define _GRPS_LIST_ Paddle
+struct Bullet;
+#define _GRPS_LIST_ Bullet
 
 // handlers
-struct Ball;
-struct LeftPaddle;
-struct RightPaddle;
+struct FighterA;
+struct FighterB;
 #define _HDLRS_LIST_ \
-	Ball, \
-	LeftPaddle, \
-	RightPaddle
+	FighterA, \
+	FighterB
 
 // systems
+class FighterSystem;
+class BulletSystem;
+class GameCtrlSystem;
+class NetworkSystem;
+class CollisionSystem;
+class RenderSystem;
+
 class BallSystem;
 class PaddlesSystem;
-class RenderSystem;
-class CollisionSystem;
 class GameManagerSystem;
-class NetworkSystem;
 
 #define _SYS_LIST_ \
-		BallSystem, \
-		PaddlesSystem, \
+		FighterSystem, \
+		BulletSystem, \
 		RenderSystem, \
 		CollisionSystem, \
-		GameManagerSystem,\
+		GameCtrlSystem,\
 		NetworkSystem
