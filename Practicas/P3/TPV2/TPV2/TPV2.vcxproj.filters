@@ -99,6 +99,9 @@
     <ClCompile Include="FighterSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BulletsSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="json\JSON.h">
@@ -216,6 +219,9 @@
       <Filter>Header Files\components</Filter>
     </ClInclude>
     <ClInclude Include="FighterSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletsSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

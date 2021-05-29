@@ -261,6 +261,10 @@ void NetworkSystem::sendFighterPosition(Vector2D pos, float rotation)
 	}
 }
 
+void NetworkSystem::sendBulletInfo(Vector2D pos, Vector2D vel, double width, double height)
+{
+}
+
 
 
 void NetworkSystem::sendPaddlePosition(Vector2D pos) {

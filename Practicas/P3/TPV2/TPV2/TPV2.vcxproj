@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BallSystem.cpp" />
+    <ClCompile Include="BulletsSystem.cpp" />
     <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="ecs\Entity.cpp" />
     <ClCompile Include="ecs\Manager.cpp" />
@@ -43,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BallSystem.h" />
+    <ClInclude Include="BulletsSystem.h" />
     <ClInclude Include="CollisionSystem.h" />
     <ClInclude Include="components\Image.h" />
     <ClInclude Include="components\PaddleCtrlKeys.h" />

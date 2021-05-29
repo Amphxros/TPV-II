@@ -80,6 +80,11 @@ void FighterSystem::moveFighter(Entity* e)
 		else {
 			tr_->vel_.set(new Vector2D());
 		}
+
+		if (ih().isKeyDown(SDLK_s)) {
+
+			manager_->getSystem<NetworkSystem>()->sendBulletInfo();
+		}
 	}
 	tr_->pos_ = tr_->pos_ + tr_->vel_;
 	
@@ -98,6 +103,7 @@ void FighterSystem::moveFighter(Entity* e)
 
 		tr_->pos_.setX(0);
 	}
+	
 
 	manager_->getSystem<NetworkSystem>()->sendFighterPosition(tr_->pos_,tr_->rotation_);
 
