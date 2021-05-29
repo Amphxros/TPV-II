@@ -7,19 +7,31 @@
   ],
   
   "images" : [
-    { "id" : "sdl_logo", "file" : "resources/images/SDL_logo.png" },
-    { "id" : "tennis_ball", "file" : "resources/images/tennis_ball.png" },
-    { "id" : "star", "file" : "resources/images/star.png"}
+	{ "id" : "fighter", "file" : "resources/images/fighter.png"},
+	{ "id" : "fighterA", "file" : "resources/images/fighter.png"},
+	{ "id" : "fighterB", "file" : "resources/images/fighter2.png"},
+	{ "id" : "AsteroidImg", "file" : "resources/images/asteroid.png"},
+	{ "id" : "AsteroidGoldenImg", "file" : "resources/images/asteroid_gold.png"},
+	{ "id" : "Bullet", "file" : "resources/images/bullet.png"}
+
   ],
   
   "messages" : [
-    { "id" : "PressAnyKey", "text" : "Press Any Key", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" },
-    { "id" : "HelloSDL", "text" : "Hello SDL!", "font" : "ARIAL48", "color" : "0x0000ffff" }
+    { "id" : "Start", "text" : "Press Any Key", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" },
+    { "id" : "Continue", "text" : "Game Paused", "font" : "ARIAL48", "color" : "0x0000ffff" },
+	{ "id" : "gameOver", "text" : "Game over! ", "font" : "ARIAL48", "color" : "0x0000ffff" }
+	
+	
+
   ],
   
   "sounds" : [
     { "id" : "gunshot", "file" : "resources/sound/gunshot.wav" },
-    { "id" : "explosion", "file" : "resources/sound/explosion.wav" }
+    { "id" : "fire", "file" : "resources/sound/fire.wav" },
+    { "id" : "explosion", "file" : "resources/sound/explosion.wav" },
+	{ "id" : "bangLarge", "file" : "resources/sound/bangLarge.wav" },
+    { "id" : "bangSmall", "file" : "resources/sound/bangSmall.wav" },
+    { "id" : "thrust", "file" : "resources/sound/thrust.wav" }
   ],
 
   "musics" : [

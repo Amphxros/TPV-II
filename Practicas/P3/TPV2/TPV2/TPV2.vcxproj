@@ -23,6 +23,8 @@
     <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="ecs\Entity.cpp" />
     <ClCompile Include="ecs\Manager.cpp" />
+    <ClCompile Include="FighterCtrl.cpp" />
+    <ClCompile Include="FighterSystem.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameManagerSystem.cpp" />
     <ClCompile Include="json\somplejson_demo.cpp" />
@@ -54,6 +56,8 @@
     <ClInclude Include="ecs\mpl.h" />
     <ClInclude Include="ecs\System.h" />
     <ClInclude Include="ecs_defs.h" />
+    <ClInclude Include="FighterCtrl.h" />
+    <ClInclude Include="FighterSystem.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameManagerSystem.h" />
     <ClInclude Include="json\simplejson_demo.h" />

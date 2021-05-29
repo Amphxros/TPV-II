@@ -29,6 +29,8 @@ public:
 		return isGameReday_;
 	}
 
+	void sendFighterPosition(Vector2D pos);
+
 	void sendPaddlePosition(Vector2D pos);
 	void sendStartGameRequest();
 	void sendStateChanged(Uint8 state, Uint8 left_score, Uint8 right_score);

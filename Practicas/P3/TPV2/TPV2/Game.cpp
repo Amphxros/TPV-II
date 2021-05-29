@@ -45,7 +45,7 @@ void Game::init(const char *host, Uint16 port) {
 	//ballSys_ = mngr_->addSystem<BallSystem>();
 	//paddlesSys_ = mngr_->addSystem<PaddlesSystem>();
 	//collisionSys_ = mngr_->addSystem<CollisionSystem>();
-	gameMngrSys_ = mngr_->addSystem<GameManagerSystem>();
+	//gameMngrSys_ = mngr_->addSystem<GameManagerSystem>();
 	//renderSys_ = mngr_->addSystem<RenderSystem>();
 }
 
@@ -72,7 +72,7 @@ void Game::start() {
 		//ballSys_->update();
 		//paddlesSys_->update();
 		//collisionSys_->update();
-		gameMngrSys_->update();
+		//gameMngrSys_->update();
 		networkSys_->update();
 
 		sdlutils().clearRenderer();
