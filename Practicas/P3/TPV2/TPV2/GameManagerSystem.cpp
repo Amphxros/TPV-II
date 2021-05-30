@@ -1,6 +1,7 @@
 // This file is part of the course TPV2@UCM - Samir Genaim
 
 #include "GameManagerSystem.h"
+#include "FighterSystem.h"
 
 #include "components/Transform.h"
 #include "ecs/Manager.h"
@@ -20,25 +21,25 @@ GameManagerSystem::~GameManagerSystem() {
 void GameManagerSystem::init() {
 }
 
-void GameManagerSystem::onBallExit(Side side) {
-
+void GameManagerSystem::onCollisionWithBullet(Uint8 id)
+{
 	assert(state_ == RUNNING); // this should be called only when game is runnig
-
-	if (side == LEFT) {
+	if(id==0){
 		score_[1]++;
-	} else {
+	}
+	else{
 		score_[0]++;
 	}
-
+	
 	if (score_[0] < maxScore_ && score_[1] < maxScore_)
 		state_ = PAUSED;
 	else
 		state_ = GAMEOVER;
+	
 
-	manager_->getSystem<NetworkSystem>()->sendStateChanged(state_, score_[0],
-			score_[1]);
-
+	manager_->getSystem<NetworkSystem>()->sendStateChanged(state_, score_[0],score_[1]);
 }
+
 
 void GameManagerSystem::update() {
 	if (state_ != RUNNING) {
@@ -69,17 +70,18 @@ void GameManagerSystem::startGame() {
 	if (state_ == RUNNING)
 		return;
 
-	if (!manager_->getSystem<NetworkSystem>()->isGameReady())
+	if (!manager_->getSystem<NetworkSystem>()->isGameReady()) {
 		return;
+	}
 
 	auto isMaster = manager_->getSystem<NetworkSystem>()->isMaster();
 
 	if (isMaster) {
 		state_ = RUNNING;
-		//manager_->getSystem<BallSystem>()->initBall();
-		manager_->getSystem<NetworkSystem>()->sendStateChanged(state_,
-				score_[0], score_[1]);
-	} else {
+		manager_->getSystem<NetworkSystem>()->sendStateChanged(state_,score_[0], score_[1]);
+	} 
+
+	else {
 		manager_->getSystem<NetworkSystem>()->sendStartGameRequest();
 	}
 }
@@ -94,5 +96,5 @@ void GameManagerSystem::changeState(Uint8 state, Uint8 left_score,
 void GameManagerSystem::resetGame() {
 	state_ = NEWGAME;
 	score_[0] = score_[1] = 0;
-	//manager_->getSystem<BallSystem>()->resetBall();
+	manager_->getSystem<FighterSystem>()->resetFighters();
 }

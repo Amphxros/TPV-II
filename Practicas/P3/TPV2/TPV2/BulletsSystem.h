@@ -11,6 +11,8 @@ public:
 	virtual ~BulletsSystem(){}
 	void update() override;
 
+
+	void resetBullets();
 	void shoot(Vector2D pos, Vector2D vel, double width, double height);
 };
 

@@ -38,6 +38,16 @@ void BulletsSystem::update()
 
 }
 
+void BulletsSystem::resetBullets()
+{
+	auto entities = manager_->getEnteties();
+	for (auto e : entities) {
+		if (manager_->hasGroup<Bullet>(e)) {
+			manager_->setActive(e, false);
+		}
+	}
+}
+
 void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double width, double height)
 {
 	Entity* e = manager_->addEntity();

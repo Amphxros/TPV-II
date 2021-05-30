@@ -32,8 +32,6 @@ public:
 	void sendFighterPosition(Vector2D pos, float rotation);
 	void sendBulletInfo(Vector2D pos, Vector2D vel, double width, double height);
 
-
-
 	void sendPaddlePosition(Vector2D pos);
 	void sendStartGameRequest();
 	void sendStateChanged(Uint8 state, Uint8 left_score, Uint8 right_score);

@@ -40,14 +40,14 @@ void Game::init(const char *host, Uint16 port) {
 	std::cin >> playerName;
 
 	SDLUtils::init("Ping Pong", 800, 600,
-			"resources/config/pingpong.resources.json");
+			"resources/config/resources.json");
 
 	networkSys_ = mngr_->addSystem<NetworkSystem>(host, port, playerName);
 	fighterSys_ = mngr_->addSystem<FighterSystem>();
 	bulletSys_ = mngr_->addSystem<BulletsSystem>();
 	
-	//collisionSys_ = mngr_->addSystem<CollisionSystem>();
-	//gameMngrSys_ = mngr_->addSystem<GameManagerSystem>();
+	collisionSys_ = mngr_->addSystem<CollisionSystem>();
+	gameMngrSys_ = mngr_->addSystem<GameManagerSystem>();
 	renderSys_ = mngr_->addSystem<RenderSystem>();
 }
 
@@ -74,8 +74,8 @@ void Game::start() {
 		//ballSys_->update();
 		//paddlesSys_->update();
 		//collisionSys_->update();
-		//gameMngrSys_->update();
 		
+		gameMngrSys_->update();
 		bulletSys_->update();
 		fighterSys_->update();
 		networkSys_->update();

@@ -50,6 +50,12 @@ void FighterSystem::update()
 
 }
 
+void FighterSystem::resetFighters()
+{
+	manager_->getComponent<Transform>(fighterA)->pos_=Vector2D(50, sdlutils().height() / 2.0 - 25);
+	manager_->getComponent<Transform>(fighterB)->pos_ = Vector2D(sdlutils().width() - 50, sdlutils().height() / 2.0 - 25);
+}
+
 void FighterSystem::setFighterPosition(Uint8 id, Vector2D pos, float rotation)
 {
 	if (id == 0) {

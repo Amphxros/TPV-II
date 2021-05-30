@@ -14,7 +14,7 @@ public:
 	virtual ~FighterSystem(){}
 	void init() override;
 	void update();
-
+	void resetFighters();
 	void setFighterPosition(Uint8 id, Vector2D pos, float rotation);
 
 protected:

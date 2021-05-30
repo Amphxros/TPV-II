@@ -18,12 +18,6 @@ public:
 		GAMEOVER // game over
 	};
 
-	enum Side {
-		LEFT = 0, //
-		RIGHT
-	};
-
-
 	GameManagerSystem();
 	virtual ~GameManagerSystem();
 
@@ -35,7 +29,7 @@ public:
 		return score_;
 	}
 
-	void onBallExit(Side side);
+	void onCollisionWithBullet(Uint8 id);
 	void startGame();
 	void changeState(Uint8 state, Uint8 left_score, Uint8 right_score);
 	void resetGame();
