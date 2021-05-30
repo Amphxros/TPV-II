@@ -1,2 +1,8 @@
-﻿  NetworkSystem.cpp
-LINK : fatal error LNK1168: cannot open C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\bin\TPV2Debug.exe for writing
+﻿  CollisionSystem.cpp
+  RenderSystem.cpp
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\RenderSystem.cpp(38,27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\RenderSystem.cpp(39,27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\RenderSystem.cpp(40,16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\RenderSystem.cpp(41,16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  TPV2.vcxproj -> C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\bin\TPV2Debug.exe

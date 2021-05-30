@@ -6,7 +6,7 @@
 #include "ecs/System.h"
 
 struct Transform;
-
+struct Image;
 class RenderSystem: public System {
 public:
 	RenderSystem();

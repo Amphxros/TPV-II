@@ -1,13 +1,16 @@
 #include "FighterSystem.h"
 
 #include "components/Transform.h"
+#include "FighterCtrl.h"
+#include "components/Image.h"
+
 #include "ecs/Manager.h"
 #include "sdlutils/InputHandler.h"
 #include "sdlutils/SDLUtils.h"
-#include "FighterCtrl.h"
 #include "NetworkSystem.h"
 #include "ecs_defs.h"
-FighterSystem::FighterSystem()
+
+FighterSystem::FighterSystem():System()
 {
 }
 
@@ -15,15 +18,18 @@ void FighterSystem::init()
 {
 	//create fighterA
 	fighterA = manager_->addEntity();
+	Texture* tA = &(sdlutils().images().at("fighterA"));
 	manager_->addComponent<Transform>(fighterA, Vector2D(50, sdlutils().height() / 2.0 - 25), Vector2D(), 50, 50, 90.0f);
-	manager_->addComponent<FighterCtrl>(fighterA,SDL_SCANCODE_UP, SDL_SCANCODE_DOWN, SDL_SCANCODE_SPACE, 5.0f);
-	manager_->addComponent<Image>(fighterA, sdlutils().images().at("fighterA")); //modificar el json
+	manager_->addComponent<FighterCtrl>(fighterA,SDL_SCANCODE_UP, SDL_SCANCODE_DOWN,SDL_SCANCODE_LEFT, SDL_SCANCODE_RIGHT, 5.0f);
+	manager_->addComponent<Image>(fighterA, tA); //modificar el json
 	
 	//create FighterB
 	fighterB = manager_->addEntity();
+	
+	Texture* tB = &(sdlutils().images().at("fighterB"));
 	manager_->addComponent<Transform>(fighterB, Vector2D(sdlutils().width()-50, sdlutils().height() / 2.0 - 25), Vector2D(), 50, 50, 90.0f);
-	manager_->addComponent<FighterCtrl>(fighterB, SDL_SCANCODE_UP, SDL_SCANCODE_DOWN, SDL_SCANCODE_SPACE, 5.0f);
-	manager_->addComponent<Image>(fighterB, sdlutils().images().at("fighterB")); //modificar el json
+	manager_->addComponent<FighterCtrl>(fighterB, SDL_SCANCODE_UP, SDL_SCANCODE_DOWN, SDL_SCANCODE_LEFT, SDL_SCANCODE_RIGHT, 5.0f);
+	manager_->addComponent<Image>(fighterB, tB ); //modificar el json
 
 	//handlers of the fighters
 	manager_->setHandler<FighterA>(fighterA);
@@ -83,14 +89,14 @@ void FighterSystem::moveFighter(Entity* e)
 
 		if (ih().isKeyDown(SDLK_s)) {
 
-			manager_->getSystem<NetworkSystem>()->sendBulletInfo();
+			manager_->getSystem<NetworkSystem>()->sendBulletInfo(tr_->pos_,tr_->vel_, 10,10);
 		}
 	}
 	tr_->pos_ = tr_->pos_ + tr_->vel_;
 	
 	//show at oppositeside component
 	if (tr_->pos_.getY() < 0) {
-		tr_->pos_.setY(sdlutils().height);
+		tr_->pos_.setY(sdlutils().height());
 	}
 	else if (tr_->pos_.getY() + tr_->height_ > sdlutils().height()) {
 

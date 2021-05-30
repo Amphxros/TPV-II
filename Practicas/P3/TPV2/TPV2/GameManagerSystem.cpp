@@ -76,7 +76,7 @@ void GameManagerSystem::startGame() {
 
 	if (isMaster) {
 		state_ = RUNNING;
-		manager_->getSystem<BallSystem>()->initBall();
+		//manager_->getSystem<BallSystem>()->initBall();
 		manager_->getSystem<NetworkSystem>()->sendStateChanged(state_,
 				score_[0], score_[1]);
 	} else {
@@ -94,5 +94,5 @@ void GameManagerSystem::changeState(Uint8 state, Uint8 left_score,
 void GameManagerSystem::resetGame() {
 	state_ = NEWGAME;
 	score_[0] = score_[1] = 0;
-	manager_->getSystem<BallSystem>()->resetBall();
+	//manager_->getSystem<BallSystem>()->resetBall();
 }

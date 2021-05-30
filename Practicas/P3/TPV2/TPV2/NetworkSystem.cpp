@@ -171,6 +171,8 @@ void NetworkSystem::update() {
 				p_->len = sizeof(WelcomeMsg);
 				SDLNet_UDP_Send(conn_, -1, p_);
 				isGameReady_ = true;
+
+				std::cout << "connected" << std::endl;
 			}
 			break;
 		}
@@ -194,7 +196,7 @@ void NetworkSystem::update() {
 		case _PADDLE_POS: {
 			PaddlePositionMsg *m = static_cast<PaddlePositionMsg*>(m_);
 			Vector2D pos(m->x, m->y);
-			manager_->getSystem<PaddlesSystem>()->setPaddlePosition(m->id, pos);
+			//manager_->getSystem<PaddlesSystem>()->setPaddlePosition(m->id, pos);
 			break;
 		}
 
@@ -202,7 +204,7 @@ void NetworkSystem::update() {
 			BallInfoMsg *m = static_cast<BallInfoMsg*>(m_);
 			Vector2D pos(m->pos_x, m->pos_y);
 			Vector2D vel(m->vel_x, m->vel_y);
-			manager_->getSystem<BallSystem>()->setBallInfo(pos, vel);
+			//manager_->getSystem<BallSystem>()->setBallInfo(pos, vel);
 
 			break;
 		}

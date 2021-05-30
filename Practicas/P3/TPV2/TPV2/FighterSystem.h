@@ -3,7 +3,9 @@
 #include <SDL_stdinc.h>
 #include "ecs/System.h"
 #include "utils/Vector2D.h"
+
 struct Entity;
+struct Image;
 
 class FighterSystem: public System
 {

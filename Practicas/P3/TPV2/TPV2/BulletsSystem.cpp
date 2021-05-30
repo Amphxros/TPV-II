@@ -1,16 +1,14 @@
 #include "BulletsSystem.h"
 
 #include "components/Transform.h"
+#include "components/Image.h"
+
 #include "ecs/Manager.h"
 #include "sdlutils/SDLUtils.h"
 #include "NetworkSystem.h"
 #include "ecs_defs.h"
 
-BulletsSystem::BulletsSystem()
-{
-}
-
-void BulletsSystem::init()
+BulletsSystem::BulletsSystem():System()
 {
 }
 
@@ -44,6 +42,7 @@ void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double width, double heigh
 {
 	Entity* e = manager_->addEntity();
 	manager_->addComponent<Transform>(e, pos, vel, width, height, 0.0);
-	manager_->addComponent<Image>(e, sdlutils().images().at("bullet"));
+	auto t = &(sdlutils().images().at("bullet"));
+	manager_->addComponent<Image>(e, t );
 	manager_->setGroup<Bullet>(e, true);
 }
