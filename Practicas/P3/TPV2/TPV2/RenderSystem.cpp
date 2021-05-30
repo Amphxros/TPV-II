@@ -40,7 +40,7 @@ void RenderSystem::update() {
 			dest.w = tr_->width_;
 			dest.h = tr_->height_;
 			if (manager_->getComponent<Image>(e)->tex_ != nullptr) {
-				manager_->getComponent<Image>(e)->tex_->render(dest);
+				manager_->getComponent<Image>(e)->tex_->render(dest, tr_->rotation_);
 			}
 		}
 	}

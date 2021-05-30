@@ -78,10 +78,10 @@ void FighterSystem::moveFighter(Entity* e)
 
 	if (ih().keyDownEvent()) {
 		if (ih().isKeyDown(ctrl->up_)) {
-			tr_->vel_.setY(-ctrl->speed_);
+			tr_->vel_ = tr_->vel_ + Vector2D(0, -1).rotate(tr_->rotation_) * 0.25;
 		}
 		else if (ih().isKeyDown(ctrl->down_)) {
-			tr_->vel_.setY(ctrl->speed_);
+			tr_->vel_ = tr_->vel_ + Vector2D(0, 1).rotate(tr_->rotation_) * 0.25;
 		}
 		else if (ih().isKeyDown(ctrl->right_)) {
 			tr_->rotation_+=5;
@@ -102,14 +102,13 @@ void FighterSystem::moveFighter(Entity* e)
 	
 	//show at oppositeside component
 	if (tr_->pos_.getY() < 0) {
-		tr_->pos_.setY(sdlutils().height());
+		tr_->pos_.setY(sdlutils().height()-tr_->height_);
 	}
 	else if (tr_->pos_.getY() + tr_->height_ > sdlutils().height()) {
-
-		tr_->pos_.setY(0);
+		tr_->pos_.setY(tr_->height_);
 	}
 	if (tr_->pos_.getX() < 0) {
-		tr_->pos_.setX(sdlutils().width());
+		tr_->pos_.setX(sdlutils().width() - tr_->width_);
 	}
 	else if (tr_->pos_.getX() + tr_->width_ > sdlutils().width()) {
 
