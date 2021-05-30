@@ -16,6 +16,7 @@ enum MsgType : uint8_nt {
 	_STATE_CHANGED_, //
 	_BALL_INFO_, //
 	_DISCONNECTED_, //
+	_Shoot, //
 	_ACTIVE_
 };
 
@@ -61,6 +62,15 @@ struct StateChangedMessage: NetworkMessage {
 	uint8_nt state_;
 	uint8_nt left_score_;
 	uint8_nt right_score_;
+};
+
+struct ShootMsg : NetworkMessage {
+	float32_nt pos_x;
+	float32_nt pos_y;
+	float32_nt vel_x;
+	float32_nt vel_y;
+	float32_nt w;
+	float32_nt h;
 };
 
 

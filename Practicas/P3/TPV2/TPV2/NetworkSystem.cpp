@@ -1,6 +1,7 @@
 // This file is part of the course TPV2@UCM - Samir Genaim
 
 #include "NetworkSystem.h"
+#include "BulletsSystem.h"
 
 #include <SDL_net.h>
 
@@ -225,6 +226,14 @@ void NetworkSystem::update() {
 			Vector2D p(f->x, f->y);
 			float r = f->rotation;
 			manager_->getSystem<FighterSystem>()->setFighterPosition(id_, p, r);
+			break;
+
+		case _Shoot:
+			ShootMsg* b = static_cast<ShootMsg*>(m_);
+			Vector2D p(b->pos_x, b->pos_y);
+			Vector2D v(b->vel_x, b->vel_y);			manager_->getSystem<BulletsSystem>()->shoot(p, v, b->w, b->h);
+
+			break;
 		}
 	}
 
@@ -265,6 +274,27 @@ void NetworkSystem::sendFighterPosition(Vector2D pos, float rotation)
 
 void NetworkSystem::sendBulletInfo(Vector2D pos, Vector2D vel, double width, double height)
 {
+	if (!isGameReady_) {
+		return;
+	}
+	else {
+		ShootMsg* f = static_cast<ShootMsg*>(m_);
+		f->_type = _Shoot;
+		f->pos_x = pos.getX();
+		f->pos_y = pos.getY();
+		f->vel_x = vel.getX();
+		f->vel_y = vel.getY();
+		f->w = width;
+		f->h = height;
+		
+		// set the message length and the address of the other player
+		p_->len = sizeof(ShootMsg);
+		p_->address = otherPlayerAddress_;
+
+		// send the message
+		SDLNet_UDP_Send(conn_, -1, p_);
+	}
+
 }
 
 

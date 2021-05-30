@@ -95,6 +95,9 @@ void FighterSystem::moveFighter(Entity* e)
 
 		if (ih().isKeyDown(SDLK_s)) {
 
+			Vector2D p;
+			Vector2D v;
+			manager_->getSystem<BulletsSystem>()->shoot(p,v,10,10);
 			manager_->getSystem<NetworkSystem>()->sendBulletInfo(tr_->pos_,tr_->vel_, 10,10);
 		}
 	}
