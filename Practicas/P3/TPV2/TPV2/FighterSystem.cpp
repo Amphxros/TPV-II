@@ -8,9 +8,9 @@
 #include "sdlutils/InputHandler.h"
 #include "sdlutils/SDLUtils.h"
 #include "NetworkSystem.h"
-#include "ecs_defs.h"
+#include "ecs/ecs_defs.h"
 
-FighterSystem::FighterSystem():System()
+FighterSystem::FighterSystem():System(), fighterA(nullptr), fighterB(nullptr)
 {
 }
 

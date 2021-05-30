@@ -6,7 +6,7 @@
 #include "ecs/Manager.h"
 #include "sdlutils/SDLUtils.h"
 #include "NetworkSystem.h"
-#include "ecs_defs.h"
+#include "ecs/ecs_defs.h"
 
 BulletsSystem::BulletsSystem():System()
 {

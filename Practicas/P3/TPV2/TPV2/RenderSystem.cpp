@@ -44,7 +44,6 @@ void RenderSystem::update() {
 			}
 		}
 	}
-
 	
 	drawScore();
 	drawMsgs();
@@ -65,6 +64,21 @@ void RenderSystem::drawMsgs()
 
 void RenderSystem::drawNames()
 {
+	auto &names_ = manager_->getSystem<NetworkSystem>()->getNames();
+	
+	// name of player 0
+	Texture name_0(
+			sdlutils().renderer(), //
+			names_[0], sdlutils().fonts().at("ARIAL16"),
+			build_sdlcolor(0xffffffff));
+	name_0.render(10, 10);
+	
+	// name of player 1
+	Texture name_1(
+			sdlutils().renderer(), //
+			names_[1], sdlutils().fonts().at("ARIAL16"),
+			build_sdlcolor(0xffffffff));
+	name_1.render(sdlutils().width() - name_1.width() - 10, 10);
 }
 
 
