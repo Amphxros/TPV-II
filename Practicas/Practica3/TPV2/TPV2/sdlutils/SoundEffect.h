@@ -16,7 +16,6 @@ public:
 	SoundEffect& operator=(SoundEffect &other) = delete;
 	SoundEffect(const SoundEffect&) = delete;
 
-//	SoundEffect(): chunk_(nullptr){}
 	SoundEffect(const std::string &fileName) {
 		chunk_ = Mix_LoadWAV(fileName.c_str());
 		assert(chunk_ != nullptr);

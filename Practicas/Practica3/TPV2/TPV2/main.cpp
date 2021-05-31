@@ -1,13 +1,18 @@
+// This file is part of the course TPV2@UCM - Samir Genaim
+
+#include <SDL_stdinc.h>
+#include <cstdlib>
 #include <iostream>
-#include <SDL.h>
+#include <memory>
+#include <vector>
 
 #include "Game.h"
 
 void start(int argc, char** argv) {
+	Game g;
 
-	// practica3 2000
-	// practica3 localhost 2000
-	Game g = Game();
+	// pingpong 2000
+	// pingpong localhost 2000
 
 	Uint16 port;
 	const char* host = nullptr;
@@ -24,26 +29,24 @@ void start(int argc, char** argv) {
 	}
 
 	g.init(host, port);
-	g.run();
+	g.start();
 }
 
-int main(int ac, char **av) {
-
-	//sdlutils_basic_demo();
-	Game g = Game();
-
-	try {	start(ac, av);	}
-	catch (const std::string& e) {	// catch exceptions thrown as strings
+int main(int argc, char** argv) {
+	try {
+		start(argc, argv);
+	}
+	catch (const std::string & e) { // catch exceptions thrown as strings
 		std::cerr << e << std::endl;
 	}
-	catch (const char* e) {			// catch exceptions thrown as char*
+	catch (const char* e) { // catch exceptions thrown as char*
 		std::cerr << e << std::endl;
 	}
-	catch (const std::exception& e) { // catch exceptions thrown as a sub-type of std::exception
+	catch (const std::exception & e) { // catch exceptions thrown as a sub-type of std::exception
 		std::cerr << e.what();
 	}
 	catch (...) {
-		std::cerr << "No sé cual es el problema";
+		std::cerr << "Caught and exception of unknown type ...";
 	}
 
 	return 0;

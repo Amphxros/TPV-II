@@ -1,36 +1,31 @@
-#pragma once
+// This file is part of the course TPV2@UCM - Samir Genaim
 
-#include "sdlutils/InputHandler.h"
-#include "sdlutils/macros.h"
-#include "sdlutils/SDLUtils.h"
-#include "System.h"
+#pragma once
+#include <SDL_stdinc.h>
+#include <memory>
+
+
+// when you are not using the methods of a class, just
+// say that it exists, that saves time when parsing files
 class Manager;
-class Game
-{
+class System;
+
+class Game {
 public:
 	Game();
-	~Game();
-
+	virtual ~Game();
 	void init(const char *host, Uint16 port);
-	void run();
-
+	void start();
 private:
-	void update();
-	void render();
-
-
-	Manager* mngr_;
-	SDLUtils* sdl;
+	std::unique_ptr<Manager> mngr_;
 	
-	//AsteroidsSystem* asteroidSys;
-	BulletsSystem* bulletSys;
-	FighterSystem* fighterSys;
-	FighterGunSystem* fighterGunSys;
-	CollisionSystem* collisionSys;
-	RenderSystem* renderSys;
-	GameCtrlSystem* gameSys;
-	NetworkSystem* netWorkSys;
-	SDL_Renderer* renderer;
-};
 
+	System* fighterSys_;
+	System* bulletSys_;
+
+	System *collisionSys_;
+	System *gameMngrSys_;
+	System *renderSys_;
+	System *networkSys_;
+};
 

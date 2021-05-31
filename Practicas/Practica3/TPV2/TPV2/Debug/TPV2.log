@@ -1,43 +1,18 @@
-﻿  Game.cpp
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\Component.h(52,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\Component.h(52,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\Component.h(57,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\Component.h(57,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\Game.cpp(34,10): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
-  NetworkSystem.cpp
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\Component.h(52,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\Component.h(52,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\Component.h(57,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\Component.h(57,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\NetworkSystem.cpp(28,10): error C2065: 'SDLNet_Ge': identificador no declarado
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\NetworkSystem.cpp(66,5): error C2144: error de sintaxis: 'void' debe estar precedido de ')'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\NetworkSystem.cpp(65,66): error C2672: 'std::endl': no se encontró una función sobrecargada que coincida
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\NetworkSystem.cpp(66,5): error C2780: 'std::basic_ostream<_Elem,_Traits> &std::endl(std::basic_ostream<_Elem,_Traits> &)': se esperan 1 argumentos; 0 proporcionados
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\ostream(977): message : vea la declaración de 'std::endl'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\NetworkSystem.cpp(66,5): error C2144: error de sintaxis: 'void' debe estar precedido de ';'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\NetworkSystem.cpp(66,5): error C2059: error de sintaxis: ')'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\NetworkSystem.cpp(66,5): error C2059: error de sintaxis: '!'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\NetworkSystem.cpp(133,1): error C2059: error de sintaxis: '}'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\NetworkSystem.cpp(133,1): error C2143: error de sintaxis: falta ';' delante de '}'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\NetworkSystem.cpp(136,1): error C2143: error de sintaxis: falta ';' delante de '{'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\NetworkSystem.cpp(136,1): error C2447: '{': falta el encabezado de función (¿lista formal de estilo anterior?)
-  System.cpp
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\Component.h(52,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\Component.h(52,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\Component.h(57,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\Component.h(57,52): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\System.cpp(194,153): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\System.cpp(194,134): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\System.cpp(194,122): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\System.cpp(194,96): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\System.cpp(194,77): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\System.cpp(194,65): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\System.cpp(223,11): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\System.cpp(224,11): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\System.cpp(225,11): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\System.cpp(281,89): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\System.cpp(281,64): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\System.cpp(292,92): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica3\TPV2\TPV2\System.cpp(292,67): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  msg.cpp
-  Generando código...
+﻿  FighterSystem.cpp
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\FighterSystem.cpp(22,85): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\FighterSystem.cpp(30,104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\FighterSystem.cpp(30,73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\FighterSystem.cpp(55,91): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\FighterSystem.cpp(56,114): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\FighterSystem.cpp(56,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\ecs\Manager.h(38,32): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\TPV2\FighterSystem.cpp(22): message : see reference to function template instantiation 'T *Manager::addComponent<Transform,Vector2D,Vector2D,int,int,float>(Entity *,Vector2D &&,Vector2D &&,int &&,int &&,float &&)' being compiled
+          with
+          [
+              T=Transform
+          ]
+  TPV2.vcxproj -> C:\Users\jorda\Documents\GitHub\TPV-II\Practicas\P3\TPV2\bin\TPV2Debug.exe

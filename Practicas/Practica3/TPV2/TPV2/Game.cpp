@@ -1,21 +1,35 @@
+// This file is part of the course TPV2@UCM - Samir Genaim
+
 #include "Game.h"
-#include "Entity.h"
-#include "Manager.h"
-#include "Component.h"
+
+#include "components/Image.h"
+#include "components/Transform.h"
+#include "ecs/ecs.h"
+#include "ecs/Entity.h"
+#include "sdlutils/InputHandler.h"
+#include "sdlutils/SDLUtils.h"
+
+#include "ecs/Manager.h"
+#include "utils/Vector2D.h"
+#include "BallSystem.h"
+#include "CollisionSystem.h"
+#include "GameManagerSystem.h"
+#include "FighterSystem.h"
+#include "BulletsSystem.h"
+
 #include "NetworkSystem.h"
+#include "PaddlesSystem.h"
+#include "RenderSystem.h"
 
-#include <SDL.h>
-
-Game::Game(): mngr_(nullptr), renderer(nullptr), sdl(nullptr){
+Game::Game() {
+	mngr_.reset(new Manager());
+	networkSys_ = nullptr;
+	collisionSys_ = nullptr;
+	gameMngrSys_ = nullptr;
+	renderSys_ = nullptr;
 }
 
 Game::~Game() {
-
-	delete sdl;
-	sdl = nullptr;
-
-	delete mngr_;
-	mngr_ = nullptr;
 }
 
 void Game::init(const char *host, Uint16 port) {
@@ -25,81 +39,56 @@ void Game::init(const char *host, Uint16 port) {
 	std::cout << "Enter you name: ";
 	std::cin >> playerName;
 
+	SDLUtils::init("Ping Pong", 800, 600,
+			"resources/config/resources.json");
 
-	SDLUtils::init("SDLGame Demo!", 800, 600,
-		"resources/config/resources.json");
-	sdl = SDLUtils::instance();
+	networkSys_ = mngr_->addSystem<NetworkSystem>(host, port, playerName);
+	fighterSys_ = mngr_->addSystem<FighterSystem>();
+	bulletSys_ = mngr_->addSystem<BulletsSystem>();
 	
-	mngr_=new Manager();
-	renderer== sdl->renderer();
-
-	netWorkSys = new NetworkSystem(host, port, playerName);
-	netWorkSys->setManager(mngr_);
-	netWorkSys->init();
-
-	gameSys = new GameCtrlSystem();
-	gameSys->setManager(mngr_);
-	gameSys->init();
-
-	bulletSys = new BulletsSystem();
-	bulletSys->setManager(mngr_);
-	bulletSys->init();
-
-	fighterSys = new FighterSystem();
-	fighterSys->setManager(mngr_);
-	fighterSys->init();
-	
-	fighterGunSys = new FighterGunSystem();
-	fighterGunSys->setManager(mngr_);
-	fighterGunSys->init();
-
-	collisionSys = new CollisionSystem();
-	collisionSys->setManager(mngr_);
-	collisionSys->init();
-	
-	renderSys = new RenderSystem();
-	renderSys->setManager(mngr_);
-	renderSys->init();
+	collisionSys_ = mngr_->addSystem<CollisionSystem>();
+	gameMngrSys_ = mngr_->addSystem<GameManagerSystem>();
+	renderSys_ = mngr_->addSystem<RenderSystem>();
 }
 
-void Game::render(){
-	sdl->clearRenderer();
-	renderSys->update();
-	gameSys->update();
-	sdl->presentRenderer();
-}
+void Game::start() {
 
-void Game::update()
-{
-	//definiremos el orden de actualizado de las distitas entidades con los sistemas
-	fighterSys->update();
-	fighterGunSys->update();
-	bulletSys->update();
-	collisionSys->update();
-	mngr_->refresh();
-}
-
-void Game::run()
-{
+	// a boolean to exit the loop
 	bool exit = false;
 	SDL_Event event;
 
 	while (!exit) {
-
 		Uint32 startTime = sdlutils().currRealTime();
+
 		ih().clearState();
-		while (SDL_PollEvent(&event)){
+		while (SDL_PollEvent(&event))
 			ih().update(event);
-		}
-		if (ih().isKeyDown(SDLK_ESCAPE)) {
+
+		if (ih().isKeyDown(SDL_SCANCODE_ESCAPE)) {
 			exit = true;
+			continue;
 		}
-		render();
-		update();
+
+		mngr_->refresh();
+
+		//ballSys_->update();
+		//paddlesSys_->update();
+		//collisionSys_->update();
+		
+		gameMngrSys_->update();
+		bulletSys_->update();
+		fighterSys_->update();
+		networkSys_->update();
+
+		sdlutils().clearRenderer();
+		renderSys_->update();
+		sdlutils().presentRenderer();
 
 		Uint32 frameTime = sdlutils().currRealTime() - startTime;
 
 		if (frameTime < 20)
 			SDL_Delay(20 - frameTime);
 	}
+
 }
+

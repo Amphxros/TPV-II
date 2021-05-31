@@ -1,26 +1,74 @@
+// This file is part of the course TPV2@UCM - Samir Genaim
+
 #include "NetworkSystem.h"
-#include "Manager.h"
+#include "BulletsSystem.h"
 
-NetworkSystem::NetworkSystem(const char* host, Uint16 port, std::string playerName): 
-	System(ecs::NetWorkSys),
-	host_(host), port_(port), isMaster_(false),//
-	isGameReady_(false), id_(0), conn_(), p_(nullptr), m_(nullptr), //
-	otherPlayerAddress_(), localPlayerName_(playerName), remotePlayerName_("N/A"), lastTimeActive_(0) { }
+#include <SDL_net.h>
 
-NetworkSystem::~NetworkSystem()
-{
+#include "ecs/Manager.h"
+#include "BallSystem.h"
+#include "GameManagerSystem.h"
+#include "netwrok_messages.h"
+#include "PaddlesSystem.h"
+#include "FighterSystem.h"
+
+
+
+NetworkSystem::NetworkSystem(const char *host, Uint16 port,
+		std::string playerName) :
+		host_(host), //
+		port_(port), //
+		isMaster_(false), //
+		isGameReady_(false), //
+		id_(0), //
+		conn_(), //
+		p_(nullptr), //
+		m_(nullptr), //
+		otherPlayerAddress_(), //
+		localPlayerName_(playerName), //
+		remotePlayerName_("N/A"), //
+		lastTimeActive_(0) {
 }
 
-void NetworkSystem::init()
-{
+NetworkSystem::~NetworkSystem() {
 
-	if (SDLNet_Init() < 0)
-		throw "ERROR NOT CONNECTED";
+	//
+	if (conn_) {
+		DissConnectMsg *m = static_cast<DissConnectMsg*>(m_);
+		m->_type = _DISCONNECTED_;
+		m->id = id_;
+		p_->len = sizeof(DissConnectMsg);
+		p_->address = otherPlayerAddress_;
+		SDLNet_UDP_Send(conn_, -1, p_);
+	}
 
+	// close the connection
+	if (conn_)
+		SDLNet_UDP_Close(conn_);
+
+	// free the packet
+	if (p_) {
+		SDLNet_FreePacket(p_);
+	}
+
+	// close SDLNet
+	SDLNet_Quit();
+}
+
+void NetworkSystem::init() {
+
+	// Initialise SDLNet
+	if (SDLNet_Init() < 0) {
+		throw SDLNet_GetError();
+	}
+
+	// allocate the packet to be used for sending data
 	p_ = SDLNet_AllocPacket(100);
-	m_ = reinterpret_cast<msg::Message*>(p_->data);
+	m_ = reinterpret_cast<NetworkMessage*>(p_->data);
 
-	if (host_ == nullptr) { //si empezamos el juego como host
+	if (host_ == nullptr) { // if started as a master player
+
+		// we use id 0, and open a socket to send/receive messages
 		isMaster_ = true;
 		id_ = 0;
 		conn_ = SDLNet_UDP_Open(port_);
@@ -29,165 +77,295 @@ void NetworkSystem::init()
 
 		names_[0] = localPlayerName_;
 		names_[1] = remotePlayerName_;
-	}
-	else { //si vamos como cliente
+
+	} else { // if started as  other player
+
+		// we use id 1, and open a socket to send/receive messages
 		isMaster_ = false;
-		//id_=1;
 
-
+//		id_ = 1;
 		conn_ = SDLNet_UDP_Open(0);
-		if (!conn_) {
-			std::cout << "Cant connect to " << host_ << ":"
-				<< port_ << std::endl;
-		}
+		if (!conn_)
+			throw SDLNet_GetError();
 
 		std::cout << "Trying to connect to other player at " << host_ << ":"
-			<< port_ << std::endl;
-		// resolve the host name into an IPAdrress
+				<< port_ << std::endl;
 
+		// resolve the host name into an IPAdrress
 		if (SDLNet_ResolveHost(&otherPlayerAddress_, host_, port_) < 0) {
-			std::cout << "Connection failed" << host_ << ":" << port_ << std::endl;
 			throw SDLNet_GetError();
 		}
 
-		msg::PlayRequest* p = static_cast<msg::PlayRequest*>(m_);
-		p->type = msg::I_WANT_PLAY;
-		memset(p->name, 0, 10);
-
-		auto size = localPlayerName_.length() > 9 ? 9:localPlayerName_.length();
-
-		memcpy(p->name, localPlayerName_.c_str(), size);
-		p_->len = sizeof(msg::PlayRequest);
+		// send a message asking to play
+		PlayRequestMsg *m = static_cast<PlayRequestMsg*>(m_);
+		m->_type = _I_WANT_TO_PLAY_;
+		memset(m->name, 0, 10);
+		auto size =
+				localPlayerName_.length() > 9 ? 9 : localPlayerName_.length();
+		memcpy(m->name, localPlayerName_.c_str(), size);
+		p_->len = sizeof(PlayRequestMsg);
 		p_->address = otherPlayerAddress_;
 		SDLNet_UDP_Send(conn_, -1, p_);
 
+		// we use socket set to allow waiting for response instead of just looping
 		SDLNet_SocketSet socketSet = SDLNet_AllocSocketSet(1);
 		SDLNet_UDP_AddSocket(socketSet, conn_);
 
-		if (SDLNet_CheckSockets(socketSet, 30000)) {
-			std::cout << "Connecting to" << host_ << ":" << port_ << std::endl
-				assert(conn_ != true);
-		
+		// wait for response
+		if (SDLNet_CheckSockets(socketSet, 3000)) {
 			if (SDLNet_SocketReady(conn_)) {
-				std::cout << "Socket Ready" << host_ << ":" << port_ << std::endl;
-				assert(p_!=nullptr);
-		
 				if (SDLNet_UDP_Recv(conn_, p_) > 0) {
-					std::cout << "Connected" << host_ << ":" << port_ << std::endl;
-					isGameReady_ = true;
-					msg::Welcome* w = static_cast<msg::Welcome*>(m_);
-					remotePlayerName_ = std::string(reinterpret_cast<char*>(w->name));
-					id_ = m_->type;
-					names_[id_] = localPlayerName_;
-					names_[1 - id_] = remotePlayerName_;
+					if (m_->_type == _WELCOME_) {
+						isGameReady_ = true;
+						WelcomeMsg *m = static_cast<WelcomeMsg*>(m_);
+						remotePlayerName_ = std::string(
+								reinterpret_cast<char*>(m->name));
+						id_ = m->id;
+						names_[id_] = localPlayerName_;
+						names_[1 - id_] = remotePlayerName_;
+					}
 				}
-
 			}
-
 		}
 
-		assert(isGameReady_ != true);
 		// free the socket set, won't be used anymore
 		SDLNet_FreeSocketSet(socketSet);
+
 		// if did not succeed to connect, throw an exception
-		if (!isGameReady_) {
-			throw "ERROR AL CONECTAR";
-		}
+		if (!isGameReady_)
+			throw "Failed to connect!";
+
 	}
 
 }
 
-void NetworkSystem::update()
-{
-	while (SDLNet_UDP_Recv(conn_, p_)) {
+void NetworkSystem::update() {
+
+	m_->_type = _ACTIVE_;
+	p_->len = sizeof(NetworkMessage);
+	p_->address = otherPlayerAddress_;
+	SDLNet_UDP_Send(conn_, -1, p_);
+
+
+
+	// in each iteration we poll all pending message and process them
+	while (SDLNet_UDP_Recv(conn_, p_) > 0) {
 		lastTimeActive_ = SDL_GetTicks();
-		switch (m_->type) {
-		case msg::_START_REQUEST:
-			if (isMaster_ && isGameReady_) {
-			mngr->getSystem<GameCtrlSystem>(ecs::GameCtrlSys)->start();
-			}
-			break;
-		case msg::I_WANT_PLAY:
+		switch (m_->_type) {
+
+		case _I_WANT_TO_PLAY_: {
 			// we accept the connection if the player is the master, and no other player is connected
 			if (isMaster_ && !isGameReady_) {
-				msg::PlayRequest *m = static_cast<msg::PlayRequest*>(m_);
+				PlayRequestMsg *m = static_cast<PlayRequestMsg*>(m_);
 				otherPlayerAddress_ = p_->address;
 				remotePlayerName_ = std::string(
 						reinterpret_cast<char*>(m->name));
 				names_[1 - id_] = remotePlayerName_;
-				msg::Welcome *mr = static_cast<msg::Welcome*>(m_);
+				WelcomeMsg *mr = static_cast<WelcomeMsg*>(m_);
 
-				mr->type = msg::_WELCOME;
+				mr->_type = _WELCOME_;
 				auto size =
 						localPlayerName_.size() > 9 ?
 								9 : localPlayerName_.size();
 				memcpy(mr->name, localPlayerName_.c_str(), size);
-				mr->type = 1 - id_;
-				p_->len = sizeof(msg::Welcome);
+				mr->id = 1 - id_;
+				p_->len = sizeof(WelcomeMsg);
 				SDLNet_UDP_Send(conn_, -1, p_);
 				isGameReady_ = true;
+
+				std::cout << "connected" << std::endl;
 			}
 			break;
 		}
+
+			// start game request
+		case _START_GAME_REQUEST_: {
+			if (isMaster_) {
+				manager_->getSystem<GameManagerSystem>()->startGame();
+			}
+			break;
+		}
+
+		case _STATE_CHANGED_: {
+			StateChangedMessage *m = static_cast<StateChangedMessage*>(m_);
+			manager_->getSystem<GameManagerSystem>()->changeState(m->state_,
+					m->left_score_, m->right_score_);
+			break;
+		}
+
+			// change paddle position of other player
+		case _PADDLE_POS: {
+			PaddlePositionMsg *m = static_cast<PaddlePositionMsg*>(m_);
+			Vector2D pos(m->x, m->y);
+			//manager_->getSystem<PaddlesSystem>()->setPaddlePosition(m->id, pos);
+			break;
+		}
+
+		case _BALL_INFO_: {
+			BallInfoMsg *m = static_cast<BallInfoMsg*>(m_);
+			Vector2D pos(m->pos_x, m->pos_y);
+			Vector2D vel(m->vel_x, m->vel_y);
+			//manager_->getSystem<BallSystem>()->setBallInfo(pos, vel);
+
+			break;
+		}
+
+		case _DISCONNECTED_: {
+			DissConnectMsg *m = static_cast<DissConnectMsg*>(m_);
+			isGameReady_ = false;
+			names_[1 - m->id] = remotePlayerName_ = "N/A";
+			manager_->getSystem<GameManagerSystem>()->resetGame();
+			if (!isMaster_) {
+				SDLNet_UDP_Close(conn_);
+				conn_ = SDLNet_UDP_Open(port_);
+				isMaster_ = true;
+			}
+		}
+		case _FighterPos:
+			FighterPositionMsg* f = static_cast<FighterPositionMsg*>(m_);
+			Vector2D p(f->x, f->y);
+			float r = f->rotation;
+			manager_->getSystem<FighterSystem>()->setFighterPosition(id_, p, r);
 			break;
 
+		case _Shoot:
+			ShootMsg* b = static_cast<ShootMsg*>(m_);
+			Vector2D p(b->pos_x, b->pos_y);
+			Vector2D v(b->vel_x, b->vel_y);			manager_->getSystem<BulletsSystem>()->shoot(p, v, b->w, b->h);
+
+			break;
 		}
 	}
+
+	if (isGameReady_ && SDL_GetTicks() - lastTimeActive_ > 3000) {
+		isGameReady_ = false;
+		names_[1 - id_] = remotePlayerName_ = "N/A";
+		manager_->getSystem<GameManagerSystem>()->resetGame();
+		if (!isMaster_) {
+			SDLNet_UDP_Close(conn_);
+			conn_ = SDLNet_UDP_Open(port_);
+			isMaster_ = true;
+		}
+
+	}
+
 }
 
-void NetworkSystem::sendStateChanged(Uint8 state, Uint8 left_score, Uint8 right_score)
+void NetworkSystem::sendFighterPosition(Vector2D pos, float rotation)
 {
 	if (!isGameReady_) {
 		return;
 	}
 	else {
+		FighterPositionMsg* f = static_cast<FighterPositionMsg*>(m_);
+		f->_type = _FighterPos;
+		f->x = pos.getX();
+		f->y = pos.getY();
+		f->id = id_;
+		f->rotation = rotation;
+		// set the message length and the address of the other player
+		p_->len = sizeof(FighterPositionMsg);
+		p_->address = otherPlayerAddress_;
 
+		// send the message
+		SDLNet_UDP_Send(conn_, -1, p_);
 	}
 }
 
-void NetworkSystem::sendStartGameRequest()
+void NetworkSystem::sendBulletInfo(Vector2D pos, Vector2D vel, double width, double height)
 {
-	m_->type = msg::_START_REQUEST;
-	p_->len = sizeof(msg::Message);
+	if (!isGameReady_) {
+		return;
+	}
+	else {
+		ShootMsg* f = static_cast<ShootMsg*>(m_);
+		f->_type = _Shoot;
+		f->pos_x = pos.getX();
+		f->pos_y = pos.getY();
+		f->vel_x = vel.getX();
+		f->vel_y = vel.getY();
+		f->w = width;
+		f->h = height;
+		
+		// set the message length and the address of the other player
+		p_->len = sizeof(ShootMsg);
+		p_->address = otherPlayerAddress_;
+
+		// send the message
+		SDLNet_UDP_Send(conn_, -1, p_);
+	}
+
+}
+
+
+
+void NetworkSystem::sendPaddlePosition(Vector2D pos) {
+
+	// if the other player is not connected do nothing
+	if (!isGameReady_)
+		return;
+
+	// we prepare a message that includes all information
+	PaddlePositionMsg *m = static_cast<PaddlePositionMsg*>(m_);
+	m->_type = _PADDLE_POS;
+	m->x = pos.getX();
+	m->y = pos.getY();
+	m->id = id_;
+
+	// set the message length and the address of the other player
+	p_->len = sizeof(PaddlePositionMsg);
+	p_->address = otherPlayerAddress_;
+
+	// send the message
+	SDLNet_UDP_Send(conn_, -1, p_);
+
+}
+
+void NetworkSystem::sendStartGameRequest() {
+	m_->_type = _START_GAME_REQUEST_;
+	p_->len = sizeof(NetworkMessage);
 	p_->address = otherPlayerAddress_;
 	SDLNet_UDP_Send(conn_, -1, p_);
 }
 
-void NetworkSystem::sendFighterPosition(Vector2D pos)
-{
-	if (!isGameReady_) {
+void NetworkSystem::sendStateChanged(Uint8 state, Uint8 left_score,	Uint8 right_score) {
+	// if the other player is not connected do nothing
+	if (!isGameReady_)
 		return;
-	}
-	else {
-		//msg::FighterInfo* f = static_cast<msg::FighterInfo*>(m_);
-		//f->id_ = msg::FIGHTER_INFO;
-		//f->x_ = pos.getX();
-		//f->y_ = pos.getY();
-		//f->rot_ = 0; //añadir parametros
 
+	// we prepare a message that includes all information
+	StateChangedMessage *m = static_cast<StateChangedMessage*>(m_);
+	m->_type = _STATE_CHANGED_;
+	m->state_ = state;
+	m->left_score_ = left_score;
+	m->right_score_ = right_score;
 
-		//p_->len = f->size_;
-		//p_->address = otherPlayerAddress_;
-		//send
-		SDLNet_UDP_Send(conn_, -1, p_);
+	// set the message length and the address of the other player
+	p_->len = sizeof(StateChangedMessage);
+	p_->address = otherPlayerAddress_;
 
-	}
+	// send the message
+	SDLNet_UDP_Send(conn_, -1, p_);
+
 }
 
-void NetworkSystem::sendBulletInfo(Vector2D pos, Vector2D vel)
-{
-	if (!isGameReady_) {
+void NetworkSystem::sendBallInfo(Vector2D pos, Vector2D vel) {
+	// if the other player is not connected do nothing
+	if (!isGameReady_)
 		return;
-	}
-	else {
-		//msg::BulletShoot* b = static_cast<msg::BulletShoot*>(m_);
-		//b->id_ = msg::MsgID::BULLET_SHOT;
-		//b->x_ = pos.getX();
-		//b->y_ = pos.getX();
-		//b->velX_ = vel.getX();
-		//b->velY_ = vel.getX();
-		//p_->len = b->size_;
-		p_->address = otherPlayerAddress_;
-		SDLNet_UDP_Send(conn_, -1, p_);
-	}
+
+	// we prepare a message that includes all information
+	BallInfoMsg *m = static_cast<BallInfoMsg*>(m_);
+	m->_type = _BALL_INFO_;
+	m->pos_x = pos.getX();
+	m->pos_y = pos.getY();
+	m->vel_x = vel.getX();
+	m->vel_y = vel.getY();
+
+	// set the message length and the address of the other player
+	p_->len = sizeof(BallInfoMsg);
+	p_->address = otherPlayerAddress_;
+
+	// send the message
+	SDLNet_UDP_Send(conn_, -1, p_);
 }
