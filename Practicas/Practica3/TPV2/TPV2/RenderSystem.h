@@ -15,10 +15,10 @@ public:
 	void update() override;
 private:
 
-	void drawRect(Transform *tr, SDL_Color color);
 	void drawScore();
 	void drawMsgs();
 	void drawNames();
+	void drawFighters();
 
 	Transform *ballTr_;
 	Transform *leftPaddelTr_;

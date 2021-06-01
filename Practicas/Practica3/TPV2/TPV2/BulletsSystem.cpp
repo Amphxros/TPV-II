@@ -52,7 +52,8 @@ void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double width, double heigh
 {
 	Entity* e = manager_->addEntity();
 	manager_->addComponent<Transform>(e, pos, vel, width, height, 0.0);
-	auto t = &(sdlutils().images().at("bullet"));
+	auto t = &(sdlutils().images().at("Bullet"));
 	manager_->addComponent<Image>(e, t );
 	manager_->setGroup<Bullet>(e, true);
+	sdlutils().soundEffects().at("gunshot").play();
 }

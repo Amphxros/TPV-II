@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BallSystem.cpp" />
     <ClCompile Include="BulletsSystem.cpp" />
     <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="ecs\Entity.cpp" />
@@ -33,7 +32,6 @@
     <ClCompile Include="json\JSONValue.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NetworkSystem.cpp" />
-    <ClCompile Include="PaddlesSystem.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="sdlutils\sdlutils_demo.cpp" />
     <ClCompile Include="sdlutils\SDLUtils.cpp" />
@@ -43,16 +41,13 @@
     <ClCompile Include="utils\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BallSystem.h" />
     <ClInclude Include="BulletsSystem.h" />
     <ClInclude Include="CollisionSystem.h" />
     <ClInclude Include="components\Image.h" />
-    <ClInclude Include="components\PaddleCtrlKeys.h" />
     <ClInclude Include="components\Transform.h" />
     <ClInclude Include="DefFactory.h" />
     <ClInclude Include="ecs\Component.h" />
     <ClInclude Include="ecs\ecs.h" />
-    <ClInclude Include="ecs\ecs_defs_example.h" />
     <ClInclude Include="ecs\Entity.h" />
     <ClInclude Include="ecs\Manager.h" />
     <ClInclude Include="ecs\mpl.h" />

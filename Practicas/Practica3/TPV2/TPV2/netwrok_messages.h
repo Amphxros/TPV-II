@@ -10,11 +10,9 @@ enum MsgType : uint8_nt {
 	_NONE_ = 0, //
 	_I_WANT_TO_PLAY_, //
 	_WELCOME_, //
-	_PADDLE_POS, //
 	_FighterPos,
 	_START_GAME_REQUEST_,
 	_STATE_CHANGED_, //
-	_BALL_INFO_, //
 	_DISCONNECTED_, //
 	_Shoot, //
 	_ACTIVE_
@@ -38,24 +36,11 @@ struct WelcomeMsg: NetworkMessage {
 	uint8_nt name[10];
 };
 
-struct PaddlePositionMsg: NetworkMessage {
-	uint8_nt id;
-	float32_nt x;
-	float32_nt y;
-};
-
 struct FighterPositionMsg: NetworkMessage {
 	uint8_nt id;
 	float32_nt x;
 	float32_nt y;
 	float32_nt rotation;
-};
-
-struct BallInfoMsg: NetworkMessage {
-	float32_nt pos_x;
-	float32_nt pos_y;
-	float32_nt vel_x;
-	float32_nt vel_y;
 };
 
 struct StateChangedMessage: NetworkMessage {

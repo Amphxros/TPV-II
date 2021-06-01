@@ -11,14 +11,13 @@
 
 #include "ecs/Manager.h"
 #include "utils/Vector2D.h"
-#include "BallSystem.h"
+
 #include "CollisionSystem.h"
 #include "GameManagerSystem.h"
 #include "FighterSystem.h"
 #include "BulletsSystem.h"
 
 #include "NetworkSystem.h"
-#include "PaddlesSystem.h"
 #include "RenderSystem.h"
 
 Game::Game() {
@@ -70,14 +69,11 @@ void Game::start() {
 		}
 
 		mngr_->refresh();
-
-		//ballSys_->update();
-		//paddlesSys_->update();
-		//collisionSys_->update();
-		
+	
 		gameMngrSys_->update();
 		bulletSys_->update();
 		fighterSys_->update();
+		collisionSys_->update();
 		networkSys_->update();
 
 		sdlutils().clearRenderer();

@@ -4,6 +4,7 @@
 #include "ecs/System.h"
 
 struct Transform;
+struct Entity;
 class SoundEffect;
 
 class CollisionSystem: public System {
@@ -12,10 +13,11 @@ public:
 	virtual ~CollisionSystem();
 	void init() override;
 	void update() override;
+	bool isOnCollision(Transform* tA, Transform* tB);
 private:
-	Transform *ballTr_;
-	Transform *leftPaddelTr_;
-	Transform *rightPaddelTr_;
-	SoundEffect *paddleHit_;
+
+	Entity* fighterA;
+	Entity* fighterB;
+	SoundEffect* Explosion;
 };
 

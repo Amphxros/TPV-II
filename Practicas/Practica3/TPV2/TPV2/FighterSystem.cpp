@@ -2,6 +2,8 @@
 
 #include "components/Transform.h"
 #include "FighterCtrl.h"
+#include "BulletsSystem.h"
+#include "GameManagerSystem.h"
 #include "components/Image.h"
 
 #include "ecs/Manager.h"
@@ -27,7 +29,7 @@ void FighterSystem::init()
 	fighterB = manager_->addEntity();
 	
 	Texture* tB = &(sdlutils().images().at("fighterB"));
-	manager_->addComponent<Transform>(fighterB, Vector2D(sdlutils().width()-50, sdlutils().height() / 2.0 - 25), Vector2D(), 50, 50, 90.0f);
+	manager_->addComponent<Transform>(fighterB, Vector2D(sdlutils().width()-50, sdlutils().height() / 2.0 - 25), Vector2D(), 50, 50, -90.0f);
 	manager_->addComponent<FighterCtrl>(fighterB, SDL_SCANCODE_UP, SDL_SCANCODE_DOWN, SDL_SCANCODE_LEFT, SDL_SCANCODE_RIGHT, 5.0f);
 	manager_->addComponent<Image>(fighterB, tB ); //modificar el json
 
@@ -39,15 +41,16 @@ void FighterSystem::init()
 
 void FighterSystem::update()
 {
-	Uint8 mID = manager_->getSystem<NetworkSystem>()->getId();
+	if (manager_->getSystem<GameManagerSystem>()->getState() == GameManagerSystem::RUNNING) {
+		Uint8 mID = manager_->getSystem<NetworkSystem>()->getId();
 
-	if (mID == 0) {
-		moveFighter(fighterA);
+		if (mID == 0) {
+			moveFighter(fighterA);
+		}
+		else {
+			moveFighter(fighterB);
+		}
 	}
-	else {
-		moveFighter(fighterB);
-	}
-
 }
 
 void FighterSystem::resetFighters()
@@ -59,13 +62,13 @@ void FighterSystem::resetFighters()
 void FighterSystem::setFighterPosition(Uint8 id, Vector2D pos, float rotation)
 {
 	if (id == 0) {
-		auto trA = manager_->getComponent<Transform>(fighterA);
+		auto trA = manager_->getComponent<Transform>(fighterB);
 		trA->pos_ = pos;
 		trA->rotation_ = rotation;
 	}
 	else {
 
-		auto trB = manager_->getComponent<Transform>(fighterB);
+		auto trB = manager_->getComponent<Transform>(fighterA);
 		trB->pos_ = pos;
 		trB->rotation_ = rotation;
 	}
@@ -94,11 +97,15 @@ void FighterSystem::moveFighter(Entity* e)
 		}
 
 		if (ih().isKeyDown(SDLK_s)) {
-
+	
 			Vector2D p;
 			Vector2D v;
+			
+			p = tr_->pos_ + Vector2D(tr_->width_ / 2.0f, tr_->height_ / 2.0f) - Vector2D(0.0f, tr_->height_ / 2.0f + 5.0f + 12.0f).rotate(tr_->rotation_) - Vector2D(2.0f, 10.0f);
+			v = Vector2D(0.0f, -1.0f).rotate(tr_->rotation_) * (tr_->vel_.magnitude() + 5.0f);
+
 			manager_->getSystem<BulletsSystem>()->shoot(p,v,10,10);
-			manager_->getSystem<NetworkSystem>()->sendBulletInfo(tr_->pos_,tr_->vel_, 10,10);
+			manager_->getSystem<NetworkSystem>()->sendBulletInfo(p,v, 10,10);
 		}
 	}
 	tr_->pos_ = tr_->pos_ + tr_->vel_;
@@ -119,6 +126,7 @@ void FighterSystem::moveFighter(Entity* e)
 	}
 	
 
+	// setea la posicion al otro jugador
 	manager_->getSystem<NetworkSystem>()->sendFighterPosition(tr_->pos_,tr_->rotation_);
 
 }

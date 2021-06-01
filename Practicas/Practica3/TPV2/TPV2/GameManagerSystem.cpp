@@ -6,7 +6,7 @@
 #include "components/Transform.h"
 #include "ecs/Manager.h"
 #include "sdlutils/InputHandler.h"
-#include "BallSystem.h"
+#include "BulletsSystem.h"
 #include "NetworkSystem.h"
 
 GameManagerSystem::GameManagerSystem() :
@@ -23,7 +23,6 @@ void GameManagerSystem::init() {
 
 void GameManagerSystem::onCollisionWithBullet(Uint8 id)
 {
-	assert(state_ == RUNNING); // this should be called only when game is runnig
 	if(id==0){
 		score_[1]++;
 	}
@@ -31,17 +30,19 @@ void GameManagerSystem::onCollisionWithBullet(Uint8 id)
 		score_[0]++;
 	}
 	
-	if (score_[0] < maxScore_ && score_[1] < maxScore_)
+	if (score_[0] < maxScore_ && score_[1] < maxScore_){
 		state_ = PAUSED;
-	else
+	}
+	else{
 		state_ = GAMEOVER;
-	
-
+	}
+	manager_->getSystem<BulletsSystem>()->resetBullets();
 	manager_->getSystem<NetworkSystem>()->sendStateChanged(state_, score_[0],score_[1]);
 }
 
 
 void GameManagerSystem::update() {
+	
 	if (state_ != RUNNING) {
 		if (ih().isKeyDown(SDL_SCANCODE_SPACE)) {
 			switch (state_) {
