@@ -20,7 +20,7 @@ public:
 	virtual void update() {
 	}
 
-	virtual void receive(const Message&) {
+	virtual void receive(const Message& m) {
 	}
 
 protected:

@@ -3,6 +3,9 @@
 // DO NOT USE/MODIFY THIS FILE, IT IS JUST AN EXAMPLE OF HOW YOUR
 // ecs_defs.h should look like
 
+
+// BORRAR ANTES DE ENTREGAR
+
 #pragma once
 
 // components -- forward declaration, i.e., assume they are defined somewhere
@@ -20,4 +23,5 @@ struct Cheery;
 struct Blinky;
 struct Pinky;
 #define _HDLRS_LIST_ Blinky,Pinky
+
 

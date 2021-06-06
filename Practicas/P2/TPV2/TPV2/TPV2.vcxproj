@@ -19,10 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AsteroidSystem.cpp" />
+    <ClCompile Include="BulletsSystem.cpp" />
+    <ClCompile Include="CollisionSystem.cpp" />
+    <ClCompile Include="ecs\Entity.cpp" />
+    <ClCompile Include="ecs\Manager.cpp" />
+    <ClCompile Include="FighterGunSystem.cpp" />
+    <ClCompile Include="FighterSystem.cpp" />
+    <ClCompile Include="GameCtrlSystem.cpp" />
     <ClCompile Include="json\somplejson_demo.cpp" />
     <ClCompile Include="json\JSON.cpp" />
     <ClCompile Include="json\JSONValue.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="messages.cpp" />
+    <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="sdlutils\sdlutils_demo.cpp" />
     <ClCompile Include="sdlutils\SDLUtils.cpp" />
     <ClCompile Include="sdlutils\SoundEffect.cpp" />
@@ -31,9 +41,26 @@
     <ClCompile Include="utils\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AsteroidSystem.h" />
+    <ClInclude Include="BulletsSystem.h" />
+    <ClInclude Include="CollisionSystem.h" />
+    <ClInclude Include="ecs\Component.h" />
+    <ClInclude Include="ecs\ecs.h" />
+    <ClInclude Include="ecs\ecs_defs.h" />
+    <ClInclude Include="ecs\ecs_defs_example.h" />
+    <ClInclude Include="ecs\Entity.h" />
+    <ClInclude Include="ecs\Manager.h" />
+    <ClInclude Include="ecs\mpl.h" />
+    <ClInclude Include="ecs\System.h" />
+    <ClInclude Include="FighterGunSystem.h" />
+    <ClInclude Include="FighterSystem.h" />
+    <ClInclude Include="GameCtrlSystem.h" />
+    <ClInclude Include="Image.h" />
     <ClInclude Include="json\simplejson_demo.h" />
     <ClInclude Include="json\JSON.h" />
     <ClInclude Include="json\JSONValue.h" />
+    <ClInclude Include="messages.h" />
+    <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="sdlutils\sdlutils_demo.h" />
     <ClInclude Include="sdlutils\Font.h" />
     <ClInclude Include="sdlutils\InputHandler.h" />
@@ -44,6 +71,7 @@
     <ClInclude Include="sdlutils\SoundEffect.h" />
     <ClInclude Include="sdlutils\Texture.h" />
     <ClInclude Include="sdlutils\VirtualTimer.h" />
+    <ClInclude Include="Transform.h" />
     <ClInclude Include="utils\Collisions.h" />
     <ClInclude Include="utils\Singleton.h" />
     <ClInclude Include="utils\Vector2D.h" />

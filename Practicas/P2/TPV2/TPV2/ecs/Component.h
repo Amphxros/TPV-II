@@ -2,8 +2,19 @@
 
 #pragma once
 
-struct Component {
+class Component {
+public:
+	Component(){
+
+	}
 	virtual ~Component() {
+	}
+
+	virtual void init(){
+
+	}
+	virtual void update(){
+
 	}
 };
 
