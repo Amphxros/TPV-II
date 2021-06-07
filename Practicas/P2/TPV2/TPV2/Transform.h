@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../ecs/Component.h"
-#include "../utils/Vector2D.h"
+#include "ecs/Component.h"
+#include "utils/Vector2D.h"
 
-class Transform : Component {
+class Transform : public Component {
 public:
 	Transform() :
 		pos_(), vel_(), width_(), height_(), rotation_() {

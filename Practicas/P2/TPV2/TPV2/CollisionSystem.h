@@ -14,6 +14,8 @@ public:
 
 	void receive(const Message& m) override;
 
+	bool collides(Transform* tr1, Transform* tr2);
+
 private:
 	bool active_;
 };

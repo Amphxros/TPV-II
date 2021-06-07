@@ -12,8 +12,11 @@ void AsteroidSystem::addAsteroids(int n)
 {
 	for(int i=0; i<n;i++){
 		Entity* e= manager_->addEntity();
+		e->setGroup<Asteroid>(true);
+		e->addComponent<Transform>(Vector2D(), Vector2D(), 50, 50, 0);
+		//e->addComponent<Image>();
+		
 		//cmps aqui
-		manager_->setGroup<Asteroid>(e, true);
 	}
 }
 

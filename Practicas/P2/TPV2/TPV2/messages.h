@@ -2,6 +2,7 @@
 #include <SDL_stdinc.h>
 
 #include "GameCtrlSystem.h"
+#include "utils/Vector2D.h"
 
 struct Entity;
 
@@ -16,7 +17,8 @@ enum MsgType : Uint8 {
 };
 
 struct CollidesWithEntity {
-	Entity* entity_;
+	Entity* entityA;
+	Entity* entityB;
 };
 
 struct RoundInfo {

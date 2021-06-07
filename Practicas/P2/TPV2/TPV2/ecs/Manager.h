@@ -10,6 +10,7 @@
 #include "ecs.h"
 #include "Entity.h"
 #include "System.h"
+#include "../messages.h"
 
 class Manager {
 public:
@@ -21,43 +22,10 @@ public:
 		e->groups_.reset();
 	}
 
-	template<typename GT>
-	inline void setGroup(Entity *e, bool status) {
-		assert(e != nullptr);
-		e->groups_[ecs::grpIdx<GT>] = status;
-	}
-
-	template<typename GT>
-	inline bool hasGroup(Entity *e) {
-		assert(e != nullptr);
-		return e->groups_[ecs::grpIdx<GT>];
-	}
-
-	template<typename T, typename ...Ts>
-	inline T* addComponent(Entity *e, Ts &&...args) {
-		T *c = new T(std::forward<Ts>(args)...);
-		e->_cmps[ecs::cmpIdx<T>] = std::unique_ptr<Component>(c);
-		return c;
-	}
-
-	template<typename T>
-	inline T* getComponent(Entity *e) {
-		return static_cast<T*>(e->_cmps[ecs::cmpIdx<T>].get());
-	}
-
-	template<typename T>
-	inline bool hasComponent(Entity *e) {
-		return e->_cmps[ecs::cmpIdx<T>].get() != nullptr;
-	}
-
-	template<typename T>
-	inline void removeComponent(Entity *e) {
-		e->_cmps[ecs::cmpIdx<T>].get() = nullptr;
-	}
-
+	
 	// entities
 	Entity* addEntity() {
-		Entity *e = new Entity();
+		Entity *e = new Entity(this);
 		if (e != nullptr) {
 			resetGroups(e);
 			e->active_ = true;
@@ -66,14 +34,7 @@ public:
 		return e;
 	}
 
-	inline bool isActive(Entity *e) const {
-		return e->active_;
-	}
-
-	inline void setActive(Entity *e, bool state) {
-		e->active_ = state;
-	}
-
+	
 	// handlers
 	template<typename T>
 	inline void setHandler(Entity *e) {
@@ -105,10 +66,10 @@ public:
 	}
 
 	// message
-	void send(const Message &msg) {
+	void send(const Message &m) {
 		// Message needs a clone method because we don't know what is the actual type, and
 		// we need to make a copy
-		msgsQueue_.emplace_back(msg.clone());
+		msgsQueue_.emplace_back(m.clone());
 	}
 
 	//	// instead of having a clone method in the messages, we could use templates to

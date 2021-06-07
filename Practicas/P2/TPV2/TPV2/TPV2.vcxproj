@@ -22,6 +22,7 @@
     <ClCompile Include="AsteroidSystem.cpp" />
     <ClCompile Include="BulletsSystem.cpp" />
     <ClCompile Include="CollisionSystem.cpp" />
+    <ClCompile Include="DisableAtExit.cpp" />
     <ClCompile Include="ecs\Entity.cpp" />
     <ClCompile Include="ecs\Manager.cpp" />
     <ClCompile Include="FighterGunSystem.cpp" />
@@ -44,6 +45,7 @@
     <ClInclude Include="AsteroidSystem.h" />
     <ClInclude Include="BulletsSystem.h" />
     <ClInclude Include="CollisionSystem.h" />
+    <ClInclude Include="DisableAtExit.h" />
     <ClInclude Include="ecs\Component.h" />
     <ClInclude Include="ecs\ecs.h" />
     <ClInclude Include="ecs\ecs_defs.h" />
