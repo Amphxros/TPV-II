@@ -69,7 +69,7 @@ public:
 	void send(const Message &m) {
 		// Message needs a clone method because we don't know what is the actual type, and
 		// we need to make a copy
-		msgsQueue_.emplace_back(m.clone());
+		msgsQueue_.emplace_back(m);
 	}
 
 	//	// instead of having a clone method in the messages, we could use templates to

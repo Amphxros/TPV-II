@@ -43,12 +43,11 @@ public:
 		c->init();
 		constexpr auto id = ecs::cmpIdx<T>;
 
-		if (cmpArray_[id] != nullptr) {
+		if (cmps_[id] != nullptr) {
 			removeComponent<T>();
 		}
 
-		cmpArray_[id] = c;
-		cmps_.emplace_back(c);
+		cmps_[id] = c;
 
 		return c;
 	}
@@ -56,24 +55,16 @@ public:
 	template<typename T>
 	void removeComponent() {
 		auto id = ecs::cmpIdx<T>;
-		if (cmpArray_[id] != nullptr) {
-			Component* old_cmp = cmpArray_[id];
-			cmpArray_[id] = nullptr;
-			cmps_.erase( //
-				std::find_if( //
-					cmps_.begin(), //
-					cmps_.end(), //
-					[old_cmp](const Component* c) { //
-						return c == old_cmp;
-					}));
-			delete old_cmp;
+		if (cmps_[id] != nullptr) {
+			Component* old_cmp = cmps_[id];
+			cmps_[id] = nullptr;
 		}
 	}
 
 	template<typename T>
 	inline T* getComponent() {
 		auto id = ecs::cmpIdx<T>;
-		return static_cast<T*>(cmpArray_[id]);
+		return static_cast<T*>(cmps_[id]);
 	}
 	inline bool isActive() const {
 		return active_;

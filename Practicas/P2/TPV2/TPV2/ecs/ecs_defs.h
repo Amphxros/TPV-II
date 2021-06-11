@@ -3,7 +3,9 @@
 // components -- forward declaration, i.e., assume they are defined somewhere
 class Transform;
 class Image;
-#define _CMPS_LIST_  Transform,Image
+class DisableAtExit;
+class ShowAtOppositeSide;
+#define _CMPS_LIST_  Transform,Image, DisableAtExit, ShowAtOppositeSide
 
 // groups -- forward declaration, but they are never defined as data structures
 struct Asteroid;

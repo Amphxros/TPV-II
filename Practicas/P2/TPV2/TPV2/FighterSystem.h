@@ -2,7 +2,7 @@
 
 #include "ecs/System.h"
 
-
+class Entity;
 class FighterSystem : public System
 {
 public:

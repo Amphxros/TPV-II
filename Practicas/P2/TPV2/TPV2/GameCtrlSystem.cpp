@@ -16,11 +16,6 @@ void GameCtrlSystem::onFighterDeath()
 
 void GameCtrlSystem::onAsteroidsExtinction()
 {	
-	Message m;
-	m.type_ = _GAME_OVER_;
-	std::cout << "Game over";
-
-	manager_->send(m);
 }
 
 void GameCtrlSystem::init()
