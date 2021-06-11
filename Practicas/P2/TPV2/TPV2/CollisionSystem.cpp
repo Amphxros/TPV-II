@@ -26,11 +26,11 @@ void CollisionSystem::update()
 					//se comprueba col aqui
 					if (collides(a->getComponent<Transform>(),
 						b->getComponent<Transform>())) {
-						Message m;
-						m.type_ = _COLLISION_ASTEROID_BULLET;
-						m.entity_.entityA = a;
-						m.entity_.entityB = b;
-						manager_->send(m);
+						Message n;
+						n.type_ = _COLLISION_ASTEROID_BULLET;
+						n.entity_.entityA = a;
+						n.entity_.entityB = b;
+						manager_->send(n);
 
 					}
 				}
@@ -58,8 +58,10 @@ void CollisionSystem::receive(const Message& m)
 	}
 }
 
-bool collides(Transform* tr1, Transform* tr2) {
+bool CollisionSystem::collides(Transform* tr1, Transform* tr2)
+{
 	return Collisions::collides( //
 			tr1->pos_, tr1->width_, tr1->height_, //
 			tr2->pos_, tr2->width_, tr2->height_);
+	
 }

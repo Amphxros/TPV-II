@@ -31,6 +31,8 @@ struct BulletInfo {
 };
 
 struct Message {
+	Message() {}
+	virtual ~Message(){}
 	MsgType type_;
 	// Union types; solo se inicializa el que se va a usar
 	union {

@@ -19,8 +19,8 @@ void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double width, double heigh
 	b->addComponent<DisableAtExit>();
 	b->setGroup<Bullet>(true);
 
-	/*
-	Entity * e = manager_->addEtity();
+	/* OTRA OPCION
+	Entity * e = manager_->addEntity();
 	manager->addComponent<...>(e, ...)
 	manager->setGroup<Grupo>(e,true)
 	manager->setHandler<Handler>(e);
