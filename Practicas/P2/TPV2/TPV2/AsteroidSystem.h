@@ -26,6 +26,6 @@ public:
 	virtual void receive(const Message& m) override;
 	
 private:
-	std::size_t numOfAsteroids_;
+	size_t numOfAsteroids_;
 
 };

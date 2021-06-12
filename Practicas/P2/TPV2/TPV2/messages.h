@@ -30,7 +30,8 @@ struct BulletInfo {
 	double w, h;
 };
 
-struct Message {
+class Message {
+public:
 	Message() {}
 	virtual ~Message(){}
 	MsgType type_;

@@ -13,23 +13,17 @@ BulletsSystem::~BulletsSystem()
 
 void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double width, double height)
 {
-	Entity* b = manager_->addEntity();
-	b->addComponent<Transform>(pos, vel, width, height);
-	b->addComponent<Image>();
-	b->addComponent<DisableAtExit>();
-	b->setGroup<Bullet>(true);
-
-	/* OTRA OPCION
 	Entity * e = manager_->addEntity();
-	manager->addComponent<...>(e, ...)
-	manager->setGroup<Grupo>(e,true)
-	manager->setHandler<Handler>(e);
-	*/
+	manager_->addComponent<Transform>(e, pos, vel,width, height);
+	manager_->addComponent<DisableAtExit>(e);
+	manager_->setGroup<Bullet>(e, true);
+	
 }
 
 void BulletsSystem::onCollisionWithAsteroid(Entity* b, Entity* a)
 {
-	b->setActive(false);
+	manager_->setActive(b, false);
+	//b->setActive(false);
 }
 
 void BulletsSystem::init()
@@ -41,12 +35,12 @@ void BulletsSystem::update()
 	if (!active_) {
 		return;
 	}
-	auto entities = manager_->getEnteties();
-	for (auto e : entities) {
-		if (e->hasGroup<Bullet>()) {
-			e->update();
-		}
-	}
+	//auto entities = manager_->getEnteties();
+	//for (auto e : entities) {
+	//	if (e->hasGroup<Bullet>()) {
+	//		e->update();
+	//	}
+	//}
 }
 
 void BulletsSystem::receive(const Message& m)
@@ -58,11 +52,11 @@ void BulletsSystem::receive(const Message& m)
 			break;
 		case _GAME_OVER_:
 		case _ROUND_OVER_:
-			for (auto e : entities) {
-				if (e->hasGroup<Bullet>()) {
-					e->setActive(false);
-				}
-			}
+		//	for (auto e : entities) {
+		//		if (e->hasGroup<Bullet>()) {
+		//			e->setActive(false);
+		//		}
+		//	}
 			active_ = false;
 			break;
 		case _COLLISION_ASTEROID_BULLET:

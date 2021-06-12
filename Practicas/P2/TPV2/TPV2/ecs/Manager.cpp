@@ -18,16 +18,17 @@ void Manager::refresh() {
 
 	// remove dead entities from the list of entities
 	entities_.erase( //
-			std::remove_if( //
-					entities_.begin(), //
-					entities_.end(), //
-					[](const Entity *e) { //
-						if (e->active_) {
-							return false;
-						} else {
-							delete e;
-							return true;
-						}
-					}), //
-			entities_.end());
+		std::remove_if( //
+			entities_.begin(), //
+			entities_.end(), //
+			[](const Entity* e) { //
+				if (e->active_) {
+					return false;
+				}
+				else {
+					delete e;
+					return true;
+				}
+			}), //
+		entities_.end());
 }

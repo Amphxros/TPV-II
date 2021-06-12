@@ -1,7 +1,8 @@
 #pragma once
 
 #include "ecs/System.h"
-
+#include "utils/Vector2D.h"
+class Entity;
 class BulletsSystem : public System
 {
 public:

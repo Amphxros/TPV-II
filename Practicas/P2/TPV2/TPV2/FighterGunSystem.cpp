@@ -20,7 +20,7 @@ void FighterGunSystem::update()
 		return;
 	}
 
-	Transform* trFighter = manager_->getHandler<Fighter>()->getComponent<Transform>();
+	//Transform* trFighter = manager_->getHandler<Fighter>()->getComponent<Transform>();
 
 }
 

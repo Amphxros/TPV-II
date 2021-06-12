@@ -1,6 +1,5 @@
 #include "CollisionSystem.h"
 
-#include "Transform.h"
 #include "ecs/Manager.h"
 #include "sdlutils/SDLUtils.h"
 #include "utils/Collisions.h"
@@ -20,22 +19,21 @@ void CollisionSystem::update()
 	}
 	auto entities = manager_->getEnteties();
 	for(Entity* a:entities){
-		if(a->hasGroup<Asteroid>()){
-			for(Entity* b:entities){
-				if(b->hasGroup<Bullet>()){
-					//se comprueba col aqui
-					if (collides(a->getComponent<Transform>(),
-						b->getComponent<Transform>())) {
-						Message n;
-						n.type_ = _COLLISION_ASTEROID_BULLET;
-						n.entity_.entityA = a;
-						n.entity_.entityB = b;
-						manager_->send(n);
-
-					}
-				}
-			}
-		}
+	//	if(a->hasGroup<Asteroid>()){
+	//		for(Entity* b:entities){
+	//			if(b->hasGroup<Bullet>()){
+	//				//se comprueba col aqui
+	//				//if (collides()) {
+	//				//	Message n;
+	//				//	n.type_ = _COLLISION_ASTEROID_BULLET;
+	//				//	n.entity_.entityA = a;
+	//				//	n.entity_.entityB = b;
+	//				//	manager_->send(n);
+	//				//
+	//				//}
+	//			}
+	//		}
+	//	}
 	}
 }
 
@@ -60,8 +58,5 @@ void CollisionSystem::receive(const Message& m)
 
 bool CollisionSystem::collides(Transform* tr1, Transform* tr2)
 {
-	return Collisions::collides( //
-			tr1->pos_, tr1->width_, tr1->height_, //
-			tr2->pos_, tr2->width_, tr2->height_);
-	
+	return Collisions::collides(tr1->pos_, tr1->width_, tr1->height_,tr2->pos_, tr2->width_, tr2->height_);
 }

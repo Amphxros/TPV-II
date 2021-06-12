@@ -1,288 +1,265 @@
 ﻿  AsteroidSystem.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\AsteroidSystem.h(29,7): error C2039: 'size_t': no es un miembro de 'std'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\predefined C++ types (compiler internal)(349): message : vea la declaración de 'std'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(7,14): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-  BulletsSystem.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(14): message : vea la declaración de 'Entity'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\BulletsSystem.h(13,22): error C2061: error de sintaxis: identificador 'Vector2D'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\BulletsSystem.h(19,37): error C2061: error de sintaxis: identificador 'Entity'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Component.h(4,13): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(7): message : vea la declaración de 'Entity'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(14,14): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(14): message : vea la declaración de 'Entity'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\BulletsSystem.cpp(15,1): error C2511: 'void BulletsSystem::shoot(Vector2D,Vector2D,double,double)': la función miembro sobrecargada no se ha encontrado en 'BulletsSystem'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\ecs_defs.h(21): message : vea la declaración de 'BulletsSystem'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\BulletsSystem.cpp(31,1): error C2511: 'void BulletsSystem::onCollisionWithAsteroid(Entity *,Entity *)': la función miembro sobrecargada no se ha encontrado en 'BulletsSystem'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\ecs_defs.h(21): message : vea la declaración de 'BulletsSystem'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\BulletsSystem.cpp(57,64): error C2660: 'BulletsSystem::shoot': la función no acepta 4 argumentos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\BulletsSystem.h(13,7): message : vea la declaración de 'BulletsSystem::shoot'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\BulletsSystem.cpp(69,64): error C2660: 'BulletsSystem::onCollisionWithAsteroid': la función no acepta 2 argumentos
-  CollisionSystem.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\BulletsSystem.h(19,7): message : vea la declaración de 'BulletsSystem::onCollisionWithAsteroid'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\CollisionSystem.h(17,25): error C2061: error de sintaxis: identificador 'Transform'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(7,14): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(14): message : vea la declaración de 'Entity'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\CollisionSystem.cpp(27,10): error C2660: 'CollisionSystem::collides': la función no acepta 2 argumentos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\CollisionSystem.h(17,7): message : vea la declaración de 'CollisionSystem::collides'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\CollisionSystem.cpp(62,1): error C2511: 'bool CollisionSystem::collides(Transform *,Transform *)': la función miembro sobrecargada no se ha encontrado en 'CollisionSystem'
-  DisableAtExit.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\ecs_defs.h(23): message : vea la declaración de 'CollisionSystem'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440: 'static_cast': no se puede realizar la conversión de '_Ty' a 'T *'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:             _Ty=std::unique_ptr<Component,std::default_delete<Component>>
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         and
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:             T=Transform
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,10): message : No hay disponible ningún operador de conversión definido por el usuario que pueda realizar esta conversión, o bien no se puede llamar al operador
-  Entity.cpp
-  Manager.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\DisableAtExit.cpp(7): message : vea la referencia a la creación de instancias de plantilla de función "T *Entity::getComponent<Transform>(void)" que se está compilando
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\DisableAtExit.cpp(7): message :         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\DisableAtExit.cpp(7): message :         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\DisableAtExit.cpp(7): message :             T=Transform
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\DisableAtExit.cpp(7): message :         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(7,14): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(14): message : vea la declaración de 'Entity'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440: 'inicializando': no se puede realizar la conversión de 'const Message' a '_Objty'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         with
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:             _Objty=Message *
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): message : No hay disponible ningún operador de conversión definido por el usuario que pueda realizar esta conversión, o bien no se puede llamar al operador
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(25,15): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(25): message : vea la declaración de 'Entity'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33,15): warning C4099: 'Message': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33): message : vea la declaración de 'Message'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,1): error C2280: 'Message::Message(const Message &)': se está intentando hacer referencia a una función eliminada.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(44): message : el compilador generó 'Message::Message' aquí
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(44,1): message : "Message::Message(const Message &)": la función se eliminó implícitamente porque "Message" tiene un miembro de datos Variant "Message::bullet_" con un objeto constructor de copia no trivial.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(42): message : vea la declaración de 'Message::bullet_'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message&>(_Alloc &,_Objty *const ,const Message &)" que se está compilando
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         with
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Alloc=std::allocator<Message *>,
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Ty=Message *,
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Objty=Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Alloc=std::allocator<Message>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Ty=Message,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Objty=Message
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         ]
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message&>(_Alloc &,_Objty *const ,const Message &)" que se está compilando
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         with
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Alloc=std::allocator<Message *>,
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Ty=Message *,
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Objty=Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Alloc=std::allocator<Message>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Ty=Message,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Objty=Message
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message *,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<const Message&>(const Message &)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<const Message&>(const Message &)" que se está compilando
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         with
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :             _Ty=Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :             _Ty=Message
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         ]
+  BulletsSystem.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message,std::allocator<_Ty>>::emplace_back<const Message&>(const Message &)" que se está compilando
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         with
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         [
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :             _Ty=Message
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         ]
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(7,14): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\BulletsSystem.h(5): message : vea la declaración de 'Entity'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33,15): warning C4099: 'Message': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33): message : vea la declaración de 'Message'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\ecs.h(13,15): warning C4099: 'Message': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33): message : vea la declaración de 'Message'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(25,15): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(25): message : vea la declaración de 'Entity'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\AsteroidSystem.h(5,13): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(25): message : vea la declaración de 'Entity'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,1): error C2280: 'Message::Message(const Message &)': se está intentando hacer referencia a una función eliminada.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(44): message : el compilador generó 'Message::Message' aquí
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(44,1): message : "Message::Message(const Message &)": la función se eliminó implícitamente porque "Message" tiene un miembro de datos Variant "Message::bullet_" con un objeto constructor de copia no trivial.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(42): message : vea la declaración de 'Message::bullet_'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message&>(_Alloc &,_Objty *const ,const Message &)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Alloc=std::allocator<Message>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Ty=Message,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Objty=Message
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message&>(_Alloc &,_Objty *const ,const Message &)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Alloc=std::allocator<Message>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Ty=Message,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Objty=Message
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<const Message&>(const Message &)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :             _Ty=Message
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         ]
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message,std::allocator<_Ty>>::emplace_back<const Message&>(const Message &)" que se está compilando
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         with
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         [
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :             _Ty=Message
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         ]
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(38,2): error C2027: uso del tipo 'Transform' sin definir
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\ecs_defs.h(4): message : vea la declaración de 'Transform'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\BulletsSystem.cpp(17): message : vea la referencia a la creación de instancias de plantilla de función "T *Manager::addComponent<Transform,Vector2D&,Vector2D&,double&,double&>(Entity *,Vector2D &,Vector2D &,double &,double &)" que se está compilando
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\BulletsSystem.cpp(17): message :         with
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\BulletsSystem.cpp(17): message :         [
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\BulletsSystem.cpp(17): message :             T=Transform
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\BulletsSystem.cpp(17): message :         ]
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(41,56): error C2440: '<function-style-cast>': no se puede realizar la conversión de 'T *' a 'std::unique_ptr<Component,std::default_delete<_Ty>>'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(41,56): error C2440:         with
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(41,56): error C2440:         [
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(41,56): error C2440:             T=Transform
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(41,56): error C2440:         ]
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(41,56): error C2440:         and
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(41,56): error C2440:         [
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(41,56): error C2440:             _Ty=Component
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(41,56): error C2440:         ]
+  CollisionSystem.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(38,2): message : Ningún constructor ha podido aceptar el tipo de origen o bien la resolución de sobrecarga del constructor era ambigua
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(25,15): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(25): message : vea la declaración de 'Entity'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33,15): warning C4099: 'Message': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33): message : vea la declaración de 'Message'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,1): error C2280: 'Message::Message(const Message &)': se está intentando hacer referencia a una función eliminada.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(44): message : el compilador generó 'Message::Message' aquí
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(44,1): message : "Message::Message(const Message &)": la función se eliminó implícitamente porque "Message" tiene un miembro de datos Variant "Message::bullet_" con un objeto constructor de copia no trivial.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(42): message : vea la declaración de 'Message::bullet_'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message&>(_Alloc &,_Objty *const ,const Message &)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Alloc=std::allocator<Message>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Ty=Message,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Objty=Message
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message&>(_Alloc &,_Objty *const ,const Message &)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Alloc=std::allocator<Message>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Ty=Message,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Objty=Message
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<const Message&>(const Message &)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :             _Ty=Message
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         ]
+  Manager.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message,std::allocator<_Ty>>::emplace_back<const Message&>(const Message &)" que se está compilando
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         with
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         [
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :             _Ty=Message
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         ]
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(25,15): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(25): message : vea la declaración de 'Entity'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33,15): warning C4099: 'Message': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33): message : vea la declaración de 'Message'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,1): error C2280: 'Message::Message(const Message &)': se está intentando hacer referencia a una función eliminada.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(44): message : el compilador generó 'Message::Message' aquí
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(44,1): message : "Message::Message(const Message &)": la función se eliminó implícitamente porque "Message" tiene un miembro de datos Variant "Message::bullet_" con un objeto constructor de copia no trivial.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(42): message : vea la declaración de 'Message::bullet_'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message&>(_Alloc &,_Objty *const ,const Message &)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Alloc=std::allocator<Message>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Ty=Message,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Objty=Message
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message&>(_Alloc &,_Objty *const ,const Message &)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Alloc=std::allocator<Message>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Ty=Message,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Objty=Message
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<const Message&>(const Message &)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :             _Ty=Message
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         ]
   FighterGunSystem.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(72): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message *,std::allocator<_Ty>>::emplace_back<const Message&>(const Message &)" que se está compilando
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(72): message :         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(72): message :         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(72): message :             _Ty=Message *
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(72): message :         ]
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message,std::allocator<_Ty>>::emplace_back<const Message&>(const Message &)" que se está compilando
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         with
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         [
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :             _Ty=Message
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         ]
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(7,14): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Component.h(4): message : vea la declaración de 'Entity'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440: 'inicializando': no se puede realizar la conversión de 'const Message' a '_Objty'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         with
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:             _Objty=Message *
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): message : No hay disponible ningún operador de conversión definido por el usuario que pueda realizar esta conversión, o bien no se puede llamar al operador
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33,15): warning C4099: 'Message': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33): message : vea la declaración de 'Message'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\ecs.h(13,15): warning C4099: 'Message': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33): message : vea la declaración de 'Message'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(25,15): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(25): message : vea la declaración de 'Entity'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,1): error C2280: 'Message::Message(const Message &)': se está intentando hacer referencia a una función eliminada.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(44): message : el compilador generó 'Message::Message' aquí
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(44,1): message : "Message::Message(const Message &)": la función se eliminó implícitamente porque "Message" tiene un miembro de datos Variant "Message::bullet_" con un objeto constructor de copia no trivial.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(42): message : vea la declaración de 'Message::bullet_'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message&>(_Alloc &,_Objty *const ,const Message &)" que se está compilando
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         with
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Alloc=std::allocator<Message *>,
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Ty=Message *,
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Objty=Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Alloc=std::allocator<Message>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Ty=Message,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Objty=Message
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         ]
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message&>(_Alloc &,_Objty *const ,const Message &)" que se está compilando
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         with
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Alloc=std::allocator<Message *>,
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Ty=Message *,
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Objty=Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Alloc=std::allocator<Message>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Ty=Message,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Objty=Message
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message *,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<const Message&>(const Message &)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<const Message&>(const Message &)" que se está compilando
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         with
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :             _Ty=Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :             _Ty=Message
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(72): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message *,std::allocator<_Ty>>::emplace_back<const Message&>(const Message &)" que se está compilando
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(72): message :         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(72): message :         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(72): message :             _Ty=Message *
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(72): message :         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440: 'static_cast': no se puede realizar la conversión de '_Ty' a 'T *'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:             _Ty=std::unique_ptr<Component,std::default_delete<Component>>
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         and
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:             T=Transform
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,10): message : No hay disponible ningún operador de conversión definido por el usuario que pueda realizar esta conversión, o bien no se puede llamar al operador
   FighterSystem.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterGunSystem.cpp(23): message : vea la referencia a la creación de instancias de plantilla de función "T *Entity::getComponent<Transform>(void)" que se está compilando
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterGunSystem.cpp(23): message :         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterGunSystem.cpp(23): message :         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterGunSystem.cpp(23): message :             T=Transform
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterGunSystem.cpp(23): message :         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(7,14): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(14): message : vea la declaración de 'Entity'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterSystem.cpp(19,88): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterSystem.cpp(19,63): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440: 'inicializando': no se puede realizar la conversión de 'const Message' a '_Objty'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         with
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:             _Objty=Message *
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): message : No hay disponible ningún operador de conversión definido por el usuario que pueda realizar esta conversión, o bien no se puede llamar al operador
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message,std::allocator<_Ty>>::emplace_back<const Message&>(const Message &)" que se está compilando
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         with
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         [
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :             _Ty=Message
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         ]
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(25,15): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(25): message : vea la declaración de 'Entity'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33,15): warning C4099: 'Message': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33): message : vea la declaración de 'Message'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,1): error C2280: 'Message::Message(const Message &)': se está intentando hacer referencia a una función eliminada.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(44): message : el compilador generó 'Message::Message' aquí
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(44,1): message : "Message::Message(const Message &)": la función se eliminó implícitamente porque "Message" tiene un miembro de datos Variant "Message::bullet_" con un objeto constructor de copia no trivial.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(42): message : vea la declaración de 'Message::bullet_'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message&>(_Alloc &,_Objty *const ,const Message &)" que se está compilando
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         with
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Alloc=std::allocator<Message *>,
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Ty=Message *,
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Objty=Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Alloc=std::allocator<Message>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Ty=Message,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Objty=Message
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         ]
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message&>(_Alloc &,_Objty *const ,const Message &)" que se está compilando
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         with
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Alloc=std::allocator<Message *>,
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Ty=Message *,
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Objty=Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Alloc=std::allocator<Message>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Ty=Message,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Objty=Message
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message *,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<const Message&>(const Message &)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<const Message&>(const Message &)" que se está compilando
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         with
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :             _Ty=Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :             _Ty=Message
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(72): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message *,std::allocator<_Ty>>::emplace_back<const Message&>(const Message &)" que se está compilando
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(72): message :         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(72): message :         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(72): message :             _Ty=Message *
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(72): message :         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): error C2027: uso del tipo 'Transform' sin definir
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\ecs_defs.h(4): message : vea la declaración de 'Transform'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterSystem.cpp(19): message : vea la referencia a la creación de instancias de plantilla de función "T *Entity::addComponent<Transform,Vector2D,Vector2D,int,int,int>(Vector2D &&,Vector2D &&,int &&,int &&,int &&)" que se está compilando
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterSystem.cpp(19): message :         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterSystem.cpp(19): message :         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterSystem.cpp(19): message :             T=Transform
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterSystem.cpp(19): message :         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(50,11): error C2679: '=' binario: no se encontró un operador que adopte un operando en la parte derecha de tipo 'T *' (o bien no existe una conversión aceptable)
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(50,11): error C2679:         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(50,11): error C2679:         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(50,11): error C2679:             T=Transform
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(50,11): error C2679:         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1915,17): message : puede ser 'std::unique_ptr<Component,std::default_delete<_Ty>> &std::unique_ptr<_Ty,std::default_delete<_Ty>>::operator =(const std::unique_ptr<_Ty,std::default_delete<_Ty>> &)'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1915,17): message :         with
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1915,17): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1915,17): message :             _Ty=Component
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1915,17): message :         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1860,17): message : o       'std::unique_ptr<Component,std::default_delete<_Ty>> &std::unique_ptr<_Ty,std::default_delete<_Ty>>::operator =(std::unique_ptr<_Ty,std::default_delete<_Ty>> &&) noexcept'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1860,17): message :         with
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1860,17): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1860,17): message :             _Ty=Component
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1860,17): message :         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1814,17): message : o       'std::unique_ptr<Component,std::default_delete<_Ty>> &std::unique_ptr<_Ty,std::default_delete<_Ty>>::operator =(std::nullptr_t) noexcept'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1814,17): message :         with
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1814,17): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1814,17): message :             _Ty=Component
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1814,17): message :         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message : al hacer coincidir la lista de argumentos '(_Ty, T *)'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :             _Ty=std::unique_ptr<Component,std::default_delete<Component>>
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         and
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :             T=Transform
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): error C2027: uso del tipo 'Image' sin definir
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\ecs_defs.h(5): message : vea la declaración de 'Image'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterSystem.cpp(20): message : vea la referencia a la creación de instancias de plantilla de función "T *Entity::addComponent<Image,>(void)" que se está compilando
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterSystem.cpp(20): message :         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterSystem.cpp(20): message :         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterSystem.cpp(20): message :             T=Image
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterSystem.cpp(20): message :         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(50,11): error C2679: '=' binario: no se encontró un operador que adopte un operando en la parte derecha de tipo 'T *' (o bien no existe una conversión aceptable)
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(50,11): error C2679:         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(50,11): error C2679:         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(50,11): error C2679:             T=Image
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(50,11): error C2679:         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1915,17): message : puede ser 'std::unique_ptr<Component,std::default_delete<_Ty>> &std::unique_ptr<_Ty,std::default_delete<_Ty>>::operator =(const std::unique_ptr<_Ty,std::default_delete<_Ty>> &)'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1915,17): message :         with
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1915,17): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1915,17): message :             _Ty=Component
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1915,17): message :         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1860,17): message : o       'std::unique_ptr<Component,std::default_delete<_Ty>> &std::unique_ptr<_Ty,std::default_delete<_Ty>>::operator =(std::unique_ptr<_Ty,std::default_delete<_Ty>> &&) noexcept'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1860,17): message :         with
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1860,17): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1860,17): message :             _Ty=Component
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1860,17): message :         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1814,17): message : o       'std::unique_ptr<Component,std::default_delete<_Ty>> &std::unique_ptr<_Ty,std::default_delete<_Ty>>::operator =(std::nullptr_t) noexcept'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1814,17): message :         with
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1814,17): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1814,17): message :             _Ty=Component
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1814,17): message :         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message : al hacer coincidir la lista de argumentos '(_Ty, T *)'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :             _Ty=std::unique_ptr<Component,std::default_delete<Component>>
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         and
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :             T=Image
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): error C2027: uso del tipo 'ShowAtOppositeSide' sin definir
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\ecs_defs.h(7): message : vea la declaración de 'ShowAtOppositeSide'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterSystem.cpp(21): message : vea la referencia a la creación de instancias de plantilla de función "T *Entity::addComponent<ShowAtOppositeSide,>(void)" que se está compilando
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterSystem.cpp(21): message :         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterSystem.cpp(21): message :         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterSystem.cpp(21): message :             T=ShowAtOppositeSide
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\FighterSystem.cpp(21): message :         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(50,11): error C2679: '=' binario: no se encontró un operador que adopte un operando en la parte derecha de tipo 'T *' (o bien no existe una conversión aceptable)
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(50,11): error C2679:         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(50,11): error C2679:         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(50,11): error C2679:             T=ShowAtOppositeSide
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(50,11): error C2679:         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1915,17): message : puede ser 'std::unique_ptr<Component,std::default_delete<_Ty>> &std::unique_ptr<_Ty,std::default_delete<_Ty>>::operator =(const std::unique_ptr<_Ty,std::default_delete<_Ty>> &)'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1915,17): message :         with
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1915,17): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1915,17): message :             _Ty=Component
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1915,17): message :         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1860,17): message : o       'std::unique_ptr<Component,std::default_delete<_Ty>> &std::unique_ptr<_Ty,std::default_delete<_Ty>>::operator =(std::unique_ptr<_Ty,std::default_delete<_Ty>> &&) noexcept'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1860,17): message :         with
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1860,17): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1860,17): message :             _Ty=Component
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1860,17): message :         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1814,17): message : o       'std::unique_ptr<Component,std::default_delete<_Ty>> &std::unique_ptr<_Ty,std::default_delete<_Ty>>::operator =(std::nullptr_t) noexcept'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1814,17): message :         with
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1814,17): message :         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1814,17): message :             _Ty=Component
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\memory(1814,17): message :         ]
+  GameCtrlSystem.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message,std::allocator<_Ty>>::emplace_back<const Message&>(const Message &)" que se está compilando
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         with
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         [
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :             _Ty=Message
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         ]
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33,15): warning C4099: 'Message': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33): message : vea la declaración de 'Message'
   RenderSystem.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message : al hacer coincidir la lista de argumentos '(_Ty, T *)'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :             _Ty=std::unique_ptr<Component,std::default_delete<Component>>
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         and
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :             T=ShowAtOppositeSide
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(40,2): message :         ]
-  ShowAtOppositeSide.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\RenderSystem.cpp(3,10): fatal error C1083: No se puede abrir el archivo incluir: '../components/Image.h': No such file or directory
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440: 'static_cast': no se puede realizar la conversión de '_Ty' a 'T *'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:             _Ty=std::unique_ptr<Component,std::default_delete<Component>>
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         and
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:             T=Transform
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,1): error C2440:         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(67,10): message : No hay disponible ningún operador de conversión definido por el usuario que pueda realizar esta conversión, o bien no se puede llamar al operador
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\GameCtrlSystem.cpp(33,2): warning C4060: la instrucción switch no contiene etiquetas 'case' ni 'default'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(25,15): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Entity.h(25): message : vea la declaración de 'Entity'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33,15): warning C4099: 'Message': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(33): message : vea la declaración de 'Message'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,1): error C2280: 'Message::Message(const Message &)': se está intentando hacer referencia a una función eliminada.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(44): message : el compilador generó 'Message::Message' aquí
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(44,1): message : "Message::Message(const Message &)": la función se eliminó implícitamente porque "Message" tiene un miembro de datos Variant "Message::bullet_" con un objeto constructor de copia no trivial.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\messages.h(42): message : vea la declaración de 'Message::bullet_'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message&>(_Alloc &,_Objty *const ,const Message &)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Alloc=std::allocator<Message>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Ty=Message,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Objty=Message
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message&>(_Alloc &,_Objty *const ,const Message &)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Alloc=std::allocator<Message>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Ty=Message,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Objty=Message
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<const Message&>(const Message &)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :             _Ty=Message
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         ]
+  sdlutils_demo.cpp
+  Vector2D.cpp
   Generando código...
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ShowAtOppositeSide.cpp(7): message : vea la referencia a la creación de instancias de plantilla de función "T *Entity::getComponent<Transform>(void)" que se está compilando
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ShowAtOppositeSide.cpp(7): message :         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ShowAtOppositeSide.cpp(7): message :         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ShowAtOppositeSide.cpp(7): message :             T=Transform
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ShowAtOppositeSide.cpp(7): message :         ]
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message,std::allocator<_Ty>>::emplace_back<const Message&>(const Message &)" que se está compilando
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         with
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         [
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :             _Ty=Message
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\TPV2\ecs\Manager.h(119): message :         ]
