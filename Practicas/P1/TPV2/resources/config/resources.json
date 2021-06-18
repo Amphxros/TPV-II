@@ -26,7 +26,9 @@
     { "id" : "init", "text" : " init game", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" },
     { "id" : "pause", "text" : " round over", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" },
     { "id" : "gameOver", "text" : "game over", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" },
-    { "id" : "HelloSDL", "text" : "Hello SDL!", "font" : "ARIAL48", "color" : "0x0000ffff" }
+    { "id" : "HelloSDL", "text" : "Hello SDL!", "font" : "ARIAL48", "color" : "0x0000ffff" },
+    { "id" : "gameWin", "text" : "CONGRATULACIONES", "font" : "ARIAL48", "color" : "0x0000ffff" }
+  
   ],
 
   "sounds": [

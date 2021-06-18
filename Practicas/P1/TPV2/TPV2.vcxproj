@@ -28,6 +28,7 @@
     <ClCompile Include="FighterCtrl.cpp" />
     <ClCompile Include="Follow.cpp" />
     <ClCompile Include="FramedImage.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameCtrl.cpp" />
     <ClCompile Include="Generations.cpp" />
     <ClCompile Include="Gun.cpp" />
@@ -61,6 +62,7 @@
     <ClInclude Include="FighterCtrl.h" />
     <ClInclude Include="Follow.h" />
     <ClInclude Include="FramedImage.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="GameCtrl.h" />
     <ClInclude Include="Generations.h" />
     <ClInclude Include="Gun.h" />

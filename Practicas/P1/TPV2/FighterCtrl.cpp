@@ -1,5 +1,7 @@
 #include "FighterCtrl.h"
 
+#include "sdlutils/InputHandler.h"
+
 FighterCtrl::FighterCtrl()
 {
 }

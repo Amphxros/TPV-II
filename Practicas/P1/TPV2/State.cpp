@@ -12,7 +12,7 @@ State::~State()
 
 void State::init()
 {
-	
+	gameState = GameState::NEW;
 	initMsg = &sdlutils().msgs().at("init");
 	pauseMsg = &sdlutils().msgs().at("pause");
 	gameOverMsg = &sdlutils().msgs().at("gameOver");

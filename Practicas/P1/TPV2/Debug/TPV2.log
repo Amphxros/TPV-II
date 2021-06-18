@@ -1,3 +1,8 @@
-﻿  State.cpp
-     Creando biblioteca C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\bin\TPV2Debug.lib y objeto C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\bin\TPV2Debug.exp
+﻿  Game.cpp
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(22,57): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(22,54): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(23,57): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(23,54): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Game.cpp(45,94): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Game.cpp(45,66): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   TPV2.vcxproj -> C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\bin\TPV2Debug.exe

@@ -132,6 +132,9 @@
     <ClCompile Include="GameCtrl.cpp">
       <Filter>Source Files\GameManager</Filter>
     </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="json\JSON.h">
@@ -244,6 +247,9 @@
     </ClInclude>
     <ClInclude Include="GameCtrl.h">
       <Filter>Header Files\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
