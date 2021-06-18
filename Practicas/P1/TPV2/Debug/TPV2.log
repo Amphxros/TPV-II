@@ -1,0 +1,15 @@
+﻿  Entity.cpp
+  Manager.cpp
+  somplejson_demo.cpp
+  JSON.cpp
+  JSONValue.cpp
+  main.cpp
+  sdlutils_demo.cpp
+  SDLUtils.cpp
+  SoundEffect.cpp
+  Texture.cpp
+  Collisions.cpp
+  Vector2D.cpp
+  Generando código...
+     Creando biblioteca C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\bin\TPV2Debug.lib y objeto C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\bin\TPV2Debug.exp
+  TPV2.vcxproj -> C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\bin\TPV2Debug.exe
