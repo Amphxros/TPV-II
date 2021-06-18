@@ -123,13 +123,13 @@
     <ClCompile Include="AsteroidsManager.cpp">
       <Filter>Source Files\GameManager</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionsManager.cpp">
-      <Filter>Source Files\GameManager</Filter>
-    </ClCompile>
-    <ClCompile Include="GameCtrl.cpp">
+    <ClCompile Include="CollisionManager.cpp">
       <Filter>Source Files\GameManager</Filter>
     </ClCompile>
     <ClCompile Include="State.cpp">
+      <Filter>Source Files\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCtrl.cpp">
       <Filter>Source Files\GameManager</Filter>
     </ClCompile>
   </ItemGroup>
@@ -236,13 +236,13 @@
     <ClInclude Include="AsteroidsManager.h">
       <Filter>Header Files\GameManager</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionsManager.h">
-      <Filter>Header Files\GameManager</Filter>
-    </ClInclude>
-    <ClInclude Include="GameCtrl.h">
+    <ClInclude Include="CollisionManager.h">
       <Filter>Header Files\GameManager</Filter>
     </ClInclude>
     <ClInclude Include="State.h">
+      <Filter>Header Files\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCtrl.h">
       <Filter>Header Files\GameManager</Filter>
     </ClInclude>
   </ItemGroup>

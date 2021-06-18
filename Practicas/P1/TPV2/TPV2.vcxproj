@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AsteroidsManager.cpp" />
-    <ClCompile Include="CollisionsManager.cpp" />
+    <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="DeAcceleration.cpp" />
     <ClCompile Include="DisableOnExit.cpp" />
     <ClCompile Include="ecs\Entity.cpp" />
@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AsteroidsManager.h" />
-    <ClInclude Include="CollisionsManager.h" />
+    <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="DeAcceleration.h" />
     <ClInclude Include="DisableOnExit.h" />
     <ClInclude Include="ecs\Component.h" />
