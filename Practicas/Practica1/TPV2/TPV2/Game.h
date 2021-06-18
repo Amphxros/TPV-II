@@ -3,6 +3,7 @@
 #include "sdlutils/InputHandler.h"
 #include "sdlutils/macros.h"
 #include "sdlutils/SDLUtils.h"
+
 class Manager;
 class Game
 {

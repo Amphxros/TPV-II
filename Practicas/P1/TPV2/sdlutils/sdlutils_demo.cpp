@@ -7,13 +7,22 @@
 #include "InputHandler.h"
 #include "macros.h"
 #include "SDLUtils.h"
+#include "../ecs/Manager.h"
+#include "../ecs/Entity.h"
+#include "../ecs/ecs_defs_example.h"
 
+// include de los components
+#include "../Transform.h"
+#include "../Image.h"
+#include "../ShowAtOppositeSide.h"
+#include "../Gun.h"
+#include "../FighterCtrl.h"
 using namespace std;
 
 void sdlutils_basic_demo() {
 
 	// Initialise the SDLGame singleton
-	SDLUtils::init("SDLGame Demo!", 800, 600,
+	SDLUtils::init("Asteroids", 800, 600,
 			"resources/config/resources.json");
 
 	// reference to the SDLUtils Singleton. You could use it as a pointer as well,
@@ -25,75 +34,96 @@ void sdlutils_basic_demo() {
 	//
 	auto &sdl = *SDLUtils::instance();
 
+	Manager* m = new Manager();
 	// store the 'renderer' in a local variable, just for convenience
 	SDL_Renderer *renderer = sdl.renderer();
+	
+	//jugador
+	Entity* e = m->addEntity();
+	e->addComponent<Transform>(Vector2D(), Vector2D(), 50, 50, 0);
+	e->addComponent<Image>(&(sdl.images().at("fighter")));
+	e->addComponent<ShowAtOppositeSide>();
+	e->addComponent<Gun>();
+	e->addComponent<FighterCtrl>();
+	m->setHandler<Fighter>(e);
+	
 
-	// we can take textures from the predefined ones, and we can create a custom one as well
-	auto &sdlLogo = sdl.images().at("sdl_logo");
-	auto &helloSDL = sdl.msgs().at("HelloSDL");
-	Texture pressAnyKey(renderer, "Press any key to exit",
-			sdl.fonts().at("ARIAL24"), build_sdlcolor(0x112233ff),
-			build_sdlcolor(0xffffff));
+	//manager
+	Entity* gm = m->addEntity();
+	gm->addComponent<Transform>(Vector2D(), Vector2D(), 50, 50, 0);
+	gm->addComponent<Image>(&(sdl.images().at("fighter")));
+	gm->addComponent<ShowAtOppositeSide>();
+	gm->addComponent<Gun>();
+	gm->addComponent<FighterCtrl>();
+	m->setHandler<Fighter>(e);
 
-	// some coordinates
-	auto winWidth = sdl.width();
-	auto winHeight = sdl.height();
-	auto x0 = (winWidth - pressAnyKey.width()) / 2;
-	auto y0 = (winHeight - pressAnyKey.height()) / 2;
-	auto x1 = 0;
-	auto y1 = y0 - 4 * pressAnyKey.height();
-	auto x2 = (winWidth - sdlLogo.width()) / 2;
-	auto y2 = y0 + 2 * pressAnyKey.height();
 
-	// start the music in a loop
-	sdl.musics().at("beat").play();
+	//// we can take textures from the predefined ones, and we can create a custom one as well
+	//auto &sdlLogo = sdl.images().at("sdl_logo");
+	//auto &helloSDL = sdl.msgs().at("HelloSDL");
+	//Texture pressAnyKey(renderer, "Press any key to exit",
+	//		sdl.fonts().at("ARIAL24"), build_sdlcolor(0x112233ff),
+	//		build_sdlcolor(0xffffff));
 
-	// reference to the input handler (we could use a pointer, I just . rather than ->).
-	// you can also use the inline method ih() that is defined in InputHandler.h
-	auto &ih = *InputHandler::instance();
+	//// some coordinates
+	//auto winWidth = sdl.width();
+	//auto winHeight = sdl.height();
+	//auto x0 = (winWidth - pressAnyKey.width()) / 2;
+	//auto y0 = (winHeight - pressAnyKey.height()) / 2;
+	//auto x1 = 0;
+	//auto y1 = y0 - 4 * pressAnyKey.height();
+	//auto x2 = (winWidth - sdlLogo.width()) / 2;
+	//auto y2 = y0 + 2 * pressAnyKey.height();
 
-	// a boolean to exit the loop
-	bool exit_ = false;
-	SDL_Event event;
+	//// start the music in a loop
+	//sdl.musics().at("beat").play();
 
-	while (!exit_) {
-		Uint32 startTime = sdl.currRealTime();
+	//// reference to the input handler (we could use a pointer, I just . rather than ->).
+	//// you can also use the inline method ih() that is defined in InputHandler.h
+	//auto &ih = *InputHandler::instance();
 
-		// update the event handler
-		ih.clearState();
-		while (SDL_PollEvent(&event))
-			ih.update(event);
+	//// a boolean to exit the loop
+	//bool exit_ = false;
+	//SDL_Event event;
 
-		// exit when any key is down
-		if (ih.keyDownEvent())
-			exit_ = true;
+	//while (!exit_) {
+	//	Uint32 startTime = sdl.currRealTime();
 
-		// clear screen
-		sdl.clearRenderer();
+	//	// update the event handler
+	//	ih.clearState();
+	//	while (SDL_PollEvent(&event))
+	//		ih.update(event);
 
-		// render Hello SDL
-		helloSDL.render(x1, y1);
-		if (x1 + helloSDL.width() > winWidth)
-			helloSDL.render(x1 - winWidth, y1);
-		x1 = (x1 + 5) % winWidth;
+	//	// exit when any key is down
+	//	if (ih.keyDownEvent())
+	//		exit_ = true;
 
-		// render Press Any Key
-		pressAnyKey.render(x0, y0);
+	//	// clear screen
+	//	sdl.clearRenderer();
 
-		// render the SDLogo
-		sdlLogo.render(x2, y2);
+	//	// render Hello SDL
+	//	helloSDL.render(x1, y1);
+	//	if (x1 + helloSDL.width() > winWidth)
+	//		helloSDL.render(x1 - winWidth, y1);
+	//	x1 = (x1 + 5) % winWidth;
 
-		// present new frame
-		sdl.presentRenderer();
+	//	// render Press Any Key
+	//	pressAnyKey.render(x0, y0);
 
-		Uint32 frameTime = sdl.currRealTime() - startTime;
+	//	// render the SDLogo
+	//	sdlLogo.render(x2, y2);
 
-		if (frameTime < 20)
-			SDL_Delay(20 - frameTime);
-	}
+	//	// present new frame
+	//	sdl.presentRenderer();
 
-	// stop the music
-	Music::haltMusic();
+	//	Uint32 frameTime = sdl.currRealTime() - startTime;
+
+	//	if (frameTime < 20)
+	//		SDL_Delay(20 - frameTime);
+	//}
+
+	//// stop the music
+	//Music::haltMusic();
 
 }
 

@@ -8,7 +8,21 @@
 // components -- forward declaration, i.e., assume they are defined somewhere
 class Transform;
 class Image;
-#define _CMPS_LIST_  Transform,Image
+class DeAcceleration;
+class DisableOnExit;
+class FighterCtrl;
+class Follow;
+class FramedImage;
+class Generations;
+class Gun;
+class Health;
+class ShowAtOppositeSide;
+class State;
+class AsteroidsManager;
+class CollisionManager;
+class GameCtrl;
+
+#define _CMPS_LIST_  Transform, Image, DeAcceleration, DisableOnExit, FighterCtrl, Follow, FramedImage, Generations, Gun, Health, ShowAtOppositeSide, State, AsteroidsManager, CollisionManager, GameCtrl
 
 // groups -- forward declaration, but they are never defined as data structures
 struct Asteroids;

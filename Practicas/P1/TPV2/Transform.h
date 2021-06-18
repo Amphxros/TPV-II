@@ -1,10 +1,12 @@
+#pragma once
 #include "ecs/Component.h"
 #include "utils/Vector2D.h"
 
 class Transform : public Component
 {
 public:
-    Transform();
+
+    Transform() {};
     Transform(Vector2D pos, Vector2D dir, double width, double height, double rotation);
     virtual ~Transform();
 
@@ -29,6 +31,8 @@ public:
     inline void setRotation(double r) { rot_ = r; }
 
 private:
+
     Vector2D pos, dir;
     double w, h, rot_;
+
 };

@@ -1,18 +1,22 @@
 #pragma once
 #include "ecs/Component.h"
+#include "ecs/Entity.h"
 #include "Transform.h"
-class DeAcceleration :
-    public Component
-{
-	public:
-		DeAcceleration(double thrust);
-		virtual ~DeAcceleration();
 
-		virtual void init() override;
-		virtual void update() override;
-		
+class DeAcceleration : public Component {
 
-	private:
-		Transform* tr_;
-		double thrust_;
+public:
+
+	DeAcceleration() {};
+	DeAcceleration(double thrust);
+	virtual ~DeAcceleration();
+
+	virtual void init() override;
+	virtual void update() override;
+
+private:
+
+	Transform* tr_;
+	double thrust_;
+
 };

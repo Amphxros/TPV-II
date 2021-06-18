@@ -1,7 +1,7 @@
 #include "Game.h"
 #include "Entity.h"
 #include "Manager.h"
-#include"Component.h"
+#include "Component.h"
 
 #include <SDL.h>
 
