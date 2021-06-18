@@ -18,4 +18,6 @@ void FighterCtrl::init()
 
 void FighterCtrl::update()
 {
+
+
 }

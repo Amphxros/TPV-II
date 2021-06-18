@@ -16,4 +16,5 @@ void Transform::init()
 
 void Transform::update()
 {
+	pos = pos + dir;
 }

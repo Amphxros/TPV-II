@@ -6,9 +6,13 @@
 
 int main(int ac, char** av) {
 
-	Game g;
-	g.init();
-	g.start();
+	//sdlutils_basic_demo();
+
+	Game* g= new Game();
+	g->init();
+	g->start();
+
+	delete g;
 
 	return 0;
 }

@@ -1,7 +1,7 @@
 #include "Image.h"
 
 Image::Image(Texture* tex):
-	Component(), tex_(tex)
+	Component(), tex_(tex), tr_(nullptr)
 {
 }
 
@@ -23,6 +23,6 @@ void Image::render()
 	dest.x = tr_->getPos().getY();
 	dest.w = tr_->getW();
 	dest.h = tr_->getH();
-
+	
 	tex_->render(dest, tr_->getRotation());
 }

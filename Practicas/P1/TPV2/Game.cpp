@@ -3,6 +3,7 @@
 #include "sdlutils/SDLUtils.h"
 #include "utils/Vector2D.h"
 
+#include "sdlutils/InputHandler.h"
 
 #include "ecs/Manager.h"
 #include "Transform.h"
@@ -24,55 +25,140 @@ Game::Game()
 
 Game::~Game()
 {
-
+	
+	mngr_.reset();
 }
 
 void Game::init()
 {
+	// Initialise the SDLGame singleton
 	SDLUtils::init("Asteroids", 800, 600,
 		"resources/config/resources.json");
-	sdl = SDLUtils::instance();
+
+	// reference to the SDLUtils Singleton. You could use it as a pointer as well,
+	// I just prefer to use . instead of ->, it is just a matter of taste, nothing
+	// else!
+	//
+	// you can also use the inline method sdlutils() that simply returns the value
+	// of *SDLUtils::instance() --- it is defined at the end of SDLUtils.h
+	//
+	auto& sdl = *SDLUtils::instance();
 
 	Entity* gManager = mngr_->addEntity();
 	gManager->addComponent<State>();
 	gManager->addComponent<AsteroidsManager>();
 	gManager->addComponent<GameCtrl>();
 	gManager->addComponent<CollisionManager>();
-	gManager->setActive(true);
+
 
 
 	Entity* player = mngr_->addEntity();
-	player->addComponent<Transform>(Vector2D((sdlutils().width()/2) -75,(sdlutils().height()/2) -75 ), Vector2D(), 150, 150, 0);
+	player->addComponent<Transform>(Vector2D((sdlutils().width() / 2) - 75, (sdlutils().height() / 2) - 75), Vector2D(), 150, 150, 0);
 	player->addComponent<Image>(&sdlutils().images().at("fighter"));
 	player->addComponent<FighterCtrl>();
-	player->addComponent<Health>();
+	player->addComponent<Health>(3, &sdl.images().at("heart"));
 	player->addComponent<Gun>();
 	player->addComponent<ShowAtOppositeSide>();
-	player->setActive(true);
 	mngr_->setHandler<Fighter>(player);
+
+
+
+	//Manager* m = new Manager();
+	//// store the 'renderer' in a local variable, just for convenience
+	SDL_Renderer* renderer = sdl.renderer();
+
+
+	// we can take textures from the predefined ones, and we can create a custom one as well
+
+	
+	// start the music in a loop
+	//sdl.musics().at("beat").play();
+
+	// reference to the input handler (we could use a pointer, I just . rather than ->).
+	// you can also use the inline method ih() that is defined in InputHandler.h
+	auto& ih = *InputHandler::instance();
+
+	// a boolean to exit the loop
+	bool exit_ = false;
+	SDL_Event event;
+
+	while (!exit_) {
+		Uint32 startTime = sdl.currRealTime();
+
+		// update the event handler
+		ih.clearState();
+		while (SDL_PollEvent(&event))
+			ih.update(event);
+
+		// exit when any key is down
+		if (ih.keyDownEvent())
+			exit_ = true;
+
+		// clear screen
+		sdl.clearRenderer();
+
+		mngr_->render();
+
+
+		// present new frame
+		sdl.presentRenderer();
+
+		Uint32 frameTime = sdl.currRealTime() - startTime;
+
+		if (frameTime < 20)
+			SDL_Delay(20 - frameTime);
+	}
+
+	// stop the music
+	Music::haltMusic();
+
+
+
+	/*SDLUtils::init("Asteroids", 800, 600,
+		"resources/config/resources.json");
+	sdl = SDLUtils::instance();
+
+	
+	*/
 
 }
 
 void Game::start()
 {
+	/*
 	bool exit = false;
-
+	SDL_Event event;
 	while(!exit){
-		update();
-		render();
-	}
+
+		Uint32 startTime = sdlutils().currRealTime();
+		ih().clearState();
+		while (SDL_PollEvent(&event)) ih().update(event);
+		if (ih().isKeyDown(SDLK_ESCAPE)) {
+			exit = true;
+		}
+
+		mngr_->refresh();
+		mngr_->update();
+
+		sdl->clearRenderer();
+		mngr_->render();
+		sdl->presentRenderer();
+		Uint32 frameTime = sdlutils().currRealTime() - startTime;
+
+		if (frameTime < 20)
+			SDL_Delay(20 - frameTime);
+			}
+	*/
+	
 }
 
 void Game::update()
 {
-	mngr_->refresh();
-	mngr_->update();
+
 }
 
 void Game::render()
 {
-	sdl->clearRenderer();
-	mngr_->render();
-	sdl->presentRenderer();
+
 
 }

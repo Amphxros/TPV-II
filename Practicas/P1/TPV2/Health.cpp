@@ -13,10 +13,10 @@ void Health::render()
 {
 	for(int i=0; i<health_; i++){
 		SDL_Rect dest;
-		dest.x = sdlutils().width() / 3 + (tex_->width() + 10) * i;
-		dest.y = tex_->height();
-		dest.w = tex_->width();
-		dest.h = tex_->height();
+		dest.x = sdlutils().width()/3 + 40 * i;
+		dest.y = 10;
+		dest.w = 30;
+		dest.h = 30;
 
 		tex_->render(dest, 0.0f);
 

@@ -3,7 +3,7 @@
 #include "ecs/Entity.h"
 #include "sdlutils/InputHandler.h"
 
-GameCtrl::GameCtrl()
+GameCtrl::GameCtrl(): Component(), astManager(nullptr), gameState_(nullptr)
 {
 }
 
@@ -25,13 +25,14 @@ void GameCtrl::update()
 			switch(gameState_->getGameState()){
 
 				case GameState::NEW:
-
-					break;
-
 				case GameState::PAUSE:
+					gameState_->changeState(GameState::RUNNING);
+					astManager->initGame();
+					std::cout << "init game" << std::endl;
 					break;
 
 				case GameState::GAMEOVER:
+					gameState_->changeState(GameState::NEW);
 
 					break;
 			}
