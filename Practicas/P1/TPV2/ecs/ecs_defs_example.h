@@ -8,16 +8,14 @@
 // components -- forward declaration, i.e., assume they are defined somewhere
 class Transform;
 class Image;
-class PacManCtrl;
-#define _CMPS_LIST_  Transform,Image,PacManCtrl
+#define _CMPS_LIST_  Transform,Image
 
 // groups -- forward declaration, but they are never defined as data structures
-struct Ghost;
-struct Cheery;
-#define _GRPS_LIST_  Ghost,Cheery
+struct Asteroids;
+struct Bullets;
+#define _GRPS_LIST_  Asteroids,Bullets
 
 // handlers -- forward declaration, but they are never defined as data structures
-struct Blinky;
-struct Pinky;
-#define _HDLRS_LIST_ Blinky,Pinky
+struct Fighter;
+#define _HDLRS_LIST_ Fighter
 

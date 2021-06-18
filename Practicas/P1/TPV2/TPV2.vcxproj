@@ -19,8 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AsteroidsManager.cpp" />
+    <ClCompile Include="CollisionsManager.cpp" />
+    <ClCompile Include="DeAcceleration.cpp" />
+    <ClCompile Include="DisableOnExit.cpp" />
     <ClCompile Include="ecs\Entity.cpp" />
     <ClCompile Include="ecs\Manager.cpp" />
+    <ClCompile Include="FighterCtrl.cpp" />
+    <ClCompile Include="Follow.cpp" />
+    <ClCompile Include="FramedImage.cpp" />
+    <ClCompile Include="GameCtrl.cpp" />
+    <ClCompile Include="Generations.cpp" />
+    <ClCompile Include="Gun.cpp" />
+    <ClCompile Include="Health.cpp" />
+    <ClCompile Include="Image.cpp" />
     <ClCompile Include="json\somplejson_demo.cpp" />
     <ClCompile Include="json\JSON.cpp" />
     <ClCompile Include="json\JSONValue.cpp" />
@@ -29,16 +41,31 @@
     <ClCompile Include="sdlutils\SDLUtils.cpp" />
     <ClCompile Include="sdlutils\SoundEffect.cpp" />
     <ClCompile Include="sdlutils\Texture.cpp" />
+    <ClCompile Include="ShowAtOppositeSide.cpp" />
+    <ClCompile Include="State.cpp" />
+    <ClCompile Include="Transform.cpp" />
     <ClCompile Include="utils\Collisions.cpp" />
     <ClCompile Include="utils\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AsteroidsManager.h" />
+    <ClInclude Include="CollisionsManager.h" />
+    <ClInclude Include="DeAcceleration.h" />
+    <ClInclude Include="DisableOnExit.h" />
     <ClInclude Include="ecs\Component.h" />
     <ClInclude Include="ecs\ecs.h" />
     <ClInclude Include="ecs\ecs_defs_example.h" />
     <ClInclude Include="ecs\Entity.h" />
     <ClInclude Include="ecs\Manager.h" />
     <ClInclude Include="ecs\mpl.h" />
+    <ClInclude Include="FighterCtrl.h" />
+    <ClInclude Include="Follow.h" />
+    <ClInclude Include="FramedImage.h" />
+    <ClInclude Include="GameCtrl.h" />
+    <ClInclude Include="Generations.h" />
+    <ClInclude Include="Gun.h" />
+    <ClInclude Include="Health.h" />
+    <ClInclude Include="Image.h" />
     <ClInclude Include="json\simplejson_demo.h" />
     <ClInclude Include="json\JSON.h" />
     <ClInclude Include="json\JSONValue.h" />
@@ -52,9 +79,15 @@
     <ClInclude Include="sdlutils\SoundEffect.h" />
     <ClInclude Include="sdlutils\Texture.h" />
     <ClInclude Include="sdlutils\VirtualTimer.h" />
+    <ClInclude Include="ShowAtOppositeSide.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="Transform.h" />
     <ClInclude Include="utils\Collisions.h" />
     <ClInclude Include="utils\Singleton.h" />
     <ClInclude Include="utils\Vector2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\config\resources.json" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
