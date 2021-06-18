@@ -1,4 +1,6 @@
 #include "Gun.h"
+#include "ecs/Manager.h"
+#include "sdlutils/InputHandler.h"
 
 Gun::Gun(double time)
 {
@@ -16,4 +18,7 @@ void Gun::init()
 
 void Gun::update()
 {
+	if(ih().keyDownEvent()){
+
+	}
 }

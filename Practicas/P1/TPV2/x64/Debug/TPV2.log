@@ -1,31 +1,22 @@
 ﻿  AsteroidsManager.cpp
-c1xx : fatal error C1083: No se puede abrir el archivo origen: 'AsteroidsManager.cpp': No such file or directory
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\AsteroidsManager.h(23,7): error C2143: error de sintaxis: falta ';' delante de '*'
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\AsteroidsManager.h(23,7): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\AsteroidsManager.h(23,16): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\AsteroidsManager.cpp(17,2): error C2065: 'mState_': identificador no declarado
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\AsteroidsManager.cpp(27,6): error C2065: 'mState_': identificador no declarado
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\AsteroidsManager.cpp(53,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\AsteroidsManager.cpp(53,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   CollisionManager.cpp
-c1xx : fatal error C1083: No se puede abrir el archivo origen: 'CollisionManager.cpp': No such file or directory
-  DeAcceleration.cpp
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(20,57): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(20,54): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(21,57): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(21,54): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-  DisableOnExit.cpp
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(20,57): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(20,54): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(21,57): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(21,54): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-  FighterCtrl.cpp
-  Follow.cpp
-  FramedImage.cpp
-  GameCtrl.cpp
-c1xx : fatal error C1083: No se puede abrir el archivo origen: 'GameCtrl.cpp': No such file or directory
-  Generations.cpp
-  Gun.cpp
-  Health.cpp
-  Image.cpp
-  JSON.cpp
-  JSONValue.cpp
-  SDLUtils.cpp
-  ShowAtOppositeSide.cpp
-  State.cpp
-c1xx : fatal error C1083: No se puede abrir el archivo origen: 'State.cpp': No such file or directory
-  Transform.cpp
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(22,57): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(22,54): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(23,57): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(23,54): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\CollisionManager.cpp(41,69): error C2440: 'inicializando': no se puede realizar la conversión de 'Entity *' a 'Transform *'
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\CollisionManager.cpp(41,26): message : Los tipos señalados no están relacionados; la conversión requiere reinterpret_cast, conversión de estilo de C o conversión de estilo de función
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\CollisionManager.cpp(55,62): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\CollisionManager.cpp(55,44): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\CollisionManager.cpp(55,33): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\CollisionManager.cpp(54,92): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\CollisionManager.cpp(54,74): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\CollisionManager.cpp(54,63): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
   Generando código...

@@ -1,13 +1,27 @@
 #pragma once
 #include "ecs/Component.h"
-class CollisionManager :
-    public Component
-{
+#include"utils/Collisions.h"
+#include "Transform.h"
+#include "AsteroidsManager.h"
+#include "State.h"
+
+class CollisionManager :	public Component{
+
 public:
+	
 	CollisionManager();
 	virtual ~CollisionManager();
 
 	virtual void init() override;
 	virtual void update() override;
+
+private:
+
+	bool collides(Transform* a, Transform* b);
+
+	AsteroidsManager* astManager;
+	State* mState;
+
+
 };
 
