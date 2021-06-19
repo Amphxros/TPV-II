@@ -17,6 +17,8 @@ public:
 	inline int getHealth() { return currHealth_; }
 	inline void resetHealth() { currHealth_ = health_; }
 
+	Texture* getTexture(){ return tex_; }
+
 private:
 
 	int currHealth_, health_;

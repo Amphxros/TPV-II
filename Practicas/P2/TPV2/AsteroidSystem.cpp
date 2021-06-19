@@ -18,7 +18,7 @@ void AsteroidSystem::update()
 {
 	for (auto& ent : manager_->getEnteties()) {
 		if (manager_->hasGroup<Asteroids>(ent)) {
-
+			Transform* tr_ = manager_->getComponent<Transform>(ent);
 		}
 	}
 }
@@ -31,15 +31,15 @@ void AsteroidSystem::receive(const msg::Message& m)
 		onCollisionWithBullet(m.col.a, m.col.b);
 		break;
 	case msg::START_GAME:
-		addAsteroids(10);
+		addAsteroids(m.num.n);
 		break;
 	case msg::ROUNDOVER:
+	case msg::GAMEOVER:
 		for (auto& ent : manager_->getEnteties()) {
 			if (manager_->hasGroup<Asteroids>(ent)) {
 				manager_->setActive(ent, false);
 			}
 		}
-		
 		break;
 	default:
 		break;

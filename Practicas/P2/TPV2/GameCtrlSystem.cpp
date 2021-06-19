@@ -19,7 +19,14 @@ void GameCtrlSystem::update()
 	if (ih().keyDownEvent()) {
 		if (ih().isKeyDown(SDL_SCANCODE_SPACE) && mGameState_ != GameState::RUNNING) {
 			msg::Message m;
-			
+			if (mGameState_ == GameState::GAMEOVER) {
+				mGameState_ = GameState::NEW;
+				m.id = msg::INIT_GAME;
+			}
+			else {
+				m.id = msg::START_GAME;
+			}
+				manager_->send(m);
 		}
 	}
 }
@@ -32,6 +39,7 @@ void GameCtrlSystem::receive(const msg::Message& m)
 	case msg::COLLISIONFIGHTER:
 		onFighterDeath();
 		break;
+
 
 	default:
 		break;

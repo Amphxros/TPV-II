@@ -6,6 +6,7 @@ namespace msg {
 	using msgType = std::size_t;
 	enum msgID : msgType {
 		START_GAME,
+		INIT_GAME,
 		GAMEOVER,
 		ROUNDOVER,
 		COLLISIONBULLET,
@@ -17,12 +18,8 @@ namespace msg {
 	struct Collision {
 		Entity* a;
 		Entity* b;
-	};
 
-	struct GameInfo {
-		int currHealth;
-		bool gameWin;
-		int state;
+		int health;
 	};
 	
 	struct AsteroidInfo {
@@ -46,7 +43,6 @@ namespace msg {
 		msgID id;
 		union {
 			Collision col;
-			GameInfo info;
 			AsteroidInfo num;
 			BulletInfo bullet;
 		};

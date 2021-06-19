@@ -38,6 +38,7 @@
     <ClCompile Include="component\Transform.cpp" />
     <ClCompile Include="ecs\Entity.cpp" />
     <ClCompile Include="ecs\Manager.cpp" />
+    <ClCompile Include="FighterSystem.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameCtrlSystem.cpp" />
     <ClCompile Include="json\somplejson_demo.cpp" />
@@ -76,6 +77,7 @@
     <ClInclude Include="ecs\Manager.h" />
     <ClInclude Include="ecs\mpl.h" />
     <ClInclude Include="ecs\System.h" />
+    <ClInclude Include="FighterSystem.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameCtrlSystem.h" />
     <ClInclude Include="json\simplejson_demo.h" />
