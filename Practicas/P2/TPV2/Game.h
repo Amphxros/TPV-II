@@ -4,6 +4,7 @@
 #include "ecs/Entity.h"
 #include "sdlutils/SDLUtils.h"
 
+#include "AsteroidSystem.h"
 class Manager;
 class Game
 {
@@ -16,11 +17,8 @@ public:
 	void start();
 
 private:
-
-	void update();
-	void render();
-
 	std::unique_ptr<Manager> mngr_;
+	AsteroidSystem* astSys;
 
 };
 

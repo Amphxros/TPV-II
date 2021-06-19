@@ -8,32 +8,16 @@
 // components -- forward declaration, i.e., assume they are defined somewhere
 class Transform;
 class Image;
-class DeAcceleration;
-class DisableOnExit;
-class FighterCtrl;
-class Follow;
-class FramedImage;
-class Generations;
-class Gun;
-class Health;
-class ShowAtOppositeSide;
-class State;
-class AsteroidsManager;
-class CollisionManager;
-class GameCtrl;
-
-#define _CMPS_LIST_  Transform, Image, DeAcceleration, DisableOnExit, FighterCtrl, Follow, FramedImage, Generations, Gun, Health, ShowAtOppositeSide, State, AsteroidsManager, CollisionManager, GameCtrl
+class PacManCtrl;
+#define _CMPS_LIST_  Transform,Image,PacManCtrl
 
 // groups -- forward declaration, but they are never defined as data structures
-struct Asteroids;
-struct Bullets;
-#define _GRPS_LIST_  Asteroids,Bullets
+struct Ghost;
+struct Cheery;
+#define _GRPS_LIST_  Ghost,Cheery
 
 // handlers -- forward declaration, but they are never defined as data structures
-struct Fighter;
-struct GM;
-#define _HDLRS_LIST_ Fighter, GM
+struct Blinky;
+struct Pinky;
+#define _HDLRS_LIST_ Blinky,Pinky
 
-
-struct AsteroidSystem;
-#define _SYS_LIST_ AsteroidSystem

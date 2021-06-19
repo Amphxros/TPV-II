@@ -1,0 +1,9 @@
+﻿  State.cpp
+  Transform.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\component\Transform.h(22,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\component\Transform.h(22,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\component\Transform.h(23,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  sdlutils_demo.cpp
+  Generando código...
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\component\Transform.h(23,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  TPV2.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\bin\TPV2Debug.exe

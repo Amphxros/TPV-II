@@ -43,12 +43,6 @@
     <Filter Include="Source Files\components">
       <UniqueIdentifier>{f859dfb5-bcb4-444c-a962-bd0f44efa52a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\GameManager">
-      <UniqueIdentifier>{6ee5e0f5-d18c-4ae4-ad2b-5ddc3393171f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\GameManager">
-      <UniqueIdentifier>{a879da38-ddd3-4314-9bb0-d134ba757d97}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -84,56 +78,65 @@
     <ClCompile Include="ecs\Manager.cpp">
       <Filter>Source Files\ecs</Filter>
     </ClCompile>
-    <ClCompile Include="Transform.cpp">
-      <Filter>Source Files\components</Filter>
-    </ClCompile>
-    <ClCompile Include="DeAcceleration.cpp">
-      <Filter>Source Files\components</Filter>
-    </ClCompile>
-    <ClCompile Include="DisableOnExit.cpp">
-      <Filter>Source Files\components</Filter>
-    </ClCompile>
-    <ClCompile Include="FighterCtrl.cpp">
-      <Filter>Source Files\components</Filter>
-    </ClCompile>
-    <ClCompile Include="Follow.cpp">
-      <Filter>Source Files\components</Filter>
-    </ClCompile>
-    <ClCompile Include="FramedImage.cpp">
-      <Filter>Source Files\components</Filter>
-    </ClCompile>
-    <ClCompile Include="Generations.cpp">
-      <Filter>Source Files\components</Filter>
-    </ClCompile>
-    <ClCompile Include="Gun.cpp">
-      <Filter>Source Files\components</Filter>
-    </ClCompile>
-    <ClCompile Include="Health.cpp">
-      <Filter>Source Files\components</Filter>
-    </ClCompile>
-    <ClCompile Include="Image.cpp">
-      <Filter>Source Files\components</Filter>
-    </ClCompile>
-    <ClCompile Include="ShowAtOppositeSide.cpp">
-      <Filter>Source Files\components</Filter>
-    </ClCompile>
-    <ClCompile Include="AsteroidsManager.cpp">
-      <Filter>Source Files\GameManager</Filter>
-    </ClCompile>
-    <ClCompile Include="CollisionManager.cpp">
-      <Filter>Source Files\GameManager</Filter>
-    </ClCompile>
-    <ClCompile Include="State.cpp">
-      <Filter>Source Files\GameManager</Filter>
-    </ClCompile>
-    <ClCompile Include="GameCtrl.cpp">
-      <Filter>Source Files\GameManager</Filter>
-    </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="sdlutils\sdlutils_demo.cpp">
       <Filter>Source Files\sdlutils</Filter>
+    </ClCompile>
+    <ClCompile Include="component\AsteroidsManager.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="component\CollisionManager.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="component\DeAcceleration.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="component\DisableOnExit.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="component\FighterCtrl.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="component\Follow.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="component\FramedImage.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="component\GameCtrl.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="component\Generations.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="component\Gun.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="component\Health.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="component\Image.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="component\ShowAtOppositeSide.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="component\State.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="component\Transform.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="AsteroidSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletsSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCtrlSystem.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -185,61 +188,10 @@
     <ClInclude Include="json\simplejson_demo.h">
       <Filter>Header Files\json</Filter>
     </ClInclude>
-    <ClInclude Include="Transform.h">
-      <Filter>Header Files\components</Filter>
-    </ClInclude>
-    <ClInclude Include="DeAcceleration.h">
-      <Filter>Header Files\components</Filter>
-    </ClInclude>
-    <ClInclude Include="DisableOnExit.h">
-      <Filter>Header Files\components</Filter>
-    </ClInclude>
-    <ClInclude Include="FighterCtrl.h">
-      <Filter>Header Files\components</Filter>
-    </ClInclude>
-    <ClInclude Include="Follow.h">
-      <Filter>Header Files\components</Filter>
-    </ClInclude>
-    <ClInclude Include="FramedImage.h">
-      <Filter>Header Files\components</Filter>
-    </ClInclude>
-    <ClInclude Include="Generations.h">
-      <Filter>Header Files\components</Filter>
-    </ClInclude>
-    <ClInclude Include="Gun.h">
-      <Filter>Header Files\components</Filter>
-    </ClInclude>
-    <ClInclude Include="Health.h">
-      <Filter>Header Files\components</Filter>
-    </ClInclude>
-    <ClInclude Include="Image.h">
-      <Filter>Header Files\components</Filter>
-    </ClInclude>
-    <ClInclude Include="ShowAtOppositeSide.h">
-      <Filter>Header Files\components</Filter>
-    </ClInclude>
-    <ClInclude Include="AsteroidsManager.h">
-      <Filter>Header Files\GameManager</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionManager.h">
-      <Filter>Header Files\GameManager</Filter>
-    </ClInclude>
-    <ClInclude Include="State.h">
-      <Filter>Header Files\GameManager</Filter>
-    </ClInclude>
-    <ClInclude Include="GameCtrl.h">
-      <Filter>Header Files\GameManager</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ecs\Component.h">
       <Filter>Header Files\ecs</Filter>
     </ClInclude>
     <ClInclude Include="ecs\ecs.h">
-      <Filter>Header Files\ecs</Filter>
-    </ClInclude>
-    <ClInclude Include="ecs\ecs_defs_example.h">
       <Filter>Header Files\ecs</Filter>
     </ClInclude>
     <ClInclude Include="ecs\Entity.h">
@@ -251,8 +203,68 @@
     <ClInclude Include="ecs\mpl.h">
       <Filter>Header Files\ecs</Filter>
     </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ecs\ecs_defs.h">
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="component\AsteroidsManager.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="component\CollisionManager.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="component\DeAcceleration.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="component\DisableOnExit.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="component\FighterCtrl.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="component\Follow.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="component\FramedImage.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="component\GameCtrl.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="component\Generations.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="component\Gun.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="component\Health.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="component\Image.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="component\ShowAtOppositeSide.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="component\State.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="component\Transform.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="AsteroidSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletsSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="ecs\System.h">
       <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCtrlSystem.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Message.h">
       <Filter>Header Files</Filter>

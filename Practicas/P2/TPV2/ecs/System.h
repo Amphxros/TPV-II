@@ -1,5 +1,5 @@
 // This file is part of the course TPV2@UCM - Samir Genaim
-
+#include "../Message.h"
 #pragma once
 
 class Manager;
@@ -20,7 +20,7 @@ public:
 	virtual void update() {
 	}
 
-	virtual void receive(const Message&) {
+	virtual void receive(const msg::Message& m) {
 	}
 
 protected:

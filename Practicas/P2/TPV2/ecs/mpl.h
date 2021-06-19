@@ -26,5 +26,4 @@ template<typename T, typename TOther, typename ... Ts>
 struct IndexOf<T, TypeList<TOther, Ts...>> : std::integral_constant<std::size_t,
 		1 + IndexOf<T, TypeList<Ts...>> { }> {
 };
-
 }

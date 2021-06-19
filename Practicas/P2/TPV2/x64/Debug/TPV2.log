@@ -1,22 +1,84 @@
-﻿  AsteroidsManager.cpp
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\AsteroidsManager.h(23,7): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\AsteroidsManager.h(23,7): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\AsteroidsManager.h(23,16): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\AsteroidsManager.cpp(17,2): error C2065: 'mState_': identificador no declarado
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\AsteroidsManager.cpp(27,6): error C2065: 'mState_': identificador no declarado
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\AsteroidsManager.cpp(53,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\AsteroidsManager.cpp(53,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  CollisionManager.cpp
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(22,57): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(22,54): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(23,57): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\Transform.h(23,54): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\CollisionManager.cpp(41,69): error C2440: 'inicializando': no se puede realizar la conversión de 'Entity *' a 'Transform *'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\CollisionManager.cpp(41,26): message : Los tipos señalados no están relacionados; la conversión requiere reinterpret_cast, conversión de estilo de C o conversión de estilo de función
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\CollisionManager.cpp(55,62): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\CollisionManager.cpp(55,44): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\CollisionManager.cpp(55,33): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\CollisionManager.cpp(54,92): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\CollisionManager.cpp(54,74): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P1\TPV2\CollisionManager.cpp(54,63): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+﻿  AsteroidSystem.cpp
+  Manager.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440: 'inicializando': no se puede realizar la conversión de '_Ty' a '_Objty'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:             _Ty=const Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         and
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:             _Objty=Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): message : Se pierden calificadores en la conversión
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message*>(_Alloc &,_Objty *const ,const Message *&&)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Alloc=std::allocator<Message *>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Ty=Message *,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Objty=Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message*>(_Alloc &,_Objty *const ,const Message *&&)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Alloc=std::allocator<Message *>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Ty=Message *,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Objty=Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message *,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<const Message*>(const Message *&&)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :             _Ty=Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         ]
+  Game.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Manager.h(112): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message *,std::allocator<_Ty>>::emplace_back<const Message*>(const Message *&&)" que se está compilando
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Manager.h(112): message :         with
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Manager.h(112): message :         [
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Manager.h(112): message :             _Ty=Message *
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Manager.h(112): message :         ]
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.h(4,13): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14): message : vea la declaración de 'Entity'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(19,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(19,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(20,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(20,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\Game.cpp(102,1): error C2059: error de sintaxis: '}'
+  main.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\Game.cpp(102,1): error C2143: error de sintaxis: falta ';' delante de '}'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.h(4,13): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  sdlutils_demo.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14): message : vea la declaración de 'Entity'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440: 'inicializando': no se puede realizar la conversión de '_Ty' a '_Objty'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:             _Ty=const Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         and
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:             _Objty=Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): error C2440:         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\xmemory(758,82): message : Se pierden calificadores en la conversión
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message*>(_Alloc &,_Objty *const ,const Message *&&)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Alloc=std::allocator<Message *>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Ty=Message *,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :             _Objty=Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(633): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message : vea la referencia a la creación de instancias de plantilla de función "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const Message*>(_Alloc &,_Objty *const ,const Message *&&)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Alloc=std::allocator<Message *>,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Ty=Message *,
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :             _Objty=Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(638): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message *,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<const Message*>(const Message *&&)" que se está compilando
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :             _Ty=Message *
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\vector(651): message :         ]
   Generando código...
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Manager.h(112): message : vea la referencia a la creación de instancias de plantilla de función "void std::vector<Message *,std::allocator<_Ty>>::emplace_back<const Message*>(const Message *&&)" que se está compilando
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Manager.h(112): message :         with
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Manager.h(112): message :         [
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Manager.h(112): message :             _Ty=Message *
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Manager.h(112): message :         ]

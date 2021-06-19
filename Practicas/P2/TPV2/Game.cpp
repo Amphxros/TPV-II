@@ -6,17 +6,17 @@
 #include "sdlutils/InputHandler.h"
 
 #include "ecs/Manager.h"
-#include "Transform.h"
-#include "Image.h"
-#include "FighterCtrl.h"
-#include "Health.h"
-#include "Gun.h"
-#include "ShowAtOppositeSide.h"
-
-#include "AsteroidsManager.h"
-#include "GameCtrl.h"
-#include "CollisionManager.h"
-#include "State.h"
+#include "component/Transform.h"
+#include "component/Image.h"
+#include "component/FighterCtrl.h"
+#include "component/Health.h"
+#include "component/Gun.h"
+#include "component/ShowAtOppositeSide.h"
+		 
+#include "component/AsteroidsManager.h"
+#include "component/GameCtrl.h"
+#include "component/CollisionManager.h"
+#include "component/State.h"
 
 Game::Game()
 {
@@ -36,22 +36,22 @@ void Game::init()
 		"resources/config/resources.json");
 
 
-	/*Entity* gManager = mngr_->addEntity();
-	gManager->addComponent<State>();
-	gManager->addComponent<AsteroidsManager>(5000,10);
-	gManager->addComponent<GameCtrl>();
-	gManager->addComponent<CollisionManager>();
-	mngr_->setHandler<GM>(gManager);
+	//Entity* gManager = mngr_->addEntity();
+	//gManager->addComponent<State>();
+	//gManager->addComponent<AsteroidsManager>(5000,10);
+	//gManager->addComponent<GameCtrl>();
+	//gManager->addComponent<CollisionManager>();
+	//mngr_->setHandler<GM>(gManager);
 
-	Entity* player = mngr_->addEntity(); 
-	player->addComponent<Transform>(Vector2D(sdlutils().width() / 2-25, sdlutils().height() / 2 -25), Vector2D(), 50, 50, 0);
+	//Entity* player = mngr_->addEntity(); 
+	//player->addComponent<Transform>(Vector2D(sdlutils().width() / 2-25, sdlutils().height() / 2 -25), Vector2D(), 50, 50, 0);
 
-	player->addComponent<Image>(&sdlutils().images().at("fighter"));
-	player->addComponent<FighterCtrl>(10.0f,0.25f,3);
-	player->addComponent<Health>(3, &sdlutils().images().at("heart"));
-	player->addComponent<Gun>(50);
-	player->addComponent<ShowAtOppositeSide>();
-	mngr_->setHandler<Fighter>(player);*/
+	//player->addComponent<Image>(&sdlutils().images().at("fighter"));
+	//player->addComponent<FighterCtrl>(10.0f,0.25f,3);
+	//player->addComponent<Health>(3, &sdlutils().images().at("heart"));
+	//player->addComponent<Gun>(50);
+	//player->addComponent<ShowAtOppositeSide>();
+	//mngr_->setHandler<Fighter>(player);
 
 
 }
@@ -78,11 +78,12 @@ void Game::start(){
 			exit_ = true;
 		}
 		mngr_->refresh();
-	
+		
+
 		// clear screen
 		sdlutils().clearRenderer();
-		//rendersystem here
 
+		
 
 
 		// present new frame
@@ -97,15 +98,5 @@ void Game::start(){
 	// stop the music
 	Music::haltMusic();
 	
-}
-
-void Game::update()
-{
-
-}
-
-void Game::render()
-{
-
-
+	
 }
