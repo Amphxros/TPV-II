@@ -1,11 +1,35 @@
 {
 
   "fonts" : [
-    { "id" : "ARIAL16", "file" : "resources/fonts/ARIAL.ttf", "size": 16 },
-    { "id" : "ARIAL24", "file" : "resources/fonts/ARIAL.ttf", "size": 24 },
-    { "id" : "ARIAL48", "file" : "resources/fonts/ARIAL.ttf", "size": 48 },
-    { "id" : "CAPTURE24", "file" : "resources/fonts/Capture_it.ttf", "size": 24 },
-    { "id" : "NES-CHIMERA24", "file" : "resources/fonts/NES-Chimera.ttf", "size": 24 }
+    {
+      "id": "ARIAL16",
+      "file": "resources/fonts/ARIAL.ttf",
+      "size": 16
+
+    },
+    {
+      "id": "ARIAL24",
+      "file": "resources/fonts/ARIAL.ttf",
+      "size": 24 
+
+    },
+    {
+      "id": "ARIAL48",
+      "file": "resources/fonts/ARIAL.ttf",
+      "size": 48 
+    },
+    {
+      "id": "CAPTURE24",
+      "file": "resources/fonts/Capture_it.ttf",
+      "size": 24
+
+    },
+    {
+      "id": "NES-CHIMERA24",
+      "file": "resources/fonts/NES-Chimera.ttf",
+      "size": 24 
+
+    }
   ],
 
   "images": [
@@ -85,19 +109,55 @@
   ],
 
   "sounds": [
-    { "id": "gunshot","file": "resources/sound/gunshot.wav"},
-    { "id": "explosion","file": "resources/sound/explosion.wav"},
-    { "id": "bangLarge","file": "resources/sound/bangLarge.wav"},
-    { "id": "bangSmall", "file": "resources/sound/bangSmall.wav"},
-    { "id": "fire","file": "resources/sound/fire.wav"},
-    { "id": "paddle_hit","file": "resources/sound/paddle_hit.wav"},
-    { "id" : "thrust", "file" : "resources/sound/thrust.wav" },
-    { "id" : "wall_hit", "file" : "resources/sound/wall_hit.wav" }
+    {
+      "id": "gunshot",
+      "file": "resources/sound/gunshot.wav"
+    },
+    {
+      "id": "explosion",
+      "file": "resources/sound/explosion.wav"
+    },
+    {
+      "id": "bangLarge",
+      "file": "resources/sound/bangLarge.wav"
+    },
+    {
+      "id": "bangSmall",
+      "file": "resources/sound/bangSmall.wav"
+
+    },
+    {
+      "id": "fire",
+      "file": "resources/sound/fire.wav"
+
+    },
+    {
+      "id": "paddle_hit",
+      "file": "resources/sound/paddle_hit.wav"
+
+    },
+    {
+      "id": "thrust",
+      "file": "resources/sound/thrust.wav"
+
+    },
+    {
+      "id": "wall_hit",
+      "file": "resources/sound/wall_hit.wav"
+
+    }
   ],
 
   "musics" : [
-    { "id" : "beat", "file" : "resources/sound/beat.wav" },
-    { "id" : "imperial_march", "file" : "resources/sound/imperial_march.wav" }
+    {
+      "id": "beat",
+      "file": "resources/sound/beat.wav" 
+
+    },
+    {
+      "id": "imperial_march",
+      "file": "resources/sound/imperial_march.wav"
+    }
   ]
 
 }

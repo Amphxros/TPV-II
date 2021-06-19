@@ -4,6 +4,7 @@
 #include "sdlutils/SDLUtils.h"
 #include "Image.h"
 #include "DisableOnExit.h"
+#include "State.h"
 
 Gun::Gun(double time): time_(time), tr_(nullptr), lastCreatedTime(0)
 {
@@ -22,7 +23,8 @@ void Gun::init()
 
 void Gun::update()
 {
-	if(ih().keyDownEvent()){
+
+	if(ih().keyDownEvent() && entity_->getMngr()->getHandler<GM>()->getComponent<State>()->getGameState() == GameState::RUNNING){
 		if (ih().isKeyDown(SDLK_s) && sdlutils().currRealTime() - lastCreatedTime > time_) {
 			lastCreatedTime = sdlutils().currRealTime();
 			Vector2D p = tr_->getPos();
@@ -40,6 +42,8 @@ void Gun::update()
 			e->addComponent<DisableOnExit>();
 
 			e->setGroup<Bullets>(true);
+
+			sdlutils().soundEffects().at("fire").play(0,1);
 
 
 		}

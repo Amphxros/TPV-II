@@ -42,9 +42,10 @@ void CollisionManager::update()
 							mState->changeState(GameState::GAMEOVER, true);
 						}
 
+						sdlutils().soundEffects().at("explosion").play(0, 1);
+
 					}
 				}
-
 			}
 
 			// Colisiones con Fighter
@@ -70,10 +71,11 @@ void CollisionManager::onFighterCollision()
 	h->setHealth(h->getHealth() - 1);
 
 	if (h->getHealth() > 0) {
+		sdlutils().musics().at("imperial_march").pauseMusic();
 		mState->changeState(GameState::PAUSE);
 	}
 	else {
-
+		sdlutils().musics().at("imperial_march").haltMusic();
 		mState->changeState(GameState::GAMEOVER);
 		h->resetHealth();
 	}
@@ -90,8 +92,6 @@ void CollisionManager::onFighterCollision()
 			e->setActive(false);
 		}
 	}
-
-
 }
 
 bool CollisionManager::collides(Transform* a, Transform* b) {

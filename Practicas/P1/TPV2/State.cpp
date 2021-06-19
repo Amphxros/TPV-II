@@ -3,7 +3,7 @@
 #include "ecs/Entity.h"
 #include "ecs/Manager.h"
 State::State():
-Component(), gameWin(false), initMsg(nullptr), pauseMsg(nullptr), gameOverMsg(nullptr), gameWinMsg(nullptr)
+	Component(), gameWin(false), initMsg(nullptr), pauseMsg(nullptr), gameOverMsg(nullptr), gameWinMsg(nullptr), gameState(GameState::NEW)
 {
 }
 

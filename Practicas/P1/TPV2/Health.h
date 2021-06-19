@@ -7,7 +7,7 @@ class Health :public Component {
 
 public:
 
-	Health() {};
+	Health(): health_(-1), currHealth_(-1), tex_(nullptr) {};
 	Health(int health, Texture* tex);
 	virtual ~Health();
 

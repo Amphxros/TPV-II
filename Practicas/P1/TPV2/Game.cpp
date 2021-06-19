@@ -38,7 +38,7 @@ void Game::init()
 
 	Entity* gManager = mngr_->addEntity();
 	gManager->addComponent<State>();
-	gManager->addComponent<AsteroidsManager>();
+	gManager->addComponent<AsteroidsManager>(5000,10);
 	gManager->addComponent<GameCtrl>();
 	gManager->addComponent<CollisionManager>();
 	mngr_->setHandler<GM>(gManager);

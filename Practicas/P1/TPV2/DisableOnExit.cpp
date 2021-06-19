@@ -1,6 +1,7 @@
 #include "DisableOnExit.h"
 
-DisableOnExit::DisableOnExit():Component()
+DisableOnExit::DisableOnExit():
+	Component(), tr_(nullptr)
 {
 }
 

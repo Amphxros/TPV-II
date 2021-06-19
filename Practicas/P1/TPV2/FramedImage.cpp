@@ -2,7 +2,7 @@
 #include "sdlutils/SDLUtils.h"
 
 FramedImage::FramedImage(Texture* tex, int rows, int cols, int r, int c, float frate): 
-	Component(), tex_(tex), timer(frate)
+	Component(), tex_(tex), timer(frate),lastTime(0)
 {
 	src.x = tex_->width() / cols *c;
 	src.y = tex_->height() / rows * r;

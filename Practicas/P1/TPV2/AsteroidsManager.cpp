@@ -11,7 +11,13 @@
 #include "ShowAtOppositeSide.h"
 #include "FramedImage.h"
 
-AsteroidsManager::AsteroidsManager():numAsteroids(10), asteroidperTime(5000), lastCreatedTime_(0),time_(0)
+AsteroidsManager::AsteroidsManager():
+	Component(),initAsteroids(0) , numAsteroids(0), asteroidperTime(0), lastCreatedTime_(0),time_(0), mState_(nullptr)
+{
+}
+
+AsteroidsManager::AsteroidsManager(double astPerTime, int initialAsteroids): 
+	Component(), initAsteroids(initialAsteroids), asteroidperTime(astPerTime), mState_(nullptr), lastCreatedTime_(0), time_(0), numAsteroids(0)
 {
 }
 
@@ -26,8 +32,8 @@ void AsteroidsManager::init()
 }
 
 void AsteroidsManager::initGame(){
-	numAsteroids = 10;
-	for(int i=0;i<numAsteroids; i++){
+	numAsteroids = 0;
+	for(int i=0;i<initAsteroids; i++){
 		createAsteroid();	
 	}
 
@@ -45,7 +51,6 @@ void AsteroidsManager::update()
 		time_ = sdlutils().currRealTime();
 		if (time_ - lastCreatedTime_ >= asteroidperTime) {
 			createAsteroid();
-			numAsteroids++;
 			lastCreatedTime_ = sdlutils().currRealTime();
 		}
 	}
@@ -155,4 +160,6 @@ void AsteroidsManager::createAsteroid()
 		ast->addComponent<FramedImage>(&(sdlutils().images().at("asteroid_gold")), 5, 6, 0, 0, 50.0f);
 		ast->addComponent<Follow>();
 	}
+
+	numAsteroids++;
 }

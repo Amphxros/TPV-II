@@ -4,7 +4,8 @@
 #include "sdlutils/InputHandler.h"
 #include "ecs/Manager.h"
 
-GameCtrl::GameCtrl(): Component(), astManager(nullptr), gameState_(nullptr)
+GameCtrl::GameCtrl(): 
+	Component(), astManager(nullptr), gameState_(nullptr)
 {
 }
 
@@ -26,10 +27,15 @@ void GameCtrl::update()
 			switch(gameState_->getGameState()){
 
 				case GameState::NEW:
+					gameState_->changeState(GameState::RUNNING);
+					astManager->initGame();
+					sdlutils().musics().at("imperial_march").play();
+					break;
 				case GameState::PAUSE:
 					gameState_->changeState(GameState::RUNNING);
 					astManager->initGame();
-					std::cout << "init game" << std::endl;
+					sdlutils().musics().at("imperial_march").resumeMusic();
+		
 					break;
 
 				case GameState::GAMEOVER:

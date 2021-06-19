@@ -9,7 +9,6 @@
 #include "SDLUtils.h"
 #include "../ecs/Manager.h"
 #include "../ecs/Entity.h"
-#include "../ecs/ecs_defs_example.h"
 
 // include de los components
 #include "../Transform.h"

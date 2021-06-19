@@ -191,9 +191,6 @@
     <ClInclude Include="ecs\ecs.h">
       <Filter>Header Files\ecs</Filter>
     </ClInclude>
-    <ClInclude Include="ecs\ecs_defs_example.h">
-      <Filter>Header Files\ecs</Filter>
-    </ClInclude>
     <ClInclude Include="ecs\Entity.h">
       <Filter>Header Files\ecs</Filter>
     </ClInclude>
@@ -250,6 +247,9 @@
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ecs\ecs_defs.h">
+      <Filter>Header Files\ecs</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

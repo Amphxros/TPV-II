@@ -8,6 +8,7 @@ class AsteroidsManager :
 public:
 
 	AsteroidsManager();
+	AsteroidsManager(double astPerTime, int initialAsteroids);
 	virtual ~AsteroidsManager();
 
 	virtual void init() override;
@@ -24,8 +25,8 @@ private:
 	double time_;
 	double lastCreatedTime_; 
 	double asteroidperTime;
-	int numAsteroids;
-
+	int numAsteroids;	//current number of asteroids
+	int initAsteroids; //initial number of asteroids
 	State* mState_;
 };
 

@@ -55,7 +55,7 @@
     <ClInclude Include="DisableOnExit.h" />
     <ClInclude Include="ecs\Component.h" />
     <ClInclude Include="ecs\ecs.h" />
-    <ClInclude Include="ecs\ecs_defs_example.h" />
+    <ClInclude Include="ecs\ecs_defs.h" />
     <ClInclude Include="ecs\Entity.h" />
     <ClInclude Include="ecs\Manager.h" />
     <ClInclude Include="ecs\mpl.h" />
