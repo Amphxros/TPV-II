@@ -21,6 +21,6 @@ private:
 	void render();
 
 	std::unique_ptr<Manager> mngr_;
-	SDLUtils* sdl;
+
 };
 

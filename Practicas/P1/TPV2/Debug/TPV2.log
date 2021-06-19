@@ -1,19 +1,2 @@
-﻿  Game.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\Transform.h(22,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\Transform.h(22,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\Transform.h(23,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\Transform.h(23,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\Game.cpp(56,80): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\Game.cpp(56,58): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\ecs\Entity.h(36,32): warning C4244: 'argumento': conversión de '_Ty' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\ecs\Entity.h(36,32): warning C4244:         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\ecs\Entity.h(36,32): warning C4244:         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\ecs\Entity.h(36,32): warning C4244:             _Ty=int
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\ecs\Entity.h(36,32): warning C4244:         ]
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\Game.cpp(59): message : vea la referencia a la creación de instancias de plantilla de función "T *Entity::addComponent<FighterCtrl,float,float,int>(float &&,float &&,int &&)" que se está compilando
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\Game.cpp(59): message :         with
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\Game.cpp(59): message :         [
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\Game.cpp(59): message :             T=FighterCtrl
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\Game.cpp(59): message :         ]
-     Creando biblioteca C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\bin\TPV2Debug.lib y objeto C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\bin\TPV2Debug.exp
+﻿  State.cpp
   TPV2.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\bin\TPV2Debug.exe

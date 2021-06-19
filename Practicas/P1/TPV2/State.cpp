@@ -59,7 +59,7 @@ void State::render()
 		else {
 			dest.x = (int)(sdlutils().width()/2 - gameOverMsg->width()) / 2;
 			dest.y = (int)(sdlutils().height() - gameOverMsg->height()) / 2 - 100;
-			dest.w = (int)sdlutils().width() / 3;
+			dest.w = (int)sdlutils().width() / 2;
 			dest.h = (int)sdlutils().height() / 3;
 
 			gameOverMsg->render(dest, 0.0f);

@@ -31,5 +31,6 @@ struct Bullets;
 
 // handlers -- forward declaration, but they are never defined as data structures
 struct Fighter;
-#define _HDLRS_LIST_ Fighter
+struct GM;
+#define _HDLRS_LIST_ Fighter, GM
 

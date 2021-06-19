@@ -54,10 +54,33 @@
   
   "messages" : [
     { "id" : "PressAnyKey", "text" : "Press Any Key", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" },
-    { "id" : "init", "text" : " init game", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" },
-    { "id" : "pause", "text" : " round over", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" },
-    { "id" : "gameOver", "text" : "game over", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" },
-    { "id" : "gameWin", "text" : "CONGRATULACIONES", "font" : "ARIAL48", "color" : "0x000000ff" }
+    {
+      "id": "init",
+      "text": " init game",
+      "font": "ARIAL24",
+      "color": "0xffffffff"
+
+    },
+    {
+      "id": "pause",
+      "text": " round over",
+      "font": "ARIAL24",
+      "color": "0xffffffff"
+
+    },
+    {
+      "id": "gameOver",
+      "text": "game over",
+      "font": "ARIAL24",
+      "color": "0xffffffff"
+
+    },
+    {
+      "id": "gameWin",
+      "text": "CONGRATULACIONES",
+      "font": "ARIAL48",
+      "color": "0xffffffff"
+    }
   
   ],
 

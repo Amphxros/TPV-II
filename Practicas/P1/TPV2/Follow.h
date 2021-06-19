@@ -1,6 +1,5 @@
 #pragma once
 #include "ecs/Component.h"
-#include "ecs/Entity.h"
 #include "Transform.h"
 
 class Follow : public Component {
@@ -17,6 +16,5 @@ private:
 
 	Transform* tr_;
 	Transform* target_;
-	double thrust_;
 
 };

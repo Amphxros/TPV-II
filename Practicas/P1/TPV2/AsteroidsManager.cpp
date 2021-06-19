@@ -77,7 +77,7 @@ void AsteroidsManager::onCollisionWithBullet(Entity* a)
 		Entity* b_ = entity_->getMngr()->addEntity();
 
 		pos = p - v.rotate(r) * 2 * w;
-		vel = v.rotate(r) * 1.1f;
+		vel = v.rotate(-r) * 1.1f;
 
 		b_->addComponent<Transform>(pos, vel, 10 + 5 * gen - 1, 10 + 5 * gen - 1, sdlutils().rand().nextInt(0, 360));
 		b_->addComponent<ShowAtOppositeSide>();
@@ -99,8 +99,6 @@ void AsteroidsManager::onCollisionWithBullet(Entity* a)
 			b_->addComponent<FramedImage>(&(sdlutils().images().at("asteroid")), 5, 6, 0, 0, 50.0f);
 		}
 
-
-
 		// Como se crean 2 asteroides en vez de disminuir el numero en 1 y sumarlo en 2 al total añadimos solo 1
 		numAsteroids++;
 	}
@@ -117,14 +115,35 @@ void AsteroidsManager::onCollisionWithBullet(Entity* a)
 void AsteroidsManager::createAsteroid()
 {
 	int rnd = sdlutils().rand().nextInt(1, 3);
-
-	int x = sdlutils().rand().nextInt(0, sdlutils().width());
-	int y = sdlutils().rand().nextInt(0, sdlutils().height());
-
 	int gen = sdlutils().rand().nextInt(1, 4);
+	
+	Vector2D c = Vector2D(sdlutils().width() / 2, sdlutils().height() / 2); //center
+	Vector2D f = Vector2D(c.getX() + sdlutils().rand().nextInt(-100,100), c.getY() + sdlutils().rand().nextInt(-100, 100)); //final pos
+	Vector2D p = Vector2D(); //pos
+	
+	int pRnd;
+	int r = sdlutils().rand().nextInt(0, 2);
+	if (r == 0) {
+		r = sdlutils().rand().nextInt(0, 2);
+		pRnd = sdlutils().rand().nextInt(0, sdlutils().width() + 1);
+		p.setX(pRnd);
+		r == 0 ? p.setY(0) : p.setY(sdlutils().height());
+
+	}
+	else {
+		r = sdlutils().rand().nextInt(0, 2);
+
+		r = sdlutils().rand().nextInt(0, 2);
+		pRnd = sdlutils().rand().nextInt(0, sdlutils().width() + 1);
+		p.setY(pRnd);
+		r == 0 ? p.setX(0) : p.setX(sdlutils().width());
+	}
+	
+	Vector2D v = Vector2D(f - p).normalize() * (sdlutils().rand().nextInt(1, 10) / 10.0f);
+
 
 	Entity* ast = entity_->getMngr()->addEntity();
-	ast->addComponent<Transform>(Vector2D(x, y), Vector2D(), 10 + gen * 5, 10 + gen * 5, sdlutils().rand().nextInt(0, 360));
+	ast->addComponent<Transform>(p, v, 10 + gen * 5, 10 + gen * 5, sdlutils().rand().nextInt(0, 360));
 	ast->addComponent<ShowAtOppositeSide>();
 	ast->addComponent<Generations>(gen);
 	ast->setGroup<Asteroids>(true);
