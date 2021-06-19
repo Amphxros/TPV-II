@@ -2,6 +2,7 @@
 #include "ecs/Entity.h"
 #include "ecs/Manager.h"
 #include"Health.h"
+#include "GameCtrl.h"
 
 CollisionManager::CollisionManager()	:	Component()
 {
@@ -52,13 +53,19 @@ void CollisionManager::update()
 				//quitar vida y comprobar si su vida es 0 -> cambiar a gameOver : cambiar a pausa
 				Health* h = entity_->getMngr()->getHandler<Fighter>()->getComponent<Health>();
 				h->setHealth(h->getHealth() - 1);
-				if(h->getHealth()>0){
+				
+				if(h->getHealth() > 0){
 					mState->changeState(GameState::PAUSE);
 				}
 				else{
 					
 					mState->changeState(GameState::GAMEOVER);
+					h->resetHealth();
 				}
+
+				tr_Fighter->setPos(Vector2D(sdlutils().width()/2-25, sdlutils().height()/2 -25));
+				entity_->getComponent<GameCtrl>()->onFighterCollision();
+
 
 			}
 

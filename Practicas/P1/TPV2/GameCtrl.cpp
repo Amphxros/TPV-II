@@ -2,6 +2,7 @@
 #include "sdlutils/SDLUtils.h"
 #include "ecs/Entity.h"
 #include "sdlutils/InputHandler.h"
+#include "ecs/Manager.h"
 
 GameCtrl::GameCtrl(): Component(), astManager(nullptr), gameState_(nullptr)
 {
@@ -43,5 +44,14 @@ void GameCtrl::update()
 
 void GameCtrl::onFighterCollision()
 {
+	auto& entities = entity_->getMngr()->getEnteties();
+
+	for (auto e : entities) {
+		if (e->hasGroup<Asteroids>() || e->hasGroup<Bullets>()) {
+			e->setActive(false);
+		}
+	}
+
+	
 }
 

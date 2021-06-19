@@ -13,8 +13,11 @@ public:
     GameState getGameState() { return gameState; }
     void changeState(GameState gs, bool win=false) { gameState = gs; gameWin = win; }
 
+
+
 private:
-    GameState gameState;
+   
+	GameState gameState;
     bool gameWin;
 	Texture* initMsg;
 	Texture* pauseMsg;

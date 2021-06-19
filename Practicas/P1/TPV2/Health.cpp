@@ -3,6 +3,7 @@
 Health::Health(int health, Texture* tex):
 	Component(),health_(health), tex_(tex)
 {
+	currHealth_ = health_;
 }
 
 Health::~Health()
@@ -11,7 +12,7 @@ Health::~Health()
 
 void Health::render()
 {
-	for(int i=0; i<health_; i++){
+	for(int i=0; i<currHealth_; i++){
 		SDL_Rect dest;
 		dest.x = sdlutils().width()/3 + 40 * i;
 		dest.y = 10;

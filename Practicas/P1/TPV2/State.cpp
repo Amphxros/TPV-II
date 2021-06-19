@@ -1,6 +1,7 @@
 #include "State.h"
 #include "sdlutils/SDLUtils.h"
-
+#include "ecs/Entity.h"
+#include "ecs/Manager.h"
 State::State():
 Component(), gameWin(false), initMsg(nullptr), pauseMsg(nullptr), gameOverMsg(nullptr), gameWinMsg(nullptr)
 {
@@ -27,39 +28,39 @@ void State::render()
 
 	switch (gameState){
 	case GameState::NEW:
-		dest.x = (int)(sdlutils().width() - initMsg->width()) / 2;
-		dest.y = (int)(sdlutils().height() - initMsg->height()) / 2 - 100;
-		dest.w = (int)sdlutils().width() / 3;
-		dest.w = (int)initMsg->height();
+		dest.x = (int)(sdlutils().width()/2 - initMsg->width()) / 2;
+		dest.y = (int)(sdlutils().height()- initMsg->height()) / 2 - 100;
+		dest.w = (int)sdlutils().width() / 2;
+		dest.h = (int)sdlutils().height() / 3;
 
 		initMsg->render(dest, 0.0f);
 
 		break;
 
 	case GameState::PAUSE:
-		dest.x = (int)((sdlutils().width() - pauseMsg->width()) / 2);
+		dest.x = (int)((sdlutils().width()/2 - pauseMsg->width()) / 2);
 		dest.y = (int)((sdlutils().height() - pauseMsg->height()) / 2 - 100);
-		dest.w = (int)sdlutils().width()/3;
-		dest.w = (int)pauseMsg->height();
+		dest.w = (int)sdlutils().width()/2;
+		dest.h = (int)sdlutils().height() / 3;
 
 		pauseMsg->render(dest, 0.0f);
 		break;
 
 	case GameState::GAMEOVER:
 		if(gameWin){
-			dest.x = (int)(sdlutils().width() - gameWinMsg->width()) / 2;
+			dest.x = (int)(sdlutils().width()/2 - gameWinMsg->width()) / 2;
 			dest.y = (int)(sdlutils().height() - gameWinMsg->height()) / 2 - 100;
-			dest.w = (int)sdlutils().width() / 3;
-			dest.w = (int)gameWinMsg->height();
+			dest.w = (int)sdlutils().width() / 2;
+			dest.h = (int)sdlutils().height() / 3;
 			
 			gameWinMsg->render(dest, 0.0f);
 		}
 	
 		else {
-			dest.x = (int)(sdlutils().width() - gameOverMsg->width()) / 2;
+			dest.x = (int)(sdlutils().width()/2 - gameOverMsg->width()) / 2;
 			dest.y = (int)(sdlutils().height() - gameOverMsg->height()) / 2 - 100;
 			dest.w = (int)sdlutils().width() / 3;
-			dest.w = (int)gameOverMsg->height();
+			dest.h = (int)sdlutils().height() / 3;
 
 			gameOverMsg->render(dest, 0.0f);
 		}
@@ -68,3 +69,4 @@ void State::render()
 
 	
 }
+
