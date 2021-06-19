@@ -2,13 +2,12 @@
 #include "ecs/Component.h"
 #include "Transform.h"
 #include "sdlutils/Texture.h"
-#include "ecs/Entity.h"
 
 class Image :	public Component{
 
 public:
 
-	Image(){}
+	Image() {};
 	Image(Texture* tex);
 	virtual ~Image();
 

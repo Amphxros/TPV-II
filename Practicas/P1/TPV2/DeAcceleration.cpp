@@ -17,5 +17,6 @@ void DeAcceleration::init()
 
 void DeAcceleration::update()
 {
-	tr_->setDir(tr_->getDir() * thrust_);
+	Vector2D vel = tr_->getDir() * thrust_;
+	tr_->setDir(vel);
 }

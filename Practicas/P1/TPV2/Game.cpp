@@ -52,9 +52,10 @@ void Game::init()
 
 
 
-	Entity* player = mngr_->addEntity();
-	player->addComponent<Transform>(Vector2D((sdlutils().width() / 2) - 75, (sdlutils().height() / 2) - 75), Vector2D(), 150, 150, 0);
-	player->addComponent<Image>(&sdlutils().images().at("fighter"));
+	Entity* player = mngr_->addEntity(); 
+	player->addComponent<Transform>(Vector2D(sdl.width() / 2-25, sdl.height() / 2 -25), Vector2D(), 50, 50, 0);
+
+	player->addComponent<Image>(&sdl.images().at("fighter"));
 	player->addComponent<FighterCtrl>();
 	player->addComponent<Health>(3, &sdl.images().at("heart"));
 	player->addComponent<Gun>();
@@ -90,14 +91,18 @@ void Game::init()
 		while (SDL_PollEvent(&event))
 			ih.update(event);
 
-		// exit when any key is down
-		if (ih.keyDownEvent())
+		// exit when escape key is down
+		if (ih.isKeyDown(SDLK_ESCAPE)) {
 			exit_ = true;
+		}
+		mngr_->refresh();
+		mngr_->update();
 
 		// clear screen
 		sdl.clearRenderer();
 
 		mngr_->render();
+		mngr_->getHandler<Fighter>()->render();
 
 
 		// present new frame

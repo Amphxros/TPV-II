@@ -27,39 +27,39 @@ void State::render()
 
 	switch (gameState){
 	case GameState::NEW:
-		dest.x = (sdlutils().width() - initMsg->width()) / 2;
-		dest.y = (sdlutils().height() - initMsg->height()) / 2 - 100;
-		dest.w = initMsg->width();
-		dest.w = initMsg->height();
+		dest.x = (int)(sdlutils().width() - initMsg->width()) / 2;
+		dest.y = (int)(sdlutils().height() - initMsg->height()) / 2 - 100;
+		dest.w = (int)initMsg->width();
+		dest.w = (int)initMsg->height();
 
 		initMsg->render(dest, 0.0f);
 
 		break;
 
 	case GameState::PAUSE:
-		dest.x = (sdlutils().width() - pauseMsg->width()) / 2;
-		dest.y = (sdlutils().height() - pauseMsg->height()) / 2 - 100;
-		dest.w = pauseMsg->width();
-		dest.w = pauseMsg->height();
+		dest.x = (int)((sdlutils().width() - pauseMsg->width()) / 2);
+		dest.y = (int)((sdlutils().height() - pauseMsg->height()) / 2 - 100);
+		dest.w = (int)pauseMsg->width();
+		dest.w = (int)pauseMsg->height();
 
 		pauseMsg->render(dest, 0.0f);
 		break;
 
 	case GameState::GAMEOVER:
 		if(gameWin){
-			dest.x = (sdlutils().width() - gameWinMsg->width()) / 2;
-			dest.y = (sdlutils().height() - gameWinMsg->height()) / 2 - 100;
-			dest.w = gameWinMsg->width();
-			dest.w = gameWinMsg->height();
+			dest.x = (int)(sdlutils().width() - gameWinMsg->width()) / 2;
+			dest.y = (int)(sdlutils().height() - gameWinMsg->height()) / 2 - 100;
+			dest.w = (int)gameWinMsg->width();
+			dest.w = (int)gameWinMsg->height();
 			
 			gameWinMsg->render(dest, 0.0f);
 		}
 	
 		else {
-			dest.x = (sdlutils().width() - gameOverMsg->width()) / 2;
-			dest.y = (sdlutils().height() - gameOverMsg->height()) / 2 - 100;
-			dest.w = gameOverMsg->width();
-			dest.w = gameOverMsg->height();
+			dest.x = (int)(sdlutils().width() - gameOverMsg->width()) / 2;
+			dest.y = (int)(sdlutils().height() - gameOverMsg->height()) / 2 - 100;
+			dest.w = (int)gameOverMsg->width();
+			dest.w = (int)gameOverMsg->height();
 
 			gameOverMsg->render(dest, 0.0f);
 		}

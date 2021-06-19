@@ -6,24 +6,24 @@ class Transform : public Component
 {
 public:
 
-    Transform() {};
+    Transform(): pos_(Vector2D()), dir_(Vector2D()) {};
     Transform(Vector2D pos, Vector2D dir, double width, double height, double rotation);
     virtual ~Transform();
 
     virtual void init() override;
     virtual void update() override;
 
-    Vector2D getPos() { return pos; }
-    Vector2D getDir() { return dir; }
+    Vector2D getPos() { return pos_; }
+    Vector2D getDir() { return dir_; }
 
-    inline void setPos(Vector2D pos) { pos = pos; }
-    inline void setDir(Vector2D dir) { dir = dir; }
+    inline void setPos(Vector2D pos) { pos_ = pos; }
+    inline void setDir(Vector2D dir) { dir_ = dir; }
 
-    inline void setPos(double x, double y) { pos.set(x, y); }
-    inline void setDir(double x, double y) { dir.set(x, y); }
+    inline void setPos(double x, double y) { pos_.set(x, y); }
+    inline void setDir(double x, double y) { dir_.set(x, y); }
 
-    inline double getW() { return w; }
-    inline double getH() { return h; }
+    inline double getW() { return w_; }
+    inline double getH() { return h_; }
     inline double getRotation() { return rot_; }
 
     inline void setW(double w) { w = w; }
@@ -32,7 +32,7 @@ public:
 
 private:
 
-    Vector2D pos, dir;
-    double w, h, rot_;
+    Vector2D pos_, dir_;
+    double w_, h_, rot_;
 
 };

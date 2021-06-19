@@ -2,7 +2,7 @@
 
 #include "sdlutils/InputHandler.h"
 
-FighterCtrl::FighterCtrl()
+FighterCtrl::FighterCtrl(): Component()
 {
 }
 
@@ -18,6 +18,5 @@ void FighterCtrl::init()
 
 void FighterCtrl::update()
 {
-
 
 }
