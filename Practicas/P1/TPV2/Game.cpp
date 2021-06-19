@@ -56,9 +56,9 @@ void Game::init()
 	player->addComponent<Transform>(Vector2D(sdl.width() / 2-25, sdl.height() / 2 -25), Vector2D(), 50, 50, 0);
 
 	player->addComponent<Image>(&sdl.images().at("fighter"));
-	player->addComponent<FighterCtrl>();
+	player->addComponent<FighterCtrl>(10.0f,0.25f,3);
 	player->addComponent<Health>(3, &sdl.images().at("heart"));
-	player->addComponent<Gun>();
+	player->addComponent<Gun>(50);
 	player->addComponent<ShowAtOppositeSide>();
 	mngr_->setHandler<Fighter>(player);
 

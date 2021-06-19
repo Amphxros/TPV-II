@@ -7,7 +7,7 @@ class Gun :public Component{
 
 public:
 
-	Gun() {};
+	Gun(): time_(-1), lastCreatedTime(-1), tr_(nullptr) {};
 	Gun(double time);
 	virtual ~Gun();
 
@@ -17,6 +17,6 @@ public:
 private:
 
 	Transform* tr_;
-	double time, lastCreatedTime;
+	double time_, lastCreatedTime;
 
 };

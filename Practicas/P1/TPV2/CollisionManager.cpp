@@ -1,10 +1,12 @@
 #include "CollisionManager.h"
 #include "ecs/Entity.h"
 #include "ecs/Manager.h"
-#include"Health.h"
 #include "GameCtrl.h"
+#include "sdlutils/SDLUtils.h"
+#include "Health.h"
 
-CollisionManager::CollisionManager()	:	Component()
+CollisionManager::CollisionManager() :
+	Component(), astManager(nullptr), mState(nullptr)
 {
 }
 
@@ -51,26 +53,44 @@ void CollisionManager::update()
 	
 		if (collides(a, tr_Fighter)) {
 				//quitar vida y comprobar si su vida es 0 -> cambiar a gameOver : cambiar a pausa
-				Health* h = entity_->getMngr()->getHandler<Fighter>()->getComponent<Health>();
-				h->setHealth(h->getHealth() - 1);
-				
-				if(h->getHealth() > 0){
-					mState->changeState(GameState::PAUSE);
-				}
-				else{
-					
-					mState->changeState(GameState::GAMEOVER);
-					h->resetHealth();
-				}
-
-				tr_Fighter->setPos(Vector2D(sdlutils().width()/2-25, sdlutils().height()/2 -25));
-				entity_->getComponent<GameCtrl>()->onFighterCollision();
-
+				onFighterCollision();
+				astManager->endGame();
 
 			}
 
 		}
 	}
+
+}
+
+void CollisionManager::onFighterCollision()
+{
+	Transform* tr_Fighter = entity_->getMngr()->getHandler<Fighter>()->getComponent<Transform>();
+	Health* h = entity_->getMngr()->getHandler<Fighter>()->getComponent<Health>();
+	h->setHealth(h->getHealth() - 1);
+
+	if (h->getHealth() > 0) {
+		mState->changeState(GameState::PAUSE);
+	}
+	else {
+
+		mState->changeState(GameState::GAMEOVER);
+		h->resetHealth();
+	}
+
+	tr_Fighter->setPos(Vector2D(sdlutils().width() / 2 - 25, sdlutils().height() / 2 - 25));
+	tr_Fighter->setDir(Vector2D());
+	tr_Fighter->setRotation(0.0f);
+
+
+	auto& entities = entity_->getMngr()->getEnteties();
+
+	for (auto e : entities) {
+		if (e->hasGroup<Asteroids>() || e->hasGroup<Bullets>()) {
+			e->setActive(false);
+		}
+	}
+
 
 }
 

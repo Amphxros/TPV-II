@@ -11,7 +11,7 @@
 #include "ShowAtOppositeSide.h"
 #include "FramedImage.h"
 
-AsteroidsManager::AsteroidsManager():numAsteroids(10)
+AsteroidsManager::AsteroidsManager():numAsteroids(10), asteroidperTime(5000), lastCreatedTime_(0),time_(0)
 {
 }
 
@@ -22,8 +22,6 @@ AsteroidsManager::~AsteroidsManager()
 void AsteroidsManager::init()
 {
 	mState_ = entity_->getComponent<State>();
-
-	
 	lastCreatedTime_ = sdlutils().currRealTime();
 }
 

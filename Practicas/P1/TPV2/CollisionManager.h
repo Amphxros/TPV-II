@@ -15,6 +15,8 @@ public:
 	virtual void init() override;
 	virtual void update() override;
 
+	void onFighterCollision();
+
 private:
 
 	bool collides(Transform* a, Transform* b);

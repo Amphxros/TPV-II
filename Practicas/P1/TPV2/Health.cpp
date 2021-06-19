@@ -14,7 +14,7 @@ void Health::render()
 {
 	for(int i=0; i<currHealth_; i++){
 		SDL_Rect dest;
-		dest.x = sdlutils().width()/3 + 40 * i;
+		dest.x = sdlutils().width()/2 -120 + 35 * i;
 		dest.y = 10;
 		dest.w = 30;
 		dest.h = 30;

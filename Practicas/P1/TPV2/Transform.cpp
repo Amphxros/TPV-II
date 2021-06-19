@@ -14,7 +14,6 @@ Transform::~Transform()
 
 void Transform::init()
 {
-	std::cout << "added trnasform " << pos_.getX() << " " << pos_.getY() << " "<< w_<< " "<< h_<<std::endl;
 }
 
 void Transform::update()
