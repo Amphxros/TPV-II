@@ -9,6 +9,7 @@
 #include "Follow.h"
 #include "Generations.h"
 #include "ShowAtOppositeSide.h"
+#include "FramedImage.h"
 
 AsteroidsManager::AsteroidsManager():numAsteroids(10)
 {
@@ -89,15 +90,15 @@ void AsteroidsManager::onCollisionWithBullet(Entity* a)
 		//si el asteroide es de tipo B sus hijos tambien lo son
 		if (a->hasComponent<Follow>()) {
 			a_->addComponent<Follow>();
-			a_->addComponent<Image>(&(sdlutils().images().at("asteroid_gold")));
+			a_->addComponent<FramedImage>(&(sdlutils().images().at("asteroid_gold")), 5, 6, 0, 0, 50.0f);
 			b_->addComponent<Follow>();
-			b_->addComponent<Image>(&(sdlutils().images().at("asteroid_gold")));
+			b_->addComponent<FramedImage>(&(sdlutils().images().at("asteroid_gold")), 5, 6, 0, 0, 50.0f);
 
 		}
 		else 
 		{
-			a_->addComponent<Image>(&(sdlutils().images().at("asteroid")));
-			b_->addComponent<Image>(&(sdlutils().images().at("asteroid")));
+			a_->addComponent<FramedImage>(&(sdlutils().images().at("asteroid")), 5, 6, 0, 0, 50.0f);
+			b_->addComponent<FramedImage>(&(sdlutils().images().at("asteroid")), 5, 6, 0, 0, 50.0f);
 		}
 
 
@@ -131,10 +132,10 @@ void AsteroidsManager::createAsteroid()
 	ast->setGroup<Asteroids>(true);
 
 	if (rnd == 1) {
-		ast->addComponent<Image>(&(sdlutils().images().at("asteroid")));
+		ast->addComponent<FramedImage>(&(sdlutils().images().at("asteroid")),5,6,0,0,50.0f);
 	}
 	else {
-		ast->addComponent<Image>(&(sdlutils().images().at("asteroid_gold")));
+		ast->addComponent<FramedImage>(&(sdlutils().images().at("asteroid_gold")), 5, 6, 0, 0, 50.0f);
 		ast->addComponent<Follow>();
 	}
 }
