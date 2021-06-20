@@ -19,6 +19,7 @@ private:
 	void createAsteroid();
 	void onCollisionWithBullet(Entity* a, Entity* b);
 	std::size_t numOfAsteroids_;
+	bool active;
 
 };
 

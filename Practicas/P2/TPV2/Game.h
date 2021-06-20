@@ -5,6 +5,10 @@
 #include "sdlutils/SDLUtils.h"
 
 #include "AsteroidSystem.h"
+#include "FighterSystem.h"
+#include "BulletsSystem.h"
+#include "GameCtrlSystem.h"
+#include "RenderSystem.h"
 
 class Manager;
 class Game
@@ -21,5 +25,9 @@ private:
 
 	std::unique_ptr<Manager> mngr_;
 	AsteroidSystem* astSys;
+	BulletsSystem* bulletSys_;
+	GameCtrlSystem* gameSys_;
+	FighterSystem* fighterSys_;
+	RenderSystem* renderSys_;
 
 };

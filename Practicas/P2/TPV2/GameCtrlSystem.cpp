@@ -20,15 +20,16 @@ void GameCtrlSystem::update()
 {
 	if (ih().keyDownEvent()) {
 		if (ih().isKeyDown(SDL_SCANCODE_SPACE) && mGameState_ != GameState::RUNNING) {
-			msg::Message m;
 			if (mGameState_ == GameState::GAMEOVER) {
 				mGameState_ = GameState::NEW;
-				m.id = msg::INIT_GAME;
 			}
 			else {
+				msg::Message m;
 				m.id = msg::START_GAME;
-			}
+				mGameState_ = GameState::RUNNING;
+				m.num.n = 10;
 				manager_->send(m);
+			}
 		}
 	}
 }

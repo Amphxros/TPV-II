@@ -1,19 +1,17 @@
 #pragma once
 #include "../ecs/Component.h"
-#include "Transform.h"
 
+class Transform;
 class Follow : public Component {
 
 public:
 
-	Follow();
+	Follow(Transform* tr, Transform* target);
 	virtual ~Follow();
 
-	virtual void init() override;
-	virtual void update() override;
+	void update();
 
 private:
-
 	Transform* tr_;
 	Transform* target_;
 

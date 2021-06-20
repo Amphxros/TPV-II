@@ -5,7 +5,6 @@
 class FighterSystem :	public System{
 
 public:
-
 	FighterSystem();
 	virtual ~FighterSystem();
 

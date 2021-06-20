@@ -1,32 +1,14 @@
 ﻿  AsteroidSystem.cpp
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14,15): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14): message : vea la declaración de 'Entity'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\ecs\Manager.h(46,1): error C2440: 'static_cast': no se puede realizar la conversión de 'Component *' a 'T *'
-          with
-          [
-              T=Transform
-          ]
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\ecs\Manager.h(46,10): message : Los tipos señalados no están relacionados; la conversión requiere reinterpret_cast, conversión de estilo de C o conversión de estilo de función
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(23): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Manager::getComponent<Transform>(Entity *)" que se está compilando
-          with
-          [
-              T=Transform
-          ]
-  BulletsSystem.cpp
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14,15): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14): message : vea la declaración de 'Entity'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\component\Transform.h(19,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\component\Transform.h(19,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\component\Transform.h(20,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\component\Transform.h(20,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-  FighterSystem.cpp
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14,15): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14): message : vea la declaración de 'Entity'
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\component\Transform.h(19,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\component\Transform.h(19,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\component\Transform.h(20,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\component\Transform.h(20,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\FighterSystem.cpp(25,95): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\FighterSystem.cpp(25,69): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\P2\TPV2\FighterSystem.cpp(43,56): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-  Generando código...
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14,15): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14): message : vea la declaración de 'Entity'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(19,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(19,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(20,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(20,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(82,68): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(82,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(91,10): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(100,10): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(101,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  TPV2.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\bin\TPV2Debug.exe

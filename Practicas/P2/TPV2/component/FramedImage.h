@@ -4,26 +4,28 @@
 #include "Transform.h"
 #include "../sdlutils/Texture.h"
 
+class Transform;
 class FramedImage : public Component {
 
 public:
 
-	FramedImage(): tr_(nullptr), tex_(nullptr),dimX(0), dimY(0),posX(0), posY(0),lastTime(0), timer(0),dim(Vector2D()),src(){}
+	FramedImage(): tex_(nullptr),dimX(0), dimY(0),posX(0), posY(0),lastTime(0), timer(0),dim(Vector2D()),src(){}
 	FramedImage(Texture* tex, int rows, int cols, int r, int c, float frate=50.0f);
 	virtual ~FramedImage();
 
-	virtual void init() override;
-	virtual void update() override;
-	virtual void render() override;
+	void update();
+
+	SDL_Rect getSrc() { return src; }
+	Texture* getTexture() { return tex_; }
 
 private:
 
-	Transform* tr_;
+	SDL_Rect src;
 	Texture* tex_;
+
 	Vector2D iniFrame;
 	Vector2D dim;
 
-	SDL_Rect src;
 
 	float timer, lastTime;
 	int dimX, dimY, posX, posY;

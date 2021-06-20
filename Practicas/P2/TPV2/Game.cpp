@@ -35,23 +35,11 @@ void Game::init()
 	SDLUtils::init("Asteroids", 800, 600,
 		"resources/config/resources.json");
 
-
-	//Entity* gManager = mngr_->addEntity();
-	//gManager->addComponent<State>();
-	//gManager->addComponent<AsteroidsManager>(5000,10);
-	//gManager->addComponent<GameCtrl>();
-	//gManager->addComponent<CollisionManager>();
-	//mngr_->setHandler<GM>(gManager);
-
-	//Entity* player = mngr_->addEntity(); 
-	//player->addComponent<Transform>(Vector2D(sdlutils().width() / 2-25, sdlutils().height() / 2 -25), Vector2D(), 50, 50, 0);
-
-	//player->addComponent<Image>(&sdlutils().images().at("fighter"));
-	//player->addComponent<FighterCtrl>(10.0f,0.25f,3);
-	//player->addComponent<Health>(3, &sdlutils().images().at("heart"));
-	//player->addComponent<Gun>(50);
-	//player->addComponent<ShowAtOppositeSide>();
-	//mngr_->setHandler<Fighter>(player);
+	gameSys_ = mngr_->addSystem<GameCtrlSystem>();
+	astSys = mngr_->addSystem<AsteroidSystem>();
+	bulletSys_ = mngr_->addSystem<BulletsSystem>();
+	fighterSys_ = mngr_->addSystem<FighterSystem>();
+	renderSys_ = mngr_->addSystem<RenderSystem>();
 
 
 }
@@ -79,9 +67,14 @@ void Game::start() {
 		}
 		mngr_->refresh();
 
+		gameSys_->update();
+		astSys->update();
+		bulletSys_->update();
+		fighterSys_->update();
+
 		// clear screen
 		sdlutils().clearRenderer();
-
+		renderSys_->update();
 		// present new frame
 		sdlutils().presentRenderer();
 

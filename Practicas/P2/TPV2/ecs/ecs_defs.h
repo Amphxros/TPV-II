@@ -38,5 +38,7 @@ struct GM;
 class AsteroidSystem;
 class BulletsSystem;
 class GameCtrlSystem;
-#define _SYS_LIST_ AsteroidSystem, BulletsSystem, GameCtrlSystem
+class FighterSystem;
+class RenderSystem;
+#define _SYS_LIST_ AsteroidSystem, BulletsSystem, GameCtrlSystem, FighterSystem, RenderSystem
 
