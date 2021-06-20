@@ -1,11 +1,14 @@
 #include "FighterSystem.h"
-#include "ecs/Manager.h"
+
 
 #include "sdlutils/SDLUtils.h"
 #include "sdlutils/InputHandler.h"
 
+#include "ecs/Manager.h"
 #include "component/Transform.h"
+#include "component/Image.h"
 #include "component/Health.h"
+
 FighterSystem::FighterSystem() : System()
 {
 }
@@ -21,7 +24,7 @@ void FighterSystem::init()
 
 	manager_->addComponent<Transform>(e, Vector2D(sdlutils().width()/2 -25, sdlutils().height()/2- 25),Vector2D(), 50,50,0);
 	manager_->addComponent<Image>(e, &sdlutils().images().at("fighter"));
-	manager_->addComponent<Health>(e,3, &sdlutils().images().at("heart"));
+	//manager_->addComponent<Health>(e, 3, &sdlutils().images().at("heart"));
 	
 
 }

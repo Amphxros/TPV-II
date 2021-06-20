@@ -1,6 +1,8 @@
 #include "GameCtrlSystem.h"
+
 #include "sdlutils/InputHandler.h"
 #include "ecs/Manager.h"
+
 GameCtrlSystem::GameCtrlSystem(): System(), mGameState_(GameState::NEW)
 {
 }
@@ -55,7 +57,7 @@ void GameCtrlSystem::onAsteroidsExtinction()
 {
 	msg::Message m;
 	m.id = msg::GAMEOVER;
-	m.info.gameWin = true;
+	//m.info.gameWin = true;		??
 	manager_->send(m);
 }
 

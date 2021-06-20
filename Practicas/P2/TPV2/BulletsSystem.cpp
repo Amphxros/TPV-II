@@ -1,6 +1,10 @@
 #include "BulletsSystem.h"
+
 #include "ecs/Manager.h"
+#include "component/Transform.h"
+#include "component/Image.h"
 #include "sdlutils/SDLUtils.h"
+
 BulletsSystem::BulletsSystem(): System()
 {
 }
@@ -41,8 +45,7 @@ void BulletsSystem::onCollisionWithAsteroid(Entity* a, Entity* b)
 void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double width, double height, double rotation)
 {
 	Entity* e = manager_->addEntity();
-	manager_->addComponent<Transform>(e,pos, vel, width, height, rotation);
-	manager_->addComponent<Image>(e, sdlutils().images().at("fire"));
-
+	manager_->addComponent<Transform>(e, pos, vel, width, height, rotation);
+	manager_->addComponent<Image>(e, &sdlutils().images().at("fire"));
 
 }

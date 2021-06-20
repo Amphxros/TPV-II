@@ -1,9 +1,128 @@
-﻿  State.cpp
+﻿  AsteroidsManager.cpp
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\AsteroidsManager.cpp(72,31): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\AsteroidsManager.cpp(72,40): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\AsteroidsManager.cpp(73,27): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\AsteroidsManager.cpp(84,22): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\AsteroidsManager.cpp(84,31): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\AsteroidsManager.cpp(85,18): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\AsteroidsManager.cpp(125,68): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\AsteroidsManager.cpp(125,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\AsteroidsManager.cpp(134,10): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\AsteroidsManager.cpp(135,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\AsteroidsManager.cpp(143,10): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\AsteroidsManager.cpp(144,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  CollisionManager.cpp
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\CollisionManager.cpp(83,83): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\CollisionManager.cpp(83,53): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\CollisionManager.cpp(100,62): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\CollisionManager.cpp(100,44): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\CollisionManager.cpp(100,33): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\CollisionManager.cpp(99,92): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\CollisionManager.cpp(99,74): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\CollisionManager.cpp(99,63): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  DeAcceleration.cpp
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\DeAcceleration.cpp(20,33): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  DisableOnExit.cpp
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  FighterCtrl.cpp
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\FighterCtrl.cpp(29,56): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  Follow.cpp
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  FramedImage.cpp
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\FramedImage.cpp(15,23): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\FramedImage.cpp(15,17): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\FramedImage.cpp(16,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\FramedImage.cpp(16,22): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\FramedImage.cpp(33,37): warning C4244: '=': conversión de 'Uint32' a 'float'; posible pérdida de datos
+  GameCtrl.cpp
+  Generations.cpp
+  Gun.cpp
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Gun.cpp(32,10): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Gun.cpp(33,10): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Gun.cpp(34,10): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Gun.cpp(36,30): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Gun.cpp(36,23): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Gun.cpp(36,84): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Gun.cpp(37,37): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Health.cpp
+  Image.cpp
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Image.cpp(27,37): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  ShowAtOppositeSide.cpp
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  State.cpp
   Transform.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\component\Transform.h(22,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\component\Transform.h(22,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\component\Transform.h(23,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-  sdlutils_demo.cpp
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  Entity.cpp
+  Manager.cpp
+  Game.cpp
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(22,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\component\Transform.h(23,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\Game.cpp(47,94): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\Game.cpp(47,65): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\ecs\Entity.h(36,32): warning C4244: 'argumento': conversión de '_Ty' a 'float'; posible pérdida de datos
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\TPV2\Game.cpp(50): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Entity::addComponent<FighterCtrl,float,float,int>(float &&,float &&,int &&)" que se está compilando
+          with
+          [
+              T=FighterCtrl
+          ]
+  somplejson_demo.cpp
+  JSON.cpp
   Generando código...
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\TPV2\component\Transform.h(23,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-  TPV2.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P1\bin\TPV2Debug.exe
+  Compilando...
+  JSONValue.cpp
+  main.cpp
+  sdlutils_demo.cpp
+  SDLUtils.cpp
+  SoundEffect.cpp
+  Texture.cpp
+  Collisions.cpp
+  Vector2D.cpp
+  Generando código...
+     Creando biblioteca C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\bin\TPV2Debug.lib y objeto C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\bin\TPV2Debug.exp
+  TPV2.vcxproj -> C:\Users\Dragomante\Documents\GitHub\TPV-II\Practicas\Practica1\bin\TPV2Debug.exe

@@ -1,12 +1,14 @@
 #pragma once
+
 #include "ecs/System.h"
 #include "Message.h"
+
 enum GameState{ NEW, RUNNING, PAUSED, GAMEOVER};
 
-class GameCtrlSystem :
-	public System
-{
+class GameCtrlSystem :	public System	{
+
 public:
+
 	GameCtrlSystem();
 	virtual ~GameCtrlSystem();
 
@@ -16,6 +18,7 @@ public:
 	GameState getGameState() { return mGameState_; };
 
 private:
+
 	GameState mGameState_;
 	// - a este método se le va a llamar cuando muere el caza.
 	// - desactivar los asteroides y las balas, actualizar el estado del juego, etc.
@@ -23,5 +26,5 @@ private:
 	// - a este método se le va a llamar cuando no haya más asteroides.
 	// - desactivar todas las balas, etc.
 	void onAsteroidsExtinction();
-};
 
+};

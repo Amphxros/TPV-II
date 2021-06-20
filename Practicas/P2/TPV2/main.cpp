@@ -11,7 +11,5 @@ int main(int ac, char** av) {
 	g.init();
 	g.start();
 
-	
-
 	return 0;
 }

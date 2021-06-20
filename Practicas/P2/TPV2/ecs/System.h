@@ -6,7 +6,9 @@ class Manager;
 struct Message;
 
 class System {
+
 public:
+
 	virtual ~System() {
 	}
 
@@ -24,6 +26,7 @@ public:
 	}
 
 protected:
-	Manager *manager_;
-};
 
+	Manager *manager_;
+
+};

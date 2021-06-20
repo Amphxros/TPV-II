@@ -1,7 +1,9 @@
 #include "AsteroidSystem.h"
+
 #include "sdlutils/SDLUtils.h"
 #include "ecs/Manager.h"
 #include "ecs/ecs_defs.h"
+
 AsteroidSystem::AsteroidSystem(): System(), numOfAsteroids_(0)
 {
 }

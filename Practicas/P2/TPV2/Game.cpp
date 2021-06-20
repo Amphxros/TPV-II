@@ -56,7 +56,7 @@ void Game::init()
 
 }
 
-void Game::start(){
+void Game::start() {
 	// reference to the input handler (we could use a pointer, I just . rather than ->).
 	// you can also use the inline method ih() that is defined in InputHandler.h
 
@@ -78,13 +78,9 @@ void Game::start(){
 			exit_ = true;
 		}
 		mngr_->refresh();
-		
 
 		// clear screen
 		sdlutils().clearRenderer();
-
-		
-
 
 		// present new frame
 		sdlutils().presentRenderer();
@@ -97,6 +93,5 @@ void Game::start(){
 
 	// stop the music
 	Music::haltMusic();
-	
-	
+
 }

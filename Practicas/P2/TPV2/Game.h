@@ -5,6 +5,7 @@
 #include "sdlutils/SDLUtils.h"
 
 #include "AsteroidSystem.h"
+
 class Manager;
 class Game
 {
@@ -17,8 +18,8 @@ public:
 	void start();
 
 private:
+
 	std::unique_ptr<Manager> mngr_;
 	AsteroidSystem* astSys;
 
 };
-

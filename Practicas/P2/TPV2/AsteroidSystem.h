@@ -2,6 +2,7 @@
 #include "ecs/System.h"
 #include <cstddef>
 #include "Message.h"
+
 class Entity;
 class AsteroidSystem :
 	public System

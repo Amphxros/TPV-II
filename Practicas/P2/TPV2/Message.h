@@ -1,7 +1,9 @@
 #pragma once
 
-class Entity;
 #include "utils/Vector2D.h"
+
+class Entity;
+
 namespace msg {
 	using msgType = std::size_t;
 	enum msgID : msgType {
@@ -21,7 +23,7 @@ namespace msg {
 
 		int health;
 	};
-	
+
 	struct AsteroidInfo {
 		int n;
 	};
@@ -47,6 +49,4 @@ namespace msg {
 			BulletInfo bullet;
 		};
 	};
-
-
 }
