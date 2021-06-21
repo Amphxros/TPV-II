@@ -9,7 +9,7 @@
 #include "BulletsSystem.h"
 #include "GameCtrlSystem.h"
 #include "RenderSystem.h"
-
+#include "CollisionSystem.h"
 class Manager;
 class Game
 {
@@ -26,8 +26,10 @@ private:
 	std::unique_ptr<Manager> mngr_;
 	AsteroidSystem* astSys;
 	BulletsSystem* bulletSys_;
+	CollisionSystem* collisionSys_;
 	GameCtrlSystem* gameSys_;
 	FighterSystem* fighterSys_;
 	RenderSystem* renderSys_;
+
 
 };

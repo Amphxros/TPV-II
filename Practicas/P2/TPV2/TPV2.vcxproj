@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="AsteroidSystem.cpp" />
     <ClCompile Include="BulletsSystem.cpp" />
+    <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="component\AsteroidsManager.cpp" />
     <ClCompile Include="component\CollisionManager.cpp" />
     <ClCompile Include="component\DeAcceleration.cpp" />
@@ -38,6 +39,7 @@
     <ClCompile Include="component\Transform.cpp" />
     <ClCompile Include="ecs\Entity.cpp" />
     <ClCompile Include="ecs\Manager.cpp" />
+    <ClCompile Include="FighterGunSystem.cpp" />
     <ClCompile Include="FighterSystem.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameCtrlSystem.cpp" />
@@ -56,6 +58,7 @@
   <ItemGroup>
     <ClInclude Include="AsteroidSystem.h" />
     <ClInclude Include="BulletsSystem.h" />
+    <ClInclude Include="CollisionSystem.h" />
     <ClInclude Include="component\AsteroidsManager.h" />
     <ClInclude Include="component\CollisionManager.h" />
     <ClInclude Include="component\DeAcceleration.h" />
@@ -78,6 +81,7 @@
     <ClInclude Include="ecs\Manager.h" />
     <ClInclude Include="ecs\mpl.h" />
     <ClInclude Include="ecs\System.h" />
+    <ClInclude Include="FighterGunSystem.h" />
     <ClInclude Include="FighterSystem.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameCtrlSystem.h" />

@@ -38,6 +38,7 @@ void Game::init()
 	gameSys_ = mngr_->addSystem<GameCtrlSystem>();
 	astSys = mngr_->addSystem<AsteroidSystem>();
 	bulletSys_ = mngr_->addSystem<BulletsSystem>();
+	collisionSys_ = mngr_->addSystem<CollisionSystem>();
 	fighterSys_ = mngr_->addSystem<FighterSystem>();
 	renderSys_ = mngr_->addSystem<RenderSystem>();
 
@@ -70,6 +71,7 @@ void Game::start() {
 		gameSys_->update();
 		astSys->update();
 		bulletSys_->update();
+		collisionSys_->update();
 		fighterSys_->update();
 
 		// clear screen

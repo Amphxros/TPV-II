@@ -34,6 +34,11 @@ namespace msg {
 		Vector2D p, v;
 		double w, h, r;
 	};
+
+	struct GameInfo {
+		int currState;
+		bool hasWon;
+	};
 	struct Message
 	{
 		Message() {
@@ -46,6 +51,7 @@ namespace msg {
 		union {
 			Collision col;
 			AsteroidInfo num;
+			GameInfo info;
 			BulletInfo bullet;
 		};
 	};

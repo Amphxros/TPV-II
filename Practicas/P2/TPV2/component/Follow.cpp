@@ -13,6 +13,5 @@ Follow::~Follow()
 
 void Follow::update()
 {
-
 	tr_->setDir(tr_->getDir().rotate(tr_->getDir().angle(target_->getPos() - tr_->getPos()) > 0 ? 1.0f : -1.0f));
 }

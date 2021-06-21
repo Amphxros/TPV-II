@@ -73,7 +73,6 @@ void AsteroidSystem::addAsteroids(int n)
 {
 	for (int i = 0; i < n; i++) {
 		createAsteroid();
-		std::cout << "ast" << std::endl;
 	}
 }
 
@@ -129,4 +128,51 @@ void AsteroidSystem::createAsteroid()
 
 void AsteroidSystem::onCollisionWithBullet(Entity* a, Entity* b)
 {
+	if (manager_->getComponent<Generations>(a)->getGen() > 0) {
+		Vector2D p = manager_->getComponent<Transform>(a)->getPos();
+		Vector2D v = manager_->getComponent<Transform>(a)->getDir();
+		double r = manager_->getComponent<Transform>(a)->getRotation();
+		double w = manager_->getComponent<Transform>(a)->getW();
+		
+		int gen = manager_->getComponent<Generations>(a)->getGen();
+		//se divide en 2 asteroides A y B
+		//Asteroide A
+		Entity* A = manager_->addEntity();
+
+		Vector2D posA = p + v.rotate(r) * 2* w;
+		Vector2D velA = p + v.rotate(r) * 1.1f;
+		Transform* trA=manager_->addComponent<Transform>(A,posA, velA, 10 + 5 * gen - 1, 10 + 5 * gen - 1, sdlutils().rand().nextInt(0, 360));
+		manager_->addComponent<ShowAtOppositeSide>(A,trA);
+		manager_->addComponent<Generations>(A,gen - 1);
+
+		Entity* B = manager_->addEntity();
+		Vector2D posB = p - v.rotate(r) * 2 * w;
+		Vector2D velB = p - v.rotate(r) * 1.1f;
+		Transform* trB = manager_->addComponent<Transform>(B, posB, velB, 10 + 5 * gen - 1, 10 + 5 * gen - 1, sdlutils().rand().nextInt(0, 360));
+		manager_->addComponent<ShowAtOppositeSide>(B, trB);
+		manager_->addComponent<Generations>(B, gen - 1);
+
+
+		//si el asteroide es de tipo B sus hijos tambien lo son
+		if (manager_->hasComponent<Follow>(a)) {
+
+			Transform* tr = manager_->getComponent<Transform>(manager_->getHandler<Fighter>());
+
+			manager_->addComponent<Follow>(A,trA,tr);
+			manager_->addComponent<FramedImage>(A,&(sdlutils().images().at("asteroid_gold")), 5, 6, 0, 0, 50.0f);
+			manager_->addComponent<Follow>(B, trB,tr);
+			manager_->addComponent<FramedImage>(B,&(sdlutils().images().at("asteroid_gold")), 5, 6, 0, 0, 50.0f);
+
+		}
+		else 
+		{
+			manager_->addComponent<FramedImage>(A,&(sdlutils().images().at("asteroid")), 5, 6, 0, 0, 50.0f);
+			manager_->addComponent<FramedImage>(B,&(sdlutils().images().at("asteroid")), 5, 6, 0, 0, 50.0f);
+		}
+
+	}
+	else {
+		manager_->setActive(a, false);
+		numOfAsteroids_--;
+	}
 }

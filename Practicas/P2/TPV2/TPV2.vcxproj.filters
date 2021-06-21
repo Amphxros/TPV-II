@@ -19,9 +19,6 @@
     <Filter Include="Header Files\sdlutils">
       <UniqueIdentifier>{58dd9447-2a0c-4272-b611-c6dc1d2f3cd1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\utils">
-      <UniqueIdentifier>{c64a0449-cd8f-4c5c-9f32-b62e25f7b9ff}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\json">
       <UniqueIdentifier>{fc8a7623-40da-4e39-9225-e97151939786}</UniqueIdentifier>
     </Filter>
@@ -48,6 +45,9 @@
     </Filter>
     <Filter Include="Source Files\game">
       <UniqueIdentifier>{40c29684-d722-41cd-a0c3-a632d59fbb51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\json\utils">
+      <UniqueIdentifier>{c64a0449-cd8f-4c5c-9f32-b62e25f7b9ff}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +150,12 @@
     <ClCompile Include="RenderSystem.cpp">
       <Filter>Source Files\game</Filter>
     </ClCompile>
+    <ClCompile Include="CollisionSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FighterGunSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="json\JSON.h">
@@ -159,13 +165,13 @@
       <Filter>Header Files\json</Filter>
     </ClInclude>
     <ClInclude Include="utils\Collisions.h">
-      <Filter>Header Files\utils</Filter>
+      <Filter>Header Files\json\utils</Filter>
     </ClInclude>
     <ClInclude Include="utils\Singleton.h">
-      <Filter>Header Files\utils</Filter>
+      <Filter>Header Files\json\utils</Filter>
     </ClInclude>
     <ClInclude Include="utils\Vector2D.h">
-      <Filter>Header Files\utils</Filter>
+      <Filter>Header Files\json\utils</Filter>
     </ClInclude>
     <ClInclude Include="sdlutils\Font.h">
       <Filter>Header Files\sdlutils</Filter>
@@ -285,6 +291,12 @@
       <Filter>Header Files\game</Filter>
     </ClInclude>
     <ClInclude Include="RenderSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FighterGunSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

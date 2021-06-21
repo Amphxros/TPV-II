@@ -5,8 +5,9 @@
 #include "component/Image.h"
 #include "component/FramedImage.h"
 #include "component/Health.h"
+#include "sdlutils/SDLUtils.h"
 
-RenderSystem::RenderSystem()
+RenderSystem::RenderSystem() : System(),currState(0)
 {
 }
 
@@ -16,6 +17,11 @@ RenderSystem::~RenderSystem()
 
 void RenderSystem::init()
 {
+	currState=0;
+	initMsg = &sdlutils().msgs().at("init");
+	pauseMsg = &sdlutils().msgs().at("pause");
+	gameOverMsg = &sdlutils().msgs().at("gameOver");
+	gameWinMsg = &sdlutils().msgs().at("gameWin");
 }
 
 void RenderSystem::update()
@@ -24,10 +30,33 @@ void RenderSystem::update()
 	renderBullets();
 	renderFighter();
 	renderRemainingLives();
+	renderMsgs();
 }
 
 void RenderSystem::receive(const msg::Message& m)
 {
+	switch (m.id)
+	{
+	case msg::ROUNDOVER: //pasado a paused
+		currState = m.info.currState;
+		break;
+	case msg::START_GAME: //pasado a running
+		currState = m.info.currState;
+		break;
+	case msg::GAMEOVER:	//pasado a estado GameOver
+		if (m.info.hasWon) {
+			currState = 4;
+		}
+		else {
+			currState = m.info.currState;
+		}
+		break;
+	case msg::INIT_GAME: //pasado a estado new
+		currState = m.info.currState;
+		break;
+	default:
+		break;
+	}
 }
 
 void RenderSystem::renderAsteroids()
@@ -100,4 +129,46 @@ void RenderSystem::renderRemainingLives()
 		h->getTexture()->render(dest, 0);
 	}
 
+}
+
+void RenderSystem::renderMsgs()
+{
+	SDL_Rect dest;
+	switch (currState)
+	{
+	case 0:
+		dest.x = (int)(sdlutils().width() / 2 - initMsg->width()) / 2;
+		dest.y = (int)(sdlutils().height()- initMsg->height()) / 2 - 100;
+		dest.w = (int)sdlutils().width() / 2;
+		dest.h = (int)sdlutils().height() / 3;
+		initMsg->render(dest);
+	
+		break;
+	case 2:
+
+		dest.x = (int)(sdlutils().width() / 2 - pauseMsg->width()) / 2;
+		dest.y = (int)(sdlutils().height() - pauseMsg->height()) / 2 - 100;
+		dest.w = (int)sdlutils().width() / 2;
+		dest.h = (int)sdlutils().height() / 3;
+		pauseMsg->render(dest);
+
+		break;
+	case 3:
+
+		dest.x = (int)(sdlutils().width() / 2 - gameOverMsg->width()) / 2;
+		dest.y = (int)(sdlutils().height() - gameOverMsg->height()) / 2 - 100;
+		dest.w = (int)sdlutils().width() / 2;
+		dest.h = (int)sdlutils().height() / 3;
+		gameOverMsg->render(dest);
+		break;
+	case 4:
+		dest.x = (int)(sdlutils().width() / 2 - gameWinMsg->width()) / 2;
+		dest.y = (int)(sdlutils().height() - gameWinMsg->height()) / 2 - 100;
+		dest.w = (int)sdlutils().width() / 2;
+		dest.h = (int)sdlutils().height() / 3;
+		gameWinMsg->render(dest);
+		break;
+	default:
+		break;
+	}
 }

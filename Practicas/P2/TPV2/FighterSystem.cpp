@@ -65,6 +65,7 @@ void FighterSystem::update()
 
 void FighterSystem::receive(const msg::Message& m)
 {
+	Health* h = manager_->getComponent<Health>(manager_->getHandler<Fighter>());
 	switch (m.id)
 	{
 	case msg::START_GAME:
@@ -73,6 +74,9 @@ void FighterSystem::receive(const msg::Message& m)
 	case msg::COLLISIONFIGHTER:
 		active = false;
 		onAsteroidCollision();
+		break;
+	case msg::INIT_GAME:
+		h->resetHealth();
 		break;
 	default:
 		break;
@@ -97,9 +101,12 @@ void FighterSystem::onAsteroidCollision()
 	//si aun queda vida o no mandamos el mensaje correspondiente
 	if (curr <= 0) {
 		msg_.id = msg::GAMEOVER;
+		msg_.info.currState = 3;
+		msg_.info.hasWon = false;
 	}
 	else {
 		msg_.id = msg::ROUNDOVER;
+		msg_.info.currState = 2;
 	}
 	manager_->send(msg_);
 }
