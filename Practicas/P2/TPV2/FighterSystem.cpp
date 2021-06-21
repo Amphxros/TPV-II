@@ -45,6 +45,7 @@ void FighterSystem::update()
 			if (ih().isKeyDown(SDL_SCANCODE_UP)) {
 				auto dir = tr_->getDir();
 				dir = dir + Vector2D(0, -1).rotate(tr_->getRotation()) * 0.2f;
+				
 				sdlutils().soundEffects().at("thrust").play();
 				tr_->setDir(dir);
 			}
@@ -69,6 +70,7 @@ void FighterSystem::receive(const msg::Message& m)
 	switch (m.id)
 	{
 	case msg::START_GAME:
+		sdlutils().musics().at("imperial_march").play();
 		active = true;
 		break;
 	case msg::COLLISIONFIGHTER:
@@ -76,6 +78,7 @@ void FighterSystem::receive(const msg::Message& m)
 		onAsteroidCollision();
 		break;
 	case msg::INIT_GAME:
+	
 		h->resetHealth();
 		break;
 	default:
@@ -90,6 +93,7 @@ void FighterSystem::onAsteroidCollision()
 	//reseteamos la posicion
 	Transform* tr_ = manager_->getComponent<Transform>(manager_->getHandler<Fighter>());
 	tr_->setPos(sdlutils().width() / 2 - 25, sdlutils().height() / 2 - 25);
+	tr_->setDir(Vector2D());
 	tr_->setRotation(0);
 
 	//quitamos vida
@@ -101,6 +105,7 @@ void FighterSystem::onAsteroidCollision()
 	//si aun queda vida o no mandamos el mensaje correspondiente
 	if (curr <= 0) {
 		msg_.id = msg::GAMEOVER;
+		
 		msg_.info.currState = 3;
 		msg_.info.hasWon = false;
 	}
@@ -108,5 +113,8 @@ void FighterSystem::onAsteroidCollision()
 		msg_.id = msg::ROUNDOVER;
 		msg_.info.currState = 2;
 	}
+	sdlutils().musics().at("imperial_march").haltMusic();
 	manager_->send(msg_);
+	
+	//sdlutils().soundEffects().at("explosion").play();
 }

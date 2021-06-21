@@ -1,5 +1,6 @@
 #include "GameCtrlSystem.h"
 
+#include "sdlutils/SDLUtils.h"
 #include "sdlutils/InputHandler.h"
 #include "ecs/Manager.h"
 
@@ -14,6 +15,7 @@ GameCtrlSystem::~GameCtrlSystem()
 void GameCtrlSystem::init()
 {
 	mGameState_ = GameState::NEW;
+
 }
 
 void GameCtrlSystem::update()
@@ -29,9 +31,9 @@ void GameCtrlSystem::update()
 			}
 			else {
 				m.id = msg::START_GAME;
-				m.num.n = 10;
+				
 				mGameState_ = GameState::RUNNING;
-				m.info.currState = (int)(mGameState_);
+				m.num.n = 10;
 				manager_->send(m);
 			}
 		}

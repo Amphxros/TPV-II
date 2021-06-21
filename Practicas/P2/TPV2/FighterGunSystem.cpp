@@ -32,14 +32,13 @@ void FighterGunSystem::update()
 				int r = tr_->getRotation();
 
 				p = p + Vector2D(w / 2, h / 2) - Vector2D(0.0f, h / 2.0f + 5.0f + 12.0f).rotate(r) - Vector2D(2.0f, 10.0f);
-				v = Vector2D(0.0f, -1.0f).rotate(r) * (v.magnitude() + 5.0f);
-
+				v = Vector2D(0.0f, -1.0f).rotate(r)* (v.magnitude() + 5.0f);
 				msg::Message m;
 				m.id = msg::BULLET_SHOOT;
 				m.bullet.p = p;
 				m.bullet.v = v;
-				m.bullet.h = w;
-				m.bullet.w = w;
+				m.bullet.h = 10;
+				m.bullet.w = 10;
 				m.bullet.r = r;
 
 				manager_->send(m);

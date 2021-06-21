@@ -27,7 +27,10 @@ void CollisionSystem::update()
 					if (collides(trA, trB)) {
 						msg::Message m_;
 						m_.id = msg::COLLISIONBULLET;
+						m_.col.a = ast;
+						m_.col.b = bul;
 						manager_->send(m_);
+					
 					}
 
 				}

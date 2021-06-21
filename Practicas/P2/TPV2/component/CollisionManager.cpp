@@ -71,7 +71,7 @@
 //	h->setHealth(h->getHealth() - 1);
 //
 //	if (h->getHealth() > 0) {
-//		sdlutils().musics().at("imperial_march").pauseMusic();
+//		
 //		mState->changeState(GameState::PAUSE);
 //	}
 //	else {

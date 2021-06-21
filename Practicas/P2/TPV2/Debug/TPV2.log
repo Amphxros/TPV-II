@@ -1,8 +1,12 @@
-﻿  BulletsSystem.cpp
+﻿  FighterSystem.cpp
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14,15): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14): message : vea la declaración de 'Entity'
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(19,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(19,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(20,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(20,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\FighterSystem.cpp(28,110): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\FighterSystem.cpp(28,84): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\FighterSystem.cpp(47,56): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\FighterSystem.cpp(60,59): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
   TPV2.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\bin\TPV2Debug.exe

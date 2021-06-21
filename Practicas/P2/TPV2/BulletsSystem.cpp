@@ -21,6 +21,13 @@ void BulletsSystem::update()
 {
 	for (auto ent : manager_->getEnteties()) {
 		if (manager_->hasGroup<Bullets>(ent)) {
+			Transform* tr = manager_->getComponent<Transform>(ent);
+			tr->setPos(tr->getPos() + tr->getDir());
+
+			if (tr->getPos().getX() < 0 || tr->getPos().getX() > sdlutils().width()
+				|| tr->getPos().getY() < 0 || tr->getPos().getY() > sdlutils().height()) {
+				manager_->setActive(ent,false);
+			}
 
 		}
 	}
@@ -33,8 +40,8 @@ void BulletsSystem::receive(const msg::Message& m)
 	case msg::BULLET_SHOOT:
 		shoot(m.bullet.p, m.bullet.v, m.bullet.w, m.bullet.h, m.bullet.r);
 		break;
-	case msg::ROUNDOVER:
-	case msg::GAMEOVER:
+	case msg::COLLISIONBULLET:
+		onCollisionWithAsteroid(m.col.a, m.col.b);
 		break;
 	default:
 		break;
@@ -52,5 +59,7 @@ void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double width, double heigh
 	manager_->setGroup<Bullets>(e,true);
 	manager_->addComponent<Transform>(e, pos, vel, width, height, rotation);
 	manager_->addComponent<Image>(e, &sdlutils().images().at("fire"));
+	
+	sdlutils().soundEffects().at("fire").play();
 
 }
