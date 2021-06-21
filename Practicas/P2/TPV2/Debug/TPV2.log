@@ -1,44 +1,8 @@
-﻿  AsteroidSystem.cpp
+﻿  BulletsSystem.cpp
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14,15): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14): message : vea la declaración de 'Entity'
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(19,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(19,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(20,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(20,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(84,68): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(84,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(93,10): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(94,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(102,10): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(103,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(142,32): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(142,40): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(143,32): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(149,32): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(149,41): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-  FighterGunSystem.cpp
-  Game.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.cpp(150,32): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\Message.h(5,13): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14): message : vea la declaración de 'Entity'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.h(6,13): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\Message.h(5): message : vea la declaración de 'Entity'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\BulletsSystem.h(8,13): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.h(6): message : vea la declaración de 'Entity'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(19,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(19,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(20,58): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-  GameCtrlSystem.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\component\Transform.h(20,55): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14,15): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-  main.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14): message : vea la declaración de 'Entity'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\Message.h(5,13): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\ecs\Entity.h(14): message : vea la declaración de 'Entity'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.h(6,13): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\Message.h(5): message : vea la declaración de 'Entity'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\BulletsSystem.h(8,13): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  Generando código...
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\TPV2\AsteroidSystem.h(6): message : vea la declaración de 'Entity'
-     Creando biblioteca C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\bin\TPV2Debug.lib y objeto C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\bin\TPV2Debug.exp
   TPV2.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\TPV-II\Practicas\P2\bin\TPV2Debug.exe

@@ -33,6 +33,9 @@ void BulletsSystem::receive(const msg::Message& m)
 	case msg::BULLET_SHOOT:
 		shoot(m.bullet.p, m.bullet.v, m.bullet.w, m.bullet.h, m.bullet.r);
 		break;
+	case msg::ROUNDOVER:
+	case msg::GAMEOVER:
+		break;
 	default:
 		break;
 	}
@@ -40,11 +43,13 @@ void BulletsSystem::receive(const msg::Message& m)
 
 void BulletsSystem::onCollisionWithAsteroid(Entity* a, Entity* b)
 {
+	manager_->setActive(b, false);
 }
 
 void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double width, double height, double rotation)
 {
 	Entity* e = manager_->addEntity();
+	manager_->setGroup<Bullets>(e,true);
 	manager_->addComponent<Transform>(e, pos, vel, width, height, rotation);
 	manager_->addComponent<Image>(e, &sdlutils().images().at("fire"));
 

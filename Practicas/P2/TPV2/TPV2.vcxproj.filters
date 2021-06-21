@@ -138,9 +138,6 @@
     <ClCompile Include="FighterSystem.cpp">
       <Filter>Source Files\game</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files\game</Filter>
-    </ClCompile>
     <ClCompile Include="GameCtrlSystem.cpp">
       <Filter>Source Files\game</Filter>
     </ClCompile>
@@ -154,6 +151,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FighterGunSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -290,14 +290,14 @@
     <ClInclude Include="Message.h">
       <Filter>Header Files\game</Filter>
     </ClInclude>
-    <ClInclude Include="RenderSystem.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="FighterGunSystem.h">
+      <Filter>Header Files\game</Filter>
     </ClInclude>
     <ClInclude Include="CollisionSystem.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\game</Filter>
     </ClInclude>
-    <ClInclude Include="FighterGunSystem.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="RenderSystem.h">
+      <Filter>Header Files\game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

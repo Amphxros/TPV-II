@@ -40,6 +40,7 @@ void Game::init()
 	bulletSys_ = mngr_->addSystem<BulletsSystem>();
 	collisionSys_ = mngr_->addSystem<CollisionSystem>();
 	fighterSys_ = mngr_->addSystem<FighterSystem>();
+	fighterGunSys_ = mngr_->addSystem<FighterGunSystem>(500);
 	renderSys_ = mngr_->addSystem<RenderSystem>();
 
 
@@ -73,6 +74,7 @@ void Game::start() {
 		bulletSys_->update();
 		collisionSys_->update();
 		fighterSys_->update();
+		fighterGunSys_->update();
 
 		// clear screen
 		sdlutils().clearRenderer();

@@ -10,6 +10,7 @@
 #include "GameCtrlSystem.h"
 #include "RenderSystem.h"
 #include "CollisionSystem.h"
+#include "FighterGunSystem.h"
 class Manager;
 class Game
 {
@@ -28,7 +29,9 @@ private:
 	BulletsSystem* bulletSys_;
 	CollisionSystem* collisionSys_;
 	GameCtrlSystem* gameSys_;
+
 	FighterSystem* fighterSys_;
+	FighterGunSystem* fighterGunSys_;
 	RenderSystem* renderSys_;
 
 

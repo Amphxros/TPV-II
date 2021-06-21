@@ -30,8 +30,8 @@ void GameCtrlSystem::update()
 			else {
 				m.id = msg::START_GAME;
 				m.num.n = 10;
-				m.info.currState = (int)(mGameState_);
 				mGameState_ = GameState::RUNNING;
+				m.info.currState = (int)(mGameState_);
 				manager_->send(m);
 			}
 		}

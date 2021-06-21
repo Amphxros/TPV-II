@@ -5,7 +5,7 @@ class FighterGunSystem :
 	public System
 {
 public:
-	FighterGunSystem();
+	FighterGunSystem(double time);
 	virtual ~FighterGunSystem();
 	virtual void init() override;
 	virtual void update() override;

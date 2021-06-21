@@ -45,7 +45,7 @@ void RenderSystem::receive(const msg::Message& m)
 		break;
 	case msg::GAMEOVER:	//pasado a estado GameOver
 		if (m.info.hasWon) {
-			currState = 4;
+			currState = 4; 
 		}
 		else {
 			currState = m.info.currState;
