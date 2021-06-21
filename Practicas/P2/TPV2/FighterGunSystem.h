@@ -1,5 +1,6 @@
 #pragma once
 #include "ecs/System.h"
+class Transform;
 class FighterGunSystem :
 	public System
 {
@@ -11,5 +12,7 @@ public:
 	void receive(const msg::Message& m) override;
 private:
 	bool active;
+	double time_, lastCreatedTime;
+	Transform* tr_; //transform del fighter
 };
 
