@@ -36,7 +36,7 @@ void Game::init()
 		"resources/config/resources.json");
 
 	gameSys_ = mngr_->addSystem<GameCtrlSystem>();
-	astSys = mngr_->addSystem<AsteroidSystem>();
+	astSys_ = mngr_->addSystem<AsteroidSystem>(5000);
 	bulletSys_ = mngr_->addSystem<BulletsSystem>();
 	collisionSys_ = mngr_->addSystem<CollisionSystem>();
 	fighterSys_ = mngr_->addSystem<FighterSystem>();
@@ -70,7 +70,7 @@ void Game::start() {
 		mngr_->refresh();
 
 		gameSys_->update();
-		astSys->update();
+		astSys_->update();
 		bulletSys_->update();
 		collisionSys_->update();
 		fighterSys_->update();

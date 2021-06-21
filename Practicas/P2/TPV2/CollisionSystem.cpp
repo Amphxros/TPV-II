@@ -36,7 +36,6 @@ void CollisionSystem::update()
 				}
 			}
 
-
 			if (collides(trA, trFighter)) {
 				msg::Message m;
 				m.id = msg::COLLISIONFIGHTER;

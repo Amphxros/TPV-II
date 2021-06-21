@@ -25,7 +25,7 @@ public:
 private:
 
 	std::unique_ptr<Manager> mngr_;
-	AsteroidSystem* astSys;
+	AsteroidSystem* astSys_;
 	BulletsSystem* bulletSys_;
 	CollisionSystem* collisionSys_;
 	GameCtrlSystem* gameSys_;

@@ -78,7 +78,6 @@ void FighterSystem::receive(const msg::Message& m)
 		onAsteroidCollision();
 		break;
 	case msg::INIT_GAME:
-	
 		h->resetHealth();
 		break;
 	default:
@@ -115,6 +114,6 @@ void FighterSystem::onAsteroidCollision()
 	}
 	sdlutils().musics().at("imperial_march").haltMusic();
 	manager_->send(msg_);
+	sdlutils().soundEffects().at("bangSmall").play();
 	
-	//sdlutils().soundEffects().at("explosion").play();
 }

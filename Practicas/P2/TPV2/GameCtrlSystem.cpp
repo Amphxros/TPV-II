@@ -54,6 +54,10 @@ void GameCtrlSystem::receive(const msg::Message& m)
 	case msg::GAMEOVER:
 		mGameState_ = GameState::GAMEOVER;
 		break;
+	case msg::NO_MORE_ASTEROIDS:
+		mGameState_ = GameState::GAMEOVER;
+		onAsteroidsExtinction();
+		break;
 
 	default:
 		break;
@@ -67,6 +71,7 @@ void GameCtrlSystem::onFighterDeath()
 
 void GameCtrlSystem::onAsteroidsExtinction()
 {
+	//mensaje de que el jugador ha ganado
 	msg::Message m;
 	m.id = msg::GAMEOVER;
 	m.info.hasWon = true;

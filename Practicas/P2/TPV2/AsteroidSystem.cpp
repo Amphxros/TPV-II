@@ -10,7 +10,7 @@
 #include "component/FramedImage.h"
 #include "component/Generations.h"
 
-AsteroidSystem::AsteroidSystem(): System(), numOfAsteroids_(0), active(false)
+AsteroidSystem::AsteroidSystem(double time): System(),currTime_(time), numOfAsteroids_(0), active(false)
 {
 }
 
@@ -21,6 +21,7 @@ AsteroidSystem::~AsteroidSystem()
 void AsteroidSystem::init()
 {
 	active = false;
+	timeSinceLastAsteroid_ = sdlutils().currRealTime();
 }
 
 void AsteroidSystem::update()
@@ -30,8 +31,7 @@ void AsteroidSystem::update()
 			if (manager_->hasGroup<Asteroids>(ent)) {
 				auto tr = manager_->getComponent<Transform>(ent);
 				if (manager_->hasComponent<Follow>(ent)) {
-					auto f = manager_->getComponent<Follow>(ent);
-					f->update();
+					 manager_->getComponent<Follow>(ent)->update();
 				}
 				manager_->getComponent<ShowAtOppositeSide>(ent)->update();
 				tr->setPos(tr->getPos() + tr->getDir());
@@ -40,6 +40,16 @@ void AsteroidSystem::update()
 		}
 
 
+		if (sdlutils().currRealTime() - timeSinceLastAsteroid_ > currTime_) {
+			timeSinceLastAsteroid_ = sdlutils().currRealTime();
+			createAsteroid();
+		}
+
+		if (numOfAsteroids_ == 0) {
+			msg::Message m;
+			m.id = msg::NO_MORE_ASTEROIDS;
+			manager_->send(m);
+		}
 
 	}
 }

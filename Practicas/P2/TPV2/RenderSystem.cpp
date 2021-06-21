@@ -7,7 +7,8 @@
 #include "component/Health.h"
 #include "sdlutils/SDLUtils.h"
 
-RenderSystem::RenderSystem() : System(),currState(0)
+RenderSystem::RenderSystem() : 
+	System(),currState(0), initMsg(nullptr), pauseMsg(nullptr), gameOverMsg(nullptr), gameWinMsg(nullptr)
 {
 }
 
@@ -17,7 +18,6 @@ RenderSystem::~RenderSystem()
 
 void RenderSystem::init()
 {
-	currState=0;
 	initMsg = &sdlutils().msgs().at("init");
 	pauseMsg = &sdlutils().msgs().at("pause");
 	gameOverMsg = &sdlutils().msgs().at("gameOver");
@@ -45,10 +45,10 @@ void RenderSystem::receive(const msg::Message& m)
 		break;
 	case msg::GAMEOVER:	//pasado a estado GameOver
 		if (m.info.hasWon) {
-			currState = 4; 
+			currState = 4; //el 4 es porque no existe ningun estado gameWin
 		}
 		else {
-			currState = m.info.currState;
+			currState = m.info.currState; 
 		}
 		break;
 	case msg::INIT_GAME: //pasado a estado new
@@ -61,10 +61,12 @@ void RenderSystem::receive(const msg::Message& m)
 
 void RenderSystem::renderAsteroids()
 {
+	//renderiza todos los asteroides y actualiza su animacion
 	for (Entity* ent : manager_->getEnteties()) {
 		if (manager_->hasGroup<Asteroids>(ent)) {
 			auto tr = manager_->getComponent<Transform>(ent);
 			auto im = manager_->getComponent<FramedImage>(ent);
+			im->update();
 			SDL_Rect dest;
 			dest.x = (int)tr->getPos().getX();
 			dest.y = (int)tr->getPos().getY();
@@ -79,6 +81,7 @@ void RenderSystem::renderAsteroids()
 
 void RenderSystem::renderBullets()
 {
+	//renderiza todas las balas
 	auto entities = manager_->getEnteties();
 	for (auto e : entities) {
 		if (manager_->hasGroup<Bullets>(e)) {
@@ -99,6 +102,7 @@ void RenderSystem::renderBullets()
 
 void RenderSystem::renderFighter()
 {
+	//renderiza el fighter
 	Entity* e = manager_->getHandler<Fighter>();
 	Transform* tr = manager_->getComponent<Transform>(e);
 	Image* im = manager_->getComponent<Image>(e);
@@ -116,6 +120,7 @@ void RenderSystem::renderFighter()
 
 void RenderSystem::renderRemainingLives()
 {
+	//renderiza la vida restante del jugaador
 	Entity* e = manager_->getHandler<Fighter>();
 	Health* h = manager_->getComponent<Health>(e);
 
@@ -136,7 +141,7 @@ void RenderSystem::renderMsgs()
 	SDL_Rect dest;
 	switch (currState)
 	{
-	case 0:
+	case 0:		//state new
 		dest.x = (int)(sdlutils().width() / 2 - initMsg->width()) / 2;
 		dest.y = (int)(sdlutils().height()- initMsg->height()) / 2 - 100;
 		dest.w = (int)sdlutils().width() / 2;
@@ -144,7 +149,7 @@ void RenderSystem::renderMsgs()
 		initMsg->render(dest);
 	
 		break;
-	case 2:
+	case 2:		//state pause
 
 		dest.x = (int)(sdlutils().width() / 2 - pauseMsg->width()) / 2;
 		dest.y = (int)(sdlutils().height() - pauseMsg->height()) / 2 - 100;
@@ -153,16 +158,16 @@ void RenderSystem::renderMsgs()
 		pauseMsg->render(dest);
 
 		break;
-	case 3:
 
+	case 3:		//state game over
 		dest.x = (int)(sdlutils().width() / 2 - gameOverMsg->width()) / 2;
 		dest.y = (int)(sdlutils().height() - gameOverMsg->height()) / 2 - 100;
 		dest.w = (int)sdlutils().width() / 2;
 		dest.h = (int)sdlutils().height() / 3;
 		gameOverMsg->render(dest);
 		break;
-	case 4:
-		dest.x = (int)(sdlutils().width() / 2 - gameWinMsg->width()) / 2;
+	case 4:		//state game over pero no hay mas asteroides
+		dest.x = (int)(sdlutils().width() - gameWinMsg->width()) / 2;
 		dest.y = (int)(sdlutils().height() - gameWinMsg->height()) / 2 - 100;
 		dest.w = (int)sdlutils().width() / 2;
 		dest.h = (int)sdlutils().height() / 3;
